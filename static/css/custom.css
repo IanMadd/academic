@@ -1,0 +1,47 @@
+.hljs {
+  padding: 1em;
+}
+
+body {
+  font-family: Optima, Candara, Calibri, Arial, sans-serif;
+}
+
+/* Navigation bar text */
+.navbar-default {
+  font-family: Optima, Candara, Calibri, Arial, sans-serif;
+  font-weight: 100;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Optima, Candara, Calibri, Arial, sans-serif;
+  font-weight: 200;
+  margin-bottom: .5rem;
+  line-height: 1.25;
+  color: #313131;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word; /* Ensures very long heading words do not overflow into content. */
+}
+
+
+.navbar-default .navbar-brand {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.2em;
+  color: #2b2b2b;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #666;
+    text-align: center;
+}
+
+code {
+    background-color: #e8e8e8;
+    border-radius: 2px;
+    font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
+    padding: 3px 3px;
+}

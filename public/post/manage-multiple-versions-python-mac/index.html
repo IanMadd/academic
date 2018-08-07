@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.45.1" />
+  <meta name="author" content="Ian Maddaus">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Summary Warnings Mac OS needs python Other projects may need specific versions of python  Installation python.org Homebrew Anaconda  PATH and .bash_profile PATH .bash_profile  Homebrew - pyenv Pyenv Local Pyenv Global  Locate Python Uninstall python python.org Homebrew Troubleshooting Uninstall Python from Pyenv  Anaconda  Additional Resources XKCD   Summary It’s easy to install multiple versions of python on a Mac computer using installers from python.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/manage-multiple-versions-python-mac/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Ian Maddaus">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Ian Maddaus">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/manage-multiple-versions-python-mac/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Ian Maddaus">
+  <meta property="og:url" content="/post/manage-multiple-versions-python-mac/">
+  <meta property="og:title" content="How To Manage Multiple Versions of Python on a Mac | Ian Maddaus">
+  <meta property="og:description" content="Summary Warnings Mac OS needs python Other projects may need specific versions of python  Installation python.org Homebrew Anaconda  PATH and .bash_profile PATH .bash_profile  Homebrew - pyenv Pyenv Local Pyenv Global  Locate Python Uninstall python python.org Homebrew Troubleshooting Uninstall Python from Pyenv  Anaconda  Additional Resources XKCD   Summary It’s easy to install multiple versions of python on a Mac computer using installers from python.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-07-26T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-07-26T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>How To Manage Multiple Versions of Python on a Mac | Ian Maddaus</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Ian Maddaus</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">How To Manage Multiple Versions of Python on a Mac</h1>
+
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ian Maddaus">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-07-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2018-07-26 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Jul 26, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ian Maddaus">
+  </span>
+
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/python/">Python</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=How%20To%20Manage%20Multiple%20Versions%20of%20Python%20on%20a%20Mac&amp;url=%2fpost%2fmanage-multiple-versions-python-mac%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fmanage-multiple-versions-python-mac%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fmanage-multiple-versions-python-mac%2f&amp;title=How%20To%20Manage%20Multiple%20Versions%20of%20Python%20on%20a%20Mac"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fmanage-multiple-versions-python-mac%2f&amp;title=How%20To%20Manage%20Multiple%20Versions%20of%20Python%20on%20a%20Mac"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=How%20To%20Manage%20Multiple%20Versions%20of%20Python%20on%20a%20Mac&amp;body=%2fpost%2fmanage-multiple-versions-python-mac%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      <div id="TOC">
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#warnings">Warnings</a><ul>
+<li><a href="#mac-os-needs-python">Mac OS needs python</a></li>
+<li><a href="#other-projects-may-need-specific-versions-of-python">Other projects may need specific versions of python</a></li>
+</ul></li>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#python.org"><a href="python.org" class="uri">python.org</a></a></li>
+<li><a href="#homebrew"><a href="https://brew.sh">Homebrew</a></a></li>
+<li><a href="#anaconda"><a href="https://www.anaconda.com">Anaconda</a></a></li>
+</ul></li>
+<li><a href="#path-and-.bash_profile">PATH and .bash_profile</a><ul>
+<li><a href="#path">PATH</a></li>
+<li><a href="#bash_profile">.bash_profile</a></li>
+</ul></li>
+<li><a href="#homebrew---pyenv">Homebrew - pyenv</a><ul>
+<li><a href="#pyenv-local">Pyenv Local</a></li>
+<li><a href="#pyenv-global">Pyenv Global</a></li>
+</ul></li>
+<li><a href="#locate-python">Locate Python</a></li>
+<li><a href="#uninstall-python">Uninstall python</a><ul>
+<li><a href="#python.org-1">python.org</a></li>
+<li><a href="#homebrew-1">Homebrew</a><ul>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#uninstall-python-from-pyenv">Uninstall Python from Pyenv</a></li>
+</ul></li>
+<li><a href="#anaconda-1">Anaconda</a></li>
+</ul></li>
+<li><a href="#additional-resources">Additional Resources</a></li>
+<li><a href="#xkcd">XKCD</a></li>
+</ul>
+</div>
+
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+<p>It’s easy to install multiple versions of python on a Mac computer using installers from <a href="http://www.python.org">python.org</a>, <a href="http://brew.sh">Homebrew</a>, <a href="https://www.anaconda.com">Conda</a>, or other sources. This could create conflicts if a user wants to run one version of python but bash calls a different version instead.</p>
+<p>This is guide will show you how to:</p>
+<ul>
+<li>modify your bash profile to change which version of python is called by bash first.</li>
+<li>use virtual environments to specify a version of python that will run a project.</li>
+<li>uninstall specific versions of python.</li>
+</ul>
+</div>
+<div id="warnings" class="section level1">
+<h1>Warnings</h1>
+<hr />
+<div id="mac-os-needs-python" class="section level3">
+<h3>Mac OS needs python</h3>
+<p><strong>DO NOT</strong> remove any versions of Python found in the following folders:</p>
+<ul>
+<li><code>/usr/bin</code></li>
+<li><code>system/Library</code></li>
+</ul>
+<p>These versions of Python—which should be Python 2.7—are installed by Apple and used by Mac OS and other software to perform some functions. Deleting Python from these directories will break Mac OS and force you to reinstall it on your computer.</p>
+</div>
+<div id="other-projects-may-need-specific-versions-of-python" class="section level3">
+<h3>Other projects may need specific versions of python</h3>
+<p>You may have a python project or you may use python packages that require particular versions of Python. Uninstalling those versions would prevent those projects or packages from working until that version of python is reinstalled. For example, Python 3 is a dependency of Numpy; if you uninstalled Python 3, then Numpy wouldn’t work until you reinstalled Python 3.</p>
+<hr />
+</div>
+</div>
+<div id="installation" class="section level1">
+<h1>Installation</h1>
+<p>Three common methods of installing python can be found here:</p>
+<div id="python.org" class="section level3">
+<h3><a href="python.org" class="uri">python.org</a></h3>
+<p>The python.org installer can be found <a href="https://www.python.org/downloads/">here</a>.</p>
+<p><br></p>
+</div>
+<div id="homebrew" class="section level3">
+<h3><a href="https://brew.sh">Homebrew</a></h3>
+<p>First install Homebrew. The instructions are <a href="https://brew.sh">here</a>, or enter the following command:</p>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></pre>
+<p><br></p>
+<p>To install Python 3:</p>
+<pre><code>brew install python</code></pre>
+<p>To install Python 2:</p>
+<pre><code>brew install python@2</code></pre>
+<p><br></p>
+</div>
+<div id="anaconda" class="section level3">
+<h3><a href="https://www.anaconda.com">Anaconda</a></h3>
+<p>Anaconda is generally used for scientific and machine learning applications.</p>
+<p>For <strong>Ananconda</strong> follow installation instructions <a href="https://www.anaconda.com/download/#macos">here</a>.</p>
+<p><br></p>
+<p>Miniconda is a stripped down version of Anaconda.</p>
+<p>For <strong>Miniconda</strong> follow installation instructions <a href="https://conda.io/docs/user-guide/install/index.html">here</a>.</p>
+<p><br></p>
+<hr />
+</div>
+</div>
+<div id="path-and-.bash_profile" class="section level1">
+<h1>PATH and .bash_profile</h1>
+<div id="path" class="section level2">
+<h2>PATH</h2>
+<p>The path is a list of directories that your shell will look through when you execute a command. You can display the path on your computer using the <code>echo $PATH</code> command:</p>
+<pre><code>$ echo $PATH
+
+/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/username/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/username/miniconda2/bin:/Users/username/miniconda3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/X11/bin:/usr/local/git/bin</code></pre>
+<p>The directories above are separated by a colon, this is what they look like displayed in sequence:</p>
+<ul>
+<li>/Library/Frameworks/Python.framework/Versions/3.7/bin</li>
+<li>/Users/username/anaconda3/bin</li>
+<li>/Library/Frameworks/Python.framework/Versions/2.7/bin</li>
+<li>/Users/username/miniconda2/bin</li>
+<li>/Users/username/miniconda3/bin</li>
+<li>/Library/Frameworks/Python.framework/Versions/3.6/bin</li>
+<li>/usr/local/bin</li>
+<li>/usr/bin</li>
+<li>/bin</li>
+<li>/usr/sbin</li>
+<li>/sbin</li>
+<li>/usr/texbin</li>
+<li>/opt/X11/bin</li>
+<li>/usr/X11/bin</li>
+<li>/usr/local/git/bin</li>
+</ul>
+<p>When you ask your shell to run a particular command or run an interpreter, <code>python</code> for example, the shell looks through the different directories listed in the PATH in order they’re presented above. When the shell finds that command, it stops and calls it even if there is another version of the same command, with the same name, further down in the list.</p>
+</div>
+<div id="bash_profile" class="section level2">
+<h2>.bash_profile</h2>
+<p>The bash profile is a set of instructions that are run by the shell when the user logs in to bash. You can add a <a href="http://osxdaily.com/2011/10/03/add-a-separator-time-stamp-between-terminal-commands-to-increase-readability/">variety</a> of <a href="https://natelandau.com/my-mac-osx-bash_profile/">preferences</a> to the bash profile, including modifications to the PATH. When anaconda, miniconda or other versions of python are installed they automatically add paths to their respective versions of python to the top of the bash profile.</p>
+<p>Bash reads the bash profile in sequential order — from top to bottom — and adds those paths to the PATH in the order that they’re read. This means that the <em>last</em> path at the bottom of the bash profile will end up as the <em>first</em> path in the PATH. This means that if you have Python 3.6 installed on your computer, and then decide to add python 3.7, but keep 3.6, the installer will add Python 3.7 to the top of the bash profile but it will end up <em>after</em> python 3.6 in the PATH. Entering <code>python3</code> in bash will call python 3.6, <em>not</em> 3.7.</p>
+<p>If that was confusing compare the order that the python paths are added to my bash profile below to the PATH listed above. You’ll notice that their respective orders are opposite from each other.</p>
+<hr />
+<p>Enter the following command to open the bash profile in TextEdit:</p>
+<pre><code>$ open ~/.bash_profile</code></pre>
+<p>My .bash_profile currently looks like this:</p>
+<pre><code># Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH=&quot;/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}&quot;
+export PATH
+
+# added by Miniconda3 installer
+export PATH=&quot;/Users/username/miniconda3/bin:$PATH&quot;
+
+# added by Miniconda2 installer
+export PATH=&quot;/Users/username/miniconda2/bin:$PATH&quot;
+
+# Setting PATH for Python 2.7
+# The original version is saved in .bash_profile.pysave
+PATH=&quot;/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}&quot;
+export PATH
+
+# added by Anaconda3 installer
+export PATH=&quot;/Users/username/anaconda3/bin:$PATH&quot;
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH=&quot;/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}&quot;
+export PATH</code></pre>
+<p>If you want to keep all of your installed versions of python, but want bash to open a different version first, just copy and paste it to the <strong>bottom</strong> of the bash profile. If you don’t want bash to run a particular version of python then delete it from bash profile and uninstall that version by following the instructions further down.</p>
+<p>Don’t forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:</p>
+<ul>
+<li><code>source ~/.bash_profile</code><br />
+</li>
+<li><code>. ~/.bash_profile</code></li>
+</ul>
+</div>
+</div>
+<div id="homebrew---pyenv" class="section level1">
+<h1>Homebrew - pyenv</h1>
+<p><a href="https://github.com/pyenv/pyenv">Pyenv</a> is a <a href="https://brew.sh">Homebrew</a> package that allows a user to install multiple versions of python in Homebrew and specify which version of python they’d like to run.</p>
+<p>Install pyenv:</p>
+<pre><code>$ brew install pyenv</code></pre>
+<p>Install different versions of python:</p>
+<pre><code>$ pyenv install 3.5.0
+$ pyenv install 3.6.0</code></pre>
+<p>Show which versions of python are installed:</p>
+<pre><code>$ pyenv versions
+
+* system (set by /Users/username/Programming/python/.python-version)
+  3.5.0
+  3.6.0</code></pre>
+<p>The asterisk indicates that the system version of python is active, but 3.5.0 and 3.6.0 are also installed.</p>
+<p><br></p>
+<div id="pyenv-local" class="section level2">
+<h2>Pyenv Local</h2>
+<p>Create a folder called <code>PythonLocalProject</code>, then display the version of python called by bash by entering <code>python -V</code>:</p>
+<pre><code>$ python -V
+Python 3.6.5 :: Anaconda, Inc.</code></pre>
+<p>Now enter:</p>
+<pre><code>$ pyenv local 3.5.0</code></pre>
+<p>This creates a <code>.python-version</code> file which tells <code>pyenv</code> which version of python to run in that directory.</p>
+<p>Entering <code>ls -la</code> shows us that file:</p>
+<pre><code>$ ls -la
+total 8
+drwxr-xr-x  3 username  staff   96 Aug  3 11:52 .
+drwxr-xr-x  4 username  staff  128 Aug  3 11:56 ..
+-rw-r--r--  1 username  staff    6 Aug  3 12:03 .python-version</code></pre>
+<p>Now enter <code>pyenv versions</code>:</p>
+<pre><code>$ pyenv versions
+  system
+* 3.5.0 (set by /Users/username/Programming/python/pythonproject/.python-version)
+  3.6.0</code></pre>
+<p>And running this command shows which version of python is called by pyenv:</p>
+<pre><code>$ python -V
+Python 3.5.0</code></pre>
+<p>To change pyenv to the system version of version 3.6.0 enter:</p>
+<pre><code>$ pyenv local system
+$ pyenv local 3.6.0</code></pre>
+<p>This procedure is fine, you can set a version of python to run in a particular folder. But what if you want to use pyenv to set a global version of python.</p>
+<p><br></p>
+</div>
+<div id="pyenv-global" class="section level2">
+<h2>Pyenv Global</h2>
+<p>Pyenv gives these instructions when you enter <code>pyenv init</code> in bash:</p>
+<pre><code>$ pyenv init
+
+# Load pyenv automatically by appending
+# the following to ~/.bash_profile:
+
+eval &quot;$(pyenv init -)&quot;</code></pre>
+<p><br></p>
+<p>Open the bash profile:</p>
+<ul>
+<li><code>open ~/.bash_profile</code></li>
+</ul>
+<p>Add this text to the bottom of the file:</p>
+<ul>
+<li><code>eval &quot;$(pyenv init -)&quot;</code></li>
+</ul>
+<p>Save the file and then enter:</p>
+<ul>
+<li><code>source ~/.bash_profile</code></li>
+</ul>
+<p><br></p>
+<p>Entering <code>echo $PATH</code> will show that a pyenv shim has been added to the beginnning of the path:</p>
+<ul>
+<li><code>/Users/username/.pyenv/shims:</code></li>
+</ul>
+<p>And <code>which python</code> will return:</p>
+<ul>
+<li><code>/Users/username/.pyenv/shims/python</code></li>
+</ul>
+<p>This means that bash will run the version of python set by pyenv.</p>
+<p><br></p>
+<p>Navigate to a folder that doesn’t have a <code>.python-version</code> file and enter:</p>
+<pre><code>$ pyenv global 3.6.0
+Python 3.6.0</code></pre>
+<p>This shows us that the global version of python is 3.6.0 and it is set by <code>pyenv</code>.</p>
+<p>So this shows that bash will run whichever version of python that is set in pyenv.</p>
+<p><br></p>
+<p>If you navigate back to the <code>PythonLocalProject</code> folder with the <code>.python-version</code> file and run <code>python -V</code> you will notice that it doesn’t run the global version of python, it runs whichever version was last set with the <code>pyenv local</code> command.</p>
+<p><br></p>
+</div>
+</div>
+<div id="locate-python" class="section level1">
+<h1>Locate Python</h1>
+<p><br></p>
+<p>We can use the <code>which</code> command to identify where specific versions of python are located:</p>
+<pre><code>$ which -a python
+/Users/username/.pyenv/shims/python
+/Users/username/anaconda3/bin/python
+/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+/Users/username/miniconda2/bin/python
+/Users/username/miniconda3/bin/python
+/usr/local/bin/python
+/usr/bin/python
+
+
+$ which -a python3
+/Users/username/.pyenv/shims/python3
+/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
+/Users/username/anaconda3/bin/python3
+/Users/username/miniconda3/bin/python3
+/Library/Frameworks/Python.framework/Versions/3.6/bin/python3
+/usr/local/bin/python3</code></pre>
+<p>This shows some overlap as some versions of python appear in both searches.</p>
+<p>The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the <code>/Library/Frameworks/Python.framework/</code> directory. Homebrew installs all packages, including python, in <code>/usr/local/Cellar</code>, then Homebrew adds a symlink to <code>/usr/local/bin</code>so that it’s version of python can be found in the path. Finally, Apple installs python in <code>/usr/bin</code>. Remember, don’t delete that version.</p>
+<hr />
+</div>
+<div id="uninstall-python" class="section level1">
+<h1>Uninstall python</h1>
+<hr />
+<p>Follow these instructions if you want to remove particular versions of python. <br></p>
+<div id="python.org-1" class="section level2">
+<h2>python.org</h2>
+<p>The python.org installer places all it’s installed files in the following folders:</p>
+<ul>
+<li>The system applications folder, <code>/Applications</code></li>
+<li><code>/Library/Frameworks/Python.framework</code></li>
+<li><code>/usr/local/bin</code></li>
+</ul>
+<p>To delete all versions of python that were installed using the python.org installer, enter these commands in terminal:</p>
+<pre><code>sudo rm -rf &#39;/Applications/Python X.Y&#39; #replace X.Y with the version number on the folder
+sudo rm -rf /Library/Frameworks/Python.framework
+sudo rm -rf /usr/local/bin/python
+sudo rm -rf /usr/local/bin/python3</code></pre>
+<p>To remove particular versions of python, you have to refer to the particular framework. The frameworks are installed in <code>/Library/Frameworks/Python.framework</code> and particular versions are found in <code>/Library/Frameworks/Python.framework/Versions/X.Y</code>. So for example if you wanted to uninstall only version 3.5 but leave other versions you would enter the following commands in bash:</p>
+<pre><code>sudo rm -rf /Library/Frameworks/Python.framework/Versions/3.5
+sudo rm -rf &#39;/Applications/Python 3.5&#39;
+sudo rm -rf /usr/local/bin/python3</code></pre>
+<p><br></p>
+</div>
+<div id="homebrew-1" class="section level2">
+<h2>Homebrew</h2>
+<p>To uninstall python that was installed using homebrew you need to identify what versions of python have been installed by Homebrew:</p>
+<p>Enter:</p>
+<pre><code>$ brew list | grep &#39;python&#39;</code></pre>
+<p>Currently brew refers to python3 as <code>python</code> and python 2 is called <code>python@2</code>.</p>
+<p>To uninstall both python2 and python3 enter the following:</p>
+<pre><code>$ brew uninstall -f python python@2 </code></pre>
+<p>Homebrew will refuse to uninstall python if it has dependencies, just uninstall python and ignore the dependencies:</p>
+<pre><code>brew uninstall --ignore-dependencies python python@2</code></pre>
+<p>Or, add the dependencies to the list of items to be uninstalled:</p>
+<pre><code>$ brew uninstall -f python python@2 gdal geos libspatialite libxml2 numpy</code></pre>
+<p><br></p>
+<div id="troubleshooting" class="section level3">
+<h3>Troubleshooting</h3>
+<p>It’s possible to have Homebrew’s Python directory at the beginning of the $PATH but calling <code>python</code> will still start the Apple installed version of Python or some other version. If that’s the case it’s possible that Homebrew’s Python install has become unlinked. This command will unlink and relink Python in Homebrew:</p>
+<pre><code>brew unlink python python@2 &amp;&amp; brew link python python@2</code></pre>
+</div>
+<div id="uninstall-python-from-pyenv" class="section level3">
+<h3>Uninstall Python from Pyenv</h3>
+<p>To list versions of python installed using pyenv enter:</p>
+<pre><code>$ pyenv versions
+* system (set by /Applications/.python-version)
+  3.5.0
+  3.6.0</code></pre>
+<p>To uninstall versions of python installed using pyenv enter:</p>
+<pre><code>$ pyenv uninstall 3.5.0
+$ pyenv uninstall 3.6.0</code></pre>
+</div>
+</div>
+<div id="anaconda-1" class="section level2">
+<h2>Anaconda</h2>
+<p>The official removal instructions are found <a href="https://conda.io/docs/user-guide/install/macos.html#">here</a>, but deleting anaconda and miniconda is easy.</p>
+<p>Anaconda and miniconda are installed in the users home directory: <code>~/miniconda2</code>, <code>~/miniconda3</code>,<code>~/anaconda2</code>, or <code>~/anaconda3</code></p>
+<p>Depending on which version or versions you have, just enter the following commands:</p>
+<pre><code>rm -rf ~/anaconda2
+rm -rf ~/anaconda3
+rm -rf ~/miniconda2
+rm -rf ~/miniconda3</code></pre>
+<p>Anaconda and miniconda also use several invisible files. Delete them by entering this command:</p>
+<pre><code>rm -rf ~/.condarc ~/.conda ~/.continuum</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="additional-resources" class="section level1">
+<h1>Additional Resources</h1>
+<ul>
+<li><a href="https://brew.sh">Homebrew</a></li>
+<li><a href="https://www.anaconda.com">Anaconda</a></li>
+<li><a href="https://www.python.org">python.org</a></li>
+<li><a href="https://github.com/pyenv/pyenv">pyenv package</a></li>
+<li><a href="https://github.com/pyenv/pyenv/blob/master/COMMANDS.md">pyenv commands</a></li>
+<li><a href="https://github.com/python/cpython/blob/master/Mac/README">Python Removal Instructions</a> - towards the bottom of the README file.</li>
+<li><a href="http://osxdaily.com/2018/07/05/where-homebrew-packages-installed-location-mac/">OS X Daily - How to Find Where Homebrew Packages Are Installed on Mac</a></li>
+<li><a href="https://conda.io/docs/user-guide/install/macos.html#">Official Conda Uninstall Instructions</a></li>
+<li><a href="https://realpython.com/python-virtual-environments-a-primer/#using-different-versions-of-python">Real Python - Python Virtual Environments</a></li>
+</ul>
+</div>
+<div id="xkcd" class="section level1">
+<h1>XKCD</h1>
+<p>And now for something completely different.</p>
+<div style="text-align:center">
+<p><a href="https://xkcd.com/1987/"><img src="https://imgs.xkcd.com/comics/python_environment.png" alt="The Python Environment" /></a></p>
+</div>
+<p><br></p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="label label-default" href="/tags/homebrew/">Homebrew</a>
+  
+  <a class="label label-default" href="/tags/conda/">Conda</a>
+  
+  <a class="label label-default" href="/tags/python.org/">python.org</a>
+  
+  <a class="label label-default" href="/tags/python/">Python</a>
+  
+  <a class="label label-default" href="/tags/virtual-environments/">virtual environments</a>
+  
+  <a class="label label-default" href="/tags/pyenv/">pyenv</a>
+  
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+
+    
+    <p class="powered-by">
+      <a href="/privacy/">Privacy Policy</a>
+    </p>
+    
+
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+      });
+    </script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+
+  </body>
+</html>
+

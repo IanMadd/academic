@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pyenv on Ian Maddaus</title>
+    <link>/tags/pyenv/</link>
+    <description>Recent content in Pyenv on Ian Maddaus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 26 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/pyenv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How To Manage Multiple Versions of Python on a Mac</title>
+      <link>/post/manage-multiple-versions-python-mac/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/manage-multiple-versions-python-mac/</guid>
+      <description>Summary Warnings Mac OS needs python Other projects may need specific versions of python  Installation python.org Homebrew Anaconda  PATH and .bash_profile PATH .bash_profile  Homebrew - pyenv Pyenv Local Pyenv Global  Locate Python Uninstall python python.org Homebrew Troubleshooting Uninstall Python from Pyenv  Anaconda  Additional Resources XKCD   Summary It’s easy to install multiple versions of python on a Mac computer using installers from python.</description>
+    </item>
+    
+  </channel>
+</rss>

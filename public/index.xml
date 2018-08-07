@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ian Maddaus on Ian Maddaus</title>
+    <link>/</link>
+    <description>Recent content in Ian Maddaus on Ian Maddaus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 -0400</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Passive Voice - This Passive Voice Sentence Was Written By Zombies</title>
+      <link>/post/passive-voice/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/passive-voice/</guid>
+      <description>
+
+&lt;p&gt;Here are a few articles about using the passive voice. I could provide my own commentary but these articles are better than anything that I would write. In short, people often use the passive voice excessively or incorrectly, but the passive voice is an effective way to describe a passive subject or a victim.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.poynter.org/news/npr-tornado-report-reveals-elements-vivid-newswriting&#34; target=&#34;_blank&#34;&gt;Poynter Institute - NPR tornado report reveals the elements of vivid newswriting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.poynter.org/news/praise-passive-voice&#34; target=&#34;_blank&#34;&gt;Poynter Institute - In praise of the passive voice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.poynter.org/news/blindsided-how-christie-used-passive-verbs-turn-himself-victim&#34; target=&#34;_blank&#34;&gt;Poynter Institute - Blindsided: How Christie used passive verbs to turn himself into a victim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://opinionator.blogs.nytimes.com/2012/04/30/the-pleasures-and-perils-of-the-passive/&#34; target=&#34;_blank&#34;&gt;NY Times - The Pleasures and Perils of the Passive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;how-to-identify-the-passive-voice&#34;&gt;How To Identify The Passive Voice&lt;/h1&gt;
+
+&lt;p&gt;I was stumped when I first started looking for the passive voice in my own writing. It&amp;rsquo;s easy to recognize when you see it, but it can be hard to find when you don&amp;rsquo;t, even if it&amp;rsquo;s staring you right in the face. These are a few short guidelines for identifying the passive voice.&lt;/p&gt;
+
+&lt;h2 id=&#34;zombies&#34;&gt;Zombies&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If you can add the phrase &amp;ldquo;by zombies&amp;rdquo; after the verb, you have passive voice.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://twitter.com/johnsonr&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;/post/2018-07-31-passive-voice_files/zombies_passive_voice.png&#34; alt=&#34;by zombies&#34;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Consider the sentence: The child threw the ball. Adding “by zombies” doesn’t make sense: The child threw by zombies. But, adding “by zombies” to the passive voice version of this sentence &amp;mdash; &amp;ldquo;The ball was thrown by the child&amp;rdquo; &amp;mdash; does make sense: The ball was thrown by zombies.&lt;/p&gt;
+
+&lt;h2 id=&#34;subject-verb-object&#34;&gt;Subject Verb Object&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The order of an active voice sentence is subject, verb, object.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The subject of a sentence is usually performing an action on another object. For example: the zombies are eating my brain. The zombies, the subject, are eating, the verb, my brain, the object. If you reverse it you get a passive voice sentence. My brain is being eaten by zombies. See above where I mention the phrase &amp;ldquo;by zombies&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;by&#34;&gt;&amp;ldquo;by &amp;hellip;&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A passive voice sentence often ends with &amp;ldquo;by &amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example: &amp;ldquo;My brain was eaten by zombies.&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;to-be-followed-by-ed&#34;&gt;To be, followed by &amp;ldquo;&amp;hellip;ed&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;When newspapers reported that Mark Twain had died, he sent a telegram from London stating, &amp;ldquo;THE REPORTS OF MY DEATH ARE GREATLY EXAGGERATED&amp;rdquo;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How To Manage Multiple Versions of Python on a Mac</title>
+      <link>/post/manage-multiple-versions-python-mac/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/manage-multiple-versions-python-mac/</guid>
+      <description>&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#summary&#34;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#warnings&#34;&gt;Warnings&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#mac-os-needs-python&#34;&gt;Mac OS needs python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#other-projects-may-need-specific-versions-of-python&#34;&gt;Other projects may need specific versions of python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#installation&#34;&gt;Installation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#python.org&#34;&gt;&lt;a href=&#34;python.org&#34; class=&#34;uri&#34;&gt;python.org&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#homebrew&#34;&gt;&lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#anaconda&#34;&gt;&lt;a href=&#34;https://www.anaconda.com&#34;&gt;Anaconda&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#path-and-.bash_profile&#34;&gt;PATH and .bash_profile&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#path&#34;&gt;PATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#bash_profile&#34;&gt;.bash_profile&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#homebrew---pyenv&#34;&gt;Homebrew - pyenv&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#pyenv-local&#34;&gt;Pyenv Local&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pyenv-global&#34;&gt;Pyenv Global&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#locate-python&#34;&gt;Locate Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#uninstall-python&#34;&gt;Uninstall python&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#python.org-1&#34;&gt;python.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#homebrew-1&#34;&gt;Homebrew&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#troubleshooting&#34;&gt;Troubleshooting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#uninstall-python-from-pyenv&#34;&gt;Uninstall Python from Pyenv&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#anaconda-1&#34;&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#additional-resources&#34;&gt;Additional Resources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#xkcd&#34;&gt;XKCD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;summary&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;It’s easy to install multiple versions of python on a Mac computer using installers from &lt;a href=&#34;http://www.python.org&#34;&gt;python.org&lt;/a&gt;, &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt;, &lt;a href=&#34;https://www.anaconda.com&#34;&gt;Conda&lt;/a&gt;, or other sources. This could create conflicts if a user wants to run one version of python but bash calls a different version instead.&lt;/p&gt;
+&lt;p&gt;This is guide will show you how to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;modify your bash profile to change which version of python is called by bash first.&lt;/li&gt;
+&lt;li&gt;use virtual environments to specify a version of python that will run a project.&lt;/li&gt;
+&lt;li&gt;uninstall specific versions of python.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;warnings&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Warnings&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;div id=&#34;mac-os-needs-python&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Mac OS needs python&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;DO NOT&lt;/strong&gt; remove any versions of Python found in the following folders:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/usr/bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;system/Library&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These versions of Python—which should be Python 2.7—are installed by Apple and used by Mac OS and other software to perform some functions. Deleting Python from these directories will break Mac OS and force you to reinstall it on your computer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;other-projects-may-need-specific-versions-of-python&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Other projects may need specific versions of python&lt;/h3&gt;
+&lt;p&gt;You may have a python project or you may use python packages that require particular versions of Python. Uninstalling those versions would prevent those projects or packages from working until that version of python is reinstalled. For example, Python 3 is a dependency of Numpy; if you uninstalled Python 3, then Numpy wouldn’t work until you reinstalled Python 3.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;p&gt;Three common methods of installing python can be found here:&lt;/p&gt;
+&lt;div id=&#34;python.org&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;a href=&#34;python.org&#34; class=&#34;uri&#34;&gt;python.org&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The python.org installer can be found &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;homebrew&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;First install Homebrew. The instructions are &lt;a href=&#34;https://brew.sh&#34;&gt;here&lt;/a&gt;, or enter the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;To install Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install python&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To install Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install python@2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;anaconda&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;a href=&#34;https://www.anaconda.com&#34;&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Anaconda is generally used for scientific and machine learning applications.&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;Ananconda&lt;/strong&gt; follow installation instructions &lt;a href=&#34;https://www.anaconda.com/download/#macos&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Miniconda is a stripped down version of Anaconda.&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;Miniconda&lt;/strong&gt; follow installation instructions &lt;a href=&#34;https://conda.io/docs/user-guide/install/index.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;path-and-.bash_profile&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;PATH and .bash_profile&lt;/h1&gt;
+&lt;div id=&#34;path&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;PATH&lt;/h2&gt;
+&lt;p&gt;The path is a list of directories that your shell will look through when you execute a command. You can display the path on your computer using the &lt;code&gt;echo $PATH&lt;/code&gt; command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ echo $PATH
+
+/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/username/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/username/miniconda2/bin:/Users/username/miniconda3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/X11/bin:/usr/local/git/bin&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The directories above are separated by a colon, this is what they look like displayed in sequence:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/Library/Frameworks/Python.framework/Versions/3.7/bin&lt;/li&gt;
+&lt;li&gt;/Users/username/anaconda3/bin&lt;/li&gt;
+&lt;li&gt;/Library/Frameworks/Python.framework/Versions/2.7/bin&lt;/li&gt;
+&lt;li&gt;/Users/username/miniconda2/bin&lt;/li&gt;
+&lt;li&gt;/Users/username/miniconda3/bin&lt;/li&gt;
+&lt;li&gt;/Library/Frameworks/Python.framework/Versions/3.6/bin&lt;/li&gt;
+&lt;li&gt;/usr/local/bin&lt;/li&gt;
+&lt;li&gt;/usr/bin&lt;/li&gt;
+&lt;li&gt;/bin&lt;/li&gt;
+&lt;li&gt;/usr/sbin&lt;/li&gt;
+&lt;li&gt;/sbin&lt;/li&gt;
+&lt;li&gt;/usr/texbin&lt;/li&gt;
+&lt;li&gt;/opt/X11/bin&lt;/li&gt;
+&lt;li&gt;/usr/X11/bin&lt;/li&gt;
+&lt;li&gt;/usr/local/git/bin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When you ask your shell to run a particular command or run an interpreter, &lt;code&gt;python&lt;/code&gt; for example, the shell looks through the different directories listed in the PATH in order they’re presented above. When the shell finds that command, it stops and calls it even if there is another version of the same command, with the same name, further down in the list.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bash_profile&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;.bash_profile&lt;/h2&gt;
+&lt;p&gt;The bash profile is a set of instructions that are run by the shell when the user logs in to bash. You can add a &lt;a href=&#34;http://osxdaily.com/2011/10/03/add-a-separator-time-stamp-between-terminal-commands-to-increase-readability/&#34;&gt;variety&lt;/a&gt; of &lt;a href=&#34;https://natelandau.com/my-mac-osx-bash_profile/&#34;&gt;preferences&lt;/a&gt; to the bash profile, including modifications to the PATH. When anaconda, miniconda or other versions of python are installed they automatically add paths to their respective versions of python to the top of the bash profile.&lt;/p&gt;
+&lt;p&gt;Bash reads the bash profile in sequential order — from top to bottom — and adds those paths to the PATH in the order that they’re read. This means that the &lt;em&gt;last&lt;/em&gt; path at the bottom of the bash profile will end up as the &lt;em&gt;first&lt;/em&gt; path in the PATH. This means that if you have Python 3.6 installed on your computer, and then decide to add python 3.7, but keep 3.6, the installer will add Python 3.7 to the top of the bash profile but it will end up &lt;em&gt;after&lt;/em&gt; python 3.6 in the PATH. Entering &lt;code&gt;python3&lt;/code&gt; in bash will call python 3.6, &lt;em&gt;not&lt;/em&gt; 3.7.&lt;/p&gt;
+&lt;p&gt;If that was confusing compare the order that the python paths are added to my bash profile below to the PATH listed above. You’ll notice that their respective orders are opposite from each other.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Enter the following command to open the bash profile in TextEdit:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ open ~/.bash_profile&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;My .bash_profile currently looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}&amp;quot;
+export PATH
+
+# added by Miniconda3 installer
+export PATH=&amp;quot;/Users/username/miniconda3/bin:$PATH&amp;quot;
+
+# added by Miniconda2 installer
+export PATH=&amp;quot;/Users/username/miniconda2/bin:$PATH&amp;quot;
+
+# Setting PATH for Python 2.7
+# The original version is saved in .bash_profile.pysave
+PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}&amp;quot;
+export PATH
+
+# added by Anaconda3 installer
+export PATH=&amp;quot;/Users/username/anaconda3/bin:$PATH&amp;quot;
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}&amp;quot;
+export PATH&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you want to keep all of your installed versions of python, but want bash to open a different version first, just copy and paste it to the &lt;strong&gt;bottom&lt;/strong&gt; of the bash profile. If you don’t want bash to run a particular version of python then delete it from bash profile and uninstall that version by following the instructions further down.&lt;/p&gt;
+&lt;p&gt;Don’t forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;. ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;homebrew---pyenv&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Homebrew - pyenv&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;Pyenv&lt;/a&gt; is a &lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt; package that allows a user to install multiple versions of python in Homebrew and specify which version of python they’d like to run.&lt;/p&gt;
+&lt;p&gt;Install pyenv:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ brew install pyenv&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install different versions of python:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv install 3.5.0
+$ pyenv install 3.6.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Show which versions of python are installed:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv versions
+
+* system (set by /Users/username/Programming/python/.python-version)
+  3.5.0
+  3.6.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The asterisk indicates that the system version of python is active, but 3.5.0 and 3.6.0 are also installed.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div id=&#34;pyenv-local&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pyenv Local&lt;/h2&gt;
+&lt;p&gt;Create a folder called &lt;code&gt;PythonLocalProject&lt;/code&gt;, then display the version of python called by bash by entering &lt;code&gt;python -V&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python -V
+Python 3.6.5 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv local 3.5.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This creates a &lt;code&gt;.python-version&lt;/code&gt; file which tells &lt;code&gt;pyenv&lt;/code&gt; which version of python to run in that directory.&lt;/p&gt;
+&lt;p&gt;Entering &lt;code&gt;ls -la&lt;/code&gt; shows us that file:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ls -la
+total 8
+drwxr-xr-x  3 username  staff   96 Aug  3 11:52 .
+drwxr-xr-x  4 username  staff  128 Aug  3 11:56 ..
+-rw-r--r--  1 username  staff    6 Aug  3 12:03 .python-version&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now enter &lt;code&gt;pyenv versions&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv versions
+  system
+* 3.5.0 (set by /Users/username/Programming/python/pythonproject/.python-version)
+  3.6.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And running this command shows which version of python is called by pyenv:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python -V
+Python 3.5.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To change pyenv to the system version of version 3.6.0 enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv local system
+$ pyenv local 3.6.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This procedure is fine, you can set a version of python to run in a particular folder. But what if you want to use pyenv to set a global version of python.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pyenv-global&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pyenv Global&lt;/h2&gt;
+&lt;p&gt;Pyenv gives these instructions when you enter &lt;code&gt;pyenv init&lt;/code&gt; in bash:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv init
+
+# Load pyenv automatically by appending
+# the following to ~/.bash_profile:
+
+eval &amp;quot;$(pyenv init -)&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Open the bash profile:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;open ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Add this text to the bottom of the file:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;eval &amp;quot;$(pyenv init -)&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Save the file and then enter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Entering &lt;code&gt;echo $PATH&lt;/code&gt; will show that a pyenv shim has been added to the beginnning of the path:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/Users/username/.pyenv/shims:&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And &lt;code&gt;which python&lt;/code&gt; will return:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/Users/username/.pyenv/shims/python&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This means that bash will run the version of python set by pyenv.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Navigate to a folder that doesn’t have a &lt;code&gt;.python-version&lt;/code&gt; file and enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv global 3.6.0
+Python 3.6.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This shows us that the global version of python is 3.6.0 and it is set by &lt;code&gt;pyenv&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So this shows that bash will run whichever version of python that is set in pyenv.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;If you navigate back to the &lt;code&gt;PythonLocalProject&lt;/code&gt; folder with the &lt;code&gt;.python-version&lt;/code&gt; file and run &lt;code&gt;python -V&lt;/code&gt; you will notice that it doesn’t run the global version of python, it runs whichever version was last set with the &lt;code&gt;pyenv local&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;locate-python&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Locate Python&lt;/h1&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;We can use the &lt;code&gt;which&lt;/code&gt; command to identify where specific versions of python are located:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ which -a python
+/Users/username/.pyenv/shims/python
+/Users/username/anaconda3/bin/python
+/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+/Users/username/miniconda2/bin/python
+/Users/username/miniconda3/bin/python
+/usr/local/bin/python
+/usr/bin/python
+
+
+$ which -a python3
+/Users/username/.pyenv/shims/python3
+/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
+/Users/username/anaconda3/bin/python3
+/Users/username/miniconda3/bin/python3
+/Library/Frameworks/Python.framework/Versions/3.6/bin/python3
+/usr/local/bin/python3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This shows some overlap as some versions of python appear in both searches.&lt;/p&gt;
+&lt;p&gt;The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the &lt;code&gt;/Library/Frameworks/Python.framework/&lt;/code&gt; directory. Homebrew installs all packages, including python, in &lt;code&gt;/usr/local/Cellar&lt;/code&gt;, then Homebrew adds a symlink to &lt;code&gt;/usr/local/bin&lt;/code&gt;so that it’s version of python can be found in the path. Finally, Apple installs python in &lt;code&gt;/usr/bin&lt;/code&gt;. Remember, don’t delete that version.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;uninstall-python&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Uninstall python&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Follow these instructions if you want to remove particular versions of python. &lt;br&gt;&lt;/p&gt;
+&lt;div id=&#34;python.org-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;python.org&lt;/h2&gt;
+&lt;p&gt;The python.org installer places all it’s installed files in the following folders:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The system applications folder, &lt;code&gt;/Applications&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/Library/Frameworks/Python.framework&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/local/bin&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To delete all versions of python that were installed using the python.org installer, enter these commands in terminal:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo rm -rf &amp;#39;/Applications/Python X.Y&amp;#39; #replace X.Y with the version number on the folder
+sudo rm -rf /Library/Frameworks/Python.framework
+sudo rm -rf /usr/local/bin/python
+sudo rm -rf /usr/local/bin/python3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To remove particular versions of python, you have to refer to the particular framework. The frameworks are installed in &lt;code&gt;/Library/Frameworks/Python.framework&lt;/code&gt; and particular versions are found in &lt;code&gt;/Library/Frameworks/Python.framework/Versions/X.Y&lt;/code&gt;. So for example if you wanted to uninstall only version 3.5 but leave other versions you would enter the following commands in bash:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo rm -rf /Library/Frameworks/Python.framework/Versions/3.5
+sudo rm -rf &amp;#39;/Applications/Python 3.5&amp;#39;
+sudo rm -rf /usr/local/bin/python3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;homebrew-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Homebrew&lt;/h2&gt;
+&lt;p&gt;To uninstall python that was installed using homebrew you need to identify what versions of python have been installed by Homebrew:&lt;/p&gt;
+&lt;p&gt;Enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ brew list | grep &amp;#39;python&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Currently brew refers to python3 as &lt;code&gt;python&lt;/code&gt; and python 2 is called &lt;code&gt;python@2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To uninstall both python2 and python3 enter the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Homebrew will refuse to uninstall python if it has dependencies, just uninstall python and ignore the dependencies:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew uninstall --ignore-dependencies python python@2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or, add the dependencies to the list of items to be uninstalled:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2 gdal geos libspatialite libxml2 numpy&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div id=&#34;troubleshooting&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Troubleshooting&lt;/h3&gt;
+&lt;p&gt;It’s possible to have Homebrew’s Python directory at the beginning of the $PATH but calling &lt;code&gt;python&lt;/code&gt; will still start the Apple installed version of Python or some other version. If that’s the case it’s possible that Homebrew’s Python install has become unlinked. This command will unlink and relink Python in Homebrew:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew unlink python python@2 &amp;amp;&amp;amp; brew link python python@2&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;uninstall-python-from-pyenv&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Uninstall Python from Pyenv&lt;/h3&gt;
+&lt;p&gt;To list versions of python installed using pyenv enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv versions
+* system (set by /Applications/.python-version)
+  3.5.0
+  3.6.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To uninstall versions of python installed using pyenv enter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pyenv uninstall 3.5.0
+$ pyenv uninstall 3.6.0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;anaconda-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Anaconda&lt;/h2&gt;
+&lt;p&gt;The official removal instructions are found &lt;a href=&#34;https://conda.io/docs/user-guide/install/macos.html#&#34;&gt;here&lt;/a&gt;, but deleting anaconda and miniconda is easy.&lt;/p&gt;
+&lt;p&gt;Anaconda and miniconda are installed in the users home directory: &lt;code&gt;~/miniconda2&lt;/code&gt;, &lt;code&gt;~/miniconda3&lt;/code&gt;,&lt;code&gt;~/anaconda2&lt;/code&gt;, or &lt;code&gt;~/anaconda3&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Depending on which version or versions you have, just enter the following commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rm -rf ~/anaconda2
+rm -rf ~/anaconda3
+rm -rf ~/miniconda2
+rm -rf ~/miniconda3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Anaconda and miniconda also use several invisible files. Delete them by entering this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rm -rf ~/.condarc ~/.conda ~/.continuum&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;additional-resources&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Additional Resources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.anaconda.com&#34;&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.python.org&#34;&gt;python.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;pyenv package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv/blob/master/COMMANDS.md&#34;&gt;pyenv commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/python/cpython/blob/master/Mac/README&#34;&gt;Python Removal Instructions&lt;/a&gt; - towards the bottom of the README file.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://osxdaily.com/2018/07/05/where-homebrew-packages-installed-location-mac/&#34;&gt;OS X Daily - How to Find Where Homebrew Packages Are Installed on Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://conda.io/docs/user-guide/install/macos.html#&#34;&gt;Official Conda Uninstall Instructions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://realpython.com/python-virtual-environments-a-primer/#using-different-versions-of-python&#34;&gt;Real Python - Python Virtual Environments&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;xkcd&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;XKCD&lt;/h1&gt;
+&lt;p&gt;And now for something completely different.&lt;/p&gt;
+&lt;div style=&#34;text-align:center&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://xkcd.com/1987/&#34;&gt;&lt;img src=&#34;https://imgs.xkcd.com/comics/python_environment.png&#34; alt=&#34;The Python Environment&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Guides For Learning Git &amp; Github</title>
+      <link>/post/guides-for-learning-git/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/guides-for-learning-git/</guid>
+      <description>&lt;p&gt;These are five great guides to using git:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://happygitwithr.com&#34; target=&#34;_blank&#34;&gt;Happy Git With R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://swcarpentry.github.io/git-novice/&#34; target=&#34;_blank&#34;&gt;Data Carpentry - Version Control with Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/&#34; target=&#34;_blank&#34;&gt;RStudio Webinar - Managing Github and RStudio.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gitimmersion.com&#34; target=&#34;_blank&#34;&gt;Git Immersion&lt;/a&gt; - use git in the command line.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://guides.github.com/activities/hello-world/&#34; target=&#34;_blank&#34;&gt;Github Guides - Hello World&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Another Note on A blogdown Tutorial</title>
+      <link>/post/another-note/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/another-note/</guid>
+      <description>&lt;p&gt;I just discovered &lt;a href=&#34;https://apreshill.rbind.io/post/up-and-running-with-blogdown/&#34; target=&#34;_blank&#34;&gt;an awesome tutorial&lt;/a&gt; on &lt;strong&gt;blogdown&lt;/strong&gt; written by Alison. I have to admit this is &lt;em&gt;the&lt;/em&gt; best &lt;strong&gt;blogdown&lt;/strong&gt; tutorial I have seen so far.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://apreshill.rbind.io/img/posts/2017-06-12-up-and-running-with-blogdown/blogdown-signpost-4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Quick Note on Two Beautiful Websites</title>
+      <link>/post/a-quick-note/</link>
+      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-quick-note/</guid>
+      <description>&lt;p&gt;To me, the two most impressive websites based on &lt;strong&gt;blogdown&lt;/strong&gt; are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://robjhyndman.com&#34; target=&#34;_blank&#34;&gt;Rob J Hyndman&lt;/a&gt;&amp;rsquo;s personal website.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://livefreeordichotomize.com&#34; target=&#34;_blank&#34;&gt;Live Free or Dichotomize&lt;/a&gt; by Lucy and Nick &lt;em&gt;et al&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure there will be more.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>/talk/example-talk/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/talk/example-talk/</guid>
+      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>/project/deep-learning/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/project/deep-learning/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>/project/example-external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/project/example-external-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Plain Markdown Post</title>
+      <link>/post/2016-02-14-hello-markdown/</link>
+      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016-02-14-hello-markdown/</guid>
+      <description>
+
+&lt;p&gt;This sample post is mainly for &lt;a href=&#34;https://github.com/rstudio/blogdown&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;blogdown&lt;/strong&gt;&lt;/a&gt; users. If you do not use &lt;strong&gt;blogdown&lt;/strong&gt;, you can skip the first section.&lt;/p&gt;
+
+&lt;h1 id=&#34;1-markdown-or-r-markdown&#34;&gt;1. Markdown or R Markdown&lt;/h1&gt;
+
+&lt;p&gt;This is a post written in plain Markdown (&lt;code&gt;*.md&lt;/code&gt;) instead of R Markdown (&lt;code&gt;*.Rmd&lt;/code&gt;). The major differences are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (&lt;code&gt;```{r}&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;A plain Markdown post is rendered through &lt;a href=&#34;https://gohugo.io/overview/configuration/&#34; target=&#34;_blank&#34;&gt;Blackfriday&lt;/a&gt;, and an R Markdown document is compiled by &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;rmarkdown&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;http://pandoc.org&#34; target=&#34;_blank&#34;&gt;Pandoc&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown. For example, you can write a task list with Blackfriday but not with Pandoc:&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Write an R package.&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Write a book.&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &amp;hellip;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Profit!&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Similarly, Blackfriday does not support LaTeX math and Pandoc does. I have added the MathJax support to this theme (&lt;a href=&#34;https://github.com/yihui/hugo-xmin&#34; target=&#34;_blank&#34;&gt;hugo-xmin&lt;/a&gt;) but there is a caveat for plain Markdown posts: you have to include math expressions in a pair of backticks (inline: &lt;code&gt;`$ $`&lt;/code&gt;; display style: &lt;code&gt;`$$ $$`&lt;/code&gt;), e.g., &lt;code&gt;$S_n = \sum_{i=1}^n X_i$&lt;/code&gt;.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:This-is-because&#34;&gt;&lt;a href=&#34;#fn:This-is-because&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; For R Markdown posts, you do not need the backticks, because Pandoc can identify and process math expressions.&lt;/p&gt;
+
+&lt;p&gt;When creating a new post, I recommend you to use the RStudio addin &amp;ldquo;New Post&amp;rdquo;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://bookdown.org/yihui/blogdown/images/new-post.png&#34; alt=&#34;RStudio addin New Post&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;2-sample-text&#34;&gt;2. Sample Text&lt;/h1&gt;
+
+&lt;h2 id=&#34;second-level-header&#34;&gt;Second-level header&lt;/h2&gt;
+
+&lt;h3 id=&#34;third-level-header&#34;&gt;Third-level header&lt;/h3&gt;
+
+&lt;h4 id=&#34;fourth-level-header&#34;&gt;Fourth-level header&lt;/h4&gt;
+
+&lt;p&gt;A paragraph (with a footnote):&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lorem ipsum&lt;/strong&gt; dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore &lt;em&gt;magna aliqua&lt;/em&gt;. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:I-m-sure-you-are&#34;&gt;&lt;a href=&#34;#fn:I-m-sure-you-are&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;A blockquote (a gray bar at the left and lightgray background):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Quisque mattis volutpat lorem vitae feugiat. Praesent porta est quis porta imperdiet. Aenean porta, mi non cursus volutpat, mi est mollis libero, id suscipit orci urna a augue. In fringilla euismod lacus, vitae tristique massa ultricies vitae. Mauris accumsan ligula tristique, viverra nulla sed, porta sapien. Vestibulum facilisis nec nisl blandit convallis. Maecenas venenatis porta malesuada. Ut ac erat tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla sodales quam sit amet tincidunt egestas. In et turpis at orci vestibulum ullamcorper. Aliquam sed ante libero. Sed hendrerit arcu lacus.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Some code (with a drop-shadow effect):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;(function() {
+  var quotes = document.getElementsByTagName(&#39;blockquote&#39;), i, quote;
+  for (i = 0; i &amp;lt; quotes.length; i++) {
+    quote = quotes[i];
+    var n = quote.children.length;
+    if (n === 0) continue;
+    var el = quote.children[n - 1];
+    if (!el || el.nodeName !== &#39;P&#39;) continue;
+    // right-align a quote footer if it starts with ---
+    if (/^—/.test(el.textContent)) el.style.textAlign = &#39;right&#39;;
+  }
+})();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A table (centered by default):&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;right&#34;&gt;Sepal.Length&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Sepal.Width&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Petal.Length&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Petal.Width&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Species&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;5.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;4.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;4.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;4.6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;5.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;right&#34;&gt;5.4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;setosa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;An image (automatically centered when it is appropriate):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://slides.yihui.name/gif/happy-elmo.gif&#34; alt=&#34;Happy Elmo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looks good?&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:This-is-because&#34;&gt;This is because we have to protect the math expressions from being interpreted as Markdown. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:This-is-because&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:I-m-sure-you-are&#34;&gt;I&amp;rsquo;m sure you are bored by the text here. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-m-sure-you-are&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Person Re-Identification System For Mobile Devices</title>
+      <link>/publication/person-re-identification/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 -0400</pubDate>
+      
+      <guid>/publication/person-re-identification/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;R Markdown&lt;/h1&gt;
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+fit &amp;lt;- lm(dist ~ speed, data = cars)
+fit
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Including Plots&lt;/h1&gt;
+&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
+  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
+  init.angle = -50, border = NA
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: A fancy pie chart.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mobile visual clothing search</title>
+      <link>/publication/clothing-search/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 -0400</pubDate>
+      
+      <guid>/publication/clothing-search/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
