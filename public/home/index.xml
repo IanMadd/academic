@@ -28,7 +28,7 @@
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
       <guid>/home/about/</guid>
-      <description>About My name is Ian Maddaus. I am a technical writer and a member of the Society for Technical Communication with an interest in R, RStudio, statistics, GIS, and Python, German language. I have a Master of Fine Arts in Science and Natural History Filmmaking from Montana State University, but since I graduated I&amp;rsquo;ve found that I like technical writing, GIS, and R more than filmmaking. Now I spend my time writing sometimes longwinded documents (hopefully not too longwinded ) about complicated things.</description>
+      <description>About My name is Ian Maddaus. I am a technical writer and a member of the Society for Technical Communication with an interest in R programming, data analysis, and GIS. I have a Master of Fine Arts in Science and Natural History Filmmaking from Montana State University, but since I graduated I&amp;rsquo;ve found that I like technical writing, GIS, and R more than filmmaking. Now I spend my time writing documents about complicated things.</description>
     </item>
     
     <item>
@@ -65,6 +65,15 @@ OURF accepts donations here.</description>
       <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
       
       <guid>/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>/home/portfolio/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/home/portfolio/</guid>
       <description></description>
     </item>
     
