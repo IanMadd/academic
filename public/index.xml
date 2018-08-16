@@ -502,20 +502,662 @@ rm -rf ~/miniconda3&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
-      <title>Deep Learning</title>
-      <link>/portfolio/deep-learning/</link>
+      <title>Central Limit Theorem</title>
+      <link>/portfolio/central_limit_theorem/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/portfolio/deep-learning/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+      <guid>/portfolio/central_limit_theorem/</guid>
+      <description>
 
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;style&gt;
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+&lt;/style&gt;
 
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;The Central Limit Theorem states that if you take many random samples of the same size from a population, take the mean of each sample, and then plot these means in a histogram, the plot will look like a normal distribution regardless of the distribution of data in the original data set and the &lt;em&gt;mean&lt;/em&gt; of all of these sample means will approach the population mean as the number of samples approaches infinity.&lt;/p&gt;
 
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;
+
+&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#packages&#34;&gt;Packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mean_sample_means&#34;&gt;Mean of Sample Means&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;packages&#34;&gt;Packages&lt;/h3&gt;
+
+&lt;p&gt;This demonstration will use the following packages:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;data.table&lt;/li&gt;
+&lt;li&gt;ggplot2&lt;/li&gt;
+&lt;li&gt;easyGgplot2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;library(data.table)
+library(ggplot2)
+library(easyGgplot2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;mean_sample_means&#34;&gt;Mean of Sample Means&lt;/h2&gt;
+
+&lt;p&gt;As the the number of sample means approach infinity the sample means and population mean will converge. Or to put it more simply, the mean of the sampled means will have the same mean as the population.&lt;/p&gt;
+
+&lt;p&gt;$$\text{mean of sample means} = \text{population mean}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;$$\mu_{\bar{X}} = \mu$$&lt;/p&gt;
+
+&lt;p&gt;Where:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;$\bar{X}$ is a sample mean&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;$\mu_{\bar{X}}$ is the mean of the sample means&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;$\mu$ is the population mean&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;standard-error-of-the-mean&#34;&gt;Standard Error of the Mean&lt;/h2&gt;
+
+&lt;p&gt;First off a statistician could find the standard error of a number of different statistics, like median, variance, and estimate among others. But the standard error of the mean is most common.&lt;/p&gt;
+
+&lt;p&gt;The standard deviation of the sample means is also called the &lt;strong&gt;standard error of the mean.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The standard deviation of the sample data will be equal to standard deviation of the population divided by the square root of the sample size, or:&lt;/p&gt;
+
+&lt;p&gt;$$\text{standard error of the mean} = \frac{\text{population standard deviation}}{\sqrt{\text{sample size}}}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;strong&gt;or&lt;/strong&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;$$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$$&lt;/p&gt;
+
+&lt;p&gt;Where:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$\sigma_{\bar{M}}$ is the standard error of the mean&lt;/li&gt;
+&lt;li&gt;$\sigma$ is the standard deviation of the population&lt;/li&gt;
+&lt;li&gt;n is the sample size&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;We can tell that the standard error of the mean will get smaller as the sample size increases. A smaller standard error would indicate that the sample data is more representative of the total population. For example if we had identical standard deviations for two different populations but different sample sizes, then the standard error of the mean would be smaller for the set with a larger sample size.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;We can also use the standard error of the mean draw inferences about the population data from a sample. This is useful in the many many situations where it would be impossible to measure every individual from a population. For example if we 30 sets of fifty samples from a population, we can take the standard deviation of the means of those samples and find a population standard deviation.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;sampling-error&#34;&gt;Sampling Error&lt;/h2&gt;
+
+&lt;p&gt;Sampling error is the difference between the actual population data and the same measure of the sampled data. For example the mean of each sample will be different from the mean of the population data.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Sampling_error&#34; target=&#34;_blank&#34;&gt;From wikipedia:&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Since the sample does not include all members of the population, statistics on the sample, such as means and quantiles, generally differ from the characteristics of the entire population, which are known as parameters.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;number-of-sample-means&#34;&gt;Number of Sample Means&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When the population data is normally distributed then the sample means will also be normally distributed.&lt;/li&gt;
+&lt;li&gt;When the population data is not normally distributed then at least 30 sample means will have to be made for the sample means to be normally distributed. This is because of sampling error.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;an-example-temperature-data&#34;&gt;An Example: Temperature Data&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;This is historical data from the &lt;a href=&#34;http://cdiac.ornl.gov/climate/temp/us_recordtemps/ui.html&#34; target=&#34;_blank&#34;&gt;United States Historical Climatology Network&lt;/a&gt;, more specificially &lt;a href=&#34;http://cdiac.ornl.gov/cgi-bin/broker?id=172765&amp;amp;_PROGRAM=prog.scat_data_d9k_424.sas&amp;amp;_SERVICE=default&amp;amp;_DEBUG=0&amp;amp;tempvar=htx&#34; target=&#34;_blank&#34;&gt;this page&lt;/a&gt;. This data set contains daily temperature highs from 1911 through 2010.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The variables/columns in the data file are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Station number (i.e., 172765: 2-digit state code, followed by 4-digit station code)&lt;/li&gt;
+&lt;li&gt;Day of year (1-365)&lt;/li&gt;
+&lt;li&gt;Month&lt;/li&gt;
+&lt;li&gt;Day of Month&lt;/li&gt;
+&lt;li&gt;Year the daily record was set&lt;/li&gt;
+&lt;li&gt;Record Hot Tmax&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;
+First we import the data.
+&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(data.table)
+
+Station172765_TMax&amp;lt;- data.table(read.table(&amp;quot;../../static/data/ME_2765tmax.txt&amp;quot;, header = FALSE))
+#Station172765_TMax&amp;lt;- data.table(read.table(&amp;quot;ME_2765tmax.txt&amp;quot;, header = FALSE))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We need to a little cleanup.
+We&amp;rsquo;ll replace the column names with more descriptive names.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setnames(Station172765_TMax, c(&amp;quot;V1&amp;quot;, &amp;quot;V2&amp;quot;, &amp;quot;V3&amp;quot;, &amp;quot;V4&amp;quot;, &amp;quot;V5&amp;quot;, &amp;quot;V6&amp;quot;), c(&amp;quot;StationID&amp;quot;, &amp;quot;YearDay&amp;quot;, &amp;quot;Year&amp;quot;, &amp;quot;Month&amp;quot;, &amp;quot;MonthDay&amp;quot;, &amp;quot;MaxTemp&amp;quot;))
+
+Station172765_TMax
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also on days that no data was collected the temperature is recorded as -999, we&amp;rsquo;ll change that to NA.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;Station172765_TMax[MaxTemp == -999, MaxTemp := NA]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;plotting-temperature-data&#34;&gt;Plotting Temperature Data&lt;/h2&gt;
+
+&lt;p&gt;This is a plot of the temperature highs with the day of the year on the x axis and the temperature on the y axis:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;p &amp;lt;- ggplot(Station172765_TMax, aes(YearDay, MaxTemp))
+p + geom_point() 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The histogram of the data shows that it&amp;rsquo;s bimodal.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;hist(Station172765_TMax[,MaxTemp], xlab=&amp;quot;Temp&amp;quot;, main=&amp;quot;Frequency Max Temp - Farmington, ME, 1911 - 2010&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;ggplot(Station172765_TMax, aes(MaxTemp)) + geom_density()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sample-means&#34;&gt;Sample Means&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;
+Now we&amp;rsquo;ll get the mean and standard deviation for all years in the data set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
+Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;To get a sample of the data we use the sample function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[,sample(MaxTemp, 5)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;This will return a data table with four columns of 1000 sample means, each sample mean will come from 2, 5, 25 or 49 sampled values from the temperature data set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;SampleMeans &amp;lt;- NULL
+Means &amp;lt;- NULL
+
+
+## Sample Size of 2
+for (i in 1:1000){
+    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,2)], na.rm=TRUE))
+    i &amp;lt;- i + 1
+    if (i == 1001) break
+}
+SampleMeans &amp;lt;- data.table(SampleSize2 = Means)
+
+
+##Sample Size of 5
+Means &amp;lt;- NULL
+for (i in 1:1000){
+    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,5)], na.rm=TRUE))
+    i &amp;lt;- i + 1
+    if (i == 1001) break
+}
+SampleMeans[,SampleSize5 := Means]
+
+
+## Sample Size of 25
+
+Means &amp;lt;- NULL
+for (i in 1:1000){
+    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,25)], na.rm=TRUE))
+    i &amp;lt;- i + 1
+    if (i == 1001) break
+}
+SampleMeans[,SampleSize25 := Means]
+
+##Sample Size of 49
+
+Means &amp;lt;- NULL
+for (i in 1:1000){
+    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,49)], na.rm=TRUE))
+    i &amp;lt;- i + 1
+    if (i == 1001) break
+}
+SampleMeans[,SampleSize49 := Means]
+
+
+head(SampleMeans)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;sampling-error-of-sample-means&#34;&gt;Sampling Error of Sample Means&lt;/h2&gt;
+
+&lt;p&gt;So we can see that there is a sampling error for each sample mean in the data set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;#Subtract the population mean from one sample mean of each sample size.
+
+SampleMeans[1] - Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;mean-of-sample-means&#34;&gt;Mean of Sample Means&lt;/h2&gt;
+
+&lt;p&gt;But we can see that mean of all of the sample means is fairly close to the mean of population data.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;sapply(SampleMeans, mean)
+
+Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;We can also see that as the number of sample means increases it comes closer and closer to the population mean.
+&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;SampleMeans[1:10, mean(SampleSize5)]
+SampleMeans[1:100, mean(SampleSize5)]
+SampleMeans[1:500, mean(SampleSize5)]
+SampleMeans[1:1000, mean(SampleSize5)]
+
+Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;standard-error-of-the-mean-1&#34;&gt;Standard Error of the Mean&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;So first off we can find the standard deviation of the sample means (&lt;strong&gt;standard error of the mean&lt;/strong&gt;) for each sample size. Notice that the standard deviation is much smaller for the set of means with the sample size of 49 and the standard deviation for the set of means is the largest for the data set with a sample size of 2.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;
+sapply(SampleMeans, sd) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also notice that the standard deviation of the sample means is approximately equal to the standard deviation of the population data divided by the square root of the sample size.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(2)
+Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(5)
+Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(25)
+Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(49)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;
+If we didn&amp;rsquo;t have a complete data set for this weather data, we could take the standard deviation of the sample means and multiply it by the square root of our sample size to get the standard deviation of the population.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;SampleMeans[,sd(SampleSize49)] * sqrt(49) 
+Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)] 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;plot-sample-means&#34;&gt;Plot Sample Means&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;
+Now if we plot the SampleMeans data as a histogram and density plot we can see that this sampled data looks like a normal distribution while the original data was bimodal. We can also see that the standard error is much larger for the sample means with fewer samples per mean and that the means of the different sample means are about the same.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;DT1 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize2&amp;quot;,SampleMeans = SampleMeans$SampleSize2) 
+DT2 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize5&amp;quot;,SampleMeans = SampleMeans$SampleSize5) 
+DT3 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize25&amp;quot;,SampleMeans = SampleMeans$SampleSize25) 
+DT4 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize49&amp;quot;,SampleMeans = SampleMeans$SampleSize49) 
+
+MeltedSampleMeans &amp;lt;- rbindlist(l=list(DT1, DT2, DT3, DT4))
+
+p &amp;lt;- ggplot(MeltedSampleMeans, aes(SampleMeans, fill=SampleSize,color=SampleSize))
+p + geom_density(alpha = 0.1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;plot-sample-means-to-show-normality&#34;&gt;Plot Sample Means to Show Normality&lt;/h3&gt;
+
+&lt;p&gt;We can see, by plotting different numbers of sample means, that as the number of sample means increases the plot of those means looks more and more normal.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:10], geom = &amp;quot;density&amp;quot;)
+qqnorm(SampleMeans$SampleSize5[1:10])
+qqline(SampleMeans$SampleSize5[1:10])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:20], geom = &amp;quot;density&amp;quot;)
+qqnorm(SampleMeans$SampleSize5[1:20])
+qqline(SampleMeans$SampleSize5[1:20])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:30], geom = &amp;quot;density&amp;quot;)
+qqnorm(SampleMeans$SampleSize5[1:30])
+qqline(SampleMeans$SampleSize5[1:30])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:40], geom = &amp;quot;density&amp;quot;)
+qqnorm(SampleMeans$SampleSize5[1:40])
+qqline(SampleMeans$SampleSize5[1:40])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:50], geom = &amp;quot;density&amp;quot;)
+qqnorm(SampleMeans$SampleSize5[1:50])
+qqline(SampleMeans$SampleSize5[1:50])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5, geom = &amp;quot;density&amp;quot;)
+qqnorm(SampleMeans$SampleSize5)
+qqline(SampleMeans$SampleSize5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;cental-limit-theorem-z-values&#34;&gt;Cental Limit Theorem Z-Values&lt;/h1&gt;
+
+&lt;p&gt;If the number of samples is &lt;a href=&#34;##Number of Sample Means&#34;&gt;large enough&lt;/a&gt;, ie more than 30, then conclusions can be made about the population data based on the sample data.&lt;/p&gt;
+
+&lt;p&gt;The formula for &lt;a href=&#34;Normal_Distribution.html#z-scores-an-example&#34; target=&#34;_blank&#34;&gt;z-values&lt;/a&gt; in normally distributed data:&lt;/p&gt;
+
+&lt;p&gt;$$z=\frac{\text{value-mean}}{\text{standard deviation}}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+We can use this very similar formula to find z-values for sample means of population data:&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;strong&gt;or&lt;/strong&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard deviation}\div\sqrt{\text{sample size}}}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;z-values-with-sample-size-less-than-30&#34;&gt;Z-Values With Sample Size Less Than 30&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;If the number of sample is less than 30 then use the normal formula for a z-score.&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;example-weather-data&#34;&gt;Example Weather Data&lt;/h2&gt;
+
+&lt;p&gt;So if we took a 36 days at random from the weather data, what is the probability that the mean of those 36 days would be greater than 65 degrees?&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The standard deviation of the sample means would be:
+$$\sigma_{\bar{X}} =\frac{\sigma}{\sqrt{n}} = \frac{21.12321}{\sqrt{36}} = 3.520535$$&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+OR
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(36)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The z-score is:&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}} = \frac{65-54.45328}{21.12321\div\sqrt{36}} = 2.995772$$&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;(65-54.45328)/(21.12321/sqrt(36))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;
+And based on &lt;a href=&#34;https://en.wikipedia.org/wiki/Standard_normal_table&#34; target=&#34;_blank&#34;&gt;Z-Score lookup table&lt;/a&gt; the probability that 36 days would have a mean greater than 65 is 1-.9987 or &lt;strong&gt;0.0013&lt;/strong&gt;.
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;pnorm-function&#34;&gt;Pnorm function&lt;/h3&gt;
+
+&lt;p&gt;What&amp;rsquo;s key in this operation is that the value for the standard deviation entered into pnorm is &lt;strong&gt;not&lt;/strong&gt; 21.12321, but $21.12321 \div \sqrt{36}$.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;pnorm(65, mean=54.45328, sd=(21.12321/sqrt(36)), lower.tail = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The actual number of sample means greater than 65 is approximately 12% which is close enough.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sapply(SampleMeans[SampleSize5&amp;gt;65], length)/nrow(SampleMeans) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;smaller-sample-size&#34;&gt;Smaller Sample Size&lt;/h3&gt;
+
+&lt;p&gt;Where it gets interesting is if we have 5 days instead of 36. Five days falls below the level at which we have to divide sigma by the root of the sample size. So&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The z-score is:&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma} = \frac{65-54.45328}{21.12321} = 0.4992953$$&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;(65-54.45328)/(21.12321)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;
+And based on &lt;a href=&#34;https://en.wikipedia.org/wiki/Standard_normal_table&#34; target=&#34;_blank&#34;&gt;Z-Score lookup table&lt;/a&gt; the probability that the mean of five values will be greater than 65 is 1-.6915 or &lt;strong&gt;0.3085&lt;/strong&gt;.
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;finite-population-correction-factor&#34;&gt;Finite Population Correction Factor&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;
+The Central Limit Theorem and standard error of the mean assume that samples are drawn with replacement. However almost all survey work are conducted on finite populations and samples are drawn without replacement. In these cases and especially when the sample size &lt;em&gt;n&lt;/em&gt; is large compared to the population size &lt;em&gt;N&lt;/em&gt; (more than 5%), the finite population correction factor is used to account for the added precision gained by sampling close to a larger percentage of the population. The effect of the FPC is that the error becomes zero when the sample size n is equal to the population size N.&lt;/p&gt;
+
+&lt;p&gt;Formula for the population correction factor:&lt;/p&gt;
+
+&lt;p&gt;$$\sqrt{\frac{N-n}{N-1}}$$&lt;/p&gt;
+
+&lt;p&gt;Where:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;N&lt;/em&gt; is the population size&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;n&lt;/em&gt; is the sample size&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;So the standard error of the mean is multiplied by the population correction factor:&lt;/p&gt;
+
+&lt;p&gt;$$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} \cdot \sqrt{\frac{N-n}{N-1}}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;And the total formula for the z-value when using the population correction factor becomes:&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}\cdot\sqrt{\frac{N-n}{N-1}}}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;population-size-and-population-correcton-factor&#34;&gt;Population Size and Population Correcton Factor&lt;/h2&gt;
+
+&lt;p&gt;We can see the effect that this correction factor has based on the size of the population N and the sample size n.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;small-n&#34;&gt;Small N&lt;/h3&gt;
+
+&lt;p&gt;If &lt;strong&gt;N is small&lt;/strong&gt; and multiplied by a data set with a $\sigma$ of 1.&lt;/p&gt;
+
+&lt;p&gt;$$\sqrt{\frac{150-30}{150-1}} = 0.8974236$$&lt;/p&gt;
+
+&lt;p&gt;$$\sigma_{\bar{X}\text{Small}} = \frac{1}{\sqrt{30}} \cdot \sqrt{\frac{150-30}{150-1}} = 0.1638464$$&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}\cdot\sqrt{\frac{150-30}{150-1}}} = 3.051639$$&lt;/p&gt;
+
+&lt;p&gt;So in this case 99.89% of the sample means fall below 4.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;large-n&#34;&gt;Large N&lt;/h3&gt;
+
+&lt;p&gt;If &lt;strong&gt;N is large&lt;/strong&gt; and multiplied by a data set with a $\sigma$ of 1:&lt;/p&gt;
+
+&lt;p&gt;$$\sqrt{\frac{100000-5}{100000-1}} = 0.999855$$&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;$$\sigma_{\bar{X}\text{Large}} = \frac{1}{\sqrt{30}} \cdot \sqrt{\frac{1000-5}{1000-1}} = 0.1825477$$&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}\cdot\sqrt{\frac{100000-30}{100000-1}}} = 2.73901$$&lt;/p&gt;
+
+&lt;p&gt;In this case 99.69% of the sample means fall below 4.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;no-correction-factor&#34;&gt;No Correction Factor&lt;/h3&gt;
+
+&lt;p&gt;This is fairly close to the standard error of the mean without a correction factor:&lt;/p&gt;
+
+&lt;p&gt;$$\sigma_{\bar{X}\text{No Correction Factor}} = \frac{1}{\sqrt{30}} = 0.1825742$$&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}}$$&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}} \approx 2.738613$$&lt;/p&gt;
+
+&lt;p&gt;And like the previous case 99.69% of the sample means fall below 4.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;example&#34;&gt;EXAMPLE&lt;/h1&gt;
+
+&lt;p&gt;A large freight elevator can transport a maximum of 9800 pounds. Suppose a load of cargo containing 49 boxes must be transported via the elevator. Experience has shown that the weight of boxes of this type of cargo follows a distribution with mean μ = 205 pounds and standard deviation σ = 15 pounds. Based on this information, what is the probability that all 49 boxes can be safely loaded onto the freight elevator and transported?&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard deviation}\div\sqrt{\text{sample size}}}$$&lt;/p&gt;
+
+&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}}$$&lt;/p&gt;
+
+&lt;p&gt;$$z=\frac{(9800\div49)-205}{15\div\sqrt{49}} = -2.33$$&lt;/p&gt;
+
+&lt;p&gt;$$.5-.4901 = 0.0099$$&lt;/p&gt;
+
+&lt;p&gt;So there&amp;rsquo;s about a 1% chance that the freight elevator won&amp;rsquo;t fail.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+Using the pnorm function we get:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;pnorm((9800/49), mean=205, sd=(15/sqrt(49)), lower.tail = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;reference-websites&#34;&gt;Reference Websites&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/&#34; target=&#34;_blank&#34;&gt;http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.math.uah.edu/stat/sample/CLT.html&#34; target=&#34;_blank&#34;&gt;http://www.math.uah.edu/stat/sample/CLT.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://atcm.mathandtech.org/EP2009/papers_full/2812009_17251.pdf&#34; target=&#34;_blank&#34;&gt;http://atcm.mathandtech.org/EP2009/papers_full/2812009_17251.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.math.utah.edu/~treiberg/M3074Simulation.pdf&#34; target=&#34;_blank&#34;&gt;http://www.math.utah.edu/~treiberg/M3074Simulation.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://science.kennesaw.edu/~jdemaio/1107/Central%20Limit%20Theorem.htm&#34; target=&#34;_blank&#34;&gt;http://science.kennesaw.edu/~jdemaio/1107/Central%20Limit%20Theorem.htm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.stat.ucla.edu/~nchristo/introeconometrics/introecon_central_limit_theorem.pdf&#34; target=&#34;_blank&#34;&gt;http://www.stat.ucla.edu/~nchristo/introeconometrics/introecon_central_limit_theorem.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.cios.org/readbook/rmcs/ch10.pdf&#34; target=&#34;_blank&#34;&gt;Sampling Distributions and the Central Limit Theorem&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148365/&#34; target=&#34;_blank&#34;&gt;In Brief: Standard Deviation and Standard Error&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Simulating the Central Limit Theorem from R-bloggers&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is code from &lt;a href=&#34;http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/&#34; target=&#34;_blank&#34;&gt;r-bloggers&lt;/a&gt; that simulates the central limit theorem. You can pick from several different distributions and then generate several plots that show the means of these distributions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sdm.sim &amp;lt;- function(n,src.dist=NULL,param1=NULL,param2=NULL) {
+   r &amp;lt;- 10000  # Number of replications/samples - DO NOT ADJUST
+   # This produces a matrix of observations with  
+   # n columns and r rows. Each row is one sample:
+   my.samples &amp;lt;- switch(src.dist,
+	&amp;quot;E&amp;quot; = matrix(rexp(n*r,param1),r),
+	&amp;quot;N&amp;quot; = matrix(rnorm(n*r,param1,param2),r),
+	&amp;quot;U&amp;quot; = matrix(runif(n*r,param1,param2),r),
+	&amp;quot;P&amp;quot; = matrix(rpois(n*r,param1),r),
+	&amp;quot;C&amp;quot; = matrix(rcauchy(n*r,param1,param2),r),
+        &amp;quot;B&amp;quot; = matrix(rbinom(n*r,param1,param2),r),
+	&amp;quot;G&amp;quot; = matrix(rgamma(n*r,param1,param2),r),
+	&amp;quot;X&amp;quot; = matrix(rchisq(n*r,param1),r),
+	&amp;quot;T&amp;quot; = matrix(rt(n*r,param1),r))
+   all.sample.sums &amp;lt;- apply(my.samples,1,sum)
+   all.sample.means &amp;lt;- apply(my.samples,1,mean)   
+   all.sample.vars &amp;lt;- apply(my.samples,1,var) 
+   par(mfrow=c(2,2))
+   hist(my.samples[1,],col=&amp;quot;gray&amp;quot;,main=&amp;quot;Distribution of One Sample&amp;quot;)
+   hist(all.sample.sums,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Sum&amp;quot;)
+   hist(all.sample.means,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Mean&amp;quot;)
+   hist(all.sample.vars,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Variance&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There are 9 population distributions to choose from: exponential (E), normal (N), uniform (U), Poisson (P), Cauchy &amp;copy;, binomial (B), gamma (G), Chi-Square (X), and the Student’s t distribution (t). Note also that you have to provide either one or two parameters, depending upon what distribution you are selecting. For example, a normal distribution requires that you specify the mean and standard deviation to describe where it’s centered, and how fat or thin it is (that’s two parameters). A Chi-square distribution requires that you specify the degrees of freedom (that’s only one parameter). You can find out exactly what distributions require what parameters by going here: &lt;a href=&#34;http://en.wikibooks.org/wiki/R_Programming/Probability_Distributions&#34; target=&#34;_blank&#34;&gt;http://en.wikibooks.org/wiki/R_Programming/Probability_Distributions&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example an exponential distribution looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;hist(rexp(100000,1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But these plots show what the sample means for an exponential distribution look like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sdm.sim(10,src.dist=&amp;quot;E&amp;quot;,1)
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -539,20 +1181,1357 @@ rm -rf ~/miniconda3&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>External Project</title>
-      <link>/portfolio/example-external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/portfolio/example-external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>External Project</title>
       <link>/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
       <guid>/project/example-external-project/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Graduate School Thesis</title>
+      <link>/portfolio/thesis/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/portfolio/thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How To Use Data Tables in R</title>
+      <link>/portfolio/data_tables/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/portfolio/data_tables/</guid>
+      <description>
+
+&lt;h1 id=&#34;how-to-use-data-tables-in-r&#34;&gt;How To Use Data Tables in R&lt;/h1&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;
+
+&lt;style&gt;
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+&lt;/style&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;There are significant speed advantages to using data.tables over data.frames, however the syntax can be a bit confusing. This will explain how to use &lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;data.tables&lt;/a&gt; in R.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(data.table)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Create a data.table&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Start by creating a few data tables.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(45L)
+
+DT &amp;lt;- data.table(
+    V1=rep(c(1,2),6),
+    V2=rep(LETTERS[1:3],4),
+    V3=rep(round(rnorm(4),4),3),
+    V4=1:12,
+    V5=21:32,
+    V6=LETTERS[1:12],
+    V7=101:112,
+    V8=121:132,
+    V9=rep(c(NA,1,2,3), 3)
+    )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT &amp;lt;- data.table(mtcars)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(MTCarsDT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Listing data.tables&lt;/p&gt;
+
+&lt;p&gt;The data.table package has a nice function that will list all tables in the global environment as well as their columns, and some extra information.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tables()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;i-j-by&#34;&gt;[i, j, by]&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;
+Data.tables allow you to find data in them and perform operations using the following syntax: &lt;code&gt;DT[i, j, by]&lt;/code&gt;, which means, “Take DT, subset rows using &lt;code&gt;i&lt;/code&gt;, then calculate &lt;code&gt;j&lt;/code&gt; grouped by &lt;code&gt;by&lt;/code&gt;.”
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Select rows: &lt;code&gt;DT[i]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;To start with we&amp;rsquo;ll select rows.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[3]
+MTCarsDT[3:5]
+MTCarsDT[c(3,5:8)]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;
+Notice that the previous command uses the combine operator, c(), to list the different rows that will be printed. Without the combine operator R will print the 3rd row for columns 5 through 8, like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[3,5:8]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;##Print rows by searching for a value in a column&lt;/p&gt;
+
+&lt;p&gt;Print rows with 6 cylinder cars&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[cyl == 6]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Print rows with 4 and 6 cylinder cars.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[cyl %in% c(4,6)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Print rows with cars that have 110 or 123 hp.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[hp %in% c(110,123)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Select Columns: &lt;code&gt;DT[,j]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Print the hp column as a vector&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,hp]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Print just the hp column as a data.table&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(MTCarsDT[,.(hp)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that the expression &lt;code&gt;.(hp)&lt;/code&gt; is identical to &lt;code&gt;list(hp)&lt;/code&gt;, the period is equivalent to the list function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(MTCarsDT[,list(hp)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Print multiple columns as a data.table.
+&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;MTCarsDT[,.(hp, cyl)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;col3&#34;&gt;
+```{r, echo=FALSE}
+MTCarsDT[,.(hp, cyl)]
+```
+&lt;/div&gt;
+***
+We can also print columns by index using the index number and `with=FALSE`, but this is a bad idea. See below.
+
+```{r, collapse=TRUE}
+head(MTCarsDT[, 1:3, with=FALSE])
+```
+
+```{r, collapse=TRUE}
+head(MTCarsDT[, c(1:3,4,6), with=FALSE])
+```
+
+&lt;br&gt;
+
+Using `with=FALSE` could create problems if used in code. This is from the [setkey documentation](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/setkey):
+
+&gt;It isn&#39;t good programming practice, in general, to use column numbers rather than names. This is why setkey and setkeyv only accept column names. If you use column numbers then bugs (possibly silent) can more easily creep into your code as time progresses if changes are made elsewhere in your code; e.g., if you add, remove or reorder columns in a few months time, a setkey by column number will then refer to a different column, possibly returning incorrect results with no warning.
+
+Long story short, if you reference columns by number and then change the order of your columns, you could create errors that you never even notice but which would ruin the results of your analysis.
+
+***
+
+&lt;br&gt;
+We can perform functions on a column. 
+
+This will return the mean of the hp column:
+```{r}
+MTCarsDT[,mean(hp)]
+```
+
+Return the mean of `hp` and standard deviation of `mpg`.
+```{r, }
+MTCarsDT[,.(mean(hp), sd(mpg))]
+```
+
+The same as above but the results have different names.
+```{r}
+MTCarsDT[,.(horsepower=mean(hp), milespergallon=sd(mpg))]
+```
+
+This prints the horsepower for each row and repeats the values of the sd and mean of the hp column.
+```{r, results=&#39;hide&#39;}
+MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
+```
+
+&lt;div class=&#34;col2&#34;&gt;
+```{r, echo=FALSE}
+MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
+```
+&lt;/div&gt;
+***
+&lt;br&gt;
+We can use apply on a data.table to apply a function to each column
+```{r}
+sapply(MTCarsDT, class)
+sapply(DT, mean) #returns errors if column is not numeric
+```
+
+&lt;br&gt;
+The curly braces allow multiple functions. Notice that the separate functions must be placed on separate lines or be separated by semicolons.
+```{r, fig.height=4, fig.width=6}
+MTCarsDT[, {print(disp); plot(mpg, wt); sapply(MTCarsDT, mean)}]
+```
+
+
+#Selecting Rows and Columns `DT[i,j]`
+
+&lt;br&gt;
+
+Print rows 1:5 but only the hp, weight, and mpg columns.
+```{r}
+MTCarsDT[1:5, .(hp,wt,mpg)]
+```
+
+Return cylinders, hp, mean hp and mpg for 6 cylinder cars.
+```{r}
+MTCarsDT[cyl == 6,.(cyl,hp,MeanHorsepower = mean(hp),mpg)]
+```
+Note that the mean horsepower is *only* for 6 cylinder cars and doesn&#39;t include 4 and 8 cylinder cars.
+
+```{r, collapse=TRUE}
+MTCarsDT[,mean(hp)]
+```
+&lt;br&gt;
+
+#Perform a function on a column by the value of another column `DT[,j,by]`
+
+&lt;br&gt;
+This gives the mean horsepower by the number of cylinders.
+```{r}
+MTCarsDT[,.(MeanHP = mean(hp)), by=cyl]
+```
+
+This will give mean time in seconds for 1/4 mile race based on both gears and cylinders.
+```{r}
+MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
+```
+&lt;br&gt;
+
+## Return The Number of Objects `.N`
+
+`.N` is a variable that will return the number of instances. For example this returns a count of the number of cars grouped by the number of gears they might have.
+```{r}
+MTCarsDT[,.N, by=gear]
+```
+
+This also works.
+```{r}
+MTCarsDT[,table(gear)]
+```
+
+
+
+&lt;br&gt;
+
+#Perform A Function On A Column By Values In Another Column From A Subset of Rows `DT[i,j,by]`
+
+
+This gives the mean horsepower of the first ten cars by the number of cylinders.
+```{r}
+
+MTCarsDT[1:10,.(mean_hp = mean(hp)), by=cyl]
+
+```
+&lt;br&gt;
+
+This will give the mean hp for cars with 4 gears grouped by the number cylinders.
+```{r}
+MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
+```
+
+#Modifying Data.Tables `DT[i,j := ]`
+
+&lt;br&gt;
+
+The `:=` operator updates columns and does so invisibly. The := operator makes the assignment operator (`DT &lt;- DT[.....]`) unnecessary because it is significantly faster than the assignment operator. [For more on :=](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D).
+```{r}
+DT[,V8]
+
+DT[, V8 := round(exp(V3),2)]
+
+DT[,V8]
+```
+
+Replace NA&#39;s in V9 column with 0
+
+```{r}
+DT[,V9]
+```
+
+```{r}
+DT[is.na(V9), V9 := 0]
+DT[1:5]
+```
+
+
+Columns V6 and V7 are updated with the results of the functions after the := operator.
+```{r}
+DT[,.(V6,V7)]
+DT[, c(&#34;V6&#34;,&#34;V7&#34;) := .(LETTERS [3:5], round(exp(V1),2))]
+DT[,.(V6,V7)]
+```
+
+Adding brackets (`[]`) to the end of the operation will print the result automatically.
+```{r}
+DT[, c(&#34;V6&#34;, &#34;V7&#34;) := .(LETTERS [3:5], round(exp(V1),2))][]
+```
+
+This deletes the V1 column
+```{r}
+DT[, V1 := NULL][]
+```
+
+And this deletes V7 and V8
+
+```{r}
+DT[, c(&#34;V7&#34;,&#34;V8&#34;) := NULL][]
+```
+
+
+Find the values in column V2 = A and assign X to them.
+```{r}
+DT[V2 == &#34;A&#34;, V2 := &#34;X&#34;][]
+```
+Add columns V7 and V8 back.
+
+```{r}
+DT[,c(&#34;V7&#34;,&#34;V8&#34;) := .(101:112,121:132)][]
+```
+
+#Complete Cases - removing NA rows
+
+We can use `complete cases` to delete all rows with NA values from any column. Complete cases is not part of the data.table package, but it is handy.
+
+&lt;br&gt;
+First I&#39;ll change the V8 column to include some NA&#39;s, then delete all those rows with NA&#39;s.
+```{r}
+DT[,&#34;V8&#34; := rep(c(NA,1,2,3), 3)][]
+DT &lt;- DT[complete.cases(DT)]
+head(DT)
+```
+
+
+#Using `setkey()` to sort by a keyed column
+
+&lt;br&gt;
+
+Setkey does two things:
+
+1. It reorders the rows of the data.table by the keyed column in increasing order.
+
+2. It marks the keyed column in the data.table.
+
+3. It allows us to easily search through that column.
+
+
+First, this operation keys the V2 column in this Data Table.
+```{r, warning=FALSE, message=FALSE}
+setkey(DT,V2)
+DT
+```
+
+
+&lt;br&gt;
+
+We can search through a keyed column quite easily.
+
+If only one column has been keyed we can search the keyed column and display all rows that match the search.
+```{r}
+setkey(DT,V2)
+DT[&#34;B&#34;]
+```
+
+We can also search for two values in the keyed column.
+
+&lt;br&gt;
+```{r}
+DT[c(&#34;B&#34;, &#34;X&#34;)]
+```
+
+
+##key()
+
+`key()` will tell us which column, if any, are set as the keyed column.
+```{r}
+key(DT)
+```
+
+`haskey()` will return TRUE or FALSE if a data.table has a key assigned.
+
+```{r}
+haskey(MTCarsDT)
+```
+
+And our old friend `tables()` will also tell us any keyed columns in any data.table in the global environment.
+
+```{r}
+tables()
+```
+
+
+##Returning specified columns - mult()
+
+The `mult` command returns the row specified. The options are *first*, *last* and *all*. All is the default.
+```{r, collapse=TRUE}
+DT[&#34;X&#34;, mult=&#34;first&#34;]
+DT[&#34;X&#34;, mult=&#34;last&#34;]
+DT[&#34;X&#34;, mult=&#34;all&#34;]
+```
+&lt;br&gt;
+
+##Nomatch
+
+&lt;br&gt;
+
+If you search for a value that doesn&#39;t exist the data table will return with an NA row.
+
+&lt;br&gt;
+```{r}
+DT[c(&#34;X&#34;, &#34;D&#34;)]
+```
+&lt;br&gt;
+
+However you can add the **nomatch** command and it won&#39;t include the NA row.
+
+&lt;br&gt;
+```{r}
+DT[c(&#34;X&#34;, &#34;D&#34;), nomatch=0]
+```
+
+&lt;br&gt;
+
+##Math Operations using setkey
+&lt;br&gt;
+
+Now we can perform specific operations on these rows that have been keyed. Like getting the mean hp for 6 cylinder cars.
+
+```{r}
+setkey(MTCarsDT, cyl)
+MTCarsDT[.(6), mean(hp)]
+```
+
+&lt;br&gt;
+
+And we can return mean hp for both 4 and 6 cylinder cars...
+
+```{r}
+MTCarsDT[.(c(4, 6)), mean(hp)]
+```
+
+&lt;br&gt;
+
+##by=.EACHI
+
+&lt;br&gt;
+
+But what if we want the mean hp for 6 cylinder cars and the mean hp for 4 cylinder cars returned separately. Use the `by.=EACHI` command which will perform same operation separately for each entered value in the keyed column. For keyed columns that are characater data we can just enter a command like this example from DT:
+
+```{r}
+setkey(DT, V2)
+DT[c(&#34;X&#34;, &#34;B&#34;), mean(V5), by=.EACHI]
+```
+
+
+
+This however returns an error:
+
+&lt;br&gt;
+`
+MTCarsDT[c(4, 6), mean(hp), by=.EACHI]
+`
+
+&lt;br&gt;
+The problem is that when subsetting a keyed column that has integer data, the data.table syntax assumes that `MTCarsDT[c(4, 6), mean(hp), by=.EACHI]` is referring to the 4th and 6th rows, not to all 4 cylinder and 6 cylinder cars.
+
+For example this operation gives the mean of rows 4 and 6.
+
+```{r}
+MTCarsDT[c(4, 6), mean(hp)]
+```
+&lt;br&gt;
+
+The solution is to put the `c(4,6)` into a list (see [List](#list) below) which works like this:
+
+```{r}
+MTCarsDT[.(c(4, 6)), mean(hp), by=.EACHI]
+```
+&lt;br&gt;
+
+So while this works with character data:
+
+* `DT[c(&#34;X&#34;, &#34;B&#34;), mean(V5), by=.EACHI]`
+
+A list must be used for integer data:
+
+* `MTCarsDT[.(c(4, 6)), mean(hp), by=.EACHI]`
+
+
+&lt;br&gt;
+Notice also that I used this same syntax above in [Math Operations using setkey](#math-operations-using-setkey)
+
+&lt;br&gt;
+&lt;br&gt;
+
+##Using setkey() on Multiple Columns
+
+&lt;br&gt;
+
+We can key multiple columns, for example the cylinder and gear columns.
+```{r}
+setkey(MTCarsDT, cyl, gear)
+```
+&lt;br&gt;
+And then print the rows with 4 cylinders and 5 gears
+```{r}
+MTCarsDT[.(4,5)]
+```
+
+&lt;br&gt;
+Or 4 cylinders and 4 or 5 gears
+```{r}
+MTCarsDT[.(4,c(4,5))]
+```
+
+&lt;br&gt;
+And then return the mean hp for 4 cylinder 4 gear cars and for 4 cylinder 5 gear cars.
+```{r}
+MTCarsDT[.(4, c(4,5)), mean(hp), by=.EACHI]
+```
+&lt;br&gt;
+
+
+
+#N
+
+&lt;br&gt;
+`.N` displays the last row.
+```{r}
+MTCarsDT[.N]
+```
+
+&lt;br&gt;
+`.N-1` displays the penultimate row and so on.
+```{r, collapse=TRUE}
+MTCarsDT[.N-1]
+MTCarsDT[.N-4]
+```
+
+&lt;br&gt;
+but `,.N` displays the number of rows
+
+```{r}
+MTCarsDT[,.N]
+```
+
+This can be handy if you want to display the largest value of a keyed row. For example, this will give the heaviest vehicle followed by the heaviest vehicles sorted by the number of cylinders.
+
+
+```{r}
+setkey(MTCarsDT, wt)
+MTCarsDT[, wt[.N]]
+MTCarsDT[, wt[.N], by=cyl]
+```
+
+
+#List
+
+The `.()` command is the same as `list()`.
+
+&lt;div class=col2&gt;
+```{r}
+head(MTCarsDT[,.(cyl, disp)])
+head(MTCarsDT[,list(cyl, disp)])
+```
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use this list function to get the mean hp for each combination of gears and cylinders&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,mean(hp),.(cyl,gear)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#SD - ie &lt;strong&gt;S&lt;/strong&gt;ubset of &lt;strong&gt;D&lt;/strong&gt;ata&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;So first we can set the key to the cylinders column in MTCarsDT.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setkey(MTCarsDT, cyl)
+MTCarsDT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using .SD it will print all of the data above but group the data by the number of cylinders. This works even if there is no key. Notice that the cylinders column is missing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,print(.SD), by = cyl]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;
+And you can select all the data by cylinder.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.(6),print(.SD), by=&amp;quot;cyl&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;This prints the first and last row grouped by the number of cylinders in the data set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,.SD[c(1,.N)], by=cyl]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;##lapply&lt;/p&gt;
+
+&lt;p&gt;Using lapply() we can perform a function on every column grouped by the number of cylinders.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[, lapply(.SD, mean), by=cyl]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;##SDcols&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;We can select specifically the columns we want to calculate and display using &lt;code&gt;.SDcols&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = c(&amp;quot;wt&amp;quot;,&amp;quot;hp&amp;quot;, &amp;quot;disp&amp;quot;)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Or we can use &lt;code&gt;.SDcols&lt;/code&gt; to specify the column numbers that we want to display, although reference columns by number is frowned upon.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = 3:7]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;And we can specify a several columns in a sequence by using &lt;code&gt;pasteO&lt;/code&gt; as long as the columns are numbered sequentially.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[,lapply(.SD,sum), by=V2, .SDcols = paste0(&amp;quot;V&amp;quot;,3:5)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Chaining multiple operations together&lt;/p&gt;
+
+&lt;p&gt;Chaining allows you to perform multiple functions in one statement.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;This set of operations will print the mean horsepower for cars, grouped by cylinder, that have more than 100 hp. But this creates a new data.table and is unnecessary.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;MTCarsDT2 &amp;lt;- MTCarsDT[, .(mean.hp = mean(hp)), by=cyl]
+MTCarsDT2
+MTCarsDT2[mean.hp &amp;gt; 100]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the easier way.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;
+MTCarsDT[, .(mean.hp = mean(hp)), by=cyl][mean.hp &amp;gt; 100]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Set and looping in a data.table&lt;/p&gt;
+
+&lt;p&gt;Set can be used to assign values in a data.table. Normally the := operation is better but &lt;strong&gt;set&lt;/strong&gt; yields faster results in a &lt;strong&gt;for loop&lt;/strong&gt; than any other function, so if you must loop, use set().&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.inside-r.org/packages/cran/data.table/docs/set&#34; target=&#34;_blank&#34;&gt;From inside-R&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Since [.data.table incurs overhead to check the existence and type of arguments (for example), set() provides direct (but less flexible) assignment by reference with low overhead, appropriate for use inside a for loop. See examples. := is more flexible than set() because := is intended to be combined with i and by in single queries on large datasets.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Remember our friend DT?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;DT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the syntax for set : &lt;code&gt;for (i in from:to) set(DT, row, column, new value)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And this will renumber the V9 column:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;for (i in 1:9) set(DT,i,&amp;quot;V9&amp;quot;,i)
+head(DT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;An example of the speed of using set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;m = matrix(1,nrow=100000,ncol=100)
+DF = as.data.frame(m)
+DT = as.data.table(m)
+dim(DT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we can run a speed test on the different methods of assigning the value of i to the i&amp;rsquo;th row of the first column.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;system.time(for (i in 1:100000) DF[i,1] &amp;lt;- i)
+
+system.time(for (i in 1:100000) DT[i,V1:=i])
+
+system.time(for (i in 1:100000) set(DT,i,1L,i))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So you can see there are big speed advantages to using set() over the assignment operator &amp;lt;- or the assignment by reference operator := .
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Also notice the the use of &lt;code&gt;1L&lt;/code&gt; to select the first column in the set command of the final speed test. See &lt;a href=&#34;http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://cran.r-project.org/doc/manuals/R-lang.html#Constants&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for a discussion of the use of 1 vs 1L for integers in R.&lt;/p&gt;
+
+&lt;p&gt;#Change column names using setnames()&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+The syntax is setnames(DT, &amp;ldquo;oldname&amp;rdquo;, &amp;ldquo;newname&amp;rdquo;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;colnames(MTCarsDT)
+setnames(MTCarsDT, &amp;quot;hp&amp;quot;, &amp;quot;horsepower&amp;quot;)
+colnames(MTCarsDT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also change multiple columnames at the same time.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setnames(MTCarsDT, c(&amp;quot;cyl&amp;quot;, &amp;quot;disp&amp;quot;), c(&amp;quot;cylinders&amp;quot;, &amp;quot;displacement&amp;quot;))
+colnames(MTCarsDT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Changing column order - setcolorder()&lt;/p&gt;
+
+&lt;p&gt;We can create a new column order by&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsColumns &amp;lt;- c(&amp;quot;drat&amp;quot;,&amp;quot;wt&amp;quot;,&amp;quot;qsec&amp;quot;,&amp;quot;vs&amp;quot;,&amp;quot;am&amp;quot;,&amp;quot;gear&amp;quot;,&amp;quot;carb&amp;quot;,&amp;quot;mpg&amp;quot;,&amp;quot;cylinders&amp;quot;,&amp;quot;displacement&amp;quot;,&amp;quot;horsepower&amp;quot;)
+
+setcolorder(MTCarsDT, MTCarsColumns)
+MTCarsDT[1]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;or by giving it a string of names&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setcolorder(MTCarsDT, c(&amp;quot;mpg&amp;quot;,&amp;quot;cylinders&amp;quot;,&amp;quot;displacement&amp;quot;,&amp;quot;horsepower&amp;quot;,&amp;quot;drat&amp;quot;,&amp;quot;wt&amp;quot;,&amp;quot;qsec&amp;quot;,&amp;quot;vs&amp;quot;,&amp;quot;am&amp;quot;,&amp;quot;gear&amp;quot;,&amp;quot;carb&amp;quot;))
+MTCarsDT[1]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Unique&lt;/p&gt;
+
+&lt;p&gt;Unique returns a data.table where duplicate data, by keyed row, are removed. So here&amp;rsquo;s a new data.table, notice that rows 3 and 12 are identical to rows 1 and 10 respectively.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT &amp;lt;- data.table(A = rep(1:3, each=4), B = rep(1:4, each=3),
+                 C = rep(1:2, 6), key = &amp;quot;B&amp;quot;)
+DT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using &lt;code&gt;duplicated&lt;/code&gt; we can see that there are two rows &lt;code&gt;TRUE&lt;/code&gt; that are identical to other rows that have already been displayed.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;duplicated(DT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Unique&lt;/code&gt; will return a DT without the duplicates.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;unique(DT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;uniqueN returns the number of unique rows.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;uniqueN(DT)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;#Reference Websites&lt;/p&gt;
+
+&lt;p&gt;More info and references:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;Data Tables Github Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1&#34; target=&#34;_blank&#34;&gt;What&amp;rsquo;s the difference between &lt;code&gt;1L&lt;/code&gt; and &lt;code&gt;1&lt;/code&gt;?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/doc/manuals/R-lang.html#Constants&#34; target=&#34;_blank&#34;&gt;R Language Definition: Constants&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.r-bloggers.com/a-data-table-r-tutorial-by-datacamp-intro-to-dti-j-by/&#34; target=&#34;_blank&#34;&gt;A data.table R tutorial by DataCamp: intro to DT[i, j, by]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Managing Python on Mac OS</title>
+      <link>/portfolio/uninstalling-python/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/portfolio/uninstalling-python/</guid>
+      <description>
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;It&amp;rsquo;s easy to install multiple versions of python on a Mac computer using installers from &lt;a href=&#34;http://www.python.org&#34; target=&#34;_blank&#34;&gt;python.org&lt;/a&gt;, &lt;a href=&#34;http://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt;, &lt;a href=&#34;https://www.anaconda.com&#34; target=&#34;_blank&#34;&gt;Conda&lt;/a&gt;, or other sources. This could create conflicts if a user wants to run one version of python but bash calls a different version instead.&lt;/p&gt;
+
+&lt;p&gt;This is guide will show you how to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;modify your bash profile to change which version of python is called by bash first.&lt;/li&gt;
+&lt;li&gt;use virtual environments to specify a version of python that will run a project.&lt;/li&gt;
+&lt;li&gt;uninstall specific versions of python.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;warnings&#34;&gt;Warnings&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;mac-os-needs-python&#34;&gt;Mac OS needs python&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;DO NOT&lt;/strong&gt; remove any versions of Python found in the following folders:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/usr/bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;system/Library&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These versions of Python&amp;mdash;which should be Python 2.7&amp;mdash;are installed by Apple and used by Mac OS and other software to perform some functions. Deleting Python from these directories will break Mac OS and force you to reinstall it on your computer.&lt;/p&gt;
+
+&lt;h3 id=&#34;other-projects-may-need-specific-versions-of-python&#34;&gt;Other projects may need specific versions of python&lt;/h3&gt;
+
+&lt;p&gt;You may have a python project or you may use python packages that require particular versions of Python. Uninstalling those versions would prevent those projects or packages from working until that version of python is reinstalled. For example, Python 3 is a dependency of Numpy; if you uninstalled Python 3, then Numpy wouldn&amp;rsquo;t work until you reinstalled Python 3.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
+
+&lt;p&gt;Three common methods of installing python can be found here:&lt;/p&gt;
+
+&lt;h3 id=&#34;python-org-python-org&#34;&gt;&lt;a href=&#34;python.org&#34; target=&#34;_blank&#34;&gt;python.org&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;The python.org installer can be found &lt;a href=&#34;https://www.python.org/downloads/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;homebrew-https-brew-sh&#34;&gt;&lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;First install Homebrew. The instructions are &lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, or enter the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;To install Python 3:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install python
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To install Python 2:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install python@2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;anaconda-https-www-anaconda-com&#34;&gt;&lt;a href=&#34;https://www.anaconda.com&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Anaconda is generally used for scientific and machine learning applications.&lt;/p&gt;
+
+&lt;p&gt;For &lt;strong&gt;Ananconda&lt;/strong&gt; follow installation instructions &lt;a href=&#34;https://www.anaconda.com/download/#macos&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Miniconda is a stripped down version of Anaconda.&lt;/p&gt;
+
+&lt;p&gt;For &lt;strong&gt;Miniconda&lt;/strong&gt; follow installation instructions &lt;a href=&#34;https://conda.io/docs/user-guide/install/index.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;path-and-bash-profile&#34;&gt;PATH and .bash_profile&lt;/h1&gt;
+
+&lt;h2 id=&#34;path&#34;&gt;PATH&lt;/h2&gt;
+
+&lt;p&gt;The path is a list of directories that your shell will look through when you execute a command. You can display the path on your computer using the &lt;code&gt;echo $PATH&lt;/code&gt; command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo $PATH
+
+/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/username/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/username/miniconda2/bin:/Users/username/miniconda3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/X11/bin:/usr/local/git/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The directories above are separated by a colon, this is what they look like displayed in sequence:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/Library/Frameworks/Python.framework/Versions/3.7/bin&lt;/li&gt;
+&lt;li&gt;/Users/username/anaconda3/bin&lt;/li&gt;
+&lt;li&gt;/Library/Frameworks/Python.framework/Versions/2.7/bin&lt;/li&gt;
+&lt;li&gt;/Users/username/miniconda2/bin&lt;/li&gt;
+&lt;li&gt;/Users/username/miniconda3/bin&lt;/li&gt;
+&lt;li&gt;/Library/Frameworks/Python.framework/Versions/3.6/bin&lt;/li&gt;
+&lt;li&gt;/usr/local/bin&lt;/li&gt;
+&lt;li&gt;/usr/bin&lt;/li&gt;
+&lt;li&gt;/bin&lt;/li&gt;
+&lt;li&gt;/usr/sbin&lt;/li&gt;
+&lt;li&gt;/sbin&lt;/li&gt;
+&lt;li&gt;/usr/texbin&lt;/li&gt;
+&lt;li&gt;/opt/X11/bin&lt;/li&gt;
+&lt;li&gt;/usr/X11/bin&lt;/li&gt;
+&lt;li&gt;/usr/local/git/bin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When you ask your shell to run a particular command or run an interpreter, &lt;code&gt;python&lt;/code&gt; for example, the shell looks through the different directories listed in the PATH in order they&amp;rsquo;re presented above. When the shell finds that command, it stops and calls it even if there is another version of the same command, with the same name, further down in the list.&lt;/p&gt;
+
+&lt;h2 id=&#34;bash-profile&#34;&gt;.bash_profile&lt;/h2&gt;
+
+&lt;p&gt;The bash profile is a set of instructions that are run by the shell when the user logs in to bash. You can add a &lt;a href=&#34;http://osxdaily.com/2011/10/03/add-a-separator-time-stamp-between-terminal-commands-to-increase-readability/&#34; target=&#34;_blank&#34;&gt;variety&lt;/a&gt; of &lt;a href=&#34;https://natelandau.com/my-mac-osx-bash_profile/&#34; target=&#34;_blank&#34;&gt;preferences&lt;/a&gt; to the bash profile, including modifications to the PATH. When anaconda, miniconda or other versions of python are installed they automatically add paths to their respective versions of python to the top of the bash profile.&lt;/p&gt;
+
+&lt;p&gt;Bash reads the bash profile in sequential order &amp;mdash; from top to bottom &amp;mdash; and adds those paths to the PATH in the order that they&amp;rsquo;re read. This means that the &lt;em&gt;last&lt;/em&gt; path at the bottom of the bash profile will end up as the &lt;em&gt;first&lt;/em&gt; path in the PATH. This means that if you have Python 3.6 installed on your computer, and then decide to add python 3.7, but keep 3.6, the installer will add Python 3.7 to the top of the bash profile but it will end up &lt;em&gt;after&lt;/em&gt; python 3.6 in the PATH. Entering &lt;code&gt;python3&lt;/code&gt; in bash will call python 3.6, &lt;em&gt;not&lt;/em&gt; 3.7.&lt;/p&gt;
+
+&lt;p&gt;If that was confusing compare the order that the python paths are added to my bash profile below to the PATH listed above. You&amp;rsquo;ll notice that their respective orders are opposite from each other.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Enter the following command to open the bash profile in TextEdit:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ open ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;My .bash_profile currently looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}&amp;quot;
+export PATH
+
+# added by Miniconda3 installer
+export PATH=&amp;quot;/Users/username/miniconda3/bin:$PATH&amp;quot;
+
+# added by Miniconda2 installer
+export PATH=&amp;quot;/Users/username/miniconda2/bin:$PATH&amp;quot;
+
+# Setting PATH for Python 2.7
+# The original version is saved in .bash_profile.pysave
+PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}&amp;quot;
+export PATH
+
+# added by Anaconda3 installer
+export PATH=&amp;quot;/Users/username/anaconda3/bin:$PATH&amp;quot;
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}&amp;quot;
+export PATH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to keep all of your installed versions of python, but want bash to open a different version first, just copy and paste it to the &lt;strong&gt;bottom&lt;/strong&gt; of the bash profile. If you don&amp;rsquo;t want bash to run a particular version of python then delete it from bash profile and uninstall that version by following the instructions further down.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;. ~/.bash_profile&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;homebrew-pyenv&#34;&gt;Homebrew - pyenv&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34; target=&#34;_blank&#34;&gt;Pyenv&lt;/a&gt; is a &lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt; package that allows a user to install multiple versions of python in Homebrew and specify which version of python they&amp;rsquo;d like to run.&lt;/p&gt;
+
+&lt;p&gt;Install pyenv:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew install pyenv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install different versions of python:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv install 3.5.0
+$ pyenv install 3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Show which versions of python are installed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv versions
+
+* system (set by /Users/username/Programming/python/.python-version)
+  3.5.0
+  3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The asterisk indicates that the system version of python is active, but 3.5.0 and 3.6.0 are also installed.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pyenv-local&#34;&gt;Pyenv Local&lt;/h2&gt;
+
+&lt;p&gt;Create a folder called &lt;code&gt;PythonLocalProject&lt;/code&gt;, then display the version of python called by bash by entering &lt;code&gt;python -V&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ python -V
+Python 3.6.5 :: Anaconda, Inc.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv local 3.5.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This creates a &lt;code&gt;.python-version&lt;/code&gt; file which tells &lt;code&gt;pyenv&lt;/code&gt; which version of python to run in that directory.&lt;/p&gt;
+
+&lt;p&gt;Entering &lt;code&gt;ls -la&lt;/code&gt; shows us that file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -la
+total 8
+drwxr-xr-x  3 username  staff   96 Aug  3 11:52 .
+drwxr-xr-x  4 username  staff  128 Aug  3 11:56 ..
+-rw-r--r--  1 username  staff    6 Aug  3 12:03 .python-version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now enter &lt;code&gt;pyenv versions&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv versions
+  system
+* 3.5.0 (set by /Users/username/Programming/python/pythonproject/.python-version)
+  3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And running this command shows which version of python is called by pyenv:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ python -V
+Python 3.5.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To change pyenv to the system version of version 3.6.0 enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv local system
+$ pyenv local 3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This procedure is fine, you can set a version of python to run in a particular folder. But what if you want to use pyenv to set a global version of python.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pyenv-global&#34;&gt;Pyenv Global&lt;/h2&gt;
+
+&lt;p&gt;Pyenv gives these instructions when you enter &lt;code&gt;pyenv init&lt;/code&gt; in bash:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv init
+
+# Load pyenv automatically by appending
+# the following to ~/.bash_profile:
+
+eval &amp;quot;$(pyenv init -)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Open the bash profile:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;open ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Add this text to the bottom of the file:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;eval &amp;quot;$(pyenv init -)&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Save the file and then enter:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Entering &lt;code&gt;echo $PATH&lt;/code&gt; will show that a pyenv shim has been added to the beginnning of the path:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/Users/username/.pyenv/shims:&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And &lt;code&gt;which python&lt;/code&gt; will return:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/Users/username/.pyenv/shims/python&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means that bash will run the version of python set by pyenv.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Navigate to a folder that doesn&amp;rsquo;t have a &lt;code&gt;.python-version&lt;/code&gt; file and enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv global 3.6.0
+Python 3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This shows us that the global version of python is 3.6.0 and it is set by &lt;code&gt;pyenv&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So this shows that bash will run whichever version of python that is set in pyenv.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;If you navigate back to the &lt;code&gt;PythonLocalProject&lt;/code&gt; folder with the &lt;code&gt;.python-version&lt;/code&gt; file and run &lt;code&gt;python -V&lt;/code&gt; you will notice that it doesn&amp;rsquo;t run the global version of python, it runs whichever version was last set with the &lt;code&gt;pyenv local&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;locate-python&#34;&gt;Locate Python&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use the &lt;code&gt;which&lt;/code&gt; command to identify where specific versions of python are located:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which -a python
+/Users/username/.pyenv/shims/python
+/Users/username/anaconda3/bin/python
+/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+/Users/username/miniconda2/bin/python
+/Users/username/miniconda3/bin/python
+/usr/local/bin/python
+/usr/bin/python
+
+
+$ which -a python3
+/Users/username/.pyenv/shims/python3
+/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
+/Users/username/anaconda3/bin/python3
+/Users/username/miniconda3/bin/python3
+/Library/Frameworks/Python.framework/Versions/3.6/bin/python3
+/usr/local/bin/python3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This shows some overlap as some versions of python appear in both searches.&lt;/p&gt;
+
+&lt;p&gt;The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the &lt;code&gt;/Library/Frameworks/Python.framework/&lt;/code&gt; directory. Homebrew installs all packages, including python, in &lt;code&gt;/usr/local/Cellar&lt;/code&gt;, then Homebrew adds a symlink to &lt;code&gt;/usr/local/bin&lt;/code&gt;so that it&amp;rsquo;s version of python can be found in the path. Finally, Apple installs python in &lt;code&gt;/usr/bin&lt;/code&gt;. Remember, don&amp;rsquo;t delete that version.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;uninstall-python&#34;&gt;Uninstall python&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Follow these instructions if you want to remove particular versions of python.
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;python-org&#34;&gt;python.org&lt;/h2&gt;
+
+&lt;p&gt;The python.org installer places all it&amp;rsquo;s installed files in the following folders:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The system applications folder, &lt;code&gt;/Applications&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/Library/Frameworks/Python.framework&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/local/bin&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To delete all versions of python that were installed using the python.org installer, enter these commands in terminal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo rm -rf &#39;/Applications/Python X.Y&#39; #replace X.Y with the version number on the folder
+sudo rm -rf /Library/Frameworks/Python.framework
+sudo rm -rf /usr/local/bin/python
+sudo rm -rf /usr/local/bin/python3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To remove particular versions of python, you have to refer to the particular framework. The frameworks are installed in &lt;code&gt;/Library/Frameworks/Python.framework&lt;/code&gt; and particular versions are found in &lt;code&gt;/Library/Frameworks/Python.framework/Versions/X.Y&lt;/code&gt;. So for example if you wanted to uninstall only version 3.5 but leave other versions you would enter the following commands in bash:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo rm -rf /Library/Frameworks/Python.framework/Versions/3.5
+sudo rm -rf &#39;/Applications/Python 3.5&#39;
+sudo rm -rf /usr/local/bin/python3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;homebrew&#34;&gt;Homebrew&lt;/h2&gt;
+
+&lt;p&gt;To uninstall python that was installed using homebrew you need to identify what versions of python have been installed by Homebrew:&lt;/p&gt;
+
+&lt;p&gt;Enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew list | grep &#39;python&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Currently brew refers to python3 as &lt;code&gt;python&lt;/code&gt; and python 2 is called &lt;code&gt;python@2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To uninstall both python2 and python3 enter the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Homebrew will refuse to uninstall python if it has dependencies, just uninstall python and ignore the dependencies:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew uninstall --ignore-dependencies python python@2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or, add the dependencies to the list of items to be uninstalled:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2 gdal geos libspatialite libxml2 numpy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s possible to have Homebrew&amp;rsquo;s Python directory at the beginning of the $PATH but calling &lt;code&gt;python&lt;/code&gt; will still start the Apple installed version of Python or some other version. If that&amp;rsquo;s the case it&amp;rsquo;s possible that Homebrew&amp;rsquo;s Python install has become unlinked. This command will unlink and relink Python in Homebrew:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew unlink python python@2 &amp;amp;&amp;amp; brew link python python@2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;uninstall-python-from-pyenv&#34;&gt;Uninstall Python from Pyenv&lt;/h3&gt;
+
+&lt;p&gt;To list versions of python installed using pyenv enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv versions
+* system (set by /Applications/.python-version)
+  3.5.0
+  3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To uninstall versions of python installed using pyenv enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pyenv uninstall 3.5.0
+$ pyenv uninstall 3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;anaconda&#34;&gt;Anaconda&lt;/h2&gt;
+
+&lt;p&gt;The official removal instructions are found &lt;a href=&#34;https://conda.io/docs/user-guide/install/macos.html#&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, but deleting anaconda and miniconda is easy.&lt;/p&gt;
+
+&lt;p&gt;Anaconda and miniconda are installed in the users home directory: &lt;code&gt;~/miniconda2&lt;/code&gt;, &lt;code&gt;~/miniconda3&lt;/code&gt;,&lt;code&gt;~/anaconda2&lt;/code&gt;, or &lt;code&gt;~/anaconda3&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Depending on which version or versions you have, just enter the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm -rf ~/anaconda2
+rm -rf ~/anaconda3
+rm -rf ~/miniconda2
+rm -rf ~/miniconda3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Anaconda and miniconda also use several invisible files. Delete them by entering this command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm -rf ~/.condarc ~/.conda ~/.continuum
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.anaconda.com&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.python.org&#34; target=&#34;_blank&#34;&gt;python.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34; target=&#34;_blank&#34;&gt;pyenv package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv/blob/master/COMMANDS.md&#34; target=&#34;_blank&#34;&gt;pyenv commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/python/cpython/blob/master/Mac/README&#34; target=&#34;_blank&#34;&gt;Python Removal Instructions&lt;/a&gt; -  towards the bottom of the README file.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://osxdaily.com/2018/07/05/where-homebrew-packages-installed-location-mac/&#34; target=&#34;_blank&#34;&gt;OS X Daily - How to Find Where Homebrew Packages Are Installed on Mac&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://conda.io/docs/user-guide/install/macos.html#&#34; target=&#34;_blank&#34;&gt;Official Conda Uninstall Instructions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://realpython.com/python-virtual-environments-a-primer/#using-different-versions-of-python&#34; target=&#34;_blank&#34;&gt;Real Python - Python Virtual Environments&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;xkcd&#34;&gt;XKCD&lt;/h1&gt;
+
+&lt;p&gt;And now for something completely different.&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;text-align:center&#34;&gt;
+&lt;a href=&#34;https://xkcd.com/1987/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://imgs.xkcd.com/comics/python_environment.png&#34; alt=&#34;The Python Environment&#34; /&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reinstalling R Packages</title>
+      <link>/portfolio/reinstalling-r-without-losing-packages/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/portfolio/reinstalling-r-without-losing-packages/</guid>
+      <description>
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;When you reinstall R it deletes all of your installed packages and reinstalling them manually can be a nuisance. This is an easy way to automatically reinstall your R packages after you install a new version of R.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;before-reinstalling-r&#34;&gt;Before Reinstalling R&lt;/h2&gt;
+
+&lt;p&gt;Before you reinstall R, use setwd() to set a directory where you can save a text file of all your currently installed packages.&lt;/p&gt;
+
+&lt;p&gt;Run this command to create a text file in that directory called &amp;ldquo;Rpaackages&amp;rdquo;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;packages &amp;lt;- installed.packages()[,&amp;quot;Package&amp;quot;]
+    save(packages, file=&amp;quot;Rpackages&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;reinstalling-r&#34;&gt;Reinstalling R&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://cran.r-project.org&#34; target=&#34;_blank&#34;&gt;Download R here&lt;/a&gt; and install according to the instructions.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;after-reinstalling-r&#34;&gt;After Reinstalling R&lt;/h2&gt;
+
+&lt;p&gt;After R has been reinstalled, use setwd() to set R to the same directory where the list of packages was saved.&lt;/p&gt;
+
+&lt;p&gt;Then run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;load(&amp;quot;Rpackages&amp;quot;) 
+    for (p in setdiff(packages, installed.packages()[,&amp;quot;Package&amp;quot;]))
+    install.packages(p)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This may take a while depending on how many packages you have installed but it&amp;rsquo;s far faster than manually installing each package one at a time.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -701,74 +2680,6 @@ rm -rf ~/miniconda3&lt;/code&gt;&lt;/pre&gt;
 &lt;li id=&#34;fn:I-m-sure-you-are&#34;&gt;I&amp;rsquo;m sure you are bored by the text here. &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:I-m-sure-you-are&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-identification/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0400</pubDate>
-      
-      <guid>/publication/person-re-identification/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Mobile visual clothing search</title>
-      <link>/publication/clothing-search/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 -0400</pubDate>
-      
-      <guid>/publication/clothing-search/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     

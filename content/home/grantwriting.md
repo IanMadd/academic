@@ -15,6 +15,6 @@ weight = 30
 
 +++
 
-I also volunteer as a grant writer for the [Orang Utan Republik Foundation](https://www.orangutanrepublik.org/). OURF supports conservation, outreach, and environmental education projects in North Sumatra, Indonesia to save wild orangutans and their habitat. Orangutans are threatened by the expansion of palm oil plantations, logging, slash-and-burn agriculture, and the illegal pet trade. As a result, orangutans are critically endangered according to the [IUCN Red List](http://www.iucnredlist.org/details/121097935/0).
+I also volunteer as a grant writer for the [Orang Utan Republik Foundation](https://www.orangutanrepublik.org/). OURF supports conservation, outreach, and environmental education projects in North Sumatra, Indonesia to save wild Sumatran orangutans and their habitat. Orangutans are threatened by the expansion of palm oil plantations, logging, slash-and-burn agriculture, and the illegal pet trade; as a result orangutans are [critically endangered](http://www.iucnredlist.org/details/121097935/0).
 
 OURF accepts donations [here](https://www.orangutanrepublik.org/donate-now).
