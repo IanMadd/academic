@@ -84,7 +84,7 @@
     
     <url>
     
-      <loc>/portfolio/deep-learning/</loc>
+      <loc>/portfolio/central_limit_theorem/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -100,7 +100,7 @@
     
     <url>
     
-      <loc>/portfolio/example-external-project/</loc>
+      <loc>/project/example-external-project/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -108,7 +108,31 @@
     
     <url>
     
-      <loc>/project/example-external-project/</loc>
+      <loc>/portfolio/thesis/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/portfolio/data_tables/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/portfolio/uninstalling-python/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/portfolio/reinstalling-r-without-losing-packages/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
     
@@ -148,6 +172,15 @@
     
     <url>
     
+      <loc>/tags/academic/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/blogdown/</loc>
       <lastmod>2017-06-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -167,15 +200,6 @@
     
       <loc>/tags/conda/</loc>
       <lastmod>2018-07-26T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -318,6 +342,15 @@
     
     <url>
     
+      <loc>/tags/python/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/categories/python/</loc>
       <lastmod>2018-07-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -354,6 +387,15 @@
     
     <url>
     
+      <loc>/tags/r-programming/</loc>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/rstudio/</loc>
       <lastmod>2016-02-14T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -382,7 +424,7 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2017-06-13T00:00:00+00:00</lastmod>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
     
