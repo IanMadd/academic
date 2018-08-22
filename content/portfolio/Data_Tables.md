@@ -29,48 +29,75 @@ caption = ""
 
 +++
 
-# How To Use Data Tables in R
-
-## Introduction
-
-## Purpose
-
-
-<style>
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
-  }
-  .col3 {
-    columns: 3 100px;
-    -webkit-columns: 3 100px;
-    -moz-columns: 3 100px;
-  }
-</style>
-
 ***
 
+# Purpose
+
+
+Data tables can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing. This will explain how to:
+
+* use the [data.tables](https://github.com/Rdatatable/data.table/wiki) package in R.
+* select data by row and column
+* perform functions on subsetted data
+* 
 <br>
 
-There are significant speed advantages to using data.tables over data.frames, however the syntax can be a bit confusing. This will explain how to use [data.tables](https://github.com/Rdatatable/data.table/wiki) in R.
+# Table of Contents
 
 
-```{r}
-library(data.table)
+1. [Create a Data Table](#create)
+2. [List Data Tables](#list_data_tables)
+3. [[i, j, by]](#i_j_by)
+4. [Select rows: DT[i]] (#dti)
+    1. [Print rows by searching for a value in a column] (#print_rows_searching_value_in_column)
+5. [Select Columns: DT[,j]] (#dtj)   
+    1. [Performing functions on a column] (#perform_functions_on_column)
+6. [Selecting Rows and Columns `DT[i,j]`] (#dtij)
+7. [Perform a function on a column by the value of another column `DT[i,j,by]`](#dt_ijby)
+9. Perform A Function On A Column By Values In Another Column From A Subset of Rows DT[i,j,by]
+* [Return The Number of Objects .N] (#objects_N)
+10. [Modifying Data.Tables DT[i,j := ]](#modifying_data_tables)
+11. Complete Cases - removing NA rows
+12. Using setkey() to sort by a keyed column
+    * key()
+    * Returning specified columns - mult()
+    * Nomatch
+    * Math Operations using setkey
+    * by=.EACHI
+    * Using setkey() on Multiple Columns
+    * N
+13. List
+14. SD (Subset of Data)
+    * lapply
+    * SDcols
+15. Chaining multiple operations together
+16. Set and looping in a data.table
+17. Change column names using setnames()
+18. Changing column order - setcolorder()
+19. Unique
+20. Additional Information (#additional_information)
+
+<br>
+    
+# Introduction
+
+
+
+
+<br>
+
+# Create a data.table {#create}
+
+<br>
+
+Start by creating a few data tables. This tutorial will use two data tables, one called **DT** with dummy data, and another called **MTCarsDT** which contains the `mtcars` dataset from the datasets package.
+
+<br>
+
 ```
+library(data.table)
 
-<br>
 
-#Create a data.table
-
-<br>
-
-Start by creating a few data tables. 
-
-<br>
-
-```{r}
 set.seed(45L)
 
 DT <- data.table(
@@ -88,6 +115,20 @@ DT <- data.table(
 
 ```{r}
 DT
+
+##     V1 V2      V3 V4 V5 V6  V7  V8 V9
+##  1:  1  A  0.3408  1 21  A 101 121 NA
+##  2:  2  B -0.7033  2 22  B 102 122  1
+##  3:  1  C -0.3795  3 23  C 103 123  2
+##  4:  2  A -0.7460  4 24  D 104 124  3
+##  5:  1  B  0.3408  5 25  E 105 125 NA
+##  6:  2  C -0.7033  6 26  F 106 126  1
+##  7:  1  A -0.3795  7 27  G 107 127  2
+##  8:  2  B -0.7460  8 28  H 108 128  3
+##  9:  1  C  0.3408  9 29  I 109 129 NA
+## 10:  2  A -0.7033 10 30  J 110 130  1
+## 11:  1  B -0.3795 11 31  K 111 131  2
+## 12:  2  C -0.7460 12 32  L 112 132  3
 ```
 
 
@@ -97,51 +138,99 @@ MTCarsDT <- data.table(mtcars)
 
 ```{r}
 head(MTCarsDT)
+
+##     mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## 1: 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## 2: 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## 3: 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## 4: 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## 5: 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## 6: 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 ```
 <br>
 
-#Listing data.tables
+# Listing Data Tables {#list_data_tables} 
 
 The data.table package has a nice function that will list all tables in the global environment as well as their columns, and some extra information.
-```{r}
+
+```
 tables()
+
+##      NAME     NROW NCOL MB COLS                                        
+## [1,] DT         12    9  1 V1,V2,V3,V4,V5,V6,V7,V8,V9                  
+## [2,] MTCarsDT   32   11  1 mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
+##      KEY
+## [1,]    
+## [2,]    
+## Total: 2MB
 ```
 
 
 
 
-# [i, j, by]
+# [i, j, by]{#i_j_by}
 
 <br>
-Data.tables allow you to find data in them and perform operations using the following syntax: `DT[i, j, by]`, which means, “Take DT, subset rows using `i`, then calculate `j` grouped by `by`.”
+
+Data Tables allow you to find data in them and perform operations using the following syntax: `DT[i, j, by]`, which means, “Take DT, subset rows using `i`, then calculate `j` grouped by `by`.” This is similar to SQL syntax where i corresponds to SELECT, 
+
 <br>
 
-#Select rows: `DT[i]`
+# Select rows: `DT[i]` {#dti}
 
 <br>
 
 To start with we'll select rows.
 
 
-```{r}
+```
 MTCarsDT[3]
+
+##     mpg cyl disp hp drat   wt  qsec vs am gear carb
+## 1: 22.8   4  108 93 3.85 2.32 18.61  1  1    4    1
+
 MTCarsDT[3:5]
+
+##     mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## 1: 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## 2: 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## 3: 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+
 MTCarsDT[c(3,5:8)]
 
+##     mpg cyl  disp  hp drat   wt  qsec vs am gear carb
+## 1: 22.8   4 108.0  93 3.85 2.32 18.61  1  1    4    1
+## 2: 18.7   8 360.0 175 3.15 3.44 17.02  0  0    3    2
+## 3: 18.1   6 225.0 105 2.76 3.46 20.22  1  0    3    1
+## 4: 14.3   8 360.0 245 3.21 3.57 15.84  0  0    3    4
+## 5: 24.4   4 146.7  62 3.69 3.19 20.00  1  0    4    2
+
 ```
 <br>
-Notice that the previous command uses the combine operator, c(), to list the different rows that will be printed. Without the combine operator R will print the 3rd row for columns 5 through 8, like this:
-```{r}
+Notice that the previous command uses the combine function, c(), to list the different rows that will be printed. Without the combine function R will print the 3rd row for columns 5 through 8, like this:
+```
 MTCarsDT[3,5:8]
+
+##    drat   wt  qsec vs
+## 1: 3.85 2.32 18.61  1
 ```
 <br>
 
-##Print rows by searching for a value in a column
+## Print rows by searching for a value in a column {#print_rows_searching_value_in_column}
 
 Print rows with 6 cylinder cars
 
-```{r}
+```
 MTCarsDT[cyl == 6]
+
+##     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## 1: 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 2: 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 3: 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 4: 18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 5: 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 6: 17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## 7: 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
 ```
 
 Print rows with 4 and 6 cylinder cars.
@@ -156,7 +245,7 @@ MTCarsDT[hp %in% c(110,123)]
 ```
 <br>
 
-#Select Columns: `DT[,j]`
+# Select Columns: `DT[,j]` {#dtj}
 
 <br>
 <br>
@@ -173,52 +262,62 @@ head(MTCarsDT[,.(hp)])
 
 
 Note that the expression `.(hp)` is identical to `list(hp)`, the period is equivalent to the list function.
-```{r}
+
+```
 head(MTCarsDT[,list(hp)])
 ```
 
 Print multiple columns as a data.table.
+
 <br>
 
-```{r, results='hide'}
+```
 MTCarsDT[,.(hp, cyl)]
 ```
-<div class="col3">
-```{r, echo=FALSE}
-MTCarsDT[,.(hp, cyl)]
-```
-</div>
-***
-We can also print columns by index using the index number and `with=FALSE`, but this is a bad idea. See below.
 
-```{r, collapse=TRUE}
+```
+MTCarsDT[,.(hp, cyl)]
+```
+
+
+<br>
+
+
+
+
+***
+
+You can also print columns by index using the index number and `with=FALSE`, but this is a bad idea. See below.
+
+```
 head(MTCarsDT[, 1:3, with=FALSE])
 ```
 
-```{r, collapse=TRUE}
+```
 head(MTCarsDT[, c(1:3,4,6), with=FALSE])
 ```
 
 <br>
 
-Using `with=FALSE` could create problems if used in code. This is from the [setkey documentation](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/setkey):
+**WARNING**
 
->It isn't good programming practice, in general, to use column numbers rather than names. This is why setkey and setkeyv only accept column names. If you use column numbers then bugs (possibly silent) can more easily creep into your code as time progresses if changes are made elsewhere in your code; e.g., if you add, remove or reorder columns in a few months time, a setkey by column number will then refer to a different column, possibly returning incorrect results with no warning.
-
-Long story short, if you reference columns by number and then change the order of your columns, you could create errors that you never even notice but which would ruin the results of your analysis.
+Using `with=FALSE` to refer to columns by index number can create errors. If you reference a column by number and then add, move, or replace columns, the code may continue to execute and may appear normal but it will return incorrect results without any warning. For this reason you should refer to columns by name rather than number.
 
 ***
 
 <br>
-We can perform functions on a column. 
+
+## Performing functions on a column {#perform_functions_on_column}
+
+You can perform functions on a column. 
 
 This will return the mean of the hp column:
-```{r}
+```
 MTCarsDT[,mean(hp)]
 ```
 
 Return the mean of `hp` and standard deviation of `mpg`.
-```{r, }
+```
 MTCarsDT[,.(mean(hp), sd(mpg))]
 ```
 
@@ -228,31 +327,33 @@ MTCarsDT[,.(horsepower=mean(hp), milespergallon=sd(mpg))]
 ```
 
 This prints the horsepower for each row and repeats the values of the sd and mean of the hp column.
-```{r, results='hide'}
+```
 MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
 ```
 
-<div class="col2">
-```{r, echo=FALSE}
+
+
+```
 MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
 ```
-</div>
+
 ***
+
 <br>
 We can use apply on a data.table to apply a function to each column
-```{r}
+```
 sapply(MTCarsDT, class)
 sapply(DT, mean) #returns errors if column is not numeric
 ```
 
 <br>
 The curly braces allow multiple functions. Notice that the separate functions must be placed on separate lines or be separated by semicolons.
-```{r, fig.height=4, fig.width=6}
+```
 MTCarsDT[, {print(disp); plot(mpg, wt); sapply(MTCarsDT, mean)}]
 ```
 
 
-#Selecting Rows and Columns `DT[i,j]`
+# Selecting Rows and Columns `DT[i,j]` {#dtij}
 
 <br>
 
@@ -272,7 +373,7 @@ MTCarsDT[,mean(hp)]
 ```
 <br>
 
-#Perform a function on a column by the value of another column `DT[,j,by]`
+# Perform a function on a column by the value of another column `DT[,j,by]` {#dtjby}
 
 <br>
 This gives the mean horsepower by the number of cylinders.
@@ -286,30 +387,12 @@ MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
 ```
 <br>
 
-## Return The Number of Objects `.N`
 
-`.N` is a variable that will return the number of instances. For example this returns a count of the number of cars grouped by the number of gears they might have.
-```{r}
-MTCarsDT[,.N, by=gear]
-```
-
-This also works.
-```{r}
-MTCarsDT[,table(gear)]
-```
-
-
-
-<br>
-
-#Perform A Function On A Column By Values In Another Column From A Subset of Rows `DT[i,j,by]`
-
+# Perform A Function On A Column By Values In Another Column From A Subset of Rows `DT[i,j,by]` {#dt_ijby}
 
 This gives the mean horsepower of the first ten cars by the number of cylinders.
-```{r}
-
+```
 MTCarsDT[1:10,.(mean_hp = mean(hp)), by=cyl]
-
 ```
 <br>
 
@@ -318,7 +401,49 @@ This will give the mean hp for cars with 4 gears grouped by the number cylinders
 MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
 ```
 
-#Modifying Data.Tables `DT[i,j := ]`
+# Count The Number of Objects `.N` {#objects_N}
+
+`.N` is a variable that will return the number of instances. 
+
+
+This gives a total count of the number of rows in the dataset:
+```
+MTCarsDT[,.N]
+
+## [1] 32
+```
+
+This returns a count of the number of cars grouped by the number of gears they might have.
+```
+MTCarsDT[,.N, by=gear]
+
+##     gear  N
+##  1:    4 12
+##  2:    3 15
+##  3:    5  5
+```
+
+This returns the count of gears only for 6 cylinder cars:
+
+```
+MTCarsDT[cyl == 6, .N, by=gear]
+
+##     gear N
+##  1:    4 4
+##  2:    3 2
+##  3:    5 1
+```
+
+This also works.
+```
+MTCarsDT[,table(gear)]
+
+##  gear
+##   3  4  5 
+##  15 12  5 
+```
+
+# Modifying Data.Tables `DT[i,j := ]` {#modifying_data_tables}
 
 <br>
 
@@ -377,7 +502,7 @@ Add columns V7 and V8 back.
 DT[,c("V7","V8") := .(101:112,121:132)][]
 ```
 
-#Complete Cases - removing NA rows
+# Complete Cases - removing NA rows
 
 We can use `complete cases` to delete all rows with NA values from any column. Complete cases is not part of the data.table package, but it is handy.
 
@@ -390,7 +515,7 @@ head(DT)
 ```
 
 
-#Using `setkey()` to sort by a keyed column
+# Using `setkey()` to sort by a keyed column
 
 <br>
 
@@ -428,7 +553,7 @@ DT[c("B", "X")]
 ```
 
 
-##key()
+## key()
 
 `key()` will tell us which column, if any, are set as the keyed column.
 ```{r}
@@ -448,7 +573,7 @@ tables()
 ```
 
 
-##Returning specified columns - mult()
+## Returning specified columns - mult()
 
 The `mult` command returns the row specified. The options are *first*, *last* and *all*. All is the default.
 ```{r, collapse=TRUE}
@@ -458,7 +583,7 @@ DT["X", mult="all"]
 ```
 <br>
 
-##Nomatch
+## Nomatch
 
 <br>
 
@@ -479,7 +604,7 @@ DT[c("X", "D"), nomatch=0]
 
 <br>
 
-##Math Operations using setkey
+## Math Operations using setkey
 <br>
 
 Now we can perform specific operations on these rows that have been keyed. Like getting the mean hp for 6 cylinder cars.
@@ -499,7 +624,7 @@ MTCarsDT[.(c(4, 6)), mean(hp)]
 
 <br>
 
-##by=.EACHI
+## by=.EACHI
 
 <br>
 
@@ -551,7 +676,7 @@ Notice also that I used this same syntax above in [Math Operations using setkey]
 <br>
 <br>
 
-##Using setkey() on Multiple Columns
+## Using setkey() on Multiple Columns
 
 <br>
 
@@ -580,7 +705,7 @@ MTCarsDT[.(4, c(4,5)), mean(hp), by=.EACHI]
 
 
 
-#N
+# N
 
 <br>
 `.N` displays the last row.
@@ -612,11 +737,11 @@ MTCarsDT[, wt[.N], by=cyl]
 ```
 
 
-#List
+# List
 
 The `.()` command is the same as `list()`.
 
-<div class=col2>
+<div class="col2">
 ```{r}
 head(MTCarsDT[,.(cyl, disp)])
 head(MTCarsDT[,list(cyl, disp)])
@@ -632,7 +757,7 @@ MTCarsDT[,mean(hp),.(cyl,gear)]
 ```
 <br>
 
-#SD - ie **S**ubset of **D**ata
+# SD - ie **S**ubset of **D**ata
 
 <br>
 
@@ -662,7 +787,7 @@ MTCarsDT[,.SD[c(1,.N)], by=cyl]
 ```
 <br>
 
-##lapply
+## lapply
 
 Using lapply() we can perform a function on every column grouped by the number of cylinders.
 
@@ -672,7 +797,7 @@ MTCarsDT[, lapply(.SD, mean), by=cyl]
 
 <br>
 
-##SDcols
+## SDcols
 
 <br>
 
@@ -698,7 +823,7 @@ DT[,lapply(.SD,sum), by=V2, .SDcols = paste0("V",3:5)]
 ```
 <br>
 
-#Chaining multiple operations together
+# Chaining multiple operations together
 
 Chaining allows you to perform multiple functions in one statement.
 
@@ -722,7 +847,7 @@ MTCarsDT[, .(mean.hp = mean(hp)), by=cyl][mean.hp > 100]
 ```
 
 
-#Set and looping in a data.table
+# Set and looping in a data.table
 
 Set can be used to assign values in a data.table. Normally the := operation is better but **set** yields faster results in a **for loop** than any other function, so if you must loop, use set().
 
@@ -771,7 +896,7 @@ So you can see there are big speed advantages to using set() over the assignment
 
 Also notice the the use of `1L` to select the first column in the set command of the final speed test. See [here](http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1) and [here](https://cran.r-project.org/doc/manuals/R-lang.html#Constants) for a discussion of the use of 1 vs 1L for integers in R.
 
-#Change column names using setnames()
+# Change column names using setnames()
 
 <br>
 The syntax is setnames(DT, "oldname", "newname")
@@ -790,7 +915,7 @@ colnames(MTCarsDT)
 ```
 <br>
 
-#Changing column order - setcolorder()
+# Changing column order - setcolorder()
 
 We can create a new column order by
 
@@ -810,7 +935,7 @@ MTCarsDT[1]
 ```
 <br>
 
-#Unique
+# Unique
 
 Unique returns a data.table where duplicate data, by keyed row, are removed. So here's a new data.table, notice that rows 3 and 12 are identical to rows 1 and 10 respectively.
 
@@ -841,7 +966,7 @@ uniqueN(DT)
 ```
 <br>
 
-#Reference Websites
+# Additional Information {#additional_information}
 
 More info and references:
 

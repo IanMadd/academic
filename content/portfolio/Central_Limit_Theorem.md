@@ -1,9 +1,9 @@
 +++
 # Date this page was created.
-date = 2016-04-27T00:00:00
+date = 2017-03-12T00:00:00
 
 # Project title.
-title =  "Central Limit Theorem"
+title =  "The Central Limit Theorem"
 
 # Project summary to display on homepage.
 summary = "."
@@ -23,64 +23,60 @@ math = true
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-    image = "university-wide.png"
-    caption = "My caption :smile:"
+    image = "headers/R_logo.png"
+    caption = ""
     
 +++
 
 
 
-<style>
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
-  }
-  .col3 {
-    columns: 3 100px;
-    -webkit-columns: 3 100px;
-    -moz-columns: 3 100px;
-  }
-</style>
+
+# Purpose
+
+This will demonstrate what the Central Limit Theorem is, why it is significant, and what conclusions you can draw from sampled data.
 
 
+# Table of Contents
+
+1. [Introduction](#introduction)
+    1. [Mean of Sample Means](#mean_sample_means)
+    2. [Standard Error of the Mean](#standard_error_mean)
+    3. [Sampling Error](#sampling_error)
+    4. [Number of Sample Means](#number_sample_means)
+2. [An Example with Temperature Data](#example)
+    1. [Prepare Temperature Data](#prepare_data)
+    2. [Plot Temperature Data](#plotting_temp_data)
+    3. [Sample Means](#example_sample_means)
+    4. [Sampling Error](#example_sampling_error)
+    5. [Mean of Sample Means](#example_mean_of_sample_means)
+3. [Central Limit Theorem and Z-Values](#central_limit_theorem_zvalues)
+    1. [Sample Size Less Than 30](#sample_size_lessthan_30)
+    2. [Example: Z-Score with Weather Data](#example_zscore_weather_data)
+        1. [Using Pnorm Function](#pnorm_function)
+    3. [Smaller Sample Size](#smaller_sample_size)
+4. [Finite Population Correction Factor](#finite_population_correction_factor)
+    1. [Population Size and Population Correction Factor](#population_size_and_pop_corr_factor)
+        1. [Small N](#small_n)
+        2. [Large N](#large_n)
+        3. [No Correction Factor](#no_correction_factor)
+5. [Example](#example2)
+6. [Simulating the Central Limit Theorem](#simulate)
+7. [Additional Sources](#additional_sources)
 
 
+# Introduction {#introduction}
 
-## Introduction
+The Central Limit Theorem is one of the most important concepts in inferential statistics. 
 
-The Central Limit Theorem states that if you take many random samples of the same size from a population, take the mean of each sample, and then plot these means in a histogram, the plot will look like a normal distribution regardless of the distribution of data in the original data set and the *mean* of all of these sample means will approach the population mean as the number of samples approaches infinity.
+It states that if you have a population with a mean $\mu$ and a standard deviation $\sigma$ and you take many sufficiently large samples with replacement from a population, the means of those samples will approach a normal distribution regardless of the distribution of the population. Further the *mean of these sample means* will approach the population mean as the number of samples approaches infinity and it's standard deviation will shrink as its sample size increases.
 
-## Purpose
+Sample sizes of 30 or more ($n \geq 30$) are considered sufficiently large unless you know the population is normally distributed, in which case smaller sample sizes are acceptable. However the population distribution will affect the sample size necessary to produce a normal distribution
 
-
-## Table of Contents
-
-1. [Packages](#packages)
-2. [Mean of Sample Means](#mean_sample_means)
-
-
-
-### Packages {#packages}
-
-This demonstration will use the following packages:
-
-* data.table
-* ggplot2
-* easyGgplot2
-
-
-```{r, warning=FALSE, results='hide'}
-library(data.table)
-library(ggplot2)
-library(easyGgplot2)
-```
-
-
+<br>
 
 ## Mean of Sample Means {#mean_sample_means}
 
-As the the number of sample means approach infinity the sample means and population mean will converge. Or to put it more simply, the mean of the sampled means will have the same mean as the population.
+As the the number of sample means approach infinity the mean of the sampled means will have the same mean as the population.
 
 $$\text{mean of sample means} = \text{population mean}$$
 
@@ -91,18 +87,12 @@ $$\mu_{\bar{X}} = \mu$$
 Where:
 
 * $\bar{X}$ is a sample mean
-
 * $\mu_{\bar{X}}$ is the mean of the sample means
-
 * $\mu$ is the population mean
 
- 
 <br>
 
-
-## Standard Error of the Mean
-
-First off a statistician could find the standard error of a number of different statistics, like median, variance, and estimate among others. But the standard error of the mean is most common.
+## Standard Error of the Mean {#standard_error_mean}
 
 The standard deviation of the sample means is also called the **standard error of the mean.**
 
@@ -125,15 +115,15 @@ Where:
 
 <br>
 
-We can tell that the standard error of the mean will get smaller as the sample size increases. A smaller standard error would indicate that the sample data is more representative of the total population. For example if we had identical standard deviations for two different populations but different sample sizes, then the standard error of the mean would be smaller for the set with a larger sample size.
+The standard error of the mean will get smaller as the sample size increases. A smaller standard error would indicate that the sample data is more representative of the total population. For example if we had identical standard deviations for two different populations but different sample sizes, then the standard error of the mean would be smaller for the set with a larger sample size.
 
 <br>
 
-We can also use the standard error of the mean draw inferences about the population data from a sample. This is useful in the many many situations where it would be impossible to measure every individual from a population. For example if we 30 sets of fifty samples from a population, we can take the standard deviation of the means of those samples and find a population standard deviation.
+You can use the standard error of the mean draw inferences about the population data from a sample. This is useful in the many many situations where it would be impossible to measure every individual from a population. For example if we 30 sets of fifty samples from a population, we can take the standard deviation of the means of those samples and find a population standard deviation.
 
 <br>
 
-## Sampling Error
+## Sampling Error {#sampling_error}
 
 Sampling error is the difference between the actual population data and the same measure of the sampled data. For example the mean of each sample will be different from the mean of the population data.
 
@@ -143,20 +133,43 @@ Sampling error is the difference between the actual population data and the same
 
 <br>
 
-## Number of Sample Means
+## Number of Sample Means {#number_sample_means}
 
 * When the population data is normally distributed then the sample means will also be normally distributed.
 * When the population data is not normally distributed then at least 30 sample means will have to be made for the sample means to be normally distributed. This is because of sampling error.
 
 <br>
 
-# An Example: Temperature Data
+****
+
+# An Example With Dice 
+
+Consider an example with a die. A die has an equal probability of landing on any side so the probability distribution is uniform. But, taking the mean of multiple samples produces a normal distribution.
+
+```
+die <- 1:6
+die_rolls <- NULL
+
+for (i in 1:1000){
+    die_rolls <- append(die_rolls, mean(sample(die, 30, replace = TRUE)))
+}
+
+hist(die_rolls)
+```
+
+![](/portfolio/Central_Limit_Theorem_files/die_roll_histogram.png)
+
 
 <br>
 
-This is historical data from the [United States Historical Climatology Network](http://cdiac.ornl.gov/climate/temp/us_recordtemps/ui.html), more specificially [this page](http://cdiac.ornl.gov/cgi-bin/broker?id=172765&_PROGRAM=prog.scat_data_d9k_424.sas&_SERVICE=default&_DEBUG=0&tempvar=htx). This data set contains daily temperature highs from 1911 through 2010.
+# An Example: Temperature Data {#example}
 
 <br>
+
+This example will sample from population data to demonstrate that a non-normal population will appear normal when sampled, that the sample means will converge around the population mean, and that the standard deviation of the sample means is equal to the population standard deviation divided by the square root of the sample size.
+
+This example uses historical data from the [United States Historical Climatology Network](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/us-historical-climatology-network-ushcn). The data set contains daily high temperatures in Farmington, Maine from 1911 through 2010. [Download the data here.](/data/ME_2765tmax.txt)
+
 
 The variables/columns in the data file are:
 
@@ -165,153 +178,162 @@ The variables/columns in the data file are:
 * Month
 * Day of Month
 * Year the daily record was set
-* Record Hot Tmax
+* Daily Temperature High
 
 <br>
-First we import the data.
-<br>
-```{r}
+
+## Prepare the Data {#prepare_data}
+
+
+First load the following packages:
+
+```
 library(data.table)
-
-Station172765_TMax<- data.table(read.table("../../static/data/ME_2765tmax.txt", header = FALSE))
-#Station172765_TMax<- data.table(read.table("ME_2765tmax.txt", header = FALSE))
+library(ggplot2)
+library(easyGgplot2)
 ```
 
-We need to a little cleanup. 
-We'll replace the column names with more descriptive names. 
-```{r}
+
+<br>
+Then import the data.
+<br>
+```
+Station172765_TMax<- data.table(read.table("/data/ME_2765tmax.txt", header = FALSE))
+```
+
+The columns are labeled "V1" through "V6" so replace the column names with more descriptive names. 
+
+```
 setnames(Station172765_TMax, c("V1", "V2", "V3", "V4", "V5", "V6"), c("StationID", "YearDay", "Year", "Month", "MonthDay", "MaxTemp"))
-
-Station172765_TMax
 ```
 
-Also on days that no data was collected the temperature is recorded as -999, we'll change that to NA.
-```{r}
+On days that no data was collected the temperature is recorded as -999, change that to NA.
+
+```
 Station172765_TMax[MaxTemp == -999, MaxTemp := NA]
 ```
+
+Now view the dataset:
+
+```
+Station172765_TMax
+
+##        StationID YearDay Year Month MonthDay MaxTemp
+##     1:    172765       1 1911     1        1      18
+##     2:    172765       2 1911     1        2      36
+##     3:    172765       3 1911     1        3      38
+##     4:    172765       4 1911     1        4      35
+##     5:    172765       5 1911     1        5      17
+##    ---                                              
+## 36496:    172765     361 2010    12       27      25
+## 36497:    172765     362 2010    12       28      26
+## 36498:    172765     363 2010    12       29      24
+## 36499:    172765     364 2010    12       30      32
+## 36500:    172765     365 2010    12       31      44
+```
+
 <br>
 
-## Plotting Temperature Data
+## Plotting Temperature Data {#plotting_temp_data}
 
-This is a plot of the temperature highs with the day of the year on the x axis and the temperature on the y axis:
+<br>
 
-```{r, fig.width=6, fig.height=3, fig.align='center', warning=FALSE, cache=TRUE}
+This plot shows the temperature highs with the day of the year on the x-axis and the temperature on the y-axis:
+
+```
 p <- ggplot(Station172765_TMax, aes(YearDay, MaxTemp))
 p + geom_point() 
 ```
+![](/portfolio/Central_Limit_Theorem_files/172765_temp_xy.png)
+
 <br>
 
-The histogram of the data shows that it's bimodal.
+The histogram of the data shows that it's bimodal:
 
-```{r, collapse=TRUE, fig.height=3, fig.width=6, fig.align='center', cache=TRUE}
+```
 hist(Station172765_TMax[,MaxTemp], xlab="Temp", main="Frequency Max Temp - Farmington, ME, 1911 - 2010")
 ```
 
-```{r, collapse=TRUE, fig.height=3, fig.width=6, fig.align='center', cache=TRUE}
-ggplot(Station172765_TMax, aes(MaxTemp)) + geom_density()
+![](/portfolio/Central_Limit_Theorem_files/172765_temp_histogram.png)
+
+## Sample Means {#example_sample_means}
+
+
+
+This will return a data table called `SampleMeans` with four columns of 1000 sample means each; each sample mean will come from 2, 10, 30 or 50 samples from the temperature data set.
+
 ```
-
-## Sample Means
-
-<br>
-Now we'll get the mean and standard deviation for all years in the data set. 
-
-```{r, collapse=TRUE, cache=TRUE}
-Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
-Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]
-```
-<br>
-
-To get a sample of the data we use the sample function.
-
-```{r, cache=TRUE}
-Station172765_TMax[,sample(MaxTemp, 5)]
-```
-<br>
-
-This will return a data table with four columns of 1000 sample means, each sample mean will come from 2, 5, 25 or 49 sampled values from the temperature data set.
-
-```{r, collapse=TRUE, cache=TRUE}
 SampleMeans <- NULL
 Means <- NULL
 
 
 ## Sample Size of 2
-for (i in 1:1000){
+for (i in 1:200){
     Means <- append(Means, mean(Station172765_TMax[,sample(MaxTemp,2)], na.rm=TRUE))
-    i <- i + 1
-    if (i == 1001) break
 }
+
 SampleMeans <- data.table(SampleSize2 = Means)
 
-
-##Sample Size of 5
+##Sample Size of 10
 Means <- NULL
-for (i in 1:1000){
-    Means <- append(Means, mean(Station172765_TMax[,sample(MaxTemp,5)], na.rm=TRUE))
-    i <- i + 1
-    if (i == 1001) break
+for (i in 1:200){
+    Means <- append(Means, mean(Station172765_TMax[,sample(MaxTemp,10)], na.rm=TRUE))
 }
-SampleMeans[,SampleSize5 := Means]
+SampleMeans[,SampleSize10 := Means]
 
-
-## Sample Size of 25
-
+##Sample Size of 30
 Means <- NULL
-for (i in 1:1000){
-    Means <- append(Means, mean(Station172765_TMax[,sample(MaxTemp,25)], na.rm=TRUE))
-    i <- i + 1
-    if (i == 1001) break
+for (i in 1:200){
+    Means <- append(Means, mean(Station172765_TMax[,sample(MaxTemp,30)], na.rm=TRUE))
 }
-SampleMeans[,SampleSize25 := Means]
 
-##Sample Size of 49
+SampleMeans[,SampleSize30 := Means]
+
+##Sample Size of 50
 
 Means <- NULL
-for (i in 1:1000){
-    Means <- append(Means, mean(Station172765_TMax[,sample(MaxTemp,49)], na.rm=TRUE))
-    i <- i + 1
-    if (i == 1001) break
+for (i in 1:200){
+    Means <- append(Means, mean(Station172765_TMax[,sample(MaxTemp,50)], na.rm=TRUE))
+
 }
-SampleMeans[,SampleSize49 := Means]
+SampleMeans[,SampleSize50 := Means]
+
+SampleMeans
+
+```
 
 
+## Sampling Error of Sample Means {#example_sampling_error}
+
+This dataset shows that there can be substantial variability in the sample means, but as the sample size increases the variability of the sample mean declines and the sample means come closer to the true population mean. In this case the sample means are clustering around ~54.5 for a population mean.
+
+```
 head(SampleMeans)
 
+   SampleSize2 SampleSize10 SampleSize30 SampleSize50
+1:        54.5         48.1     61.07143     53.86000
+2:        32.5         48.5     50.86667     59.22000
+3:        73.0         54.2     56.86667     57.10000
+4:        54.5         55.6     50.00000     54.59184
+5:        49.0         58.7     61.90000     56.38000
+6:        57.5         37.0     53.40000     55.82000
 ```
 <br>
 
-## Sampling Error of Sample Means
 
-So we can see that there is a sampling error for each sample mean in the data set.
-```{r, collapse=TRUE}
-#Subtract the population mean from one sample mean of each sample size.
+## Mean of Sample Means {#example_mean_of_sample_means}
 
-SampleMeans[1] - Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
+Taking the mean of all of the sample means shows that they are fairly close to the population mean.
 
 ```
-
-## Mean of Sample Means
-
-But we can see that mean of all of the sample means is fairly close to the mean of population data.
-
-```{r, collapse=TRUE}
 sapply(SampleMeans, mean)
 
-Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
-```
-<br>
-
-We can also see that as the number of sample means increases it comes closer and closer to the population mean.
-<br>
-
-```{r, collapse=TRUE, cache=TRUE}
-SampleMeans[1:10, mean(SampleSize5)]
-SampleMeans[1:100, mean(SampleSize5)]
-SampleMeans[1:500, mean(SampleSize5)]
-SampleMeans[1:1000, mean(SampleSize5)]
+ SampleSize2 SampleSize10 SampleSize30 SampleSize50 
+    54.75500     54.48744     54.47269     54.25413 
 
 Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
+
+## [1] 54.45328
 ```
 <br>
 
@@ -319,26 +341,39 @@ Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
 
 <br>
 
-So first off we can find the standard deviation of the sample means (**standard error of the mean**) for each sample size. Notice that the standard deviation is much smaller for the set of means with the sample size of 49 and the standard deviation for the set of means is the largest for the data set with a sample size of 2.
-```{r, collapse=TRUE}
+The standard deviation of the sample means, also called the *standard error of the mean* is much smaller with a larger sample size and much larger with a small sample size.
 
+```
 sapply(SampleMeans, sd) 
+
+## SampleSize2 SampleSize10 SampleSize30 SampleSize50 
+##   13.695907     6.553337     3.999041     3.223173 
 ```
 
-Also notice that the standard deviation of the sample means is approximately equal to the standard deviation of the population data divided by the square root of the sample size.
-```{r, collapse=TRUE, cache=TRUE}
+Also notice that the standard deviation of the sample means is approximately equal to the standard deviation of the population data divided by the square root of the sample size. Compare the standard deviations above to the population standard deviation divided by the square root of the sample size below.
+```
 Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(2)
+## [1] 14.93637
+
 Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(5)
+## [1] 6.679747
+
 Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(25)
+## [1] 3.856554
+
 Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(49)
+## [1] 2.987274
 ```
 
 <br>
-If we didn't have a complete data set for this weather data, we could take the standard deviation of the sample means and multiply it by the square root of our sample size to get the standard deviation of the population.  
+Without a complete data set for this weather data, you could take the standard deviation of the sample means and multiply it by the square root of our sample size to get the standard deviation of the population.  
 
-```{r, collapse=TRUE, cache=TRUE}
+```
 SampleMeans[,sd(SampleSize49)] * sqrt(49) 
+## [1] 22.79128
+
 Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)] 
+## [1] 21.12321
 ```
 
 <br>
@@ -346,13 +381,13 @@ Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]
 ## Plot Sample Means
 
 <br>
-Now if we plot the SampleMeans data as a histogram and density plot we can see that this sampled data looks like a normal distribution while the original data was bimodal. We can also see that the standard error is much larger for the sample means with fewer samples per mean and that the means of the different sample means are about the same.
+Plotting the SampleMeans data as a density plot shows that this sampled data looks like a normal distribution even though the original data was bimodal. You can also see that the standard error is much larger for the sample means with the smaller sample size.
 
-```{r, collapse=TRUE, fig.height=3, fig.width=6, fig.align='center'}
+```
 DT1 <- data.table(SampleSize = "SampleSize2",SampleMeans = SampleMeans$SampleSize2) 
-DT2 <- data.table(SampleSize = "SampleSize5",SampleMeans = SampleMeans$SampleSize5) 
-DT3 <- data.table(SampleSize = "SampleSize25",SampleMeans = SampleMeans$SampleSize25) 
-DT4 <- data.table(SampleSize = "SampleSize49",SampleMeans = SampleMeans$SampleSize49) 
+DT2 <- data.table(SampleSize = "SampleSize10",SampleMeans = SampleMeans$SampleSize10) 
+DT3 <- data.table(SampleSize = "SampleSize30",SampleMeans = SampleMeans$SampleSize30) 
+DT4 <- data.table(SampleSize = "SampleSize50",SampleMeans = SampleMeans$SampleSize50) 
 
 MeltedSampleMeans <- rbindlist(l=list(DT1, DT2, DT3, DT4))
 
@@ -360,86 +395,33 @@ p <- ggplot(MeltedSampleMeans, aes(SampleMeans, fill=SampleSize,color=SampleSize
 p + geom_density(alpha = 0.1)
 ```
 
-<br>
+![](/portfolio/Central_Limit_Theorem_files/sample_means_hist.png)
 
-### Plot Sample Means to Show Normality
-
-We can see, by plotting different numbers of sample means, that as the number of sample means increases the plot of those means looks more and more normal. 
 
 <br>
 
-<div class="col2">
+# Cental Limit Theorem Z-Values {#central_limit_theorem_zvalues}
 
-```{r, fig.height=3.5, fig.width=4, fig.align='center'}
-qplot(SampleMeans$SampleSize5[1:10], geom = "density")
-qqnorm(SampleMeans$SampleSize5[1:10])
-qqline(SampleMeans$SampleSize5[1:10])
-```
-</div>
-<br>
-<div class="col2">
-```{r, fig.height=3.5, fig.width=4, fig.align='center'}
-qplot(SampleMeans$SampleSize5[1:20], geom = "density")
-qqnorm(SampleMeans$SampleSize5[1:20])
-qqline(SampleMeans$SampleSize5[1:20])
-```
-</div>
-<br>
-<div class="col2">
-```{r, fig.height=3.5, fig.width=4, fig.align='center'}
-qplot(SampleMeans$SampleSize5[1:30], geom = "density")
-qqnorm(SampleMeans$SampleSize5[1:30])
-qqline(SampleMeans$SampleSize5[1:30])
-```
-</div>
-<br>
-<div class="col2">
-```{r, fig.height=3.5, fig.width=4, fig.align='center'}
-qplot(SampleMeans$SampleSize5[1:40], geom = "density")
-qqnorm(SampleMeans$SampleSize5[1:40])
-qqline(SampleMeans$SampleSize5[1:40])
-```
-</div>
-<br>
-<div class="col2">
-```{r, fig.height=3.5, fig.width=4, fig.align='center'}
-qplot(SampleMeans$SampleSize5[1:50], geom = "density")
-qqnorm(SampleMeans$SampleSize5[1:50])
-qqline(SampleMeans$SampleSize5[1:50])
-```
-</div>
-<br>
-<div class="col2">
-```{r, fig.height=3.5, fig.width=4, fig.align='center'}
-qplot(SampleMeans$SampleSize5, geom = "density")
-qqnorm(SampleMeans$SampleSize5)
-qqline(SampleMeans$SampleSize5)
-```
-</div>
-<br>
+If the number of samples is large enough, ie more than 30, then conclusions can be made about the sample means in the same way that conclusions can be made about normally distributed datasets. 
 
-# Cental Limit Theorem Z-Values
+Below is the formula for z-values in normally distributed data:
 
-If the number of samples is [large enough](##Number of Sample Means), ie more than 30, then conclusions can be made about the population data based on the sample data. 
-
-The formula for [z-values](Normal_Distribution.html#z-scores-an-example) in normally distributed data:
-
-$$z=\frac{\text{value-mean}}{\text{standard deviation}}$$
+$$z=\frac{\text{value - mean}}{\text{standard deviation}}$$
 
 <br>
 We can use this very similar formula to find z-values for sample means of population data:
 
-$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}}$$
+$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}} = \frac{\bar{X}-\mu}{\sigma_{\bar{X}}}$$
 
 <center>
 **or**
 </center>
 
-$$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard deviation}\div\sqrt{\text{sample size}}}$$
+$$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard deviation}\div\sqrt{\text{sample size}}} =  \frac{\text{sample mean}-\text{population mean}}{\text{sample standard deviation}}$$
 
 <br>
 
-## Z-Values With Sample Size Less Than 30
+## Z-Values With Sample Size Less Than 30 {#sample_size_lessthan_30}
 
 <br>
 
@@ -449,11 +431,13 @@ $$z = \frac{\bar{X}-\mu}{\sigma}$$
 
 <br>
 
-## Example Weather Data
+## Example Weather Data {#example_zscore_weather_data}
 
-So if we took a 36 days at random from the weather data, what is the probability that the mean of those 36 days would be greater than 65 degrees?
+So if we took 36 days at random from the weather data, what is the probability that the mean of those 36 days would be greater than 60 degrees?
 
 <br>
+
+
 
 The standard deviation of the sample means would be: 
 $$\sigma_{\bar{X}} =\frac{\sigma}{\sqrt{n}} = \frac{21.12321}{\sqrt{36}} = 3.520535$$
@@ -461,59 +445,86 @@ $$\sigma_{\bar{X}} =\frac{\sigma}{\sqrt{n}} = \frac{21.12321}{\sqrt{36}} = 3.520
 <center>
 OR
 </center>
-```{r, collapse=TRUE, cache=TRUE}
+```
 Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(36)
+## [1] 3.520536
 ```
 
 <br>
 
 The z-score is:
 
-$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}} = \frac{65-54.45328}{21.12321\div\sqrt{36}} = 2.995772$$
+$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}} = \frac{60-54.45328}{21.12321\div\sqrt{36}} = 1.575533$$
 
-```{r, collapse=TRUE}
-(65-54.45328)/(21.12321/sqrt(36))
 ```
+(60-54.45328)/(21.12321/sqrt(36))
+
+## [1] 1.575533
+```
+
 <br>
-And based on [Z-Score lookup table](https://en.wikipedia.org/wiki/Standard_normal_table) the probability that 36 days would have a mean greater than 65 is 1-.9987 or **0.0013**.
+And based on [Z-Score lookup table](https://en.wikipedia.org/wiki/Standard_normal_table) the probability that 36 days would have a mean greater than 60 is 1-.94295 or **0.05705**.
 <br>
 
-### Pnorm function 
+### Pnorm function {#pnorm_function}
 
 What's key in this operation is that the value for the standard deviation entered into pnorm is **not** 21.12321, but $21.12321 \div \sqrt{36}$. 
 
-```{r}
-pnorm(65, mean=54.45328, sd=(21.12321/sqrt(36)), lower.tail = FALSE)
 ```
+pnorm(60, mean=54.45328, sd=(21.12321/sqrt(36)), lower.tail = FALSE)
+## [1] 0.0575667
+```
+
+So that means there's a 5.76% percent chance that an average of 36 samples from this data set will be greater than 60 degrees. A short test in R with the weather station data set shows that this estimation holds up.
+
+```
+meanSamples <- NULL
+
+for (i in 1:1000000){
+    meanSamples <-append(meanSamples, mean(sample(Station172765_TMax$MaxTemp, 36, replace = TRUE),na.rm = TRUE))
+}
+
+table(meanSamples > 60)
+
+## FALSE  TRUE 
+## 94318  5682 
+```
+
+$$\frac{5682}{100000} = .05682$$
+
+
+
 <br>
 
-
-The actual number of sample means greater than 65 is approximately 12% which is close enough.
-```{r}
-sapply(SampleMeans[SampleSize5>65], length)/nrow(SampleMeans) 
-```
-<br>
-
-### Smaller Sample Size
+### Smaller Sample Size {#smaller_sample_size}
 
 Where it gets interesting is if we have 5 days instead of 36. Five days falls below the level at which we have to divide sigma by the root of the sample size. So...
 
 The z-score is:
 
-$$z = \frac{\bar{X}-\mu}{\sigma} = \frac{65-54.45328}{21.12321} = 0.4992953$$
+$$z = \frac{\bar{X}-\mu}{\sigma} = \frac{60-54.45328}{21.12321} = 0.2625889$$
 
-```{r, collapse=TRUE}
-(65-54.45328)/(21.12321)
+
+And based on [Z-Score lookup table](https://en.wikipedia.org/wiki/Standard_normal_table) the probability that the mean of five values will be greater than 60 is 1-.60257 or **0.39743**.
+<br>
+
+Using pnorm we get a similar answer:
+
 ```
-<br>
-And based on [Z-Score lookup table](https://en.wikipedia.org/wiki/Standard_normal_table) the probability that the mean of five values will be greater than 65 is 1-.6915 or **0.3085**.
+pnorm(60, 54.45328, 21.12321, lower.tail = FALSE)
+
+## [1] 0.3964337
+```
+
 <br>
 
 
-# Finite Population Correction Factor
+
+
+# Finite Population Correction Factor {#finite_population_correction_factor}
 
 <br>
-The Central Limit Theorem and standard error of the mean assume that samples are drawn with replacement. However almost all survey work are conducted on finite populations and samples are drawn without replacement. In these cases and especially when the sample size *n* is large compared to the population size *N* (more than 5%), the finite population correction factor is used to account for the added precision gained by sampling close to a larger percentage of the population. The effect of the FPC is that the error becomes zero when the sample size n is equal to the population size N.
+The Central Limit Theorem and standard error of the mean assume that samples are drawn with replacement. However almost all survey work are conducted on finite populations and samples are drawn without replacement. In these cases and especially when the sample size *n* is large compared to the population size *N* (more than 5%), the finite population correction (FPC) factor is used to account for the added precision gained by sampling close to a larger percentage of the population. The effect of the FPC is that the error becomes zero when the sample size n is equal to the population size N.
 
 Formula for the population correction factor:
 
@@ -538,13 +549,13 @@ $$z = \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}\cdot\sqrt{\frac{N-n}{N-1}}}$$
 
 <br>
 
-## Population Size and Population Correcton Factor
+## Population Size and Population Correction Factor {#population_size_and_pop_corr_factor}
 
-We can see the effect that this correction factor has based on the size of the population N and the sample size n. 
+This shows the effect that this correction factor has based on the size of the population N and the sample size n. 
 
 <br>
 
-### Small N
+### Small N {#small_n}
 
 If **N is small** and multiplied by a data set with a $\sigma$ of 1. 
 
@@ -559,7 +570,7 @@ So in this case 99.89% of the sample means fall below 4.
 
 <br>
 
-### Large N
+### Large N {#large_n}
 
 If **N is large** and multiplied by a data set with a $\sigma$ of 1:
 
@@ -575,7 +586,7 @@ In this case 99.69% of the sample means fall below 4.
 
 <br>
 
-### No Correction Factor
+### No Correction Factor {#no_correction_factor}
 
 This is fairly close to the standard error of the mean without a correction factor:
 
@@ -592,7 +603,8 @@ And like the previous case 99.69% of the sample means fall below 4.
 
 
 
-# EXAMPLE 
+# EXAMPLE {#example2}
+
 A large freight elevator can transport a maximum of 9800 pounds. Suppose a load of cargo containing 49 boxes must be transported via the elevator. Experience has shown that the weight of boxes of this type of cargo follows a distribution with mean μ = 205 pounds and standard deviation σ = 15 pounds. Based on this information, what is the probability that all 49 boxes can be safely loaded onto the freight elevator and transported?
 
 $$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard deviation}\div\sqrt{\text{sample size}}}$$
@@ -609,42 +621,24 @@ So there's about a 1% chance that the freight elevator won't fail.
 
 <br>
 Using the pnorm function we get:
-```{r, collapse=TRUE}
+```
 pnorm((9800/49), mean=205, sd=(15/sqrt(49)), lower.tail = TRUE)
+
+## [1] 0.009815329
 ```
 
 <br>
 <br>
 
-# Reference Websites
 
-<br>
 
-http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/
+# Simulating the Central Limit Theorem {#simulate}
 
-http://www.math.uah.edu/stat/sample/CLT.html
-
-http://atcm.mathandtech.org/EP2009/papers_full/2812009_17251.pdf
-
-http://www.math.utah.edu/~treiberg/M3074Simulation.pdf
-
-http://science.kennesaw.edu/~jdemaio/1107/Central%20Limit%20Theorem.htm
-
-http://www.stat.ucla.edu/~nchristo/introeconometrics/introecon_central_limit_theorem.pdf
-
-[Sampling Distributions and the Central Limit Theorem](http://www.cios.org/readbook/rmcs/ch10.pdf)
-
-[In Brief: Standard Deviation and Standard Error](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148365/)
-
-<br>
-
-**Simulating the Central Limit Theorem from R-bloggers**
-
-This is code from [r-bloggers](http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/) that simulates the central limit theorem. You can pick from several different distributions and then generate several plots that show the means of these distributions.
+This is code from [Quality and Innovation](https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/) which was reposted by [R-Bloggers](http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/) that simulates the central limit theorem. You can pick from several different distributions and then generate several plots that show the means of these distributions.
 
 
 
-```{r}
+```
 sdm.sim <- function(n,src.dist=NULL,param1=NULL,param2=NULL) {
    r <- 10000  # Number of replications/samples - DO NOT ADJUST
    # This produces a matrix of observations with  
@@ -674,14 +668,27 @@ sdm.sim <- function(n,src.dist=NULL,param1=NULL,param2=NULL) {
 
 For example an exponential distribution looks like this:
 
-```{r, echo=FALSE, fig.align='center', fig.height=3, fig.width=6, cache=TRUE, collapse=TRUE}
+```
 hist(rexp(100000,1))
 ```
 
+![](/portfolio/Central_Limit_Theorem_files/Central_Limit_Theorem_Rbloggers_1.png)
+
 But these plots show what the sample means for an exponential distribution look like:
-```{r}
+```
 sdm.sim(10,src.dist="E",1)
 ```
+![](/portfolio/Central_Limit_Theorem_files/Central_Limit_Theorem_Rbloggers_2.png)
 
+# Additional Sources {#additional_sources}
 
+<br>
 
+* [Sampling Distributions and Central Limit Theorem in R](http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/)
+* [The Use of R Language in the Teaching of Central Limit Theorem](http://atcm.mathandtech.org/EP2009/papers_full/2812009_17251.pdf)
+* [Simulation: Central Limit Theorem](http://www.math.utah.edu/~treiberg/M3074Simulation.pdf)
+* [UCLA: The Central Limit Theorem](http://www.stat.ucla.edu/~nchristo/introeconometrics/introecon_central_limit_theorem.pdf)
+* [Sampling Distributions and the Central Limit Theorem](http://www.cios.org/readbook/rmcs/ch10.pdf)
+* [In Brief: Standard Deviation and Standard Error](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148365/)
+
+<br>

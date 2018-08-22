@@ -72,7 +72,7 @@ enableGitInfo = false
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait-smaller.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "ian@ianmaddaus.com"
+  email = "maddaus@protonmail.com"
 #  address = "Building 1 Room 1, Stanford University, California, 90210, USA"
 #  office_hours = "Monday 10:00 to 13:00 or email for appointment"
 #  phone = "888 888 88 88"
@@ -270,25 +270,15 @@ enableGitInfo = false
   url = "#about"
   weight = 1
 
-#[[menu.main]]
-#  name = "Publications"
-#  url = "#publications_selected"
-#  weight = 2
+[[menu.main]]
+  name = "Portfolio"
+  url = "#portfolio"
+  weight = 2
 
 [[menu.main]]
   name = "Posts"
   url = "#posts"
   weight = 3
-
-#[[menu.main]]
-#  name = "Projects"
-#  url = "#projects"
-#  weight = 4
-
-#[[menu.main]]
-#  name = "Teaching"
-#  url = "#teaching"
-#  weight = 5
 
 [[menu.main]]
   name = "Contact"

@@ -4,7 +4,7 @@
 
 body {
   font-family: Optima, Candara, Calibri, Arial, sans-serif;
-
+  font-size: 0.8em;
 }
 
 a:link    { 
@@ -17,15 +17,15 @@ a:active  { color: #f6f }  /* active links    */
 
 /* Navigation bar text */
 .navbar-default {
-  font-family: Optima, Candara, Calibri, Arial, sans-serif;
-  font-weight: 100;
+  font-family: "Helvetica Neue", Optima, Candara, Calibri, Arial, sans-serif;
+  font-weight: 200;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: Optima, Candara, Calibri, Arial, sans-serif;
+  font-family: "Helvetica Neue", Optima, Candara, Calibri, Arial, sans-serif;
   font-weight: 200;
   margin-bottom: .5rem;
   line-height: 1.25;
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-default .navbar-brand {
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 200;
   font-size: 1.2em;
   color: #2b2b2b;
 }
@@ -53,4 +53,32 @@ code {
     border-radius: 2px;
     font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
     padding: 3px 3px;
+}
+
+.column-left{
+      float: left;
+      width: 33%;
+      text-align: left;
+}
+.column-center{
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+}
+.column-right{
+      float: right;
+      width: 33%;
+      text-align: right;
+}
+
+.col2 {
+
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+    columns: 2 200px;         /* number of columns and width in pixels*/
+}
+.col3 {
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+    columns: 3 100px;
 }
