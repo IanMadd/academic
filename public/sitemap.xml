@@ -124,14 +124,6 @@
     
     <url>
     
-      <loc>/portfolio/reinstalling-r-without-losing-packages/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/post/2016-02-14-hello-markdown/</loc>
       <lastmod>2016-02-14T00:00:00+00:00</lastmod>
     </url>
@@ -158,6 +150,13 @@
     
       <loc>/publication/clothing-search/</loc>
       <lastmod>2013-07-01T00:00:00-04:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/portfolio/copyofcentral_limit_theorem/</loc>
     </url>
     
   
@@ -333,7 +332,7 @@
     <url>
     
       <loc>/tags/python/</loc>
-      <lastmod>2018-07-26T00:00:00+00:00</lastmod>
+      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -342,7 +341,7 @@
     <url>
     
       <loc>/tags/python/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
+      <lastmod>2018-07-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -56,13 +56,13 @@ You may have a python project or you may use python packages that require partic
 
 Three common methods of installing python can be found here:
 
-### [python.org](python.org)
+### python.org
 
-The python.org installer can be found [here](https://www.python.org/downloads/).
+The [python.org] (python.org) installer can be found [here](https://www.python.org/downloads/).
 
 <br>
 
-### [Homebrew](https://brew.sh)
+### Homebrew
 
 First install Homebrew. The instructions are [here](https://brew.sh), or enter the following command:
 
@@ -83,9 +83,9 @@ brew install python@2
 
 <br>
 
-### [Anaconda](https://www.anaconda.com)
+### Anaconda 
 
-Anaconda is generally used for scientific and machine learning applications. 
+[Anaconda](https://www.anaconda.com) is generally used for scientific and machine learning applications. 
 
 For **Ananconda** follow installation instructions [here](https://www.anaconda.com/download/#macos).
 

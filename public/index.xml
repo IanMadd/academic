@@ -77,9 +77,9 @@
 &lt;li&gt;&lt;a href=&#34;#other-projects-may-need-specific-versions-of-python&#34;&gt;Other projects may need specific versions of python&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#installation&#34;&gt;Installation&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#python.org&#34;&gt;&lt;a href=&#34;python.org&#34; class=&#34;uri&#34;&gt;python.org&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#homebrew&#34;&gt;&lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#anaconda&#34;&gt;&lt;a href=&#34;https://www.anaconda.com&#34;&gt;Anaconda&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#python.org&#34;&gt;python.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#homebrew&#34;&gt;Homebrew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#anaconda&#34;&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#path-and-.bash_profile&#34;&gt;PATH and .bash_profile&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#path&#34;&gt;PATH&lt;/a&gt;&lt;/li&gt;
@@ -135,12 +135,12 @@
 &lt;h1&gt;Installation&lt;/h1&gt;
 &lt;p&gt;Three common methods of installing python can be found here:&lt;/p&gt;
 &lt;div id=&#34;python.org&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;a href=&#34;python.org&#34; class=&#34;uri&#34;&gt;python.org&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The python.org installer can be found &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;python.org&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&#34;#python.org-1&#34;&gt;python.org&lt;/a&gt; (python.org) installer can be found &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;homebrew&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;a href=&#34;https://brew.sh&#34;&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;Homebrew&lt;/h3&gt;
 &lt;p&gt;First install Homebrew. The instructions are &lt;a href=&#34;https://brew.sh&#34;&gt;here&lt;/a&gt;, or enter the following command:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
@@ -151,8 +151,8 @@
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;anaconda&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;&lt;a href=&#34;https://www.anaconda.com&#34;&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Anaconda is generally used for scientific and machine learning applications.&lt;/p&gt;
+&lt;h3&gt;Anaconda&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com&#34;&gt;Anaconda&lt;/a&gt; is generally used for scientific and machine learning applications.&lt;/p&gt;
 &lt;p&gt;For &lt;strong&gt;Ananconda&lt;/strong&gt; follow installation instructions &lt;a href=&#34;https://www.anaconda.com/download/#macos&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Miniconda is a stripped down version of Anaconda.&lt;/p&gt;
@@ -1203,67 +1203,81 @@ Using the pnorm function we get:&lt;/p&gt;
 
 &lt;h1 id=&#34;purpose&#34;&gt;Purpose&lt;/h1&gt;
 
-&lt;p&gt;Data tables can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing. This will explain how to:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;Data tables&lt;/a&gt; can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing. This will explain how to:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;use the &lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;data.tables&lt;/a&gt; package in R.&lt;/li&gt;
+&lt;li&gt;use the &lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;Data Table&lt;/a&gt; syntax&lt;/li&gt;
 &lt;li&gt;select data by row and column&lt;/li&gt;
+&lt;li&gt;subset data by keyed column&lt;/li&gt;
 &lt;li&gt;perform functions on subsetted data&lt;/li&gt;
-&lt;li&gt;
-&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#create&#34;&gt;Create a Data Table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#create&#34;&gt;Create a Data Table&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#fread&#34;&gt;fread&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#list_data_tables&#34;&gt;List Data Tables&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#i_j_by&#34;&gt;[i, j, by]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#i_j_by&#34;&gt;Intoduction to Data Table syntax [i, j, by]&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#dti&#34;&gt;Select rows: DT[i]&lt;/a&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#print_rows_searching_value_in_column&#34;&gt;Print rows by searching for a value in a column&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#return_rows_by_value&#34;&gt;Return Rows By Value&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#dtj&#34;&gt;Select Columns: DT[,j]&lt;/a&gt;&lt;br /&gt;
 
-&lt;ol&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#perform_functions_on_column&#34;&gt;Performing functions on a column&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#dtij&#34;&gt;Selecting Rows and Columns &lt;code&gt;DT[i,j]&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#dt_ijby&#34;&gt;Perform a function on a column by the value of another column &lt;code&gt;DT[i,j,by]&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Perform A Function On A Column By Values In Another Column From A Subset of Rows DT[i,j,by]&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#dt_jby&#34;&gt;Perform A Function On A Column By The Value Of Another Column &lt;code&gt;DT[j,by]&lt;/code&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#dt_ijby&#34;&gt;Subset Rows DT[i,j,by]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#objects_N&#34;&gt;Return The Number of Objects .N&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#modifying_data_tables&#34;&gt;Modifying Data.Tables DT[i,j := ]&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Complete Cases - removing NA rows&lt;/li&gt;
-&lt;li&gt;Using setkey() to sort by a keyed column
+&lt;li&gt;&lt;a href=&#34;#modifying_data_tables&#34;&gt;Modifying Data.Tables DT[i,j := ]&lt;/a&gt;
 
 &lt;ul&gt;
-&lt;li&gt;key()&lt;/li&gt;
-&lt;li&gt;Returning specified columns - mult()&lt;/li&gt;
-&lt;li&gt;Nomatch&lt;/li&gt;
-&lt;li&gt;Math Operations using setkey&lt;/li&gt;
-&lt;li&gt;by=.EACHI&lt;/li&gt;
-&lt;li&gt;Using setkey() on Multiple Columns&lt;/li&gt;
-&lt;li&gt;N&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#delete_columns&#34;&gt;Delete Columns&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;List&lt;/li&gt;
-&lt;li&gt;SD (Subset of Data)
+&lt;li&gt;&lt;a href=&#34;#setkey&#34;&gt;Using Setkey&lt;/a&gt;
 
 &lt;ul&gt;
-&lt;li&gt;lapply&lt;/li&gt;
-&lt;li&gt;SDcols&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#key&#34;&gt;key()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mult&#34;&gt;Returning specified rows - mult()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nomatch&#34;&gt;Nomatch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#math_operations_using_setkey&#34;&gt;Math Operations Using Setkey&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#by_eachi&#34;&gt;by=.EACHI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#setkey_multiple_columns&#34;&gt;Using Setkey on Multiple Columns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#N&#34;&gt;N&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Chaining multiple operations together&lt;/li&gt;
-&lt;li&gt;Set and looping in a data.table&lt;/li&gt;
-&lt;li&gt;Change column names using setnames()&lt;/li&gt;
-&lt;li&gt;Changing column order - setcolorder()&lt;/li&gt;
-&lt;li&gt;Unique&lt;/li&gt;
-&lt;li&gt;Additional Information (#additional_information)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list&#34;&gt;List&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sd&#34;&gt;SD (Subset of Data)&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#SD_lapply&#34;&gt;lapply&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#SDcols&#34;&gt;SDcols&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#chaining&#34;&gt;Chaining Multiple Operations Together&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#set_looping&#34;&gt;Set And Looping In A Data Table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#setnames&#34;&gt;Setnames - Change Column Names&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#setcolorder&#34;&gt;Setcolorder - Changing Column Order&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#unique&#34;&gt;Unique - Removing Duplicate Rows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#additional_sources&#34;&gt;Additional Sources&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Data Table &lt;a href=&#34;https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)&#34; target=&#34;_blank&#34;&gt;inherits&lt;/a&gt; from data frames, both are a list of vectors of the same length. The primary advantage of data tables is that they are much faster than data frames.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -1273,14 +1287,12 @@ Using the pnorm function we get:&lt;/p&gt;
 
 &lt;p&gt;Start by creating a few data tables. This tutorial will use two data tables, one called &lt;strong&gt;DT&lt;/strong&gt; with dummy data, and another called &lt;strong&gt;MTCarsDT&lt;/strong&gt; which contains the &lt;code&gt;mtcars&lt;/code&gt; dataset from the datasets package.&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;library(data.table)
+&lt;pre&gt;&lt;code&gt;&amp;gt; library(data.table)
 
 
-set.seed(45L)
+&amp;gt; set.seed(45L)
 
-DT &amp;lt;- data.table(
+&amp;gt; DT &amp;lt;- data.table(
     V1=rep(c(1,2),6),
     V2=rep(LETTERS[1:3],4),
     V3=rep(round(rnorm(4),4),3),
@@ -1293,7 +1305,7 @@ DT &amp;lt;- data.table(
     )
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT
+&lt;pre&gt;&lt;code&gt;&amp;gt; DT
 
 ##     V1 V2      V3 V4 V5 V6  V7  V8 V9
 ##  1:  1  A  0.3408  1 21  A 101 121 NA
@@ -1310,10 +1322,10 @@ DT &amp;lt;- data.table(
 ## 12:  2  C -0.7460 12 32  L 112 132  3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT &amp;lt;- data.table(mtcars)
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT &amp;lt;- data.table(mtcars)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(MTCarsDT)
+&lt;pre&gt;&lt;code&gt;&amp;gt; head(MTCarsDT)
 
 ##     mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## 1: 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
@@ -1326,11 +1338,13 @@ DT &amp;lt;- data.table(
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
+&lt;h2 id=&#34;fread&#34;&gt;fread&lt;/h2&gt;
+
 &lt;h1 id=&#34;list_data_tables&#34;&gt;Listing Data Tables&lt;/h1&gt;
 
 &lt;p&gt;The data.table package has a nice function that will list all tables in the global environment as well as their columns, and some extra information.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;tables()
+&lt;pre&gt;&lt;code&gt;&amp;gt; tables()
 
 ##      NAME     NROW NCOL MB COLS                                        
 ## [1,] DT         12    9  1 V1,V2,V3,V4,V5,V6,V7,V8,V9                  
@@ -1341,11 +1355,13 @@ DT &amp;lt;- data.table(
 ## Total: 2MB
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;i_j_by&#34;&gt;[i, j, by]&lt;/h1&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;i_j_by&#34;&gt;Intoduction to Data Table syntax [i, j, by]&lt;/h1&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Data Tables allow you to find data in them and perform operations using the following syntax: &lt;code&gt;DT[i, j, by]&lt;/code&gt;, which means, “Take DT, subset rows using &lt;code&gt;i&lt;/code&gt;, then calculate &lt;code&gt;j&lt;/code&gt; grouped by &lt;code&gt;by&lt;/code&gt;.” This is similar to SQL syntax where i corresponds to SELECT,&lt;/p&gt;
+&lt;p&gt;Data Tables allow you to find data in them and perform operations using the following syntax: &lt;code&gt;DT[i, j, by]&lt;/code&gt;, which means, “Take DT, subset rows using &lt;code&gt;i&lt;/code&gt;, then calculate &lt;code&gt;j&lt;/code&gt; grouped by &lt;code&gt;by&lt;/code&gt;.” This is similar to SQL syntax where &lt;strong&gt;i&lt;/strong&gt; corresponds to SELECT, &lt;strong&gt;j&lt;/strong&gt; corresponds to WHERE, and &lt;em&gt;by&lt;/em&gt; corresponds to GROUP BY.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -1353,21 +1369,27 @@ DT &amp;lt;- data.table(
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;To start with we&amp;rsquo;ll select rows.&lt;/p&gt;
+&lt;p&gt;To start with we&amp;rsquo;ll select rows. These operations will select:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[3]
+&lt;ul&gt;
+&lt;li&gt;the 3rd row&lt;/li&gt;
+&lt;li&gt;the 3rd through 5th rows&lt;/li&gt;
+&lt;li&gt;the 3rd and 5th through 8th rows&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[3]
 
 ##     mpg cyl disp hp drat   wt  qsec vs am gear carb
 ## 1: 22.8   4  108 93 3.85 2.32 18.61  1  1    4    1
 
-MTCarsDT[3:5]
+&amp;gt; MTCarsDT[3:5]
 
 ##     mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## 1: 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
 ## 2: 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## 3: 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
 
-MTCarsDT[c(3,5:8)]
+&amp;gt; MTCarsDT[c(3,5:8)]
 
 ##     mpg cyl  disp  hp drat   wt  qsec vs am gear carb
 ## 1: 22.8   4 108.0  93 3.85 2.32 18.61  1  1    4    1
@@ -1379,9 +1401,9 @@ MTCarsDT[c(3,5:8)]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;
-Notice that the previous command uses the combine function, c(), to list the different rows that will be printed. Without the combine function R will print the 3rd row for columns 5 through 8, like this:&lt;/p&gt;
+Notice that the previous command uses the combine function, &lt;strong&gt;c()&lt;/strong&gt;, to list the different rows that will be printed. Without the combine function R will print the 3rd row for columns 5 through 8, like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[3,5:8]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[3,5:8]
 
 ##    drat   wt  qsec vs
 ## 1: 3.85 2.32 18.61  1
@@ -1389,11 +1411,11 @@ Notice that the previous command uses the combine function, c(), to list the dif
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;print_rows_searching_value_in_column&#34;&gt;Print rows by searching for a value in a column&lt;/h2&gt;
+&lt;h2 id=&#34;return_rows_by_value&#34;&gt;Return Rows By Value&lt;/h2&gt;
 
-&lt;p&gt;Print rows with 6 cylinder cars&lt;/p&gt;
+&lt;p&gt;Return rows with 6 cylinder cars:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[cyl == 6]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[cyl == 6]
 
 ##     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## 1: 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
@@ -1405,65 +1427,122 @@ Notice that the previous command uses the combine function, c(), to list the dif
 ## 7: 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Print rows with 4 and 6 cylinder cars.&lt;/p&gt;
+&lt;p&gt;Return rows with 4 and 6 cylinder cars:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[cyl %in% c(4,6)]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[cyl %in% c(4,6)]
+
+##    gear N
+## 1:    4 4
+## 2:    3 2
+## 3:    5 1
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Print rows with cars that have 110 or 123 hp.&lt;/p&gt;
+&lt;p&gt;Return rows with cars that have 110 or 123 hp:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[hp %in% c(110,123)]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[hp %in% c(110,123)]
+
+##     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## 1: 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 2: 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 3: 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 4: 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 5: 17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;dtj&#34;&gt;Select Columns: &lt;code&gt;DT[,j]&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;dtj&#34;&gt;Return Columns: &lt;code&gt;DT[,j]&lt;/code&gt;&lt;/h1&gt;
 
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Return the hp column as a vector:&lt;/p&gt;
 
-&lt;p&gt;Print the hp column as a vector&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[,hp]
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,hp]
+## [1] 110 110 93 110 175 105 245 62 95 123 123 180 180 180 205 215 230 66 52 65  
+## [21] 97 150 150 245 175 66 91 113 264 175 335 109
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Print just the hp column as a data.table&lt;/p&gt;
+&lt;p&gt;Print the first ten rows of the hp column as a data table:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(MTCarsDT[,.(hp)])
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:10,.(hp)]
+
+##     hp
+##  1: 110
+##  2: 110
+##  3:  93
+##  4: 110
+##  5: 175
+##  6: 105
+##  7: 245
+##  8:  62
+##  9:  95
+##  10: 123
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Note that the expression &lt;code&gt;.(hp)&lt;/code&gt; is identical to &lt;code&gt;list(hp)&lt;/code&gt;, the period is equivalent to the list function.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;head(MTCarsDT[,list(hp)])
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:10,list(hp)]
+
+##     hp
+##  1: 110
+##  2: 110
+##  3:  93
+##  4: 110
+##  5: 175
+##  6: 105
+##  7: 245
+##  8:  62
+##  9:  95
+##  10: 123
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Print multiple columns as a data.table.&lt;/p&gt;
+&lt;p&gt;Print multiple columns as a data.table:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:10,.(hp, cyl)]
+
+##     hp cyl
+##  1: 110   6
+##  2: 110   6
+##  3:  93   4
+##  4: 110   6
+##  5: 175   8
+##  6: 105   6
+##  7: 245   8
+##  8:  62   4
+##  9:  95   4
+##  10: 123   6
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[,.(hp, cyl)]
+&lt;p&gt;You can also print columns by index number using &lt;code&gt;with=FALSE&lt;/code&gt;. This is a bad idea, &lt;strong&gt;see the warning below&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:5, 1:3, with=FALSE]
+
+##      mpg cyl disp
+##  1: 21.0   6  160
+##  2: 21.0   6  160
+##  3: 22.8   4  108
+##  4: 21.4   6  258
+##  5: 18.7   8  360
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[,.(hp, cyl)]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:5, c(1:3,4,6), with=FALSE]
+
+##      mpg cyl disp  hp    wt
+##  1: 21.0   6  160 110 2.620
+##  2: 21.0   6  160 110 2.875
+##  3: 22.8   4  108  93 2.320
+##  4: 21.4   6  258 110 3.215
+##  5: 18.7   8  360 175 3.440
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;You can also print columns by index using the index number and &lt;code&gt;with=FALSE&lt;/code&gt;, but this is a bad idea. See below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;head(MTCarsDT[, 1:3, with=FALSE])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;head(MTCarsDT[, c(1:3,4,6), with=FALSE])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Using &lt;code&gt;with=FALSE&lt;/code&gt; to refer to columns by index number can create errors. If you reference a column by number and then add, move, or replace columns, the code may continue to execute and may appear normal but it will return incorrect results without any warning. For this reason you should refer to columns by name rather than number.&lt;/p&gt;
+&lt;p&gt;Using &lt;code&gt;with=FALSE&lt;/code&gt; to refer to columns by index number can create errors. If you reference a column by number and then add, move, or replace columns, the code may continue to execute but it will return incorrect results without any warning. For this reason you should refer to columns by name rather than number.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1471,94 +1550,176 @@ Notice that the previous command uses the combine function, c(), to list the dif
 
 &lt;h2 id=&#34;perform_functions_on_column&#34;&gt;Performing functions on a column&lt;/h2&gt;
 
-&lt;p&gt;You can perform functions on a column.&lt;/p&gt;
+&lt;p&gt;You can execute functions on a column of data.&lt;/p&gt;
 
-&lt;p&gt;This will return the mean of the hp column:&lt;/p&gt;
+&lt;p&gt;This will return the mean of the &lt;code&gt;hp&lt;/code&gt; column:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[,mean(hp)]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[,mean(hp)]
+
+##  [1] 146.6875
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Return the mean of &lt;code&gt;hp&lt;/code&gt; and standard deviation of &lt;code&gt;mpg&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Return the mean of &lt;code&gt;hp&lt;/code&gt; and standard deviation of &lt;code&gt;mpg&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[,.(mean(hp), sd(mpg))]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[,.(mean(hp), sd(mpg))]
+
+##           V1       V2
+##  1: 146.6875 6.026948
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The same as above but the results have different names.&lt;/p&gt;
+&lt;p&gt;The same as above but the results have different names:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,.(horsepower=mean(hp), milespergallon=sd(mpg))]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[,.(horsepower=mean(hp), milespergallon=sd(mpg))]
+
+##     horsepower milespergallon
+##  1:   146.6875       6.026948
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This prints the horsepower for each row and repeats the values of the sd and mean of the hp column.&lt;/p&gt;
+&lt;p&gt;This prints the horsepower column and repeats the values of the sd and mean of the hp column. The head function prints only the first six rows. Compare this operation with next operation which selects the first six rows within the brackets.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
+&lt;pre&gt;&lt;code&gt;&amp;gt; head(MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))])
+
+##      hp    SD_HP  Mean_HP
+##  1: 110 68.56287 146.6875
+##  2: 110 68.56287 146.6875
+##  3:  93 68.56287 146.6875
+##  4: 110 68.56287 146.6875
+##  5: 175 68.56287 146.6875
+##  6: 105 68.56287 146.6875
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
+&lt;p&gt;Notice here that the numbers for standard deviation and mean are different in this function below. This returns only the mean and standard deviation for the hp column for the &lt;strong&gt;first six columns only&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:6,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
+
+##      hp    SD_HP  Mean_HP
+##  1: 110 29.08894 117.1667
+##  2: 110 29.08894 117.1667
+##  3:  93 29.08894 117.1667
+##  4: 110 29.08894 117.1667
+##  5: 175 29.08894 117.1667
+##  6: 105 29.08894 117.1667
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;&lt;br&gt;
-We can use apply on a data.table to apply a function to each column&lt;/p&gt;
+You can use &lt;code&gt;apply()&lt;/code&gt; on a data.table to apply a function to each column:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sapply(MTCarsDT, class)
-sapply(DT, mean) #returns errors if column is not numeric
+&lt;pre&gt;&lt;code&gt;&amp;gt; sapply(MTCarsDT, class)
+
+##        mpg       cyl      disp        hp      drat        wt      qsec        vs        am      gear      carb 
+##  &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;br&gt;
-The curly braces allow multiple functions. Notice that the separate functions must be placed on separate lines or be separated by semicolons.&lt;/p&gt;
+&lt;p&gt;Notice that this returns errors if it cannot perform a function on a column:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[, {print(disp); plot(mpg, wt); sapply(MTCarsDT, mean)}]
+&lt;pre&gt;&lt;code&gt;&amp;gt; sapply(DT, mean)
+
+##          V1         V2         V3         V4         V5         V6         V7          
+##    1.500000         NA  -0.337575   6.500000  26.500000         NA 106.500000  
+##          V8         V9
+##  126.500000         NA
+##  Warning messages:
+##  1: In mean.default(X[[i]], ...) :
+##    argument is not numeric or logical: returning NA
+##  2: In mean.default(X[[i]], ...) :
+##    argument is not numeric or logical: returning NA
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;dtij&#34;&gt;Selecting Rows and Columns &lt;code&gt;DT[i,j]&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;The curly braces allow multiple functions. Notice that the separate functions must be placed on separate lines or be separated by semicolons.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[, {print(disp); plot(mpg, wt); sapply(MTCarsDT, mean)}]
+
+##   [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8 275.8 
+##  [14] 275.8 472.0 460.0 440.0  78.7  75.7 71.1 120.1 318.0 304.0 350.0 400.0  
+##  [27] 79.0 120.3  95.1 351.0 145.0 301.0 121.0
+##         mpg        cyl       disp         hp       drat         wt       qsec         
+##   20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750    
+##          vs         am       gear       carb 
+##    0.437500   0.406250   3.687500   2.812500 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;/portfolio/Data_Tables_files/MTCarsDT_plot.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
+&lt;h1 id=&#34;dtij&#34;&gt;Selecting Rows and Columns &lt;code&gt;DT[i,j]&lt;/code&gt;&lt;/h1&gt;
+
 &lt;p&gt;Print rows 1:5 but only the hp, weight, and mpg columns.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[1:5, .(hp,wt,mpg)]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:5, .(hp,wt,mpg)]
+
+##      hp    wt  mpg
+##  1: 110 2.620 21.0
+##  2: 110 2.875 21.0
+##  3:  93 2.320 22.8
+##  4: 110 3.215 21.4
+##  5: 175 3.440 18.7
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Return cylinders, hp, mean hp and mpg for 6 cylinder cars.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[cyl == 6,.(cyl,hp,MeanHorsepower = mean(hp),mpg)]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[cyl == 6,.(cyl,hp,MeanHorsepower = mean(hp),mpg)]
+
+##     cyl  hp MeanHorsepower  mpg
+##  1:   6 110       122.2857 21.0
+##  2:   6 110       122.2857 21.0
+##  3:   6 110       122.2857 21.4
+##  4:   6 105       122.2857 18.1
+##  5:   6 123       122.2857 19.2
+##  6:   6 123       122.2857 17.8
+##  7:   6 175       122.2857 19.7
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Note that the mean horsepower is &lt;em&gt;only&lt;/em&gt; for 6 cylinder cars and doesn&amp;rsquo;t include 4 and 8 cylinder cars.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;MTCarsDT[,mean(hp)]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[,mean(hp)]
+
+##  [1] 146.6875
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;dtjby&#34;&gt;Perform a function on a column by the value of another column &lt;code&gt;DT[,j,by]&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;dt_jby&#34;&gt;Perform A Function On A Column By The Value Of Another Column &lt;code&gt;DT[,j,by]&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;&lt;br&gt;
-This gives the mean horsepower by the number of cylinders.&lt;/p&gt;
+This gives the mean horsepower for cars with each number of cylinders.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,.(MeanHP = mean(hp)), by=cyl]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[,.(MeanHP = mean(hp)), by=cyl]
+
+##     cyl    MeanHP
+##  1:   6 122.28571
+##  2:   4  82.63636
+##  3:   8 209.21429
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This will give mean time in seconds for &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt; mile race based on both gears and cylinders.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
+
+##     cyl gear MeanQuarterMile
+##  1:   6    4         17.6700
+##  2:   4    4         19.6125
+##  3:   6    3         19.8300
+##  4:   8    3         17.1425
+##  5:   4    3         20.0100
+##  6:   4    5         16.8000
+##  7:   8    5         14.5500
+##  8:   6    5         15.5000
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;dt_ijby&#34;&gt;Perform A Function On A Column By Values In Another Column From A Subset of Rows &lt;code&gt;DT[i,j,by]&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;This gives the mean horsepower of the first ten cars by the number of cylinders.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MTCarsDT[1:10,.(mean_hp = mean(hp)), by=cyl]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dt_ijby&#34;&gt;Subset of Rows &lt;code&gt;DT[i,j,by]&lt;/code&gt;&lt;/h2&gt;
 
 &lt;p&gt;This will give the mean hp for cars with 4 gears grouped by the number cylinders.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
+
+##     cyl Mean_HP
+##  1:   6   116.5
+##  2:   4    76.0
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;objects_N&#34;&gt;Count The Number of Objects &lt;code&gt;.N&lt;/code&gt;&lt;/h1&gt;
@@ -1572,7 +1733,7 @@ This gives the mean horsepower by the number of cylinders.&lt;/p&gt;
 ## [1] 32
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This returns a count of the number of cars grouped by the number of gears they might have.&lt;/p&gt;
+&lt;p&gt;This returns a count of the number of cars grouped by the number of gears they might have:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;MTCarsDT[,.N, by=gear]
 
@@ -1592,432 +1753,713 @@ This gives the mean horsepower by the number of cylinders.&lt;/p&gt;
 ##  3:    5 1
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This also works.&lt;/p&gt;
+&lt;p&gt;This performs the same function:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;MTCarsDT[,table(gear)]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[cyl == 6,table(gear)]
 
 ##  gear
 ##   3  4  5 
-##  15 12  5 
+##   2  4  1 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;modifying_data_tables&#34;&gt;Modifying Data.Tables &lt;code&gt;DT[i,j := ]&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;modifying_data_tables&#34;&gt;Modify Data Tables &lt;code&gt;DT[i,j := ]&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;:=&lt;/code&gt; operator updates columns and does so invisibly. The := operator makes the assignment operator (&lt;code&gt;DT &amp;lt;- DT[.....]&lt;/code&gt;) unnecessary because it is significantly faster than the assignment operator. &lt;a href=&#34;https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D&#34; target=&#34;_blank&#34;&gt;For more on :=&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;:=&lt;/code&gt; operator updates columns and does so invisibly, that is to say when you use &lt;code&gt;:=&lt;/code&gt; it doesn&amp;rsquo;t print a result unless you explicitly tell it to. The := operator makes the assignment operator (&lt;code&gt;DT &amp;lt;- DT[.....]&lt;/code&gt;) unnecessary because it is significantly faster than the assignment operator. &lt;a href=&#34;https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D&#34; target=&#34;_blank&#34;&gt;For more on :=&lt;/a&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[,V8]
+&lt;pre&gt;&lt;code&gt;DT[,V8]
+
+## [1] 121 122 123 124 125 126 127 128 129 130 131 132
+
+
+DT[, V8 := 1:12]
+DT[, V8]
+
+## [1]  1  2  3  4  5  6  7  8  9 10 11 12
 
 DT[, V8 := round(exp(V3),2)]
-
 DT[,V8]
+
+## [1] 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Replace NA&amp;rsquo;s in V9 column with 0&lt;/p&gt;
+&lt;p&gt;Replace NA&amp;rsquo;s in V9 column with 0:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[,V9]
+&lt;pre&gt;&lt;code&gt;DT[,V9]
+
+## [1] NA  1  2  3 NA  1  2  3 NA  1  2  3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[is.na(V9), V9 := 0]
-DT[1:5]
+&lt;pre&gt;&lt;code&gt;DT[is.na(V9), V9 := 0]
+DT[, V9]
+
+## [1] 0 1 2 3 0 1 2 3 0 1 2 3
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Columns V6 and V7 are updated with the results of the functions after the := operator.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[,.(V6,V7)]
+&lt;pre&gt;&lt;code&gt;DT[,.(V6,V7)]
+
+##     V6  V7
+##  1:  A 101
+##  2:  B 102
+##  3:  C 103
+##  4:  D 104
+##  5:  E 105
+##  6:  F 106
+##  7:  G 107
+##  8:  H 108
+##  9:  I 109
+## 10:  J 110
+## 11:  K 111
+## 12:  L 112
+
 DT[, c(&amp;quot;V6&amp;quot;,&amp;quot;V7&amp;quot;) := .(LETTERS [3:5], round(exp(V1),2))]
+
 DT[,.(V6,V7)]
+
+##    V6   V7
+##  1:  C 2.72
+##  2:  D 7.39
+##  3:  E 2.72
+##  4:  C 7.39
+##  5:  D 2.72
+##  6:  E 7.39
+##  7:  C 2.72
+##  8:  D 7.39
+##  9:  E 2.72
+## 10:  C 7.39
+## 11:  D 2.72
+## 12:  E 7.39
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Adding brackets (&lt;code&gt;[]&lt;/code&gt;) to the end of the operation will print the result automatically.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[, c(&amp;quot;V6&amp;quot;, &amp;quot;V7&amp;quot;) := .(LETTERS [3:5], round(exp(V1),2))][]
+&lt;pre&gt;&lt;code&gt;DT[, c(&amp;quot;V6&amp;quot;, &amp;quot;V7&amp;quot;) := .(LETTERS [3:5], round(exp(V1),2))][]
+
+##     V1 V2      V3 V4 V5 V6   V7 V8 V9
+##  1:  1  A  0.6581  1 21  C 2.72  1  0
+##  2:  2  B -1.4012  2 22  D 7.39  2  1
+##  3:  1  C -1.0002  3 23  E 2.72  3  2
+##  4:  2  A  0.3930  4 24  C 7.39  4  3
+##  5:  1  B  0.6581  5 25  D 2.72  5  0
+##  6:  2  C -1.4012  6 26  E 7.39  6  1
+##  7:  1  A -1.0002  7 27  C 2.72  7  2
+##  8:  2  B  0.3930  8 28  D 7.39  8  3
+##  9:  1  C  0.6581  9 29  E 2.72  9  0
+## 10:  2  A -1.4012 10 30  C 7.39 10  1
+## 11:  1  B -1.0002 11 31  D 2.72 11  2
+## 12:  2  C  0.3930 12 32  E 7.39 12  3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This deletes the V1 column&lt;/p&gt;
+&lt;h2 id=&#34;delete_columns&#34;&gt;Delete Columns&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[, V1 := NULL][]
+&lt;p&gt;Delete the V1 column:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DT[, V1 := NULL][]
+
+    V2      V3 V4 V5 V6   V7 V8 V9
+ 1:  A  0.6581  1 21  C 2.72  1  0
+ 2:  B -1.4012  2 22  D 7.39  2  1
+ 3:  C -1.0002  3 23  E 2.72  3  2
+ 4:  A  0.3930  4 24  C 7.39  4  3
+ 5:  B  0.6581  5 25  D 2.72  5  0
+ 6:  C -1.4012  6 26  E 7.39  6  1
+ 7:  A -1.0002  7 27  C 2.72  7  2
+ 8:  B  0.3930  8 28  D 7.39  8  3
+ 9:  C  0.6581  9 29  E 2.72  9  0
+10:  A -1.4012 10 30  C 7.39 10  1
+11:  B -1.0002 11 31  D 2.72 11  2
+12:  C  0.3930 12 32  E 7.39 12  3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;And this deletes V7 and V8&lt;/p&gt;
+&lt;p&gt;Delete the V7 and V8 columns:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[, c(&amp;quot;V7&amp;quot;,&amp;quot;V8&amp;quot;) := NULL][]
+&lt;pre&gt;&lt;code&gt;DT[, c(&amp;quot;V7&amp;quot;,&amp;quot;V8&amp;quot;) := NULL][]
+
+##     V2      V3 V4 V5 V6 V9
+##  1:  A -0.9712  1 21  C  0
+##  2:  B  0.8338  2 22  D  1
+##  3:  C  0.2974  3 23  E  2
+##  4:  A  0.9116  4 24  C  3
+##  5:  B -0.9712  5 25  D  0
+##  6:  C  0.8338  6 26  E  1
+##  7:  A  0.2974  7 27  C  2
+##  8:  B  0.9116  8 28  D  3
+##  9:  C -0.9712  9 29  E  0
+## 10:  A  0.8338 10 30  C  1
+## 11:  B  0.2974 11 31  D  2
+## 12:  C  0.9116 12 32  E  3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Find the values in column V2 = A and assign X to them.&lt;/p&gt;
+&lt;p&gt;Find the rows in column V2 that are equal to &lt;strong&gt;A&lt;/strong&gt; and assign X to them:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[V2 == &amp;quot;A&amp;quot;, V2 := &amp;quot;X&amp;quot;][]
+&lt;pre&gt;&lt;code&gt;DT[V2 == &amp;quot;A&amp;quot;, V2 := &amp;quot;X&amp;quot;][]
+
+##     V2      V3 V4 V5 V6 V9
+##  1:  X -0.9712  1 21  C  0
+##  2:  B  0.8338  2 22  D  1
+##  3:  C  0.2974  3 23  E  2
+##  4:  X  0.9116  4 24  C  3
+##  5:  B -0.9712  5 25  D  0
+##  6:  C  0.8338  6 26  E  1
+##  7:  X  0.2974  7 27  C  2
+##  8:  B  0.9116  8 28  D  3
+##  9:  C -0.9712  9 29  E  0
+## 10:  X  0.8338 10 30  C  1
+## 11:  B  0.2974 11 31  D  2
+## 12:  C  0.9116 12 32  E  3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Add columns V7 and V8 back.&lt;/p&gt;
+&lt;p&gt;Add columns V7 and V8 back:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[,c(&amp;quot;V7&amp;quot;,&amp;quot;V8&amp;quot;) := .(101:112,121:132)][]
+&lt;pre&gt;&lt;code&gt;DT[,c(&amp;quot;V7&amp;quot;,&amp;quot;V8&amp;quot;) := .(101:112,121:132)][]
+
+##     V2      V3 V4 V5 V6 V9  V7  V8
+##  1:  X -0.9712  1 21  C  0 101 121
+##  2:  B  0.8338  2 22  D  1 102 122
+##  3:  C  0.2974  3 23  E  2 103 123
+##  4:  X  0.9116  4 24  C  3 104 124
+##  5:  B -0.9712  5 25  D  0 105 125
+##  6:  C  0.8338  6 26  E  1 106 126
+##  7:  X  0.2974  7 27  C  2 107 127
+##  8:  B  0.9116  8 28  D  3 108 128
+##  9:  C -0.9712  9 29  E  0 109 129
+## 10:  X  0.8338 10 30  C  1 110 130
+## 11:  B  0.2974 11 31  D  2 111 131
+## 12:  C  0.9116 12 32  E  3 112 132
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;complete-cases-removing-na-rows&#34;&gt;Complete Cases - removing NA rows&lt;/h1&gt;
-
-&lt;p&gt;We can use &lt;code&gt;complete cases&lt;/code&gt; to delete all rows with NA values from any column. Complete cases is not part of the data.table package, but it is handy.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-First I&amp;rsquo;ll change the V8 column to include some NA&amp;rsquo;s, then delete all those rows with NA&amp;rsquo;s.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[,&amp;quot;V8&amp;quot; := rep(c(NA,1,2,3), 3)][]
-DT &amp;lt;- DT[complete.cases(DT)]
-head(DT)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;using-setkey-to-sort-by-a-keyed-column&#34;&gt;Using &lt;code&gt;setkey()&lt;/code&gt; to sort by a keyed column&lt;/h1&gt;
+&lt;h1 id=&#34;setkey&#34;&gt;Using Setkey&lt;/h1&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Setkey does two things:&lt;/p&gt;
+&lt;p&gt;Setkey does three things:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;It reorders the rows of the data.table by the keyed column in increasing order.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;It marks the keyed column in the data.table.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;It allows us to easily search through that column.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It allows you to easily search through that column.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;First, this operation keys the V2 column in this Data Table.&lt;/p&gt;
+&lt;p&gt;First, this operation keys the V2 column in this Data Table. Notice that it will sort it into alphabetical order by the keyed column.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;setkey(DT,V2)
+&lt;pre&gt;&lt;code&gt;setkey(DT,V2)
 DT
+
+##     V2      V3 V4 V5 V6 V9  V7  V8
+##  1:  B -0.0486  2 22  D  1 102 122
+##  2:  B  0.4519  5 25  D  0 105 125
+##  3:  B  0.6997  8 28  D  3 108 128
+##  4:  B -0.2843 11 31  D  2 111 131
+##  5:  C -0.2843  3 23  E  2 103 123
+##  6:  C -0.0486  6 26  E  1 106 126
+##  7:  C  0.4519  9 29  E  0 109 129
+##  8:  C  0.6997 12 32  E  3 112 132
+##  9:  X  0.4519  1 21  C  0 101 121
+## 10:  X  0.6997  4 24  C  3 104 124
+## 11:  X -0.2843  7 27  C  2 107 127
+## 12:  X -0.0486 10 30  C  1 110 130
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;We can search through a keyed column quite easily.&lt;/p&gt;
+&lt;p&gt;Put the search term in quotes to search through a keyed column:&lt;/p&gt;
 
-&lt;p&gt;If only one column has been keyed we can search the keyed column and display all rows that match the search.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DT[&amp;quot;B&amp;quot;]
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setkey(DT,V2)
-DT[&amp;quot;B&amp;quot;]
+##    V2      V3 V4 V5 V6 V9  V7  V8
+## 1:  B -0.0486  2 22  D  1 102 122
+## 2:  B  0.4519  5 25  D  0 105 125
+## 3:  B  0.6997  8 28  D  3 108 128
+## 4:  B -0.2843 11 31  D  2 111 131
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We can also search for two values in the keyed column.&lt;/p&gt;
+&lt;p&gt;Use the combine function to search for two terms:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DT[c(&amp;quot;B&amp;quot;, &amp;quot;X&amp;quot;)]
+
+##   V2      V3 V4 V5 V6 V9  V7  V8
+## 1:  B -0.0486  2 22  D  1 102 122
+## 2:  B  0.4519  5 25  D  0 105 125
+## 3:  B  0.6997  8 28  D  3 108 128
+## 4:  B -0.2843 11 31  D  2 111 131
+## 5:  X  0.4519  1 21  C  0 101 121
+## 6:  X  0.6997  4 24  C  3 104 124
+## 7:  X -0.2843  7 27  C  2 107 127
+## 8:  X -0.0486 10 30  C  1 110 130
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[c(&amp;quot;B&amp;quot;, &amp;quot;X&amp;quot;)]
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;key&#34;&gt;key()&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;key()&lt;/code&gt; will tell us which column, if any, are set as the keyed column.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;key()&lt;/code&gt; indicates which column, if any, are set as the keyed column.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;key(DT)
+&lt;pre&gt;&lt;code&gt;key(DT)
+
+## [1] &amp;quot;V2&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;haskey()&lt;/code&gt; will return TRUE or FALSE if a data.table has a key assigned.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;haskey(MTCarsDT)
+&lt;pre&gt;&lt;code&gt;haskey(MTCarsDT)
+
+## [1] FALSE
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;And our old friend &lt;code&gt;tables()&lt;/code&gt; will also tell us any keyed columns in any data.table in the global environment.&lt;/p&gt;
+&lt;p&gt;The last column returned by &lt;code&gt;tables()&lt;/code&gt; will also indicate if any data tables have keyed columns in the global environment.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tables()
+&lt;pre&gt;&lt;code&gt;tables()
+
+       NAME NROW NCOL MB                        COLS KEY
+1:       DT   12    8  0       V2,V3,V4,V5,V6,V9,...  V2
+2: MTCarsDT   32   11  0 mpg,cyl,disp,hp,drat,wt,...    
+Total: 0MB
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;returning-specified-columns-mult&#34;&gt;Returning specified columns - mult()&lt;/h2&gt;
+&lt;h2 id=&#34;mult&#34;&gt;Returning specified rows - mult()&lt;/h2&gt;
 
-&lt;p&gt;The &lt;code&gt;mult&lt;/code&gt; command returns the row specified. The options are &lt;em&gt;first&lt;/em&gt;, &lt;em&gt;last&lt;/em&gt; and &lt;em&gt;all&lt;/em&gt;. All is the default.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;mult&lt;/code&gt; command returns the row specified. The options are &lt;em&gt;first&lt;/em&gt;, &lt;em&gt;last&lt;/em&gt; and &lt;em&gt;all&lt;/em&gt;. All is the default:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;DT[&amp;quot;X&amp;quot;, mult=&amp;quot;first&amp;quot;]
+&lt;pre&gt;&lt;code&gt;DT[&amp;quot;X&amp;quot;, mult=&amp;quot;first&amp;quot;]
+
+##    V2     V3 V4 V5 V6 V9  V7  V8
+## 1:  X 0.4519  1 21  C  0 101 121
+
 DT[&amp;quot;X&amp;quot;, mult=&amp;quot;last&amp;quot;]
+
+##    V2      V3 V4 V5 V6 V9  V7  V8
+## 1:  X -0.0486 10 30  C  1 110 130
+
 DT[&amp;quot;X&amp;quot;, mult=&amp;quot;all&amp;quot;]
+
+##    V2      V3 V4 V5 V6 V9  V7  V8
+## 1:  X  0.4519  1 21  C  0 101 121
+## 2:  X  0.6997  4 24  C  3 104 124
+## 3:  X -0.2843  7 27  C  2 107 127
+## 4:  X -0.0486 10 30  C  1 110 130
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;nomatch&#34;&gt;Nomatch&lt;/h2&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
 &lt;p&gt;If you search for a value that doesn&amp;rsquo;t exist the data table will return with an NA row.&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DT[&amp;quot;D&amp;quot;]
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[c(&amp;quot;X&amp;quot;, &amp;quot;D&amp;quot;)]
+##    V2      V3 V4 V5   V6 V9  V7  V8
+## 1:  X  0.4519  1 21    C  0 101 121
+## 2:  X  0.6997  4 24    C  3 104 124
+## 3:  X -0.2843  7 27    C  2 107 127
+## 4:  X -0.0486 10 30    C  1 110 130
+## 5:  D      NA NA NA &amp;lt;NA&amp;gt; NA  NA  NA
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;However you can add the &lt;strong&gt;nomatch&lt;/strong&gt; command and it won&amp;rsquo;t include the NA row.&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DT[c(&amp;quot;X&amp;quot;, &amp;quot;D&amp;quot;), nomatch=0]
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[c(&amp;quot;X&amp;quot;, &amp;quot;D&amp;quot;), nomatch=0]
+##    V2      V3 V4 V5   V6 V9  V7  V8
+## 1:  X  0.4519  1 21    C  0 101 121
+## 2:  X  0.6997  4 24    C  3 104 124
+## 3:  X -0.2843  7 27    C  2 107 127
+## 4:  X -0.0486 10 30    C  1 110 130
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;math-operations-using-setkey&#34;&gt;Math Operations using setkey&lt;/h2&gt;
+&lt;h2 id=&#34;math_operations_using_setkey&#34;&gt;Math Operations Using Setkey&lt;/h2&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Now we can perform specific operations on these rows that have been keyed. Like getting the mean hp for 6 cylinder cars.&lt;/p&gt;
+&lt;p&gt;Setkey allows you to perform operations on rows that have been keyed. This will get the mean hp for 6 cylinder cars and the mean horsepower for 4 and 6 cylinder cars.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setkey(MTCarsDT, cyl)
+&lt;pre&gt;&lt;code&gt;setkey(MTCarsDT, cyl)
 MTCarsDT[.(6), mean(hp)]
+
+## [1] 122.2857
+
+MTCarsDT[.(c(4, 6)), mean(hp)]
+
+## [1] 98.05556
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;And we can return mean hp for both 4 and 6 cylinder cars&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;by_eachi&#34;&gt;by=.EACHI&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.(c(4, 6)), mean(hp)]
+&lt;p&gt;To return the mean &lt;strong&gt;hp&lt;/strong&gt; for 4 and 6 cylinder cars separately use the &lt;code&gt;by=.EACHI&lt;/code&gt; command. This will perform the same operation separately for each value in the keyed column. Notice that numerical data requires the list command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MTCarsDT[.(c(4,6)), mean(hp), by=.EACHI]
+
+##    cyl        V1
+## 1:   4  82.63636
+## 2:   6 122.28571
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;by-eachi&#34;&gt;by=.EACHI&lt;/h2&gt;
+&lt;h2 id=&#34;setkey_multiple_columns&#34;&gt;Using setkey() on Multiple Columns&lt;/h2&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;You can key multiple columns, for example the cylinder and gear columns.&lt;/p&gt;
 
-&lt;p&gt;But what if we want the mean hp for 6 cylinder cars and the mean hp for 4 cylinder cars returned separately. Use the &lt;code&gt;by.=EACHI&lt;/code&gt; command which will perform same operation separately for each entered value in the keyed column. For keyed columns that are characater data we can just enter a command like this example from DT:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setkey(DT, V2)
-DT[c(&amp;quot;X&amp;quot;, &amp;quot;B&amp;quot;), mean(V5), by=.EACHI]
+&lt;pre&gt;&lt;code&gt;setkey(MTCarsDT, cyl, gear)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This however returns an error:&lt;/p&gt;
+&lt;p&gt;And then print the rows with 6 cylinders and 5 gears:&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;
-&lt;code&gt;
-MTCarsDT[c(4, 6), mean(hp), by=.EACHI]
-&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MTCarsDT[.(6,5)]
 
-&lt;p&gt;&lt;br&gt;
-The problem is that when subsetting a keyed column that has integer data, the data.table syntax assumes that &lt;code&gt;MTCarsDT[c(4, 6), mean(hp), by=.EACHI]&lt;/code&gt; is referring to the 4th and 6th rows, not to all 4 cylinder and 6 cylinder cars.&lt;/p&gt;
-
-&lt;p&gt;For example this operation gives the mean of rows 4 and 6.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[c(4, 6), mean(hp)]
+##     mpg cyl  disp  hp drat    wt qsec vs am gear carb
+## 1: 19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Or 6 cylinders and 4 or 5 gears:&lt;/p&gt;
 
-&lt;p&gt;The solution is to put the &lt;code&gt;c(4,6)&lt;/code&gt; into a list (see &lt;a href=&#34;#list&#34;&gt;List&lt;/a&gt; below) which works like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MTCarsDT[.(6,c(4,5))]
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.(c(4, 6)), mean(hp), by=.EACHI]
+##     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## 1: 21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 2: 21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 3: 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 4: 17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## 5: 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;And then return the mean hp for 4 cylinder 4 gear cars and for 4 cylinder 5 gear cars:&lt;/p&gt;
 
-&lt;p&gt;So while this works with character data:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MTCarsDT[.(4, c(4,5)), mean(hp), by=.EACHI]
 
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;DT[c(&amp;quot;X&amp;quot;, &amp;quot;B&amp;quot;), mean(V5), by=.EACHI]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A list must be used for integer data:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;MTCarsDT[.(c(4, 6)), mean(hp), by=.EACHI]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-Notice also that I used this same syntax above in &lt;a href=&#34;#math-operations-using-setkey&#34;&gt;Math Operations using setkey&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;using-setkey-on-multiple-columns&#34;&gt;Using setkey() on Multiple Columns&lt;/h2&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;We can key multiple columns, for example the cylinder and gear columns.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setkey(MTCarsDT, cyl, gear)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-And then print the rows with 4 cylinders and 5 gears&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.(4,5)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-Or 4 cylinders and 4 or 5 gears&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.(4,c(4,5))]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-And then return the mean hp for 4 cylinder 4 gear cars and for 4 cylinder 5 gear cars.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.(4, c(4,5)), mean(hp), by=.EACHI]
+##    cyl gear  V1
+## 1:   4    4  76
+## 2:   4    5 102
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;n&#34;&gt;N&lt;/h1&gt;
+&lt;h1 id=&#34;N&#34;&gt;N&lt;/h1&gt;
 
-&lt;p&gt;&lt;br&gt;
-&lt;code&gt;.N&lt;/code&gt; displays the last row.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.N&lt;/code&gt; displays the last row.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.N]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[.N]
+
+##    mpg cyl disp  hp drat   wt qsec vs am gear carb
+## 1:  15   8  301 335 3.54 3.57 14.6  0  1    5    8
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;br&gt;
-&lt;code&gt;.N-1&lt;/code&gt; displays the penultimate row and so on.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.N-1&lt;/code&gt; displays the penultimate row and so on.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;MTCarsDT[.N-1]
-MTCarsDT[.N-4]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[.N-4]
+
+##     mpg cyl disp  hp drat    wt qsec vs am gear carb
+## 1: 15.2   8  304 150 3.15 3.435 17.3  0  0    3    2
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;
 but &lt;code&gt;,.N&lt;/code&gt; displays the number of rows&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,.N]
+
+## [1] 32
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This can be handy if you want to display the largest value of a keyed row. For example, this will give the heaviest vehicle followed by the heaviest vehicles sorted by the number of cylinders.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setkey(MTCarsDT, wt)
+&lt;pre&gt;&lt;code&gt;setkey(MTCarsDT, wt)
 MTCarsDT[, wt[.N]]
+
+## [1] 5.424
+
 MTCarsDT[, wt[.N], by=cyl]
+
+##    cyl    V1
+## 1:   4 3.190
+## 2:   6 3.460
+## 3:   8 5.424
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;list&#34;&gt;List&lt;/h1&gt;
 
 &lt;p&gt;The &lt;code&gt;.()&lt;/code&gt; command is the same as &lt;code&gt;list()&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&#34;col2&#34;&gt;
-```{r}
-head(MTCarsDT[,.(cyl, disp)])
-head(MTCarsDT[,list(cyl, disp)])
-```
-&lt;/div&gt;
+&lt;p&gt;The list command ensures that a data table is returned and not a vector.&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## MTCarsDT[1:5,.(cyl, disp)]
+##    cyl  disp
+## 1:   4  95.1
+## 2:   4  75.7
+## 3:   4  71.1
+## 4:   4  79.0
+## 5:   4 120.3
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We can use this list function to get the mean hp for each combination of gears and cylinders&lt;/p&gt;
+&lt;p&gt;Use the list function in the to return the mean horsepower for each combination of gears and cylinders:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,mean(hp),.(cyl,gear)]
+&lt;pre&gt;&lt;code&gt;MTCarsDT[,mean(hp),.(cyl,gear)]
+
+##    cyl gear       V1
+## 1:   4    5 102.0000
+## 2:   4    4  76.0000
+## 3:   4    3  97.0000
+## 4:   6    4 116.5000
+## 5:   6    5 175.0000
+## 6:   8    5 299.5000
+## 7:   6    3 107.5000
+## 8:   8    3 194.1667
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;sd-ie-s-ubset-of-d-ata&#34;&gt;SD - ie &lt;strong&gt;S&lt;/strong&gt;ubset of &lt;strong&gt;D&lt;/strong&gt;ata&lt;/h1&gt;
+&lt;h1 id=&#34;sd&#34;&gt;SD (&lt;strong&gt;S&lt;/strong&gt;ubset of &lt;strong&gt;D&lt;/strong&gt;ata)&lt;/h1&gt;
+
+&lt;p&gt;SD stands for &lt;strong&gt;Subset&lt;/strong&gt; of &lt;strong&gt;Data&lt;/strong&gt;. SD will create a subsetted data table grouped by the &lt;code&gt;by&lt;/code&gt; statement.&lt;/p&gt;
+
+&lt;p&gt;This will return the MTCarsDT sorted first by number of cylinders and then by horsepower:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; setkey(MTCarsDT, hp)
+&amp;gt; MTCarsDT[,.SD, by=cyl]
+
+##    cyl  mpg  disp  hp drat    wt  qsec vs am gear carb
+##  1:   4 30.4  75.7  52 4.93 1.615 18.52  1  1    4    2
+##  2:   4 24.4 146.7  62 3.69 3.190 20.00  1  0    4    2
+##  3:   4 33.9  71.1  65 4.22 1.835 19.90  1  1    4    1
+##  4:   4 27.3  79.0  66 4.08 1.935 18.90  1  1    4    1
+##  5:   4 32.4  78.7  66 4.08 2.200 19.47  1  1    4    1
+##  6:   4 26.0 120.3  91 4.43 2.140 16.70  0  1    5    2
+##  7:   4 22.8 108.0  93 3.85 2.320 18.61  1  1    4    1
+##  8:   4 22.8 140.8  95 3.92 3.150 22.90  1  0    4    2
+##  9:   4 21.5 120.1  97 3.70 2.465 20.01  1  0    3    1
+## 10:   4 21.4 121.0 109 4.11 2.780 18.60  1  1    4    2
+## 11:   4 30.4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## 12:   6 18.1 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 13:   6 21.4 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 14:   6 21.0 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 15:   6 21.0 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 16:   6 19.2 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 17:   6 17.8 167.6 123 3.92 3.440 18.90  1  0    4    4
+## 18:   6 19.7 145.0 175 3.62 2.770 15.50  0  1    5    6
+## 19:   8 15.5 318.0 150 2.76 3.520 16.87  0  0    3    2
+## 20:   8 15.2 304.0 150 3.15 3.435 17.30  0  0    3    2
+## 21:   8 19.2 400.0 175 3.08 3.845 17.05  0  0    3    2
+## 22:   8 18.7 360.0 175 3.15 3.440 17.02  0  0    3    2
+## 23:   8 16.4 275.8 180 3.07 4.070 17.40  0  0    3    3
+## 24:   8 17.3 275.8 180 3.07 3.730 17.60  0  0    3    3
+## 25:   8 15.2 275.8 180 3.07 3.780 18.00  0  0    3    3
+## 26:   8 10.4 472.0 205 2.93 5.250 17.98  0  0    3    4
+## 27:   8 10.4 460.0 215 3.00 5.424 17.82  0  0    3    4
+## 28:   8 14.7 440.0 230 3.23 5.345 17.42  0  0    3    4
+## 29:   8 14.3 360.0 245 3.21 3.570 15.84  0  0    3    4
+## 30:   8 13.3 350.0 245 3.73 3.840 15.41  0  0    3    4
+## 31:   8 15.8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## 32:   8 15.0 301.0 335 3.54 3.570 14.60  0  1    5    8
+##     cyl  mpg  disp  hp drat    wt  qsec vs am gear carb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using .SD with print will return all of the data above but group the data by the number of cylinders. This works even if there is no keyed column. Notice that the cylinders column is missing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[,print(.SD), by = cyl]
+
+##      mpg  disp  hp drat    wt  qsec vs am gear carb
+##  1: 30.4  75.7  52 4.93 1.615 18.52  1  1    4    2
+##  2: 24.4 146.7  62 3.69 3.190 20.00  1  0    4    2
+##  3: 33.9  71.1  65 4.22 1.835 19.90  1  1    4    1
+##  4: 27.3  79.0  66 4.08 1.935 18.90  1  1    4    1
+##  5: 32.4  78.7  66 4.08 2.200 19.47  1  1    4    1
+##  6: 26.0 120.3  91 4.43 2.140 16.70  0  1    5    2
+##  7: 22.8 108.0  93 3.85 2.320 18.61  1  1    4    1
+##  8: 22.8 140.8  95 3.92 3.150 22.90  1  0    4    2
+##  9: 21.5 120.1  97 3.70 2.465 20.01  1  0    3    1
+## 10: 21.4 121.0 109 4.11 2.780 18.60  1  1    4    2
+## 11: 30.4  95.1 113 3.77 1.513 16.90  1  1    5    2
+##     mpg  disp  hp drat    wt  qsec vs am gear carb
+## 1: 18.1 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 2: 21.4 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 3: 21.0 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 4: 21.0 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 5: 19.2 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 6: 17.8 167.6 123 3.92 3.440 18.90  1  0    4    4
+## 7: 19.7 145.0 175 3.62 2.770 15.50  0  1    5    6
+##      mpg  disp  hp drat    wt  qsec vs am gear carb
+##  1: 15.5 318.0 150 2.76 3.520 16.87  0  0    3    2
+##  2: 15.2 304.0 150 3.15 3.435 17.30  0  0    3    2
+##  3: 19.2 400.0 175 3.08 3.845 17.05  0  0    3    2
+##  4: 18.7 360.0 175 3.15 3.440 17.02  0  0    3    2
+##  5: 16.4 275.8 180 3.07 4.070 17.40  0  0    3    3
+##  6: 17.3 275.8 180 3.07 3.730 17.60  0  0    3    3
+##  7: 15.2 275.8 180 3.07 3.780 18.00  0  0    3    3
+##  8: 10.4 472.0 205 2.93 5.250 17.98  0  0    3    4
+##  9: 10.4 460.0 215 3.00 5.424 17.82  0  0    3    4
+## 10: 14.7 440.0 230 3.23 5.345 17.42  0  0    3    4
+## 11: 14.3 360.0 245 3.21 3.570 15.84  0  0    3    4
+## 12: 13.3 350.0 245 3.73 3.840 15.41  0  0    3    4
+## 13: 15.8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## 14: 15.0 301.0 335 3.54 3.570 14.60  0  1    5    8
+## Empty data.table (0 rows) of 1 col: cyl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And you can subset the data by cylinder by adding an &lt;code&gt;i&lt;/code&gt; statement, or by keying cylinders and using the list function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[cyl == 6,print(.SD), by=&amp;quot;cyl&amp;quot;]
+
+##     mpg  disp  hp drat    wt  qsec vs am gear carb
+## 1: 18.1 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 2: 21.0 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 3: 21.0 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 4: 21.4 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 5: 19.2 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 6: 17.8 167.6 123 3.92 3.440 18.90  1  0    4    4
+## 7: 19.7 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Empty data.table (0 rows) of 1 col: cyl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; setkey(MTCarsDT, cyl)
+&amp;gt; MTCarsDT[.(6),print(.SD), by=&amp;quot;cyl&amp;quot;]
+
+##     mpg  disp  hp drat    wt  qsec vs am gear carb
+## 1: 18.1 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 2: 21.0 160.0 110 3.90 2.620 16.46  0  1    4    4
+## 3: 21.0 160.0 110 3.90 2.875 17.02  0  1    4    4
+## 4: 21.4 258.0 110 3.08 3.215 19.44  1  0    3    1
+## 5: 19.2 167.6 123 3.92 3.440 18.30  1  0    4    4
+## 6: 17.8 167.6 123 3.92 3.440 18.90  1  0    4    4
+## 7: 19.7 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Empty data.table (0 rows) of 1 col: cyl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To print the highest and lowest horsepower vehicle sorted by the number of cylinders, first key by horsepower, then use SD to print the first and last of row by cylinder:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; setkey(MTCarsDT, hp)
+&amp;gt; MTCarsDT[,.SD[c(1,.N)], by=cyl]
+
+##    cyl  mpg  disp  hp drat    wt  qsec vs am gear carb
+## 1:   4 30.4  75.7  52 4.93 1.615 18.52  1  1    4    2
+## 2:   4 30.4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## 3:   6 18.1 225.0 105 2.76 3.460 20.22  1  0    3    1
+## 4:   6 19.7 145.0 175 3.62 2.770 15.50  0  1    5    6
+## 5:   8 15.2 304.0 150 3.15 3.435 17.30  0  0    3    2
+## 6:   8 15.0 301.0 335 3.54 3.570 14.60  0  1    5    8
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;So first we can set the key to the cylinders column in MTCarsDT.&lt;/p&gt;
+&lt;h2 id=&#34;SD_lapply&#34;&gt;lapply&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setkey(MTCarsDT, cyl)
-MTCarsDT
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With lapply you can perform a function on every column grouped by the number of cylinders.&lt;/p&gt;
 
-&lt;p&gt;Using .SD it will print all of the data above but group the data by the number of cylinders. This works even if there is no key. Notice that the cylinders column is missing.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,print(.SD), by = cyl]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-And you can select all the data by cylinder.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[.(6),print(.SD), by=&amp;quot;cyl&amp;quot;]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[, lapply(.SD, mean), by=cyl]
+##    cyl      mpg     disp        hp     drat       wt     qsec        vs        am     gear     carb
+## 1:   4 26.66364 105.1364  82.63636 4.070909 2.285727 19.13727 0.9090909 0.7272727 4.090909 1.545455
+## 2:   6 19.74286 183.3143 122.28571 3.585714 3.117143 17.97714 0.5714286 0.4285714 3.857143 3.428571
+## 3:   8 15.10000 353.1000 209.21429 3.229286 3.999214 16.77214 0.0000000 0.1428571 3.285714 3.500000
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;This prints the first and last row grouped by the number of cylinders in the data set.&lt;/p&gt;
+&lt;h2 id=&#34;SDcols&#34;&gt;SDcols&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,.SD[c(1,.N)], by=cyl]
+&lt;p&gt;You can select specific columns using &lt;code&gt;.SDcols&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = c(&amp;quot;wt&amp;quot;,&amp;quot;hp&amp;quot;, &amp;quot;disp&amp;quot;)]
+
+##    cyl       wt        hp     disp
+## 1:   4 2.285727  82.63636 105.1364
+## 2:   6 3.117143 122.28571 183.3143
+## 3:   8 3.999214 209.21429 353.1000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or you can specify the column numbers that you want to display:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = 3:7]
+
+##    cyl     disp        hp     drat       wt     qsec
+## 1:   4 105.1364  82.63636 4.070909 2.285727 19.13727
+## 2:   6 183.3143 122.28571 3.585714 3.117143 17.97714
+## 3:   8 353.1000 209.21429 3.229286 3.999214 16.77214
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;lapply&#34;&gt;lapply&lt;/h2&gt;
-
-&lt;p&gt;Using lapply() we can perform a function on every column grouped by the number of cylinders.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[, lapply(.SD, mean), by=cyl]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;sdcols&#34;&gt;SDcols&lt;/h2&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;We can select specifically the columns we want to calculate and display using &lt;code&gt;.SDcols&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = c(&amp;quot;wt&amp;quot;,&amp;quot;hp&amp;quot;, &amp;quot;disp&amp;quot;)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Or we can use &lt;code&gt;.SDcols&lt;/code&gt; to specify the column numbers that we want to display, although reference columns by number is frowned upon.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = 3:7]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;And we can specify a several columns in a sequence by using &lt;code&gt;pasteO&lt;/code&gt; as long as the columns are numbered sequentially.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT[,lapply(.SD,sum), by=V2, .SDcols = paste0(&amp;quot;V&amp;quot;,3:5)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;chaining-multiple-operations-together&#34;&gt;Chaining multiple operations together&lt;/h1&gt;
+&lt;h1 id=&#34;chaining&#34;&gt;Chaining multiple operations together&lt;/h1&gt;
 
 &lt;p&gt;Chaining allows you to perform multiple functions in one statement.&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;This set of operations will: (1) return the mean horsepower for cars, grouped by cylinder, (2) and then return those means with more than 100 hp. There&amp;rsquo;s an easier way to do this by chaining.&lt;/p&gt;
 
-&lt;p&gt;This set of operations will print the mean horsepower for cars, grouped by cylinder, that have more than 100 hp. But this creates a new data.table and is unnecessary.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT2 &amp;lt;- MTCarsDT[, .(mean.hp = mean(hp)), by=cyl]
+&amp;gt; MTCarsDT2
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;MTCarsDT2 &amp;lt;- MTCarsDT[, .(mean.hp = mean(hp)), by=cyl]
-MTCarsDT2
-MTCarsDT2[mean.hp &amp;gt; 100]
+##    cyl   mean.hp
+## 1:   4  82.63636
+## 2:   6 122.28571
+## 3:   8 209.21429
+
+&amp;gt; MTCarsDT2[mean.hp &amp;gt; 100]
+
+##    cyl  mean.hp
+## 1:   6 122.2857
+## 2:   8 209.2143
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This is the easier way.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;
-MTCarsDT[, .(mean.hp = mean(hp)), by=cyl][mean.hp &amp;gt; 100]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[, .(mean.hp = mean(hp)), by=cyl][mean.hp &amp;gt; 100]
 
+##    cyl  mean.hp
+## 1:   6 122.2857
+## 2:   8 209.2143
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;set-and-looping-in-a-data-table&#34;&gt;Set and looping in a data.table&lt;/h1&gt;
+&lt;p&gt;More than two operations can be chained together:&lt;/p&gt;
 
-&lt;p&gt;Set can be used to assign values in a data.table. Normally the := operation is better but &lt;strong&gt;set&lt;/strong&gt; yields faster results in a &lt;strong&gt;for loop&lt;/strong&gt; than any other function, so if you must loop, use set().&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[cyl ==6][,.(mean.hp=mean(hp)), by = .(gear,carb, am)][gear == 4][am==1]
 
-&lt;p&gt;&lt;a href=&#34;http://www.inside-r.org/packages/cran/data.table/docs/set&#34; target=&#34;_blank&#34;&gt;From inside-R&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Since [.data.table incurs overhead to check the existence and type of arguments (for example), set() provides direct (but less flexible) assignment by reference with low overhead, appropriate for use inside a for loop. See examples. := is more flexible than set() because := is intended to be combined with i and by in single queries on large datasets.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Remember our friend DT?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;DT
+##    gear carb am mean.hp
+## 1:    4    4  1     110
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;set_looping&#34;&gt;Set and looping in a data.table&lt;/h1&gt;
+
+&lt;p&gt;Set can be used to assign values in a data.table. Normally the := operation is better, but &lt;strong&gt;set&lt;/strong&gt; yields faster results in a &lt;strong&gt;for loop&lt;/strong&gt; than any other function, so if you must use a for loop, use set().&lt;/p&gt;
 
 &lt;p&gt;This is the syntax for set : &lt;code&gt;for (i in from:to) set(DT, row, column, new value)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;And this will renumber the V9 column:&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s the DT data table:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;for (i in 1:9) set(DT,i,&amp;quot;V9&amp;quot;,i)
-head(DT)
+&lt;pre&gt;&lt;code&gt;DT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will renumber the V8 column:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; for (i in 1:12) set(DT,i,&amp;quot;V8&amp;quot;,i)
+&amp;gt; DT
+
+##     V2      V3 V4 V5 V6 V9  V7 V8
+##  1:  X -1.8123  1 21  C  1 101  1
+##  2:  B  0.2134  2 22  D  2 102  2
+##  3:  C -0.2825  3 23  E  3 103  3
+##  4:  X -0.3802  4 24  C  4 104  4
+##  5:  B -1.8123  5 25  D  5 105  5
+##  6:  C  0.2134  6 26  E  6 106  6
+##  7:  X -0.2825  7 27  C  7 107  7
+##  8:  B -0.3802  8 28  D  8 108  8
+##  9:  C -1.8123  9 29  E  9 109  9
+## 10:  X  0.2134 10 30  C  1 110 10
+## 11:  B -0.2825 11 31  D  2 111 11
+## 12:  C -0.3802 12 32  E  3 112 12
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;An example of the speed of using set.&lt;/p&gt;
+&lt;p&gt;This example shows the speed of using set in a for loop. First create three tables, a matrix, a data frame, and a data table. Each with 100,000 rows and 100 columns, then assign 1 to each cell, then u&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;m = matrix(1,nrow=100000,ncol=100)
+&lt;pre&gt;&lt;code&gt;m = matrix(1,nrow=100000,ncol=100)
 DF = as.data.frame(m)
 DT = as.data.table(m)
 dim(DT)
@@ -2025,90 +2467,129 @@ dim(DT)
 
 &lt;p&gt;Now we can run a speed test on the different methods of assigning the value of i to the i&amp;rsquo;th row of the first column.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;system.time(for (i in 1:100000) DF[i,1] &amp;lt;- i)
+&lt;pre&gt;&lt;code&gt;&amp;gt; system.time(for (i in 1:100000) m[i,1] &amp;lt;- i)
+   user  system elapsed 
+  0.015   0.003   0.019 
 
-system.time(for (i in 1:100000) DT[i,V1:=i])
+&amp;gt; system.time(for (i in 1:100000) DF[i,1] &amp;lt;- i)
+   user  system elapsed 
+ 49.487  44.195  94.792 
 
-system.time(for (i in 1:100000) set(DT,i,1L,i))
+&amp;gt; system.time(for (i in 1:100000) DT[i,1] &amp;lt;- i)
+   user  system elapsed 
+457.258 290.126 757.099 
+
+&amp;gt; system.time(for (i in 1:100000) DT[i,V1:=i])
+   user  system elapsed 
+ 27.656   0.096  28.228 
+
+&amp;gt; system.time(for (i in 1:100000) set(DT,i,1L,i))
+   user  system elapsed 
+  0.237   0.030   0.268 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;So you can see there are big speed advantages to using set() over the assignment operator &amp;lt;- or the assignment by reference operator := .
-&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;So you can see there are big speed advantages to using set() over the assignment operator &amp;lt;- or the assignment by reference operator := .&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Also notice the the use of &lt;code&gt;1L&lt;/code&gt; to select the first column in the set command of the final speed test. See &lt;a href=&#34;http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://cran.r-project.org/doc/manuals/R-lang.html#Constants&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for a discussion of the use of 1 vs 1L for integers in R.&lt;/p&gt;
 
-&lt;h1 id=&#34;change-column-names-using-setnames&#34;&gt;Change column names using setnames()&lt;/h1&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;
-The syntax is setnames(DT, &amp;ldquo;oldname&amp;rdquo;, &amp;ldquo;newname&amp;rdquo;)&lt;/p&gt;
+&lt;h1 id=&#34;setnames&#34;&gt;Change column names using setnames()&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;colnames(MTCarsDT)
-setnames(MTCarsDT, &amp;quot;hp&amp;quot;, &amp;quot;horsepower&amp;quot;)
-colnames(MTCarsDT)
+&lt;p&gt;The syntax is setnames(DT, &amp;ldquo;oldname&amp;rdquo;, &amp;ldquo;newname&amp;rdquo;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; colnames(MTCarsDT)
+
+##  [1] &amp;quot;mpg&amp;quot;  &amp;quot;cyl&amp;quot;  &amp;quot;disp&amp;quot; &amp;quot;hp&amp;quot;   &amp;quot;drat&amp;quot; &amp;quot;wt&amp;quot;   &amp;quot;qsec&amp;quot; &amp;quot;vs&amp;quot;   &amp;quot;am&amp;quot;   &amp;quot;gear&amp;quot; &amp;quot;carb&amp;quot;
+
+&amp;gt; setnames(MTCarsDT, &amp;quot;hp&amp;quot;, &amp;quot;horsepower&amp;quot;)
+
+&amp;gt; colnames(MTCarsDT)
+
+##  [1] &amp;quot;mpg&amp;quot;        &amp;quot;cyl&amp;quot;        &amp;quot;disp&amp;quot;       &amp;quot;horsepower&amp;quot; &amp;quot;drat&amp;quot;       &amp;quot;wt&amp;quot;                
+##  [7] &amp;quot;qsec&amp;quot;       &amp;quot;vs&amp;quot;         &amp;quot;am&amp;quot;         &amp;quot;gear&amp;quot;       &amp;quot;carb&amp;quot;   
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;You can also change multiple columnames at the same time.&lt;/p&gt;
+&lt;p&gt;You can also change multiple columnames at the same time:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setnames(MTCarsDT, c(&amp;quot;cyl&amp;quot;, &amp;quot;disp&amp;quot;), c(&amp;quot;cylinders&amp;quot;, &amp;quot;displacement&amp;quot;))
-colnames(MTCarsDT)
+&lt;pre&gt;&lt;code&gt;&amp;gt; setnames(MTCarsDT, c(&amp;quot;cyl&amp;quot;, &amp;quot;disp&amp;quot;), c(&amp;quot;cylinders&amp;quot;, &amp;quot;displacement&amp;quot;))
+&amp;gt; colnames(MTCarsDT)
+
+##  [1] &amp;quot;mpg&amp;quot;          &amp;quot;cylinders&amp;quot;    &amp;quot;displacement&amp;quot; &amp;quot;horsepower&amp;quot;   &amp;quot;drat&amp;quot;       
+##  [6] &amp;quot;wt&amp;quot;           &amp;quot;qsec&amp;quot;         &amp;quot;vs&amp;quot;           &amp;quot;am&amp;quot;           &amp;quot;gear&amp;quot;        
+##  [11]&amp;quot;carb&amp;quot;      
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;changing-column-order-setcolorder&#34;&gt;Changing column order - setcolorder()&lt;/h1&gt;
+&lt;h1 id=&#34;setcolorder&#34;&gt;Changing column order - setcolorder()&lt;/h1&gt;
 
-&lt;p&gt;We can create a new column order by&lt;/p&gt;
+&lt;p&gt;Create a new column order:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsColumns &amp;lt;- c(&amp;quot;drat&amp;quot;,&amp;quot;wt&amp;quot;,&amp;quot;qsec&amp;quot;,&amp;quot;vs&amp;quot;,&amp;quot;am&amp;quot;,&amp;quot;gear&amp;quot;,&amp;quot;carb&amp;quot;,&amp;quot;mpg&amp;quot;,&amp;quot;cylinders&amp;quot;,&amp;quot;displacement&amp;quot;,&amp;quot;horsepower&amp;quot;)
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsColumns &amp;lt;- c(&amp;quot;drat&amp;quot;,&amp;quot;wt&amp;quot;,&amp;quot;qsec&amp;quot;,&amp;quot;vs&amp;quot;,&amp;quot;am&amp;quot;,&amp;quot;gear&amp;quot;,&amp;quot;carb&amp;quot;,&amp;quot;mpg&amp;quot;,&amp;quot;cylinders&amp;quot;,&amp;quot;displacement&amp;quot;,&amp;quot;horsepower&amp;quot;)
 
-setcolorder(MTCarsDT, MTCarsColumns)
-MTCarsDT[1]
+&amp;gt; setcolorder(MTCarsDT, MTCarsColumns)
+&amp;gt; MTCarsDT[1]
+
+&amp;gt; MTCarsDT[1]
+
+##    drat    wt  qsec vs am gear carb  mpg cylinders displacement horsepower
+## 1: 4.93 1.615 18.52  1  1    4    2 30.4         4         75.7         52
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;or by giving it a string of names&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setcolorder(MTCarsDT, c(&amp;quot;mpg&amp;quot;,&amp;quot;cylinders&amp;quot;,&amp;quot;displacement&amp;quot;,&amp;quot;horsepower&amp;quot;,&amp;quot;drat&amp;quot;,&amp;quot;wt&amp;quot;,&amp;quot;qsec&amp;quot;,&amp;quot;vs&amp;quot;,&amp;quot;am&amp;quot;,&amp;quot;gear&amp;quot;,&amp;quot;carb&amp;quot;))
-MTCarsDT[1]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;unique&#34;&gt;Unique&lt;/h1&gt;
 
-&lt;p&gt;Unique returns a data.table where duplicate data, by keyed row, are removed. So here&amp;rsquo;s a new data.table, notice that rows 3 and 12 are identical to rows 1 and 10 respectively.&lt;/p&gt;
+&lt;p&gt;Unique returns a data.table where duplicate data, by keyed row, are removed. So here&amp;rsquo;s a new data.table, notice that rows 2 and 3 are identical to rows 4 and 6 respectively.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;DT &amp;lt;- data.table(A = rep(1:3, each=4), B = rep(1:4, each=3),
-                 C = rep(1:2, 6), key = &amp;quot;B&amp;quot;)
-DT
+&lt;pre&gt;&lt;code&gt;&amp;gt; DT &amp;lt;- data.table(A = c(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;B&#39;,&#39;A&#39;,&#39;C&#39;), B=c(1,2,3,2,4,3), C=c(10,20,30,20,60,30))
+&amp;gt; DT
+
+   A B  C
+1: A 1 10
+2: B 2 20
+3: C 3 30
+4: B 2 20
+5: A 4 60
+6: C 3 20
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Using &lt;code&gt;duplicated&lt;/code&gt; we can see that there are two rows &lt;code&gt;TRUE&lt;/code&gt; that are identical to other rows that have already been displayed.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;duplicated(DT)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;&amp;gt; duplicated(DT)
 
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+## [1] FALSE FALSE FALSE  TRUE FALSE  TRUE
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;Unique&lt;/code&gt; will return a DT without the duplicates.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;unique(DT)
+&lt;pre&gt;&lt;code&gt;&amp;gt; unique(DT)
+
+##    A B  C
+## 1: A 1 10
+## 2: B 2 20
+## 3: C 3 30
+## 4: A 4 60
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;uniqueN returns the number of unique rows.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;uniqueN(DT)
+&lt;pre&gt;&lt;code&gt;&amp;gt; uniqueN(DT)
+
+## [1] 4
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;additional_information&#34;&gt;Additional Information&lt;/h1&gt;
+&lt;h1 id=&#34;additional_sources&#34;&gt;Additional Sources&lt;/h1&gt;
 
 &lt;p&gt;More info and references:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;Data Tables Github Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/data.table/data.table.pdf&#34; target=&#34;_blank&#34;&gt;CRAN - Data Table&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1&#34; target=&#34;_blank&#34;&gt;What&amp;rsquo;s the difference between &lt;code&gt;1L&lt;/code&gt; and &lt;code&gt;1&lt;/code&gt;?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/doc/manuals/R-lang.html#Constants&#34; target=&#34;_blank&#34;&gt;R Language Definition: Constants&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.r-bloggers.com/a-data-table-r-tutorial-by-datacamp-intro-to-dti-j-by/&#34; target=&#34;_blank&#34;&gt;A data.table R tutorial by DataCamp: intro to DT[i, j, by]&lt;/a&gt;&lt;/li&gt;
@@ -2594,53 +3075,6 @@ rm -rf ~/miniconda3
     </item>
     
     <item>
-      <title>Reinstalling R Packages</title>
-      <link>/portfolio/reinstalling-r-without-losing-packages/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/portfolio/reinstalling-r-without-losing-packages/</guid>
-      <description>
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;When you reinstall R it deletes all of your installed packages and reinstalling them manually can be a nuisance. This is an easy way to automatically reinstall your R packages after you install a new version of R.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;before-reinstalling-r&#34;&gt;Before Reinstalling R&lt;/h2&gt;
-
-&lt;p&gt;Before you reinstall R, use setwd() to set a directory where you can save a text file of all your currently installed packages.&lt;/p&gt;
-
-&lt;p&gt;Run this command to create a text file in that directory called &amp;ldquo;Rpaackages&amp;rdquo;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;packages &amp;lt;- installed.packages()[,&amp;quot;Package&amp;quot;]
-    save(packages, file=&amp;quot;Rpackages&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;reinstalling-r&#34;&gt;Reinstalling R&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://cran.r-project.org&#34; target=&#34;_blank&#34;&gt;Download R here&lt;/a&gt; and install according to the instructions.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;after-reinstalling-r&#34;&gt;After Reinstalling R&lt;/h2&gt;
-
-&lt;p&gt;After R has been reinstalled, use setwd() to set R to the same directory where the list of packages was saved.&lt;/p&gt;
-
-&lt;p&gt;Then run:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;load(&amp;quot;Rpackages&amp;quot;) 
-    for (p in setdiff(packages, installed.packages()[,&amp;quot;Package&amp;quot;]))
-    install.packages(p)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This may take a while depending on how many packages you have installed but it&amp;rsquo;s far faster than manually installing each package one at a time.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>A Plain Markdown Post</title>
       <link>/post/2016-02-14-hello-markdown/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
@@ -2796,6 +3230,54 @@ rm -rf ~/miniconda3
       
       <guid>/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;R Markdown&lt;/h1&gt;
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+fit &amp;lt;- lm(dist ~ speed, data = cars)
+fit
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Including Plots&lt;/h1&gt;
+&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
+  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
+  init.angle = -50, border = NA
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: A fancy pie chart.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
