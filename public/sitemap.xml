@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/post/deleting-large-file-from-git/</loc>
+      <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/passive-voice/</loc>
       <lastmod>2018-07-31T00:00:00+00:00</lastmod>
     </url>
@@ -84,14 +92,6 @@
     
     <url>
     
-      <loc>/portfolio/central_limit_theorem/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/project/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
     </url>
@@ -164,13 +164,6 @@
     
     <url>
     
-      <loc>/portfolio/copyofcentral_limit_theorem/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/academic/</loc>
       <lastmod>2016-04-27T00:00:00-04:00</lastmod>
       <priority>0</priority>
@@ -206,13 +199,6 @@
     
     <url>
     
-      <loc>/portfolio/confidence-intervals/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/english/</loc>
       <lastmod>2018-07-31T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -231,8 +217,17 @@
     
     <url>
     
+      <loc>/tags/git/</loc>
+      <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/categories/git/</loc>
-      <lastmod>2018-07-25T00:00:00+00:00</lastmod>
+      <lastmod>2018-09-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -340,15 +335,6 @@
     <url>
     
       <loc>/tags/python/</loc>
-      <lastmod>2016-04-27T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/python/</loc>
       <lastmod>2018-07-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -430,7 +416,7 @@
     <url>
     
       <loc>/categories/short-note/</loc>
-      <lastmod>2018-07-25T00:00:00+00:00</lastmod>
+      <lastmod>2018-09-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

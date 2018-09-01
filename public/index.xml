@@ -11,6 +11,22 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>BFG Repo-Cleaner - Deleting Large File From Git</title>
+      <link>/post/deleting-large-file-from-git/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/deleting-large-file-from-git/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34; target=&#34;_blank&#34;&gt;BFG Repo-Cleaner&lt;/a&gt; is the best way to delete a large file from a git repository that you&amp;rsquo;ve already committed.&lt;/p&gt;
+
+&lt;p&gt;When a file is committed to a repository, it stays in the repository&amp;rsquo;s history even if you remove it in a subsequent commit. This allows a user to undo subsequent commits and bring back the previous commits, with all their files undisturbed. The problem is that users may want to completely delete a file that is too large or could have sensitive information stored in it.&lt;/p&gt;
+
+&lt;p&gt;BFG-Repo-cleaner will delete those files from every commit in your repositiories history.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34; target=&#34;_blank&#34;&gt;Download from their website and follow their instructions.&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Passive Voice - This Passive Voice Sentence Was Written By Zombies</title>
       <link>/post/passive-voice/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
@@ -34,7 +50,7 @@
 &lt;h2 id=&#34;zombies&#34;&gt;Zombies&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;If you can add the phrase &amp;ldquo;by zombies&amp;rdquo; after the verb, you have passive voice.&lt;/li&gt;
+&lt;li&gt;If you can add the phrase &amp;ldquo;by zombies&amp;rdquo; after the verb, then you have passive voice.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://twitter.com/johnsonr&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;/post/2018-07-31-passive-voice_files/zombies_passive_voice.png&#34; alt=&#34;by zombies&#34;/&gt;&lt;/a&gt;&lt;/p&gt;
@@ -47,19 +63,22 @@
 &lt;li&gt;The order of an active voice sentence is subject, verb, object.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The subject of a sentence is usually performing an action on another object. For example: the zombies are eating my brain. The zombies, the subject, are eating, the verb, my brain, the object. If you reverse it you get a passive voice sentence. My brain is being eaten by zombies. See above where I mention the phrase &amp;ldquo;by zombies&amp;rdquo;.&lt;/p&gt;
-
-&lt;h2 id=&#34;by&#34;&gt;&amp;ldquo;by &amp;hellip;&amp;rdquo;&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A passive voice sentence often ends with &amp;ldquo;by &amp;hellip;&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For example: &amp;ldquo;My brain was eaten by zombies.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;The subject of a sentence is usually performing an action on another object. For example: the zombies are eating my brain. The zombies, the subject, are eating, the verb, my brain, the object. If you reverse it you get a passive voice sentence. My brain is being eaten by zombies is object, verb, subject. See above where I mention the phrase &amp;ldquo;by zombies&amp;rdquo;.&lt;/p&gt;
 
 &lt;h2 id=&#34;to-be-followed-by-ed&#34;&gt;To be, followed by &amp;ldquo;&amp;hellip;ed&amp;rdquo;&lt;/h2&gt;
 
-&lt;p&gt;When newspapers reported that Mark Twain had died, he sent a telegram from London stating, &amp;ldquo;THE REPORTS OF MY DEATH ARE GREATLY EXAGGERATED&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;A sentence constructed with &amp;lsquo;to be&amp;rsquo; followed with the past participle of a verb is a case of passive voice. For example:
+    * The elves were chased by the ogre.&lt;/p&gt;
+
+&lt;h1 id=&#34;passive-voice-in-the-vaccine-controversy&#34;&gt;Passive Voice in The Vaccine Controversy&lt;/h1&gt;
+
+&lt;p&gt;In this &lt;a href=&#34;https://www.stitcher.com/podcast/uah-technical-writing/10minute-tech-comm/e/52070939&#34; target=&#34;_blank&#34;&gt;interview in 10-minute TechComm&lt;/a&gt;, Dr.Lauren Kolodziejski describes how Andrew Wakefield used the passive voice to imply that doctors made certain observations or conclusions when they were actually made by the parents.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Wakefield wrote this article in passive voice. Passive voice, which often appears in scientific writing, emphasizes results rather than the person completing the action (Halloran, 1984). However, Wakefield incorporated passive voice in problematic ways to present parent-supplied information regarding the children’s medical histories. For example, in the article, Wakefield wrote, ‘‘Onset of behavioural symptoms was associated, by the parents, with measles, mumps, and rubella vaccination in eight of the 12 children’’ (p. 637). Here, passive voice places the emphasis on the association between the MMR vaccine and the onset of behavioral symptoms. Wakefield deemphasized that parents assumed and reported this association, as opposed to medical experts observing it, by placing the statement within the larger sentence as a parenthetical phrase set off by commas. Wakefield relied on this phrasing twice in the article: once in the overview of the article’s findings on the front page and again in the results section (p. 638). Through passive-voice construction, Wakefield avoided making any explicit claims himself but still inserted the idea of a link between the MMR vaccine and autism. The use of passive voice in these statements also minimizes the fact that such a link has only been hypothesized by parents but not scientifically tested or proven. At another point in the article, Wakefield reported, ‘‘In these eight children, the average interval from exposure to first behavioral symptoms was 6.3 days (range 1–14)’’ (p. 638). Again, he used passive voice to focus on the ‘‘data,’’ but this statement proves even more problematic than the other construc- tions because no source is identified, even though, again, this information comes from parent recall. Stated in passive voice, these statements become imbued with scientific standing despite the lack of scientific evidence to corroborate the parent reports. These constructions maintain the standards of scientific publishing while creating an opening for interpreting the article as establishing a link between the MMR vaccine and autism.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.1080/10572252.2013.816487&#34; target=&#34;_blank&#34;&gt;The full published article is here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1122,666 +1141,6 @@ The Central Limit Theorem and standard error of the mean assume that samples are
     </item>
     
     <item>
-      <title>Central Limit Theorem</title>
-      <link>/portfolio/central_limit_theorem/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/portfolio/central_limit_theorem/</guid>
-      <description>
-
-&lt;style&gt;
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
-  }
-  .col3 {
-    columns: 3 100px;
-    -webkit-columns: 3 100px;
-    -moz-columns: 3 100px;
-  }
-&lt;/style&gt;
-
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;The Central Limit Theorem states that if you take many random samples of the same size from a population, take the mean of each sample, and then plot these means in a histogram, the plot will look like a normal distribution regardless of the distribution of data in the original data set and the &lt;em&gt;mean&lt;/em&gt; of all of these sample means will approach the population mean as the number of samples approaches infinity.&lt;/p&gt;
-
-&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;
-
-&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#packages&#34;&gt;Packages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#mean_sample_means&#34;&gt;Mean of Sample Means&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;packages&#34;&gt;Packages&lt;/h3&gt;
-
-&lt;p&gt;This demonstration will use the following packages:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;data.table&lt;/li&gt;
-&lt;li&gt;ggplot2&lt;/li&gt;
-&lt;li&gt;easyGgplot2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;library(data.table)
-library(ggplot2)
-library(easyGgplot2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;mean_sample_means&#34;&gt;Mean of Sample Means&lt;/h2&gt;
-
-&lt;p&gt;As the the number of sample means approach infinity the sample means and population mean will converge. Or to put it more simply, the mean of the sampled means will have the same mean as the population.&lt;/p&gt;
-
-&lt;p&gt;$$\text{mean of sample means} = \text{population mean}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;$$\mu_{\bar{X}} = \mu$$&lt;/p&gt;
-
-&lt;p&gt;Where:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;$\bar{X}$ is a sample mean&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;$\mu_{\bar{X}}$ is the mean of the sample means&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;$\mu$ is the population mean&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;standard-error-of-the-mean&#34;&gt;Standard Error of the Mean&lt;/h2&gt;
-
-&lt;p&gt;First off a statistician could find the standard error of a number of different statistics, like median, variance, and estimate among others. But the standard error of the mean is most common.&lt;/p&gt;
-
-&lt;p&gt;The standard deviation of the sample means is also called the &lt;strong&gt;standard error of the mean.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The standard deviation of the sample data will be equal to standard deviation of the population divided by the square root of the sample size, or:&lt;/p&gt;
-
-&lt;p&gt;$$\text{standard error of the mean} = \frac{\text{population standard deviation}}{\sqrt{\text{sample size}}}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;strong&gt;or&lt;/strong&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;$$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$$&lt;/p&gt;
-
-&lt;p&gt;Where:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;$\sigma_{\bar{M}}$ is the standard error of the mean&lt;/li&gt;
-&lt;li&gt;$\sigma$ is the standard deviation of the population&lt;/li&gt;
-&lt;li&gt;n is the sample size&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;We can tell that the standard error of the mean will get smaller as the sample size increases. A smaller standard error would indicate that the sample data is more representative of the total population. For example if we had identical standard deviations for two different populations but different sample sizes, then the standard error of the mean would be smaller for the set with a larger sample size.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;We can also use the standard error of the mean draw inferences about the population data from a sample. This is useful in the many many situations where it would be impossible to measure every individual from a population. For example if we 30 sets of fifty samples from a population, we can take the standard deviation of the means of those samples and find a population standard deviation.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;sampling-error&#34;&gt;Sampling Error&lt;/h2&gt;
-
-&lt;p&gt;Sampling error is the difference between the actual population data and the same measure of the sampled data. For example the mean of each sample will be different from the mean of the population data.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Sampling_error&#34; target=&#34;_blank&#34;&gt;From wikipedia:&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Since the sample does not include all members of the population, statistics on the sample, such as means and quantiles, generally differ from the characteristics of the entire population, which are known as parameters.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;number-of-sample-means&#34;&gt;Number of Sample Means&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;When the population data is normally distributed then the sample means will also be normally distributed.&lt;/li&gt;
-&lt;li&gt;When the population data is not normally distributed then at least 30 sample means will have to be made for the sample means to be normally distributed. This is because of sampling error.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;an-example-temperature-data&#34;&gt;An Example: Temperature Data&lt;/h1&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;This is historical data from the &lt;a href=&#34;http://cdiac.ornl.gov/climate/temp/us_recordtemps/ui.html&#34; target=&#34;_blank&#34;&gt;United States Historical Climatology Network&lt;/a&gt;, more specificially &lt;a href=&#34;http://cdiac.ornl.gov/cgi-bin/broker?id=172765&amp;amp;_PROGRAM=prog.scat_data_d9k_424.sas&amp;amp;_SERVICE=default&amp;amp;_DEBUG=0&amp;amp;tempvar=htx&#34; target=&#34;_blank&#34;&gt;this page&lt;/a&gt;. This data set contains daily temperature highs from 1911 through 2010.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;The variables/columns in the data file are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Station number (i.e., 172765: 2-digit state code, followed by 4-digit station code)&lt;/li&gt;
-&lt;li&gt;Day of year (1-365)&lt;/li&gt;
-&lt;li&gt;Month&lt;/li&gt;
-&lt;li&gt;Day of Month&lt;/li&gt;
-&lt;li&gt;Year the daily record was set&lt;/li&gt;
-&lt;li&gt;Record Hot Tmax&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-First we import the data.
-&lt;br&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(data.table)
-
-Station172765_TMax&amp;lt;- data.table(read.table(&amp;quot;../../static/data/ME_2765tmax.txt&amp;quot;, header = FALSE))
-#Station172765_TMax&amp;lt;- data.table(read.table(&amp;quot;ME_2765tmax.txt&amp;quot;, header = FALSE))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We need to a little cleanup.
-We&amp;rsquo;ll replace the column names with more descriptive names.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;setnames(Station172765_TMax, c(&amp;quot;V1&amp;quot;, &amp;quot;V2&amp;quot;, &amp;quot;V3&amp;quot;, &amp;quot;V4&amp;quot;, &amp;quot;V5&amp;quot;, &amp;quot;V6&amp;quot;), c(&amp;quot;StationID&amp;quot;, &amp;quot;YearDay&amp;quot;, &amp;quot;Year&amp;quot;, &amp;quot;Month&amp;quot;, &amp;quot;MonthDay&amp;quot;, &amp;quot;MaxTemp&amp;quot;))
-
-Station172765_TMax
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Also on days that no data was collected the temperature is recorded as -999, we&amp;rsquo;ll change that to NA.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;Station172765_TMax[MaxTemp == -999, MaxTemp := NA]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;plotting-temperature-data&#34;&gt;Plotting Temperature Data&lt;/h2&gt;
-
-&lt;p&gt;This is a plot of the temperature highs with the day of the year on the x axis and the temperature on the y axis:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;p &amp;lt;- ggplot(Station172765_TMax, aes(YearDay, MaxTemp))
-p + geom_point() 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;The histogram of the data shows that it&amp;rsquo;s bimodal.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;hist(Station172765_TMax[,MaxTemp], xlab=&amp;quot;Temp&amp;quot;, main=&amp;quot;Frequency Max Temp - Farmington, ME, 1911 - 2010&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;ggplot(Station172765_TMax, aes(MaxTemp)) + geom_density()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;sample-means&#34;&gt;Sample Means&lt;/h2&gt;
-
-&lt;p&gt;&lt;br&gt;
-Now we&amp;rsquo;ll get the mean and standard deviation for all years in the data set.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
-Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;To get a sample of the data we use the sample function.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[,sample(MaxTemp, 5)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;This will return a data table with four columns of 1000 sample means, each sample mean will come from 2, 5, 25 or 49 sampled values from the temperature data set.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;SampleMeans &amp;lt;- NULL
-Means &amp;lt;- NULL
-
-
-## Sample Size of 2
-for (i in 1:1000){
-    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,2)], na.rm=TRUE))
-    i &amp;lt;- i + 1
-    if (i == 1001) break
-}
-SampleMeans &amp;lt;- data.table(SampleSize2 = Means)
-
-
-##Sample Size of 5
-Means &amp;lt;- NULL
-for (i in 1:1000){
-    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,5)], na.rm=TRUE))
-    i &amp;lt;- i + 1
-    if (i == 1001) break
-}
-SampleMeans[,SampleSize5 := Means]
-
-
-## Sample Size of 25
-
-Means &amp;lt;- NULL
-for (i in 1:1000){
-    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,25)], na.rm=TRUE))
-    i &amp;lt;- i + 1
-    if (i == 1001) break
-}
-SampleMeans[,SampleSize25 := Means]
-
-##Sample Size of 49
-
-Means &amp;lt;- NULL
-for (i in 1:1000){
-    Means &amp;lt;- append(Means, mean(Station172765_TMax[,sample(MaxTemp,49)], na.rm=TRUE))
-    i &amp;lt;- i + 1
-    if (i == 1001) break
-}
-SampleMeans[,SampleSize49 := Means]
-
-
-head(SampleMeans)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;sampling-error-of-sample-means&#34;&gt;Sampling Error of Sample Means&lt;/h2&gt;
-
-&lt;p&gt;So we can see that there is a sampling error for each sample mean in the data set.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;#Subtract the population mean from one sample mean of each sample size.
-
-SampleMeans[1] - Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;mean-of-sample-means&#34;&gt;Mean of Sample Means&lt;/h2&gt;
-
-&lt;p&gt;But we can see that mean of all of the sample means is fairly close to the mean of population data.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;sapply(SampleMeans, mean)
-
-Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;We can also see that as the number of sample means increases it comes closer and closer to the population mean.
-&lt;br&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;SampleMeans[1:10, mean(SampleSize5)]
-SampleMeans[1:100, mean(SampleSize5)]
-SampleMeans[1:500, mean(SampleSize5)]
-SampleMeans[1:1000, mean(SampleSize5)]
-
-Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;standard-error-of-the-mean-1&#34;&gt;Standard Error of the Mean&lt;/h2&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;So first off we can find the standard deviation of the sample means (&lt;strong&gt;standard error of the mean&lt;/strong&gt;) for each sample size. Notice that the standard deviation is much smaller for the set of means with the sample size of 49 and the standard deviation for the set of means is the largest for the data set with a sample size of 2.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;
-sapply(SampleMeans, sd) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Also notice that the standard deviation of the sample means is approximately equal to the standard deviation of the population data divided by the square root of the sample size.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(2)
-Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(5)
-Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(25)
-Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(49)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-If we didn&amp;rsquo;t have a complete data set for this weather data, we could take the standard deviation of the sample means and multiply it by the square root of our sample size to get the standard deviation of the population.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;SampleMeans[,sd(SampleSize49)] * sqrt(49) 
-Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)] 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;plot-sample-means&#34;&gt;Plot Sample Means&lt;/h2&gt;
-
-&lt;p&gt;&lt;br&gt;
-Now if we plot the SampleMeans data as a histogram and density plot we can see that this sampled data looks like a normal distribution while the original data was bimodal. We can also see that the standard error is much larger for the sample means with fewer samples per mean and that the means of the different sample means are about the same.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;DT1 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize2&amp;quot;,SampleMeans = SampleMeans$SampleSize2) 
-DT2 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize5&amp;quot;,SampleMeans = SampleMeans$SampleSize5) 
-DT3 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize25&amp;quot;,SampleMeans = SampleMeans$SampleSize25) 
-DT4 &amp;lt;- data.table(SampleSize = &amp;quot;SampleSize49&amp;quot;,SampleMeans = SampleMeans$SampleSize49) 
-
-MeltedSampleMeans &amp;lt;- rbindlist(l=list(DT1, DT2, DT3, DT4))
-
-p &amp;lt;- ggplot(MeltedSampleMeans, aes(SampleMeans, fill=SampleSize,color=SampleSize))
-p + geom_density(alpha = 0.1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;plot-sample-means-to-show-normality&#34;&gt;Plot Sample Means to Show Normality&lt;/h3&gt;
-
-&lt;p&gt;We can see, by plotting different numbers of sample means, that as the number of sample means increases the plot of those means looks more and more normal.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:10], geom = &amp;quot;density&amp;quot;)
-qqnorm(SampleMeans$SampleSize5[1:10])
-qqline(SampleMeans$SampleSize5[1:10])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:20], geom = &amp;quot;density&amp;quot;)
-qqnorm(SampleMeans$SampleSize5[1:20])
-qqline(SampleMeans$SampleSize5[1:20])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:30], geom = &amp;quot;density&amp;quot;)
-qqnorm(SampleMeans$SampleSize5[1:30])
-qqline(SampleMeans$SampleSize5[1:30])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:40], geom = &amp;quot;density&amp;quot;)
-qqnorm(SampleMeans$SampleSize5[1:40])
-qqline(SampleMeans$SampleSize5[1:40])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5[1:50], geom = &amp;quot;density&amp;quot;)
-qqnorm(SampleMeans$SampleSize5[1:50])
-qqline(SampleMeans$SampleSize5[1:50])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;div class=&#34;col2&#34;&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;qplot(SampleMeans$SampleSize5, geom = &amp;quot;density&amp;quot;)
-qqnorm(SampleMeans$SampleSize5)
-qqline(SampleMeans$SampleSize5)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/div&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;cental-limit-theorem-z-values&#34;&gt;Cental Limit Theorem Z-Values&lt;/h1&gt;
-
-&lt;p&gt;If the number of samples is &lt;a href=&#34;##Number of Sample Means&#34;&gt;large enough&lt;/a&gt;, ie more than 30, then conclusions can be made about the population data based on the sample data.&lt;/p&gt;
-
-&lt;p&gt;The formula for &lt;a href=&#34;Normal_Distribution.html#z-scores-an-example&#34; target=&#34;_blank&#34;&gt;z-values&lt;/a&gt; in normally distributed data:&lt;/p&gt;
-
-&lt;p&gt;$$z=\frac{\text{value-mean}}{\text{standard deviation}}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-We can use this very similar formula to find z-values for sample means of population data:&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;
-&lt;strong&gt;or&lt;/strong&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard deviation}\div\sqrt{\text{sample size}}}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;z-values-with-sample-size-less-than-30&#34;&gt;Z-Values With Sample Size Less Than 30&lt;/h2&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;If the number of sample is less than 30 then use the normal formula for a z-score.&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;example-weather-data&#34;&gt;Example Weather Data&lt;/h2&gt;
-
-&lt;p&gt;So if we took a 36 days at random from the weather data, what is the probability that the mean of those 36 days would be greater than 65 degrees?&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;The standard deviation of the sample means would be:
-$$\sigma_{\bar{X}} =\frac{\sigma}{\sqrt{n}} = \frac{21.12321}{\sqrt{36}} = 3.520535$$&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;
-OR
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;Station172765_TMax[, sd(MaxTemp, na.rm = TRUE)]/sqrt(36)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;The z-score is:&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}} = \frac{65-54.45328}{21.12321\div\sqrt{36}} = 2.995772$$&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;(65-54.45328)/(21.12321/sqrt(36))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-And based on &lt;a href=&#34;https://en.wikipedia.org/wiki/Standard_normal_table&#34; target=&#34;_blank&#34;&gt;Z-Score lookup table&lt;/a&gt; the probability that 36 days would have a mean greater than 65 is 1-.9987 or &lt;strong&gt;0.0013&lt;/strong&gt;.
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;pnorm-function&#34;&gt;Pnorm function&lt;/h3&gt;
-
-&lt;p&gt;What&amp;rsquo;s key in this operation is that the value for the standard deviation entered into pnorm is &lt;strong&gt;not&lt;/strong&gt; 21.12321, but $21.12321 \div \sqrt{36}$.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;pnorm(65, mean=54.45328, sd=(21.12321/sqrt(36)), lower.tail = FALSE)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;The actual number of sample means greater than 65 is approximately 12% which is close enough.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sapply(SampleMeans[SampleSize5&amp;gt;65], length)/nrow(SampleMeans) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;smaller-sample-size&#34;&gt;Smaller Sample Size&lt;/h3&gt;
-
-&lt;p&gt;Where it gets interesting is if we have 5 days instead of 36. Five days falls below the level at which we have to divide sigma by the root of the sample size. So&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;The z-score is:&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma} = \frac{65-54.45328}{21.12321} = 0.4992953$$&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;(65-54.45328)/(21.12321)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-And based on &lt;a href=&#34;https://en.wikipedia.org/wiki/Standard_normal_table&#34; target=&#34;_blank&#34;&gt;Z-Score lookup table&lt;/a&gt; the probability that the mean of five values will be greater than 65 is 1-.6915 or &lt;strong&gt;0.3085&lt;/strong&gt;.
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;finite-population-correction-factor&#34;&gt;Finite Population Correction Factor&lt;/h1&gt;
-
-&lt;p&gt;&lt;br&gt;
-The Central Limit Theorem and standard error of the mean assume that samples are drawn with replacement. However almost all survey work are conducted on finite populations and samples are drawn without replacement. In these cases and especially when the sample size &lt;em&gt;n&lt;/em&gt; is large compared to the population size &lt;em&gt;N&lt;/em&gt; (more than 5%), the finite population correction factor is used to account for the added precision gained by sampling close to a larger percentage of the population. The effect of the FPC is that the error becomes zero when the sample size n is equal to the population size N.&lt;/p&gt;
-
-&lt;p&gt;Formula for the population correction factor:&lt;/p&gt;
-
-&lt;p&gt;$$\sqrt{\frac{N-n}{N-1}}$$&lt;/p&gt;
-
-&lt;p&gt;Where:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;N&lt;/em&gt; is the population size&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;n&lt;/em&gt; is the sample size&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;So the standard error of the mean is multiplied by the population correction factor:&lt;/p&gt;
-
-&lt;p&gt;$$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} \cdot \sqrt{\frac{N-n}{N-1}}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;And the total formula for the z-value when using the population correction factor becomes:&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}\cdot\sqrt{\frac{N-n}{N-1}}}$$&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;population-size-and-population-correcton-factor&#34;&gt;Population Size and Population Correcton Factor&lt;/h2&gt;
-
-&lt;p&gt;We can see the effect that this correction factor has based on the size of the population N and the sample size n.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;small-n&#34;&gt;Small N&lt;/h3&gt;
-
-&lt;p&gt;If &lt;strong&gt;N is small&lt;/strong&gt; and multiplied by a data set with a $\sigma$ of 1.&lt;/p&gt;
-
-&lt;p&gt;$$\sqrt{\frac{150-30}{150-1}} = 0.8974236$$&lt;/p&gt;
-
-&lt;p&gt;$$\sigma_{\bar{X}\text{Small}} = \frac{1}{\sqrt{30}} \cdot \sqrt{\frac{150-30}{150-1}} = 0.1638464$$&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}\cdot\sqrt{\frac{150-30}{150-1}}} = 3.051639$$&lt;/p&gt;
-
-&lt;p&gt;So in this case 99.89% of the sample means fall below 4.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;large-n&#34;&gt;Large N&lt;/h3&gt;
-
-&lt;p&gt;If &lt;strong&gt;N is large&lt;/strong&gt; and multiplied by a data set with a $\sigma$ of 1:&lt;/p&gt;
-
-&lt;p&gt;$$\sqrt{\frac{100000-5}{100000-1}} = 0.999855$$&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;$$\sigma_{\bar{X}\text{Large}} = \frac{1}{\sqrt{30}} \cdot \sqrt{\frac{1000-5}{1000-1}} = 0.1825477$$&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}\cdot\sqrt{\frac{100000-30}{100000-1}}} = 2.73901$$&lt;/p&gt;
-
-&lt;p&gt;In this case 99.69% of the sample means fall below 4.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;no-correction-factor&#34;&gt;No Correction Factor&lt;/h3&gt;
-
-&lt;p&gt;This is fairly close to the standard error of the mean without a correction factor:&lt;/p&gt;
-
-&lt;p&gt;$$\sigma_{\bar{X}\text{No Correction Factor}} = \frac{1}{\sqrt{30}} = 0.1825742$$&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}}$$&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}} \approx 2.738613$$&lt;/p&gt;
-
-&lt;p&gt;And like the previous case 99.69% of the sample means fall below 4.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;example&#34;&gt;EXAMPLE&lt;/h1&gt;
-
-&lt;p&gt;A large freight elevator can transport a maximum of 9800 pounds. Suppose a load of cargo containing 49 boxes must be transported via the elevator. Experience has shown that the weight of boxes of this type of cargo follows a distribution with mean μ = 205 pounds and standard deviation σ = 15 pounds. Based on this information, what is the probability that all 49 boxes can be safely loaded onto the freight elevator and transported?&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard deviation}\div\sqrt{\text{sample size}}}$$&lt;/p&gt;
-
-&lt;p&gt;$$z = \frac{\bar{X}-\mu}{\sigma\div\sqrt{n}}$$&lt;/p&gt;
-
-&lt;p&gt;$$z=\frac{(9800\div49)-205}{15\div\sqrt{49}} = -2.33$$&lt;/p&gt;
-
-&lt;p&gt;$$.5-.4901 = 0.0099$$&lt;/p&gt;
-
-&lt;p&gt;So there&amp;rsquo;s about a 1% chance that the freight elevator won&amp;rsquo;t fail.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-Using the pnorm function we get:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;pnorm((9800/49), mean=205, sd=(15/sqrt(49)), lower.tail = TRUE)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;reference-websites&#34;&gt;Reference Websites&lt;/h1&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/&#34; target=&#34;_blank&#34;&gt;http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.math.uah.edu/stat/sample/CLT.html&#34; target=&#34;_blank&#34;&gt;http://www.math.uah.edu/stat/sample/CLT.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://atcm.mathandtech.org/EP2009/papers_full/2812009_17251.pdf&#34; target=&#34;_blank&#34;&gt;http://atcm.mathandtech.org/EP2009/papers_full/2812009_17251.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.math.utah.edu/~treiberg/M3074Simulation.pdf&#34; target=&#34;_blank&#34;&gt;http://www.math.utah.edu/~treiberg/M3074Simulation.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://science.kennesaw.edu/~jdemaio/1107/Central%20Limit%20Theorem.htm&#34; target=&#34;_blank&#34;&gt;http://science.kennesaw.edu/~jdemaio/1107/Central%20Limit%20Theorem.htm&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.stat.ucla.edu/~nchristo/introeconometrics/introecon_central_limit_theorem.pdf&#34; target=&#34;_blank&#34;&gt;http://www.stat.ucla.edu/~nchristo/introeconometrics/introecon_central_limit_theorem.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.cios.org/readbook/rmcs/ch10.pdf&#34; target=&#34;_blank&#34;&gt;Sampling Distributions and the Central Limit Theorem&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148365/&#34; target=&#34;_blank&#34;&gt;In Brief: Standard Deviation and Standard Error&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Simulating the Central Limit Theorem from R-bloggers&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;This is code from &lt;a href=&#34;http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/&#34; target=&#34;_blank&#34;&gt;r-bloggers&lt;/a&gt; that simulates the central limit theorem. You can pick from several different distributions and then generate several plots that show the means of these distributions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sdm.sim &amp;lt;- function(n,src.dist=NULL,param1=NULL,param2=NULL) {
-   r &amp;lt;- 10000  # Number of replications/samples - DO NOT ADJUST
-   # This produces a matrix of observations with  
-   # n columns and r rows. Each row is one sample:
-   my.samples &amp;lt;- switch(src.dist,
-	&amp;quot;E&amp;quot; = matrix(rexp(n*r,param1),r),
-	&amp;quot;N&amp;quot; = matrix(rnorm(n*r,param1,param2),r),
-	&amp;quot;U&amp;quot; = matrix(runif(n*r,param1,param2),r),
-	&amp;quot;P&amp;quot; = matrix(rpois(n*r,param1),r),
-	&amp;quot;C&amp;quot; = matrix(rcauchy(n*r,param1,param2),r),
-        &amp;quot;B&amp;quot; = matrix(rbinom(n*r,param1,param2),r),
-	&amp;quot;G&amp;quot; = matrix(rgamma(n*r,param1,param2),r),
-	&amp;quot;X&amp;quot; = matrix(rchisq(n*r,param1),r),
-	&amp;quot;T&amp;quot; = matrix(rt(n*r,param1),r))
-   all.sample.sums &amp;lt;- apply(my.samples,1,sum)
-   all.sample.means &amp;lt;- apply(my.samples,1,mean)   
-   all.sample.vars &amp;lt;- apply(my.samples,1,var) 
-   par(mfrow=c(2,2))
-   hist(my.samples[1,],col=&amp;quot;gray&amp;quot;,main=&amp;quot;Distribution of One Sample&amp;quot;)
-   hist(all.sample.sums,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Sum&amp;quot;)
-   hist(all.sample.means,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Mean&amp;quot;)
-   hist(all.sample.vars,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Variance&amp;quot;)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;There are 9 population distributions to choose from: exponential (E), normal (N), uniform (U), Poisson (P), Cauchy &amp;copy;, binomial (B), gamma (G), Chi-Square (X), and the Student’s t distribution (t). Note also that you have to provide either one or two parameters, depending upon what distribution you are selecting. For example, a normal distribution requires that you specify the mean and standard deviation to describe where it’s centered, and how fat or thin it is (that’s two parameters). A Chi-square distribution requires that you specify the degrees of freedom (that’s only one parameter). You can find out exactly what distributions require what parameters by going here: &lt;a href=&#34;http://en.wikibooks.org/wiki/R_Programming/Probability_Distributions&#34; target=&#34;_blank&#34;&gt;http://en.wikibooks.org/wiki/R_Programming/Probability_Distributions&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;For example an exponential distribution looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;hist(rexp(100000,1))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But these plots show what the sample means for an exponential distribution look like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sdm.sim(10,src.dist=&amp;quot;E&amp;quot;,1)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Deep Learning</title>
       <link>/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
@@ -1814,7 +1173,18 @@ Using the pnorm function we get:&lt;/p&gt;
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
       <guid>/portfolio/thesis/</guid>
-      <description></description>
+      <description>&lt;p&gt;I wrote &lt;a href=&#34;/files/Maddaus_Thesis_Paper.pdf&#34;&gt;this thesis&lt;/a&gt; for my MFA at Montana State University in the Science and Natural History Filmmaking Program.&lt;/p&gt;
+
+&lt;p&gt;The abstract:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Noble Savage mythology appears in many films that depict Native Americans. In these films a character or characters will represent the wild, natural and savage side of this myth and other characters represent civilized society but also moral corruption. The natural and savage character will clash with members of civilized society and will be threatened or killed. In this paper I will show that the events and characters in some suburban films draw from these same Noble Savage myths and cultural beliefs. I will discuss these tropes in the films E.T. The Extraterrestrial, The Ice Storm, American Beauty, and Ordinary People. In these films the wild and savage side is valorized and the civilized side is denounced. I will show that this mythology has permeated into our cultural beliefs so thoroughly that it appears in films that have little to do with the original cultural, geographical and historical context that first produced this mythology.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;/files/Maddaus_Thesis_Paper.pdf&#34;&gt;File Link&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -3856,54 +3226,6 @@ rm -rf ~/miniconda3
       
       <guid>/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     

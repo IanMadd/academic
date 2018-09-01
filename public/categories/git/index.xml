@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 25 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BFG Repo-Cleaner - Deleting Large File From Git</title>
+      <link>/post/deleting-large-file-from-git/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/deleting-large-file-from-git/</guid>
+      <description>BFG Repo-Cleaner is the best way to delete a large file from a git repository that you&amp;rsquo;ve already committed.
+When a file is committed to a repository, it stays in the repository&amp;rsquo;s history even if you remove it in a subsequent commit. This allows a user to undo subsequent commits and bring back the previous commits, with all their files undisturbed. The problem is that users may want to completely delete a file that is too large or could have sensitive information stored in it.</description>
+    </item>
     
     <item>
       <title>Guides For Learning Git &amp; Github</title>
