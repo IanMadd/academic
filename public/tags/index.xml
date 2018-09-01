@@ -49,6 +49,15 @@
     </item>
     
     <item>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Grammar</title>
       <link>/tags/grammar/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
@@ -124,15 +133,6 @@
       <title>Python</title>
       <link>/tags/python/</link>
       <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
       <guid>/tags/python/</guid>
       <description></description>
