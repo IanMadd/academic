@@ -90,7 +90,7 @@ Data Table [inherits](https://en.wikipedia.org/wiki/Inheritance_(object-oriented
 
 <br>
 
-Start by creating a few data tables. This tutorial will use two data tables, one called **DT** with dummy data, and another called **MTCarsDT** which contains the `mtcars` dataset from the datasets package.
+This tutorial will use two data tables, one called **DT** with dummy data, and another called **MTCarsDT** which contains the `mtcars` dataset from the datasets package.
 
 
 ```
@@ -148,12 +148,10 @@ Start by creating a few data tables. This tutorial will use two data tables, one
 ```
 <br>
 
-## fread {#fread}
-
 
 # Listing Data Tables {#list_data_tables} 
 
-The data.table package has a nice function that will list all tables in the global environment as well as their columns, and some extra information.
+The `tables` function will list all tables in the global environment as well as their columns, and some extra summary information.
 
 ```
 > tables()
@@ -173,7 +171,7 @@ The data.table package has a nice function that will list all tables in the glob
 
 <br>
 
-Data Tables allow you to find data in them and perform operations using the following syntax: `DT[i, j, by]`, which means, “Take DT, subset rows using `i`, then calculate `j` grouped by `by`.” This is similar to SQL syntax where **i** corresponds to SELECT, **j** corresponds to WHERE, and *by* corresponds to GROUP BY. 
+Data Tables allow you to find data and perform operations using the following syntax: `DT[i, j, by]`, which means, “Take DT, subset rows using `i`, then calculate `j` grouped by `by`.” This is similar to SQL syntax where **i** corresponds to SELECT, **j** corresponds to WHERE, and *by* corresponds to GROUP BY. 
 
 <br>
 
@@ -330,10 +328,10 @@ Print multiple columns as a data.table:
 
 <br>
 
-You can also print columns by index number using `with=FALSE`. This is a bad idea, **see the warning below**.
+You can also print columns by index number but this is generally a bad idea, **see the warning below**.
 
 ```
-> MTCarsDT[1:5, 1:3, with=FALSE]
+> MTCarsDT[1:5, 1:3]
 
 ##      mpg cyl disp
 ##  1: 21.0   6  160
@@ -344,7 +342,7 @@ You can also print columns by index number using `with=FALSE`. This is a bad ide
 ```
 
 ```
-> MTCarsDT[1:5, c(1:3,4,6), with=FALSE]
+> MTCarsDT[1:5, c(1:3,4,6)]
 
 ##      mpg cyl disp  hp    wt
 ##  1: 21.0   6  160 110 2.620
@@ -360,7 +358,7 @@ You can also print columns by index number using `with=FALSE`. This is a bad ide
 
 **WARNING**
 
-Using `with=FALSE` to refer to columns by index number can create errors. If you reference a column by number and then add, move, or replace columns, the code may continue to execute but it will return incorrect results without any warning. For this reason you should refer to columns by name rather than number.
+Referring to columns by index number can create errors. If you reference a column by number and then add, move, or replace columns, the code may continue to execute but it will return incorrect results possibly without any warning. For this reason you should refer to columns by name rather than number.
 
 ***
 
@@ -393,7 +391,7 @@ The same as above but the results have different names:
 ##  1:   146.6875       6.026948
 ```
 
-This prints the horsepower column and repeats the values of the sd and mean of the hp column. The head function prints only the first six rows. Compare this operation with next operation which selects the first six rows within the brackets.
+This prints the `hp` column and repeats the values of the standard deviation and mean of the `hp` column. The head function prints only the first six rows. Compare this operation with next operation which selects the first six rows within the brackets.
 ```
 > head(MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))])
 
@@ -406,7 +404,7 @@ This prints the horsepower column and repeats the values of the sd and mean of t
 ##  6: 105 68.56287 146.6875
 ```
 
-Notice here that the numbers for standard deviation and mean are different in this function below. This returns only the mean and standard deviation for the hp column for the **first six columns only**.
+Notice here that the numbers for standard deviation and mean are different in this function below. This returns only the mean and standard deviation for the `hp` column for the **first six columns only**.
 
 ```
 > MTCarsDT[1:6,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
@@ -431,23 +429,8 @@ You can use `apply()` on a data.table to apply a function to each column:
 ##  "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" 
 ```
 
-Notice that this returns errors if it cannot perform a function on a column:
 
-```
-> sapply(DT, mean)
-
-##          V1         V2         V3         V4         V5         V6         V7          
-##    1.500000         NA  -0.337575   6.500000  26.500000         NA 106.500000  
-##          V8         V9
-##  126.500000         NA
-##  Warning messages:
-##  1: In mean.default(X[[i]], ...) :
-##    argument is not numeric or logical: returning NA
-##  2: In mean.default(X[[i]], ...) :
-##    argument is not numeric or logical: returning NA
-```
-
-The curly braces allow multiple functions. Notice that the separate functions must be placed on separate lines or be separated by semicolons.
+Use curly braces to perform multiple functions in one function call. Notice that the separate functions must be placed on separate lines or be separated by semicolons.
 
 ```
 > MTCarsDT[, {print(disp); plot(mpg, wt); sapply(MTCarsDT, mean)}]
@@ -479,6 +462,7 @@ Print rows 1:5 but only the hp, weight, and mpg columns.
 ```
 
 Return cylinders, hp, mean hp and mpg for 6 cylinder cars.
+
 ```
 > MTCarsDT[cyl == 6,.(cyl,hp,MeanHorsepower = mean(hp),mpg)]
 
@@ -491,6 +475,7 @@ Return cylinders, hp, mean hp and mpg for 6 cylinder cars.
 ##  6:   6 123       122.2857 17.8
 ##  7:   6 175       122.2857 19.7
 ```
+
 Note that the mean horsepower is *only* for 6 cylinder cars and doesn't include 4 and 8 cylinder cars.
 
 ```
@@ -498,12 +483,15 @@ MTCarsDT[,mean(hp)]
 
 ##  [1] 146.6875
 ```
+
 <br>
 
 # Perform A Function On A Column By The Value Of Another Column `DT[,j,by]` {#dt_jby}
 
 <br>
-This gives the mean horsepower for cars with each number of cylinders.
+
+This gives the mean horsepower for cars by number of cylinders.
+
 ```
 MTCarsDT[,.(MeanHP = mean(hp)), by=cyl]
 
@@ -513,7 +501,8 @@ MTCarsDT[,.(MeanHP = mean(hp)), by=cyl]
 ##  3:   8 209.21429
 ```
 
-This will give mean time in seconds for 1/4 mile race based on both gears and cylinders.
+This will give mean time in seconds for 1/4 mile race by both gears and cylinders.
+
 ```
 MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
 
@@ -527,13 +516,14 @@ MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
 ##  7:   8    5         14.5500
 ##  8:   6    5         15.5000
 ```
-<br>
 
+<br>
 
 ## Subset of Rows `DT[i,j,by]` {#dt_ijby}
 
 
 This will give the mean hp for cars with 4 gears grouped by the number cylinders.
+
 ```
 MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
 
@@ -541,6 +531,8 @@ MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
 ##  1:   6   116.5
 ##  2:   4    76.0
 ```
+
+<br>
 
 # Count The Number of Objects `.N` {#objects_N}
 
@@ -584,11 +576,14 @@ MTCarsDT[cyl == 6,table(gear)]
 ##   2  4  1 
 ```
 
+<br>
+
 # Modify Data Tables `DT[i,j := ]` {#modifying_data_tables}
 
 <br>
 
 The `:=` operator updates columns and does so invisibly, that is to say when you use `:=` it doesn't print a result unless you explicitly tell it to. The := operator makes the assignment operator (`DT <- DT[.....]`) unnecessary because it is significantly faster than the assignment operator. [For more on :=](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D).
+
 ```
 DT[,V8]
 
@@ -719,8 +714,8 @@ DT[, c("V7","V8") := NULL][]
 ## 12:  C  0.9116 12 32  E  3
 ```
 
-
 Find the rows in column V2 that are equal to **A** and assign X to them:
+
 ```
 DT[V2 == "A", V2 := "X"][]
 
@@ -773,7 +768,7 @@ Setkey does three things:
 3. It allows you to easily search through that column.
 
 
-First, this operation keys the V2 column in this Data Table. Notice that it will sort it into alphabetical order by the keyed column.
+First, this operation keys the V2 column in this data table and it sorts the data table into alphabetical order by the keyed column.
 ```
 setkey(DT,V2)
 DT
@@ -793,10 +788,10 @@ DT
 ## 12:  X -0.0486 10 30  C  1 110 130
 ```
 
-
 <br>
 
 Put the search term in quotes to search through a keyed column:
+
 ```
 DT["B"]
 
@@ -808,7 +803,6 @@ DT["B"]
 ```
 
 Use the combine function to search for two terms:
-
 
 ```
 DT[c("B", "X")]
@@ -823,6 +817,7 @@ DT[c("B", "X")]
 ## 7:  X -0.2843  7 27  C  2 107 127
 ## 8:  X -0.0486 10 30  C  1 110 130
 ```
+
 <br>
 
 ## key() {#key}
@@ -853,10 +848,12 @@ tables()
 Total: 0MB
 ```
 
+<br>
 
 ## Returning specified rows - mult() {#mult}
 
 The `mult` command returns the row specified. The options are *first*, *last* and *all*. All is the default:
+
 ```
 DT["X", mult="first"]
 
@@ -876,6 +873,7 @@ DT["X", mult="all"]
 ## 3:  X -0.2843  7 27  C  2 107 127
 ## 4:  X -0.0486 10 30  C  1 110 130
 ```
+
 <br>
 
 ## Nomatch {#nomatch}
@@ -883,7 +881,7 @@ DT["X", mult="all"]
 If you search for a value that doesn't exist the data table will return with an NA row.
 
 ```
-DT["D"]
+DT[c("X", "D")]
 
 ##    V2      V3 V4 V5   V6 V9  V7  V8
 ## 1:  X  0.4519  1 21    C  0 101 121
@@ -928,8 +926,6 @@ MTCarsDT[.(c(4, 6)), mean(hp)]
 <br>
 
 ## by=.EACHI {#by_eachi}
-
-
 
 To return the mean **hp** for 4 and 6 cylinder cars separately use the `by=.EACHI` command. This will perform the same operation separately for each value in the keyed column. Notice that numerical data requires the list command:
 
@@ -1006,6 +1002,7 @@ MTCarsDT[.N-4]
 ```
 
 <br>
+
 but `,.N` displays the number of rows
 
 ```{r}
@@ -1014,8 +1011,7 @@ MTCarsDT[,.N]
 ## [1] 32
 ```
 
-This can be handy if you want to display the largest value of a keyed row. For example, this will give the heaviest vehicle followed by the heaviest vehicles sorted by the number of cylinders.
-
+This can be handy if you want to display the largest value of a keyed row. The first operation will give the heaviest vehicle and the second will give the heaviest vehicles sorted by the number of cylinders.
 
 ```
 setkey(MTCarsDT, wt)
@@ -1048,7 +1044,6 @@ The list command ensures that a data table is returned and not a vector.
 ## 5:   4 120.3
 ```
 
-
 Use the list function in the to return the mean horsepower for each combination of gears and cylinders:
 
 ```
@@ -1064,6 +1059,7 @@ MTCarsDT[,mean(hp),.(cyl,gear)]
 ## 7:   6    3 107.5000
 ## 8:   8    3 194.1667
 ```
+
 <br>
 
 # SD (**S**ubset of **D**ata) {#sd}
@@ -1112,6 +1108,7 @@ This will return the MTCarsDT sorted first by number of cylinders and then by ho
 ```
 
 Using .SD with print will return all of the data above but group the data by the number of cylinders. This works even if there is no keyed column. Notice that the cylinders column is missing. 
+
 ```
 > MTCarsDT[,print(.SD), by = cyl]
 
@@ -1216,6 +1213,7 @@ With lapply you can perform a function on every column grouped by the number of 
 ## SDcols {#SDcols}
 
 You can select specific columns using `.SDcols`.
+
 ```
 > MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = c("wt","hp", "disp")]
 
@@ -1290,10 +1288,24 @@ This is the syntax for set : `for (i in from:to) set(DT, row, column, new value)
 Here's the DT data table:
 
 ```
-DT
+> DT
+
+##    V2      V3 V4 V5 V6 V9  V7  V8
+##  1:  X -1.9649  1 21  C  0 101 121
+##  2:  B  0.2992  2 22  D  1 102 122
+##  3:  C -0.6450  3 23  E  2 103 123
+##  4:  X -0.4986  4 24  C  3 104 124
+##  5:  B -1.9649  5 25  D  0 105 125
+##  6:  C  0.2992  6 26  E  1 106 126
+##  7:  X -0.6450  7 27  C  2 107 127
+##  8:  B -0.4986  8 28  D  3 108 128
+##  9:  C -1.9649  9 29  E  0 109 129
+## 10:  X  0.2992 10 30  C  1 110 130
+## 11:  B -0.6450 11 31  D  2 111 131
+## 12:  C -0.4986 12 32  E  3 112 132
 ```
 
-This will renumber the V8 column:
+As an example, this will renumber the V8 column:
 
 ```
 > for (i in 1:12) set(DT,i,"V8",i)
@@ -1347,6 +1359,7 @@ Now we can run a speed test on the different methods of assigning the value of i
    user  system elapsed 
   0.237   0.030   0.268 
 ```
+
 So you can see there are big speed advantages to using set() over the assignment operator <- or the assignment by reference operator := .
 
 <br>

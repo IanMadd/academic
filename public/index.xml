@@ -18,11 +18,11 @@
       <guid>/post/deleting-large-file-from-git/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34; target=&#34;_blank&#34;&gt;BFG Repo-Cleaner&lt;/a&gt; is the best way to delete a large file from a git repository that you&amp;rsquo;ve already committed.&lt;/p&gt;
 
-&lt;p&gt;When a file is committed to a repository, it stays in the repository&amp;rsquo;s history even if you remove it in a subsequent commit. This allows a user to undo subsequent commits and bring back the previous commits, with all their files undisturbed. The problem is that users may want to completely delete a file that is too large or could have sensitive information stored in it.&lt;/p&gt;
+&lt;p&gt;When a file is committed to a repository, it stays in the repository&amp;rsquo;s history even if you remove it in a subsequent commit. This allows a user to undo later commits and bring back the previous commits, with all their files undisturbed. The problem is that users may want to completely delete a file that is too large or could have sensitive information stored in it.&lt;/p&gt;
 
-&lt;p&gt;BFG-Repo-cleaner will delete those files from every commit in your repositiories history.&lt;/p&gt;
+&lt;p&gt;BFG Repo-Cleaner will delete those files from every commit in a repositiory&amp;rsquo;s history.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34; target=&#34;_blank&#34;&gt;Download from their website and follow their instructions.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34; target=&#34;_blank&#34;&gt;Download from their website and follow their instructions.&lt;/a&gt; &lt;a href=&#34;https://www.oracle.com/technetwork/java/javase/downloads/index.html&#34; target=&#34;_blank&#34;&gt;You&amp;rsquo;ll need the Java Development Kit&lt;/a&gt; if you don&amp;rsquo;t already have it installed.&lt;/p&gt;
 </description>
     </item>
     
@@ -1281,7 +1281,7 @@ The Central Limit Theorem and standard error of the mean assume that samples are
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Start by creating a few data tables. This tutorial will use two data tables, one called &lt;strong&gt;DT&lt;/strong&gt; with dummy data, and another called &lt;strong&gt;MTCarsDT&lt;/strong&gt; which contains the &lt;code&gt;mtcars&lt;/code&gt; dataset from the datasets package.&lt;/p&gt;
+&lt;p&gt;This tutorial will use two data tables, one called &lt;strong&gt;DT&lt;/strong&gt; with dummy data, and another called &lt;strong&gt;MTCarsDT&lt;/strong&gt; which contains the &lt;code&gt;mtcars&lt;/code&gt; dataset from the datasets package.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; library(data.table)
 
@@ -1334,11 +1334,9 @@ The Central Limit Theorem and standard error of the mean assume that samples are
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;fread&#34;&gt;fread&lt;/h2&gt;
-
 &lt;h1 id=&#34;list_data_tables&#34;&gt;Listing Data Tables&lt;/h1&gt;
 
-&lt;p&gt;The data.table package has a nice function that will list all tables in the global environment as well as their columns, and some extra information.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;tables&lt;/code&gt; function will list all tables in the global environment as well as their columns, and some extra summary information.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; tables()
 
@@ -1357,7 +1355,7 @@ The Central Limit Theorem and standard error of the mean assume that samples are
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Data Tables allow you to find data in them and perform operations using the following syntax: &lt;code&gt;DT[i, j, by]&lt;/code&gt;, which means, “Take DT, subset rows using &lt;code&gt;i&lt;/code&gt;, then calculate &lt;code&gt;j&lt;/code&gt; grouped by &lt;code&gt;by&lt;/code&gt;.” This is similar to SQL syntax where &lt;strong&gt;i&lt;/strong&gt; corresponds to SELECT, &lt;strong&gt;j&lt;/strong&gt; corresponds to WHERE, and &lt;em&gt;by&lt;/em&gt; corresponds to GROUP BY.&lt;/p&gt;
+&lt;p&gt;Data Tables allow you to find data and perform operations using the following syntax: &lt;code&gt;DT[i, j, by]&lt;/code&gt;, which means, “Take DT, subset rows using &lt;code&gt;i&lt;/code&gt;, then calculate &lt;code&gt;j&lt;/code&gt; grouped by &lt;code&gt;by&lt;/code&gt;.” This is similar to SQL syntax where &lt;strong&gt;i&lt;/strong&gt; corresponds to SELECT, &lt;strong&gt;j&lt;/strong&gt; corresponds to WHERE, and &lt;em&gt;by&lt;/em&gt; corresponds to GROUP BY.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -1510,9 +1508,9 @@ Notice that the previous command uses the combine function, &lt;strong&gt;c()&lt
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;You can also print columns by index number using &lt;code&gt;with=FALSE&lt;/code&gt;. This is a bad idea, &lt;strong&gt;see the warning below&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You can also print columns by index number but this is generally a bad idea, &lt;strong&gt;see the warning below&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:5, 1:3, with=FALSE]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:5, 1:3]
 
 ##      mpg cyl disp
 ##  1: 21.0   6  160
@@ -1522,7 +1520,7 @@ Notice that the previous command uses the combine function, &lt;strong&gt;c()&lt
 ##  5: 18.7   8  360
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:5, c(1:3,4,6), with=FALSE]
+&lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:5, c(1:3,4,6)]
 
 ##      mpg cyl disp  hp    wt
 ##  1: 21.0   6  160 110 2.620
@@ -1538,7 +1536,7 @@ Notice that the previous command uses the combine function, &lt;strong&gt;c()&lt
 
 &lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Using &lt;code&gt;with=FALSE&lt;/code&gt; to refer to columns by index number can create errors. If you reference a column by number and then add, move, or replace columns, the code may continue to execute but it will return incorrect results without any warning. For this reason you should refer to columns by name rather than number.&lt;/p&gt;
+&lt;p&gt;Referring to columns by index number can create errors. If you reference a column by number and then add, move, or replace columns, the code may continue to execute but it will return incorrect results possibly without any warning. For this reason you should refer to columns by name rather than number.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1571,7 +1569,7 @@ Notice that the previous command uses the combine function, &lt;strong&gt;c()&lt
 ##  1:   146.6875       6.026948
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This prints the horsepower column and repeats the values of the sd and mean of the hp column. The head function prints only the first six rows. Compare this operation with next operation which selects the first six rows within the brackets.&lt;/p&gt;
+&lt;p&gt;This prints the &lt;code&gt;hp&lt;/code&gt; column and repeats the values of the standard deviation and mean of the &lt;code&gt;hp&lt;/code&gt; column. The head function prints only the first six rows. Compare this operation with next operation which selects the first six rows within the brackets.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; head(MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))])
 
@@ -1584,7 +1582,7 @@ Notice that the previous command uses the combine function, &lt;strong&gt;c()&lt
 ##  6: 105 68.56287 146.6875
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Notice here that the numbers for standard deviation and mean are different in this function below. This returns only the mean and standard deviation for the hp column for the &lt;strong&gt;first six columns only&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Notice here that the numbers for standard deviation and mean are different in this function below. This returns only the mean and standard deviation for the &lt;code&gt;hp&lt;/code&gt; column for the &lt;strong&gt;first six columns only&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[1:6,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
 
@@ -1608,22 +1606,7 @@ You can use &lt;code&gt;apply()&lt;/code&gt; on a data.table to apply a function
 ##  &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; &amp;quot;numeric&amp;quot; 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Notice that this returns errors if it cannot perform a function on a column:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; sapply(DT, mean)
-
-##          V1         V2         V3         V4         V5         V6         V7          
-##    1.500000         NA  -0.337575   6.500000  26.500000         NA 106.500000  
-##          V8         V9
-##  126.500000         NA
-##  Warning messages:
-##  1: In mean.default(X[[i]], ...) :
-##    argument is not numeric or logical: returning NA
-##  2: In mean.default(X[[i]], ...) :
-##    argument is not numeric or logical: returning NA
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The curly braces allow multiple functions. Notice that the separate functions must be placed on separate lines or be separated by semicolons.&lt;/p&gt;
+&lt;p&gt;Use curly braces to perform multiple functions in one function call. Notice that the separate functions must be placed on separate lines or be separated by semicolons.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; MTCarsDT[, {print(disp); plot(mpg, wt); sapply(MTCarsDT, mean)}]
 
@@ -1679,8 +1662,9 @@ You can use &lt;code&gt;apply()&lt;/code&gt; on a data.table to apply a function
 
 &lt;h1 id=&#34;dt_jby&#34;&gt;Perform A Function On A Column By The Value Of Another Column &lt;code&gt;DT[,j,by]&lt;/code&gt;&lt;/h1&gt;
 
-&lt;p&gt;&lt;br&gt;
-This gives the mean horsepower for cars with each number of cylinders.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;This gives the mean horsepower for cars by number of cylinders.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;MTCarsDT[,.(MeanHP = mean(hp)), by=cyl]
 
@@ -1690,7 +1674,7 @@ This gives the mean horsepower for cars with each number of cylinders.&lt;/p&gt;
 ##  3:   8 209.21429
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This will give mean time in seconds for &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt; mile race based on both gears and cylinders.&lt;/p&gt;
+&lt;p&gt;This will give mean time in seconds for &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt; mile race by both gears and cylinders.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
 
@@ -1717,6 +1701,8 @@ This gives the mean horsepower for cars with each number of cylinders.&lt;/p&gt;
 ##  1:   6   116.5
 ##  2:   4    76.0
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;objects_N&#34;&gt;Count The Number of Objects &lt;code&gt;.N&lt;/code&gt;&lt;/h1&gt;
 
@@ -1757,6 +1743,8 @@ This gives the mean horsepower for cars with each number of cylinders.&lt;/p&gt;
 ##   3  4  5 
 ##   2  4  1 
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;modifying_data_tables&#34;&gt;Modify Data Tables &lt;code&gt;DT[i,j := ]&lt;/code&gt;&lt;/h1&gt;
 
@@ -1941,7 +1929,7 @@ DT[,.(V6,V7)]
 &lt;li&gt;&lt;p&gt;It allows you to easily search through that column.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;First, this operation keys the V2 column in this Data Table. Notice that it will sort it into alphabetical order by the keyed column.&lt;/p&gt;
+&lt;p&gt;First, this operation keys the V2 column in this data table and it sorts the data table into alphabetical order by the keyed column.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;setkey(DT,V2)
 DT
@@ -2017,6 +2005,8 @@ DT
 Total: 0MB
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;mult&#34;&gt;Returning specified rows - mult()&lt;/h2&gt;
 
 &lt;p&gt;The &lt;code&gt;mult&lt;/code&gt; command returns the row specified. The options are &lt;em&gt;first&lt;/em&gt;, &lt;em&gt;last&lt;/em&gt; and &lt;em&gt;all&lt;/em&gt;. All is the default:&lt;/p&gt;
@@ -2046,7 +2036,7 @@ DT[&amp;quot;X&amp;quot;, mult=&amp;quot;all&amp;quot;]
 
 &lt;p&gt;If you search for a value that doesn&amp;rsquo;t exist the data table will return with an NA row.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;DT[&amp;quot;D&amp;quot;]
+&lt;pre&gt;&lt;code&gt;DT[c(&amp;quot;X&amp;quot;, &amp;quot;D&amp;quot;)]
 
 ##    V2      V3 V4 V5   V6 V9  V7  V8
 ## 1:  X  0.4519  1 21    C  0 101 121
@@ -2156,15 +2146,16 @@ MTCarsDT[.(c(4, 6)), mean(hp)]
 ## 1: 15.2   8  304 150 3.15 3.435 17.3  0  0    3    2
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;br&gt;
-but &lt;code&gt;,.N&lt;/code&gt; displays the number of rows&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;but &lt;code&gt;,.N&lt;/code&gt; displays the number of rows&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;MTCarsDT[,.N]
 
 ## [1] 32
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This can be handy if you want to display the largest value of a keyed row. For example, this will give the heaviest vehicle followed by the heaviest vehicles sorted by the number of cylinders.&lt;/p&gt;
+&lt;p&gt;This can be handy if you want to display the largest value of a keyed row. The first operation will give the heaviest vehicle and the second will give the heaviest vehicles sorted by the number of cylinders.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;setkey(MTCarsDT, wt)
 MTCarsDT[, wt[.N]]
@@ -2428,10 +2419,24 @@ MTCarsDT[, wt[.N], by=cyl]
 
 &lt;p&gt;Here&amp;rsquo;s the DT data table:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;DT
+&lt;pre&gt;&lt;code&gt;&amp;gt; DT
+
+##    V2      V3 V4 V5 V6 V9  V7  V8
+##  1:  X -1.9649  1 21  C  0 101 121
+##  2:  B  0.2992  2 22  D  1 102 122
+##  3:  C -0.6450  3 23  E  2 103 123
+##  4:  X -0.4986  4 24  C  3 104 124
+##  5:  B -1.9649  5 25  D  0 105 125
+##  6:  C  0.2992  6 26  E  1 106 126
+##  7:  X -0.6450  7 27  C  2 107 127
+##  8:  B -0.4986  8 28  D  3 108 128
+##  9:  C -1.9649  9 29  E  0 109 129
+## 10:  X  0.2992 10 30  C  1 110 130
+## 11:  B -0.6450 11 31  D  2 111 131
+## 12:  C -0.4986 12 32  E  3 112 132
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This will renumber the V8 column:&lt;/p&gt;
+&lt;p&gt;As an example, this will renumber the V8 column:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; for (i in 1:12) set(DT,i,&amp;quot;V8&amp;quot;,i)
 &amp;gt; DT
@@ -2595,10 +2600,10 @@ dim(DT)
     
     <item>
       <title>Managing Python on Mac OS</title>
-      <link>/portfolio/uninstalling-python/</link>
+      <link>/portfolio/managing-python/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
       
-      <guid>/portfolio/uninstalling-python/</guid>
+      <guid>/portfolio/managing-python/</guid>
       <description>
 
 &lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
