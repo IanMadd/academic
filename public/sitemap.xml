@@ -217,7 +217,7 @@
     
     <url>
     
-      <loc>/tags/git/</loc>
+      <loc>/categories/git/</loc>
       <lastmod>2018-09-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -226,7 +226,7 @@
     
     <url>
     
-      <loc>/categories/git/</loc>
+      <loc>/tags/git/</loc>
       <lastmod>2018-09-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -334,7 +334,7 @@
     
     <url>
     
-      <loc>/tags/python/</loc>
+      <loc>/categories/python/</loc>
       <lastmod>2018-07-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -352,7 +352,7 @@
     
     <url>
     
-      <loc>/categories/python/</loc>
+      <loc>/tags/python/</loc>
       <lastmod>2018-07-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

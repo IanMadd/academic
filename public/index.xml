@@ -18,9 +18,7 @@
       <guid>/post/deleting-large-file-from-git/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34; target=&#34;_blank&#34;&gt;BFG Repo-Cleaner&lt;/a&gt; is the best way to delete a large file from a git repository that you&amp;rsquo;ve already committed.&lt;/p&gt;
 
-&lt;p&gt;When a file is committed to a repository, it stays in the repository&amp;rsquo;s history even if you remove it in a subsequent commit. This allows a user to undo later commits and bring back the previous commits, with all their files undisturbed. The problem is that users may want to completely delete a file that is too large or could have sensitive information stored in it.&lt;/p&gt;
-
-&lt;p&gt;BFG Repo-Cleaner will delete those files from every commit in a repositiory&amp;rsquo;s history.&lt;/p&gt;
+&lt;p&gt;When a file is committed to a repository, it stays in the repository&amp;rsquo;s history, and is uploaded to a remote repository, even if you remove it in a subsequent commit. This allows a user to undo a subsequent commit and return to a previous version without losing any files. However, users may want to completely delete a file that is too large for the remote server or could have sensitive information stored in it. BFG Repo-Cleaner will delete those files from every commit in a repositiory&amp;rsquo;s history.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://rtyley.github.io/bfg-repo-cleaner/&#34; target=&#34;_blank&#34;&gt;Download from their website and follow their instructions.&lt;/a&gt; &lt;a href=&#34;https://www.oracle.com/technetwork/java/javase/downloads/index.html&#34; target=&#34;_blank&#34;&gt;You&amp;rsquo;ll need the Java Development Kit&lt;/a&gt; if you don&amp;rsquo;t already have it installed.&lt;/p&gt;
 </description>
