@@ -1,5 +1,5 @@
 ---
-title: BFG Repo-Cleaner - Deleting Large File From Git
+title: BFG Repo-Cleaner - Deleting Large Files From Git
 author: ''
 date: '2018-09-01'
 slug: deleting-large-file-from-git

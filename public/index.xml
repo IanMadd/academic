@@ -11,7 +11,7 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>BFG Repo-Cleaner - Deleting Large File From Git</title>
+      <title>BFG Repo-Cleaner - Deleting Large Files From Git</title>
       <link>/post/deleting-large-file-from-git/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -2597,483 +2597,6 @@ dim(DT)
     </item>
     
     <item>
-      <title>Managing Python on Mac OS</title>
-      <link>/portfolio/managing-python/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
-      
-      <guid>/portfolio/managing-python/</guid>
-      <description>
-
-&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
-
-&lt;p&gt;It&amp;rsquo;s easy to install multiple versions of python on a Mac computer using installers from &lt;a href=&#34;http://www.python.org&#34; target=&#34;_blank&#34;&gt;python.org&lt;/a&gt;, &lt;a href=&#34;http://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt;, &lt;a href=&#34;https://www.anaconda.com&#34; target=&#34;_blank&#34;&gt;Conda&lt;/a&gt;, or other sources. This could create conflicts if a user wants to run one version of python but bash calls a different version instead.&lt;/p&gt;
-
-&lt;p&gt;This is guide will show you how to:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;modify your bash profile to change which version of python is called by bash first.&lt;/li&gt;
-&lt;li&gt;use virtual environments to specify a version of python that will run a project.&lt;/li&gt;
-&lt;li&gt;uninstall specific versions of python.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;warnings&#34;&gt;Warnings&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;mac-os-needs-python&#34;&gt;Mac OS needs python&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;DO NOT&lt;/strong&gt; remove any versions of Python found in the following folders:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/usr/bin&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;system/Library&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These versions of Python&amp;mdash;which should be Python 2.7&amp;mdash;are installed by Apple and used by Mac OS and other software to perform some functions. Deleting Python from these directories will break Mac OS and force you to reinstall it on your computer.&lt;/p&gt;
-
-&lt;h3 id=&#34;other-projects-may-need-specific-versions-of-python&#34;&gt;Other projects may need specific versions of python&lt;/h3&gt;
-
-&lt;p&gt;You may have a python project or you may use python packages that require particular versions of Python. Uninstalling those versions would prevent those projects or packages from working until that version of python is reinstalled. For example, Python 3 is a dependency of Numpy; if you uninstalled Python 3, then Numpy wouldn&amp;rsquo;t work until you reinstalled Python 3.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
-
-&lt;p&gt;Three common methods of installing python can be found here:&lt;/p&gt;
-
-&lt;h3 id=&#34;python-org-python-org&#34;&gt;&lt;a href=&#34;python.org&#34; target=&#34;_blank&#34;&gt;python.org&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;The python.org installer can be found &lt;a href=&#34;https://www.python.org/downloads/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;homebrew-https-brew-sh&#34;&gt;&lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;First install Homebrew. The instructions are &lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, or enter the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;To install Python 3:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;brew install python
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To install Python 2:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;brew install python@2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;anaconda-https-www-anaconda-com&#34;&gt;&lt;a href=&#34;https://www.anaconda.com&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Anaconda is generally used for scientific and machine learning applications.&lt;/p&gt;
-
-&lt;p&gt;For &lt;strong&gt;Ananconda&lt;/strong&gt; follow installation instructions &lt;a href=&#34;https://www.anaconda.com/download/#macos&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Miniconda is a stripped down version of Anaconda.&lt;/p&gt;
-
-&lt;p&gt;For &lt;strong&gt;Miniconda&lt;/strong&gt; follow installation instructions &lt;a href=&#34;https://conda.io/docs/user-guide/install/index.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;path-and-bash-profile&#34;&gt;PATH and .bash_profile&lt;/h1&gt;
-
-&lt;h2 id=&#34;path&#34;&gt;PATH&lt;/h2&gt;
-
-&lt;p&gt;The path is a list of directories that your shell will look through when you execute a command. You can display the path on your computer using the &lt;code&gt;echo $PATH&lt;/code&gt; command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ echo $PATH
-
-/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/username/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/username/miniconda2/bin:/Users/username/miniconda3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/X11/bin:/usr/local/git/bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The directories above are separated by a colon, this is what they look like displayed in sequence:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;/Library/Frameworks/Python.framework/Versions/3.7/bin&lt;/li&gt;
-&lt;li&gt;/Users/username/anaconda3/bin&lt;/li&gt;
-&lt;li&gt;/Library/Frameworks/Python.framework/Versions/2.7/bin&lt;/li&gt;
-&lt;li&gt;/Users/username/miniconda2/bin&lt;/li&gt;
-&lt;li&gt;/Users/username/miniconda3/bin&lt;/li&gt;
-&lt;li&gt;/Library/Frameworks/Python.framework/Versions/3.6/bin&lt;/li&gt;
-&lt;li&gt;/usr/local/bin&lt;/li&gt;
-&lt;li&gt;/usr/bin&lt;/li&gt;
-&lt;li&gt;/bin&lt;/li&gt;
-&lt;li&gt;/usr/sbin&lt;/li&gt;
-&lt;li&gt;/sbin&lt;/li&gt;
-&lt;li&gt;/usr/texbin&lt;/li&gt;
-&lt;li&gt;/opt/X11/bin&lt;/li&gt;
-&lt;li&gt;/usr/X11/bin&lt;/li&gt;
-&lt;li&gt;/usr/local/git/bin&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;When you ask your shell to run a particular command or run an interpreter, &lt;code&gt;python&lt;/code&gt; for example, the shell looks through the different directories listed in the PATH in order they&amp;rsquo;re presented above. When the shell finds that command, it stops and calls it even if there is another version of the same command, with the same name, further down in the list.&lt;/p&gt;
-
-&lt;h2 id=&#34;bash-profile&#34;&gt;.bash_profile&lt;/h2&gt;
-
-&lt;p&gt;The bash profile is a set of instructions that are run by the shell when the user logs in to bash. You can add a &lt;a href=&#34;http://osxdaily.com/2011/10/03/add-a-separator-time-stamp-between-terminal-commands-to-increase-readability/&#34; target=&#34;_blank&#34;&gt;variety&lt;/a&gt; of &lt;a href=&#34;https://natelandau.com/my-mac-osx-bash_profile/&#34; target=&#34;_blank&#34;&gt;preferences&lt;/a&gt; to the bash profile, including modifications to the PATH. When anaconda, miniconda or other versions of python are installed they automatically add paths to their respective versions of python to the top of the bash profile.&lt;/p&gt;
-
-&lt;p&gt;Bash reads the bash profile in sequential order &amp;mdash; from top to bottom &amp;mdash; and adds those paths to the PATH in the order that they&amp;rsquo;re read. This means that the &lt;em&gt;last&lt;/em&gt; path at the bottom of the bash profile will end up as the &lt;em&gt;first&lt;/em&gt; path in the PATH. This means that if you have Python 3.6 installed on your computer, and then decide to add python 3.7, but keep 3.6, the installer will add Python 3.7 to the top of the bash profile but it will end up &lt;em&gt;after&lt;/em&gt; python 3.6 in the PATH. Entering &lt;code&gt;python3&lt;/code&gt; in bash will call python 3.6, &lt;em&gt;not&lt;/em&gt; 3.7.&lt;/p&gt;
-
-&lt;p&gt;If that was confusing compare the order that the python paths are added to my bash profile below to the PATH listed above. You&amp;rsquo;ll notice that their respective orders are opposite from each other.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Enter the following command to open the bash profile in TextEdit:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ open ~/.bash_profile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;My .bash_profile currently looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}&amp;quot;
-export PATH
-
-# added by Miniconda3 installer
-export PATH=&amp;quot;/Users/username/miniconda3/bin:$PATH&amp;quot;
-
-# added by Miniconda2 installer
-export PATH=&amp;quot;/Users/username/miniconda2/bin:$PATH&amp;quot;
-
-# Setting PATH for Python 2.7
-# The original version is saved in .bash_profile.pysave
-PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}&amp;quot;
-export PATH
-
-# added by Anaconda3 installer
-export PATH=&amp;quot;/Users/username/anaconda3/bin:$PATH&amp;quot;
-
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH=&amp;quot;/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}&amp;quot;
-export PATH
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you want to keep all of your installed versions of python, but want bash to open a different version first, just copy and paste it to the &lt;strong&gt;bottom&lt;/strong&gt; of the bash profile. If you don&amp;rsquo;t want bash to run a particular version of python then delete it from bash profile and uninstall that version by following the instructions further down.&lt;/p&gt;
-
-&lt;p&gt;Don&amp;rsquo;t forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;. ~/.bash_profile&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;homebrew-pyenv&#34;&gt;Homebrew - pyenv&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34; target=&#34;_blank&#34;&gt;Pyenv&lt;/a&gt; is a &lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt; package that allows a user to install multiple versions of python in Homebrew and specify which version of python they&amp;rsquo;d like to run.&lt;/p&gt;
-
-&lt;p&gt;Install pyenv:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ brew install pyenv
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Install different versions of python:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv install 3.5.0
-$ pyenv install 3.6.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Show which versions of python are installed:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv versions
-
-* system (set by /Users/username/Programming/python/.python-version)
-  3.5.0
-  3.6.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The asterisk indicates that the system version of python is active, but 3.5.0 and 3.6.0 are also installed.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;pyenv-local&#34;&gt;Pyenv Local&lt;/h2&gt;
-
-&lt;p&gt;Create a folder called &lt;code&gt;PythonLocalProject&lt;/code&gt;, then display the version of python called by bash by entering &lt;code&gt;python -V&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ python -V
-Python 3.6.5 :: Anaconda, Inc.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now enter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv local 3.5.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This creates a &lt;code&gt;.python-version&lt;/code&gt; file which tells &lt;code&gt;pyenv&lt;/code&gt; which version of python to run in that directory.&lt;/p&gt;
-
-&lt;p&gt;Entering &lt;code&gt;ls -la&lt;/code&gt; shows us that file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ ls -la
-total 8
-drwxr-xr-x  3 username  staff   96 Aug  3 11:52 .
-drwxr-xr-x  4 username  staff  128 Aug  3 11:56 ..
--rw-r--r--  1 username  staff    6 Aug  3 12:03 .python-version
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now enter &lt;code&gt;pyenv versions&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv versions
-  system
-* 3.5.0 (set by /Users/username/Programming/python/pythonproject/.python-version)
-  3.6.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And running this command shows which version of python is called by pyenv:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ python -V
-Python 3.5.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To change pyenv to the system version of version 3.6.0 enter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv local system
-$ pyenv local 3.6.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This procedure is fine, you can set a version of python to run in a particular folder. But what if you want to use pyenv to set a global version of python.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;pyenv-global&#34;&gt;Pyenv Global&lt;/h2&gt;
-
-&lt;p&gt;Pyenv gives these instructions when you enter &lt;code&gt;pyenv init&lt;/code&gt; in bash:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv init
-
-# Load pyenv automatically by appending
-# the following to ~/.bash_profile:
-
-eval &amp;quot;$(pyenv init -)&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Open the bash profile:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;open ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Add this text to the bottom of the file:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;eval &amp;quot;$(pyenv init -)&amp;quot;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Save the file and then enter:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Entering &lt;code&gt;echo $PATH&lt;/code&gt; will show that a pyenv shim has been added to the beginnning of the path:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/Users/username/.pyenv/shims:&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And &lt;code&gt;which python&lt;/code&gt; will return:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/Users/username/.pyenv/shims/python&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This means that bash will run the version of python set by pyenv.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Navigate to a folder that doesn&amp;rsquo;t have a &lt;code&gt;.python-version&lt;/code&gt; file and enter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv global 3.6.0
-Python 3.6.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This shows us that the global version of python is 3.6.0 and it is set by &lt;code&gt;pyenv&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;So this shows that bash will run whichever version of python that is set in pyenv.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;If you navigate back to the &lt;code&gt;PythonLocalProject&lt;/code&gt; folder with the &lt;code&gt;.python-version&lt;/code&gt; file and run &lt;code&gt;python -V&lt;/code&gt; you will notice that it doesn&amp;rsquo;t run the global version of python, it runs whichever version was last set with the &lt;code&gt;pyenv local&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;locate-python&#34;&gt;Locate Python&lt;/h1&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;We can use the &lt;code&gt;which&lt;/code&gt; command to identify where specific versions of python are located:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ which -a python
-/Users/username/.pyenv/shims/python
-/Users/username/anaconda3/bin/python
-/Library/Frameworks/Python.framework/Versions/2.7/bin/python
-/Users/username/miniconda2/bin/python
-/Users/username/miniconda3/bin/python
-/usr/local/bin/python
-/usr/bin/python
-
-
-$ which -a python3
-/Users/username/.pyenv/shims/python3
-/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
-/Users/username/anaconda3/bin/python3
-/Users/username/miniconda3/bin/python3
-/Library/Frameworks/Python.framework/Versions/3.6/bin/python3
-/usr/local/bin/python3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This shows some overlap as some versions of python appear in both searches.&lt;/p&gt;
-
-&lt;p&gt;The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the &lt;code&gt;/Library/Frameworks/Python.framework/&lt;/code&gt; directory. Homebrew installs all packages, including python, in &lt;code&gt;/usr/local/Cellar&lt;/code&gt;, then Homebrew adds a symlink to &lt;code&gt;/usr/local/bin&lt;/code&gt;so that it&amp;rsquo;s version of python can be found in the path. Finally, Apple installs python in &lt;code&gt;/usr/bin&lt;/code&gt;. Remember, don&amp;rsquo;t delete that version.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;uninstall-python&#34;&gt;Uninstall python&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Follow these instructions if you want to remove particular versions of python.
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;python-org&#34;&gt;python.org&lt;/h2&gt;
-
-&lt;p&gt;The python.org installer places all it&amp;rsquo;s installed files in the following folders:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The system applications folder, &lt;code&gt;/Applications&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/Library/Frameworks/Python.framework&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/usr/local/bin&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To delete all versions of python that were installed using the python.org installer, enter these commands in terminal:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo rm -rf &#39;/Applications/Python X.Y&#39; #replace X.Y with the version number on the folder
-sudo rm -rf /Library/Frameworks/Python.framework
-sudo rm -rf /usr/local/bin/python
-sudo rm -rf /usr/local/bin/python3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To remove particular versions of python, you have to refer to the particular framework. The frameworks are installed in &lt;code&gt;/Library/Frameworks/Python.framework&lt;/code&gt; and particular versions are found in &lt;code&gt;/Library/Frameworks/Python.framework/Versions/X.Y&lt;/code&gt;. So for example if you wanted to uninstall only version 3.5 but leave other versions you would enter the following commands in bash:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo rm -rf /Library/Frameworks/Python.framework/Versions/3.5
-sudo rm -rf &#39;/Applications/Python 3.5&#39;
-sudo rm -rf /usr/local/bin/python3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;homebrew&#34;&gt;Homebrew&lt;/h2&gt;
-
-&lt;p&gt;To uninstall python that was installed using homebrew you need to identify what versions of python have been installed by Homebrew:&lt;/p&gt;
-
-&lt;p&gt;Enter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ brew list | grep &#39;python&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Currently brew refers to python3 as &lt;code&gt;python&lt;/code&gt; and python 2 is called &lt;code&gt;python@2&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;To uninstall both python2 and python3 enter the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Homebrew will refuse to uninstall python if it has dependencies, just uninstall python and ignore the dependencies:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;brew uninstall --ignore-dependencies python python@2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or, add the dependencies to the list of items to be uninstalled:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2 gdal geos libspatialite libxml2 numpy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h3&gt;
-
-&lt;p&gt;It&amp;rsquo;s possible to have Homebrew&amp;rsquo;s Python directory at the beginning of the $PATH but calling &lt;code&gt;python&lt;/code&gt; will still start the Apple installed version of Python or some other version. If that&amp;rsquo;s the case it&amp;rsquo;s possible that Homebrew&amp;rsquo;s Python install has become unlinked. This command will unlink and relink Python in Homebrew:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;brew unlink python python@2 &amp;amp;&amp;amp; brew link python python@2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;uninstall-python-from-pyenv&#34;&gt;Uninstall Python from Pyenv&lt;/h3&gt;
-
-&lt;p&gt;To list versions of python installed using pyenv enter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv versions
-* system (set by /Applications/.python-version)
-  3.5.0
-  3.6.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To uninstall versions of python installed using pyenv enter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pyenv uninstall 3.5.0
-$ pyenv uninstall 3.6.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;anaconda&#34;&gt;Anaconda&lt;/h2&gt;
-
-&lt;p&gt;The official removal instructions are found &lt;a href=&#34;https://conda.io/docs/user-guide/install/macos.html#&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, but deleting anaconda and miniconda is easy.&lt;/p&gt;
-
-&lt;p&gt;Anaconda and miniconda are installed in the users home directory: &lt;code&gt;~/miniconda2&lt;/code&gt;, &lt;code&gt;~/miniconda3&lt;/code&gt;,&lt;code&gt;~/anaconda2&lt;/code&gt;, or &lt;code&gt;~/anaconda3&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Depending on which version or versions you have, just enter the following commands:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rm -rf ~/anaconda2
-rm -rf ~/anaconda3
-rm -rf ~/miniconda2
-rm -rf ~/miniconda3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Anaconda and miniconda also use several invisible files. Delete them by entering this command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rm -rf ~/.condarc ~/.conda ~/.continuum
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34;&gt;Homebrew&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.anaconda.com&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.python.org&#34; target=&#34;_blank&#34;&gt;python.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34; target=&#34;_blank&#34;&gt;pyenv package&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv/blob/master/COMMANDS.md&#34; target=&#34;_blank&#34;&gt;pyenv commands&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/python/cpython/blob/master/Mac/README&#34; target=&#34;_blank&#34;&gt;Python Removal Instructions&lt;/a&gt; -  towards the bottom of the README file.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://osxdaily.com/2018/07/05/where-homebrew-packages-installed-location-mac/&#34; target=&#34;_blank&#34;&gt;OS X Daily - How to Find Where Homebrew Packages Are Installed on Mac&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://conda.io/docs/user-guide/install/macos.html#&#34; target=&#34;_blank&#34;&gt;Official Conda Uninstall Instructions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://realpython.com/python-virtual-environments-a-primer/#using-different-versions-of-python&#34; target=&#34;_blank&#34;&gt;Real Python - Python Virtual Environments&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;xkcd&#34;&gt;XKCD&lt;/h1&gt;
-
-&lt;p&gt;And now for something completely different.&lt;/p&gt;
-
-&lt;p&gt;&lt;div style=&#34;text-align:center&#34;&gt;
-&lt;a href=&#34;https://xkcd.com/1987/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://imgs.xkcd.com/comics/python_environment.png&#34; alt=&#34;The Python Environment&#34; /&gt;&lt;/a&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>A Plain Markdown Post</title>
       <link>/post/2016-02-14-hello-markdown/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
@@ -3229,6 +2752,54 @@ rm -rf ~/miniconda3
       
       <guid>/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;R Markdown&lt;/h1&gt;
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+fit &amp;lt;- lm(dist ~ speed, data = cars)
+fit
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Including Plots&lt;/h1&gt;
+&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
+  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
+  init.angle = -50, border = NA
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: A fancy pie chart.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
