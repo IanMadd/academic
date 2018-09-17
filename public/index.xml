@@ -1201,7 +1201,11 @@ The Central Limit Theorem and standard error of the mean assume that samples are
 
 &lt;h1 id=&#34;purpose&#34;&gt;Purpose&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;Data tables&lt;/a&gt; can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing. This will explain how to:&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;Data Table&lt;/a&gt; package inherits from &lt;a href=&#34;https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Data-frames&#34; target=&#34;_blank&#34;&gt;data frames&lt;/a&gt;, both display tabular data and are a list of vectors of the same length.&lt;/p&gt;
+
+&lt;p&gt;Data tables can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing.&lt;/p&gt;
+
+&lt;p&gt;This will explain how to:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;use the &lt;a href=&#34;https://github.com/Rdatatable/data.table/wiki&#34; target=&#34;_blank&#34;&gt;Data Table&lt;/a&gt; syntax&lt;/li&gt;
@@ -1215,7 +1219,6 @@ The Central Limit Theorem and standard error of the mean assume that samples are
 &lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#create&#34;&gt;Create a Data Table&lt;/a&gt;
 
 &lt;ul&gt;
@@ -1268,14 +1271,8 @@ The Central Limit Theorem and standard error of the mean assume that samples are
 &lt;li&gt;&lt;a href=&#34;#setnames&#34;&gt;Setnames - Change Column Names&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#setcolorder&#34;&gt;Setcolorder - Changing Column Order&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#unique&#34;&gt;Unique - Removing Duplicate Rows&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#additional_sources&#34;&gt;Additional Sources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#additional_sources&#34;&gt;Additional Sources of Information&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;Data Table &lt;a href=&#34;https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)&#34; target=&#34;_blank&#34;&gt;inherits&lt;/a&gt; from data frames, both are a list of vectors of the same length. The primary advantage of data tables is that they are much faster than data frames.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -1763,9 +1760,11 @@ DT[, V8 := 1:12]
 DT[, V8]
 
 ## [1]  1  2  3  4  5  6  7  8  9 10 11 12
+&lt;/code&gt;&lt;/pre&gt;
 
-DT[, V8 := round(exp(V3),2)]
-DT[,V8]
+&lt;p&gt;Adding brackets (&lt;code&gt;[]&lt;/code&gt;) to the end of the operation will print the result automatically.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DT[, V8 := round(exp(V3),2)][]
 
 ## [1] 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48
 &lt;/code&gt;&lt;/pre&gt;
@@ -1777,8 +1776,7 @@ DT[,V8]
 ## [1] NA  1  2  3 NA  1  2  3 NA  1  2  3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;DT[is.na(V9), V9 := 0]
-DT[, V9]
+&lt;pre&gt;&lt;code&gt;DT[is.na(V9), V9 := 0][]
 
 ## [1] 0 1 2 3 0 1 2 3 0 1 2 3
 &lt;/code&gt;&lt;/pre&gt;
@@ -1801,28 +1799,8 @@ DT[, V9]
 ## 11:  K 111
 ## 12:  L 112
 
-DT[, c(&amp;quot;V6&amp;quot;,&amp;quot;V7&amp;quot;) := .(LETTERS [3:5], round(exp(V1),2))]
 
-DT[,.(V6,V7)]
-
-##    V6   V7
-##  1:  C 2.72
-##  2:  D 7.39
-##  3:  E 2.72
-##  4:  C 7.39
-##  5:  D 2.72
-##  6:  E 7.39
-##  7:  C 2.72
-##  8:  D 7.39
-##  9:  E 2.72
-## 10:  C 7.39
-## 11:  D 2.72
-## 12:  E 7.39
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Adding brackets (&lt;code&gt;[]&lt;/code&gt;) to the end of the operation will print the result automatically.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;DT[, c(&amp;quot;V6&amp;quot;, &amp;quot;V7&amp;quot;) := .(LETTERS [3:5], round(exp(V1),2))][]
+DT[, c(&amp;quot;V6&amp;quot;,&amp;quot;V7&amp;quot;) := .(LETTERS [3:5], round(exp(V1),2))][]
 
 ##     V1 V2      V3 V4 V5 V6   V7 V8 V9
 ##  1:  1  A  0.6581  1 21  C 2.72  1  0
@@ -2586,7 +2564,7 @@ dim(DT)
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;additional_sources&#34;&gt;Additional Sources&lt;/h1&gt;
+&lt;h1 id=&#34;additional_sources&#34;&gt;Additional Sources of Information&lt;/h1&gt;
 
 &lt;p&gt;More info and references:&lt;/p&gt;
 

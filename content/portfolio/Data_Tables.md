@@ -33,7 +33,11 @@ caption = ""
 
 # Purpose
 
-[Data tables](https://github.com/Rdatatable/data.table/wiki) can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing. This will explain how to:
+The [Data Table](https://github.com/Rdatatable/data.table/wiki) package inherits from [data frames](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Data-frames), both display tabular data and are a list of vectors of the same length. 
+
+Data tables can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing. 
+
+This will explain how to:
 
 * use the [Data Table](https://github.com/Rdatatable/data.table/wiki) syntax
 * select data by row and column
@@ -44,7 +48,6 @@ caption = ""
 
 # Table of Contents
 
-0. [Introduction](#introduction)
 1. [Create a Data Table](#create)
     * [fread](#fread)
 2. [List Data Tables](#list_data_tables)
@@ -76,13 +79,8 @@ caption = ""
 17. [Setnames - Change Column Names](#setnames)
 18. [Setcolorder - Changing Column Order](#setcolorder)
 19. [Unique - Removing Duplicate Rows](#unique)
-20. [Additional Sources] (#additional_sources)
+20. [Additional Sources of Information] (#additional_sources)
 
-<br>
-    
-# Introduction {#introduction}
-
-Data Table [inherits](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) from data frames, both are a list of vectors of the same length. The primary advantage of data tables is that they are much faster than data frames.
 
 <br>
 
@@ -594,9 +592,12 @@ DT[, V8 := 1:12]
 DT[, V8]
 
 ## [1]  1  2  3  4  5  6  7  8  9 10 11 12
+```
 
-DT[, V8 := round(exp(V3),2)]
-DT[,V8]
+Adding brackets (`[]`) to the end of the operation will print the result automatically.
+
+```
+DT[, V8 := round(exp(V3),2)][]
 
 ## [1] 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48
 ```
@@ -610,8 +611,7 @@ DT[,V9]
 ```
 
 ```
-DT[is.na(V9), V9 := 0]
-DT[, V9]
+DT[is.na(V9), V9 := 0][]
 
 ## [1] 0 1 2 3 0 1 2 3 0 1 2 3
 ```
@@ -635,28 +635,8 @@ DT[,.(V6,V7)]
 ## 11:  K 111
 ## 12:  L 112
 
-DT[, c("V6","V7") := .(LETTERS [3:5], round(exp(V1),2))]
 
-DT[,.(V6,V7)]
-
-##    V6   V7
-##  1:  C 2.72
-##  2:  D 7.39
-##  3:  E 2.72
-##  4:  C 7.39
-##  5:  D 2.72
-##  6:  E 7.39
-##  7:  C 2.72
-##  8:  D 7.39
-##  9:  E 2.72
-## 10:  C 7.39
-## 11:  D 2.72
-## 12:  E 7.39
-```
-
-Adding brackets (`[]`) to the end of the operation will print the result automatically.
-```
-DT[, c("V6", "V7") := .(LETTERS [3:5], round(exp(V1),2))][]
+DT[, c("V6","V7") := .(LETTERS [3:5], round(exp(V1),2))][]
 
 ##     V1 V2      V3 V4 V5 V6   V7 V8 V9
 ##  1:  1  A  0.6581  1 21  C 2.72  1  0
@@ -1461,7 +1441,7 @@ uniqueN returns the number of unique rows.
 ```
 <br>
 
-# Additional Sources {#additional_sources}
+# Additional Sources of Information {#additional_sources}
 
 More info and references:
 
