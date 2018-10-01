@@ -1069,50 +1069,10 @@ The Central Limit Theorem and standard error of the mean assume that samples are
 
 &lt;h1 id=&#34;simulate&#34;&gt;Simulating the Central Limit Theorem&lt;/h1&gt;
 
-&lt;p&gt;This is code from &lt;a href=&#34;https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/&#34; target=&#34;_blank&#34;&gt;Quality and Innovation&lt;/a&gt; which was reposted by &lt;a href=&#34;http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/&#34; target=&#34;_blank&#34;&gt;R-Bloggers&lt;/a&gt; that simulates the central limit theorem. You can pick from several different distributions and then generate several plots that show the means of these distributions.&lt;/p&gt;
+&lt;p&gt;This simulation is based on code from &lt;a href=&#34;https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/&#34; target=&#34;_blank&#34;&gt;Quality and Innovation&lt;/a&gt; and &lt;a href=&#34;http://www2.stat.duke.edu/~mc301/shinyed/&#34; target=&#34;_blank&#34;&gt;ShinyEd&lt;/a&gt;. The code can be found on &lt;a href=&#34;https://github.com/IanMadd/CLT&#34; target=&#34;_blank&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sdm.sim &amp;lt;- function(n,src.dist=NULL,param1=NULL,param2=NULL) {
-   r &amp;lt;- 10000  # Number of replications/samples - DO NOT ADJUST
-   # This produces a matrix of observations with  
-   # n columns and r rows. Each row is one sample:
-   my.samples &amp;lt;- switch(src.dist,
-	&amp;quot;E&amp;quot; = matrix(rexp(n*r,param1),r),
-	&amp;quot;N&amp;quot; = matrix(rnorm(n*r,param1,param2),r),
-	&amp;quot;U&amp;quot; = matrix(runif(n*r,param1,param2),r),
-	&amp;quot;P&amp;quot; = matrix(rpois(n*r,param1),r),
-	&amp;quot;C&amp;quot; = matrix(rcauchy(n*r,param1,param2),r),
-        &amp;quot;B&amp;quot; = matrix(rbinom(n*r,param1,param2),r),
-	&amp;quot;G&amp;quot; = matrix(rgamma(n*r,param1,param2),r),
-	&amp;quot;X&amp;quot; = matrix(rchisq(n*r,param1),r),
-	&amp;quot;T&amp;quot; = matrix(rt(n*r,param1),r))
-   all.sample.sums &amp;lt;- apply(my.samples,1,sum)
-   all.sample.means &amp;lt;- apply(my.samples,1,mean)   
-   all.sample.vars &amp;lt;- apply(my.samples,1,var) 
-   par(mfrow=c(2,2))
-   hist(my.samples[1,],col=&amp;quot;gray&amp;quot;,main=&amp;quot;Distribution of One Sample&amp;quot;)
-   hist(all.sample.sums,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Sum&amp;quot;)
-   hist(all.sample.means,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Mean&amp;quot;)
-   hist(all.sample.vars,col=&amp;quot;gray&amp;quot;,main=&amp;quot;Sampling Distribution of the Variance&amp;quot;)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;There are 9 population distributions to choose from: exponential (E), normal (N), uniform (U), Poisson (P), Cauchy &amp;copy;, binomial (B), gamma (G), Chi-Square (X), and the Student’s t distribution (t). Note also that you have to provide either one or two parameters, depending upon what distribution you are selecting. For example, a normal distribution requires that you specify the mean and standard deviation to describe where it’s centered, and how fat or thin it is (that’s two parameters). A Chi-square distribution requires that you specify the degrees of freedom (that’s only one parameter). You can find out exactly what distributions require what parameters by going here: &lt;a href=&#34;http://en.wikibooks.org/wiki/R_Programming/Probability_Distributions&#34; target=&#34;_blank&#34;&gt;http://en.wikibooks.org/wiki/R_Programming/Probability_Distributions&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;For example an exponential distribution looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hist(rexp(100000,1))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;/portfolio/Central_Limit_Theorem_files/Central_Limit_Theorem_Rbloggers_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;But these plots show what the sample means for an exponential distribution look like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sdm.sim(10,src.dist=&amp;quot;E&amp;quot;,1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;/portfolio/Central_Limit_Theorem_files/Central_Limit_Theorem_Rbloggers_2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://ianmadd.shinyapps.io/CentralLimitTheorem/&#34; width = 100% height = 1200px &gt;
+    &lt;/iframe&gt;
 
 &lt;h1 id=&#34;additional_sources&#34;&gt;Additional Sources&lt;/h1&gt;
 

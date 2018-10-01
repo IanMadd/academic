@@ -584,51 +584,13 @@ And like the previous case 99.69% of the sample means fall below 4.
 
 # Simulating the Central Limit Theorem {#simulate}
 
-This is code from [Quality and Innovation](https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/) which was reposted by [R-Bloggers](http://www.r-bloggers.com/sampling-distributions-and-central-limit-theorem-in-r/) that simulates the central limit theorem. You can pick from several different distributions and then generate several plots that show the means of these distributions.
+This simulation is based on code from [Quality and Innovation](https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/) and [ShinyEd](http://www2.stat.duke.edu/~mc301/shinyed/). The code can be found on [github](https://github.com/IanMadd/CLT).
 
 
 
-```
-sdm.sim <- function(n,src.dist=NULL,param1=NULL,param2=NULL) {
-   r <- 10000  # Number of replications/samples - DO NOT ADJUST
-   # This produces a matrix of observations with  
-   # n columns and r rows. Each row is one sample:
-   my.samples <- switch(src.dist,
-	"E" = matrix(rexp(n*r,param1),r),
-	"N" = matrix(rnorm(n*r,param1,param2),r),
-	"U" = matrix(runif(n*r,param1,param2),r),
-	"P" = matrix(rpois(n*r,param1),r),
-	"C" = matrix(rcauchy(n*r,param1,param2),r),
-        "B" = matrix(rbinom(n*r,param1,param2),r),
-	"G" = matrix(rgamma(n*r,param1,param2),r),
-	"X" = matrix(rchisq(n*r,param1),r),
-	"T" = matrix(rt(n*r,param1),r))
-   all.sample.sums <- apply(my.samples,1,sum)
-   all.sample.means <- apply(my.samples,1,mean)   
-   all.sample.vars <- apply(my.samples,1,var) 
-   par(mfrow=c(2,2))
-   hist(my.samples[1,],col="gray",main="Distribution of One Sample")
-   hist(all.sample.sums,col="gray",main="Sampling Distribution of the Sum")
-   hist(all.sample.means,col="gray",main="Sampling Distribution of the Mean")
-   hist(all.sample.vars,col="gray",main="Sampling Distribution of the Variance")
-}
-```
+<iframe src="https://ianmadd.shinyapps.io/CentralLimitTheorem/" width = 100% height = 1200px >
+    </iframe>
 
-> There are 9 population distributions to choose from: exponential (E), normal (N), uniform (U), Poisson (P), Cauchy (C), binomial (B), gamma (G), Chi-Square (X), and the Student’s t distribution (t). Note also that you have to provide either one or two parameters, depending upon what distribution you are selecting. For example, a normal distribution requires that you specify the mean and standard deviation to describe where it’s centered, and how fat or thin it is (that’s two parameters). A Chi-square distribution requires that you specify the degrees of freedom (that’s only one parameter). You can find out exactly what distributions require what parameters by going here: http://en.wikibooks.org/wiki/R_Programming/Probability_Distributions.
-
-For example an exponential distribution looks like this:
-
-```
-hist(rexp(100000,1))
-```
-
-![](/portfolio/Central_Limit_Theorem_files/Central_Limit_Theorem_Rbloggers_1.png)
-
-But these plots show what the sample means for an exponential distribution look like:
-```
-sdm.sim(10,src.dist="E",1)
-```
-![](/portfolio/Central_Limit_Theorem_files/Central_Limit_Theorem_Rbloggers_2.png)
 
 # Additional Sources {#additional_sources}
 

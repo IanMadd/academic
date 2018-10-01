@@ -19,13 +19,13 @@ output:
 
 # Summary
 
-It's easy to install multiple versions of python on a Mac computer using installers from [python.org](http://www.python.org), [Homebrew](http://brew.sh), [Conda](https://www.anaconda.com), or other sources. This could create conflicts if a user wants to run one version of python but bash calls a different version instead. 
+It's easy to install multiple versions of python on a Mac computer using installers from [python.org](http://www.python.org), [Homebrew](http://brew.sh), [Conda](https://www.anaconda.com), or other sources. This could create conflicts if a user wants to run one version of python but bash calls a different version instead.
 
 This is guide will show you how to:
 
 * modify your bash profile to change which version of python is called by bash first.
 * use virtual environments to specify a version of python that will run a project.
-* uninstall specific versions of python. 
+* uninstall specific versions of python.
 
 
 
@@ -83,9 +83,9 @@ brew install python@2
 
 <br>
 
-### Anaconda 
+### Anaconda
 
-[Anaconda](https://www.anaconda.com) is generally used for scientific and machine learning applications. 
+[Anaconda](https://www.anaconda.com) is generally used for scientific and machine learning applications.
 
 For **Ananconda** follow installation instructions [here](https://www.anaconda.com/download/#macos).
 
@@ -133,9 +133,9 @@ When you ask your shell to run a particular command or run an interpreter, `pyth
 
 ## .bash_profile
 
-The bash profile is a set of instructions that are run by the shell when the user logs in to bash. You can add a [variety](http://osxdaily.com/2011/10/03/add-a-separator-time-stamp-between-terminal-commands-to-increase-readability/) of [preferences](https://natelandau.com/my-mac-osx-bash_profile/) to the bash profile, including modifications to the PATH. When anaconda, miniconda or other versions of python are installed they automatically add paths to their respective versions of python to the top of the bash profile. 
+The bash profile is a set of instructions that are run by the shell when the user logs in to bash. You can add a [variety](http://osxdaily.com/2011/10/03/add-a-separator-time-stamp-between-terminal-commands-to-increase-readability/) of [preferences](https://natelandau.com/my-mac-osx-bash_profile/) to the bash profile, including modifications to the PATH. When anaconda, miniconda or other versions of python are installed they automatically add paths to their respective versions of python to the top of the bash profile.
 
-Bash reads the bash profile in sequential order --- from top to bottom --- and adds those paths to the PATH in the order that they're read. This means that the *last* path at the bottom of the bash profile will end up as the *first* path in the PATH. This means that if you have Python 3.6 installed on your computer, and then decide to add python 3.7, but keep 3.6, the installer will add Python 3.7 to the top of the bash profile but it will end up *after* python 3.6 in the PATH. Entering `python3` in bash will call python 3.6, *not* 3.7. 
+Bash reads the bash profile in sequential order --- from top to bottom --- and adds those paths to the PATH in the order that they're read. This means that the *last* path at the bottom of the bash profile will end up as the *first* path in the PATH. This means that if you have Python 3.6 installed on your computer, and then decide to add python 3.7, but keep 3.6, the installer will add Python 3.7 to the top of the bash profile but it will end up *after* python 3.6 in the PATH. Entering `python3` in bash will call python 3.6, *not* 3.7.
 
 If that was confusing compare the order that the python paths are added to my bash profile below to the PATH listed above. You'll notice that their respective orders are opposite from each other.
 
@@ -175,17 +175,17 @@ export PATH
 ```
 If you want to keep all of your installed versions of python, but want bash to open a different version first, just copy and paste it to the **bottom** of the bash profile. If you don't want bash to run a particular version of python then delete it from bash profile and uninstall that version by following the instructions further down.
 
-Don't forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:  
+Don't forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:
 
-* `source ~/.bash_profile`  
-* `. ~/.bash_profile`  
+* `source ~/.bash_profile`
+* `. ~/.bash_profile`
 
 
 # Homebrew - pyenv
 
 [Pyenv](https://github.com/pyenv/pyenv) is a [Homebrew](https://brew.sh) package that allows a user to install multiple versions of python in Homebrew and specify which version of python they'd like to run.
 
-Install pyenv:  
+Install pyenv:
 ```
 $ brew install pyenv
 ```
@@ -225,7 +225,7 @@ Now enter:
 $ pyenv local 3.5.0
 ```
 
-This creates a `.python-version` file which tells `pyenv` which version of python to run in that directory. 
+This creates a `.python-version` file which tells `pyenv` which version of python to run in that directory.
 
 Entering `ls -la` shows us that file:
 
@@ -259,7 +259,7 @@ $ pyenv local system
 $ pyenv local 3.6.0
 ```
 
-This procedure is fine, you can set a version of python to run in a particular folder. But what if you want to use pyenv to set a global version of python. 
+This procedure is fine, you can set a version of python to run in a particular folder. But what if you want to use pyenv to set a global version of python.
 
 <br>
 
@@ -274,7 +274,7 @@ $ pyenv init
 # the following to ~/.bash_profile:
 
 eval "$(pyenv init -)"
-```  
+```
 
 <br>
 
@@ -282,19 +282,19 @@ Open the bash profile:
 
 * `open ~/.bash_profile`
 
-Add this text to the bottom of the file: 
+Add this text to the bottom of the file:
 
 * `eval "$(pyenv init -)"`
 
-Save the file and then enter: 
+Save the file and then enter:
 
-* `source ~/.bash_profile`   
+* `source ~/.bash_profile`
 
 <br>
 
-Entering `echo $PATH` will show that a pyenv shim has been added to the beginnning of the path: 
+Entering `echo $PATH` will show that a pyenv shim has been added to the beginnning of the path:
 
-* `/Users/username/.pyenv/shims:` 
+* `/Users/username/.pyenv/shims:`
 
 And `which python` will return:
 
@@ -348,9 +348,9 @@ $ which -a python3
 /Library/Frameworks/Python.framework/Versions/3.6/bin/python3
 /usr/local/bin/python3
 ```
-This shows some overlap as some versions of python appear in both searches. 
+This shows some overlap as some versions of python appear in both searches.
 
-The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the `/Library/Frameworks/Python.framework/` directory. Homebrew installs all packages, including python, in `/usr/local/Cellar`, then Homebrew adds a symlink to `/usr/local/bin`so that it's version of python can be found in the path. Finally, Apple installs python in `/usr/bin`. Remember, don't delete that version.   
+The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the `/Library/Frameworks/Python.framework/` directory. Homebrew installs all packages, including python, in `/usr/local/Cellar`, then Homebrew adds a symlink to `/usr/local/bin`so that its version of python can be found in the path. Finally, Apple installs python in `/usr/bin`. Remember, don't delete that version.   
 
 
 
@@ -358,7 +358,7 @@ The locations of the anaconda and miniconda versions of python are self explanat
 
 # Uninstall python
 
-***   
+***
 
 
 Follow these instructions if you want to remove particular versions of python.
@@ -404,7 +404,7 @@ Currently brew refers to python3 as `python` and python 2 is called `python@2`.
 
 To uninstall both python2 and python3 enter the following:
 ```
-$ brew uninstall -f python python@2 
+$ brew uninstall -f python python@2
 ```
 Homebrew will refuse to uninstall python if it has dependencies, just uninstall python and ignore the dependencies:
 
@@ -424,7 +424,7 @@ It's possible to have Homebrew's Python directory at the beginning of the $PATH 
 
 ```
 brew unlink python python@2 && brew link python python@2
-```  
+```
 
 ### Uninstall Python from Pyenv
 
@@ -486,8 +486,6 @@ And now for something completely different.
 
  <div style="text-align:center">
 [![The Python Environment](https://imgs.xkcd.com/comics/python_environment.png)](https://xkcd.com/1987/)
-</div>  
+</div>
 
 <br>
-
-
