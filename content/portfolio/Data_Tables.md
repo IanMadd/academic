@@ -33,16 +33,16 @@ caption = ""
 
 # Purpose
 
-The [Data Table](https://github.com/Rdatatable/data.table/wiki) package inherits from [data frames](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Data-frames), both display tabular data and are a list of vectors of the same length. 
+The [Data Table](https://github.com/Rdatatable/data.table/wiki) package inherits from [data frames](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Data-frames), both display tabular data and are a list of vectors of the same length.
 
-Data tables can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing. 
+Data tables can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing.
 
 This will explain how to:
 
-* use the [Data Table](https://github.com/Rdatatable/data.table/wiki) syntax
-* select data by row and column
-* subset data by keyed column
-* perform functions on subsetted data
+* use the [Data Table](https://github.com/Rdatatable/data.table/wiki) syntax,
+* select data by row and column,
+* subset data by keyed column,
+* perform functions on subsetted data.
 
 <br>
 
@@ -54,7 +54,7 @@ This will explain how to:
 3. [Intoduction to Data Table syntax [i, j, by]](#i_j_by)
 4. [Select rows: DT[i]](#dti)
     * [Return Rows By Value](#return_rows_by_value)
-5. [Select Columns: DT[,j]](#dtj)   
+5. [Select Columns: DT[,j]](#dtj)
     * [Performing functions on a column] (#perform_functions_on_column)
 6. [Selecting Rows and Columns `DT[i,j]`] (#dtij)
 7. [Perform A Function On A Column By The Value Of Another Column `DT[j,by]`](#dt_jby)
@@ -147,19 +147,19 @@ This tutorial will use two data tables, one called **DT** with dummy data, and a
 <br>
 
 
-# Listing Data Tables {#list_data_tables} 
+# Listing Data Tables {#list_data_tables}
 
 The `tables` function will list all tables in the global environment as well as their columns, and some extra summary information.
 
 ```
 > tables()
 
-##      NAME     NROW NCOL MB COLS                                        
-## [1,] DT         12    9  1 V1,V2,V3,V4,V5,V6,V7,V8,V9                  
+##      NAME     NROW NCOL MB COLS
+## [1,] DT         12    9  1 V1,V2,V3,V4,V5,V6,V7,V8,V9
 ## [2,] MTCarsDT   32   11  1 mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
 ##      KEY
-## [1,]    
-## [2,]    
+## [1,]
+## [2,]
 ## Total: 2MB
 ```
 
@@ -169,7 +169,7 @@ The `tables` function will list all tables in the global environment as well as 
 
 <br>
 
-Data Tables allow you to find data and perform operations using the following syntax: `DT[i, j, by]`, which means, “Take DT, subset rows using `i`, then calculate `j` grouped by `by`.” This is similar to SQL syntax where **i** corresponds to SELECT, **j** corresponds to WHERE, and *by* corresponds to GROUP BY. 
+Data Tables allow you to find data and perform operations using the following syntax: `DT[i, j, by]`, which means, “Take DT, subset rows using `i`, then calculate `j` grouped by `by`.” This is similar to SQL syntax where **i** corresponds to SELECT, **j** corresponds to WHERE, and *by* corresponds to GROUP BY.
 
 <br>
 
@@ -265,7 +265,7 @@ Return the hp column as a vector:
 ```
 > MTCarsDT[,hp]
 
-## [1] 110 110 93 110 175 105 245 62 95 123 123 180 180 180 205 215 230 66 52 65  
+## [1] 110 110 93 110 175 105 245 62 95 123 123 180 180 180 205 215 230 66 52 65
 ## [21] 97 150 150 245 175 66 91 113 264 175 335 109
 ```
 
@@ -364,7 +364,7 @@ Referring to columns by index number can create errors. If you reference a colum
 
 ## Performing functions on a column {#perform_functions_on_column}
 
-You can execute functions on a column of data. 
+You can execute functions on a column of data.
 
 This will return the mean of the `hp` column:
 ```
@@ -423,8 +423,8 @@ You can use `apply()` on a data.table to apply a function to each column:
 ```
 > sapply(MTCarsDT, class)
 
-##        mpg       cyl      disp        hp      drat        wt      qsec        vs        am      gear      carb 
-##  "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" 
+##        mpg       cyl      disp        hp      drat        wt      qsec        vs        am      gear      carb
+##  "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric"
 ```
 
 
@@ -433,13 +433,13 @@ Use curly braces to perform multiple functions in one function call. Notice that
 ```
 > MTCarsDT[, {print(disp); plot(mpg, wt); sapply(MTCarsDT, mean)}]
 
-##   [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8 275.8 
-##  [14] 275.8 472.0 460.0 440.0  78.7  75.7 71.1 120.1 318.0 304.0 350.0 400.0  
+##   [1] 160.0 160.0 108.0 258.0 360.0 225.0 360.0 146.7 140.8 167.6 167.6 275.8 275.8
+##  [14] 275.8 472.0 460.0 440.0  78.7  75.7 71.1 120.1 318.0 304.0 350.0 400.0
 ##  [27] 79.0 120.3  95.1 351.0 145.0 301.0 121.0
-##         mpg        cyl       disp         hp       drat         wt       qsec         
-##   20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750    
-##          vs         am       gear       carb 
-##    0.437500   0.406250   3.687500   2.812500 
+##         mpg        cyl       disp         hp       drat         wt       qsec
+##   20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750
+##          vs         am       gear       carb
+##    0.437500   0.406250   3.687500   2.812500
 ```
 ![](/portfolio/Data_Tables_files/MTCarsDT_plot.png)
 
@@ -534,7 +534,7 @@ MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
 
 # Count The Number of Objects `.N` {#objects_N}
 
-`.N` is a variable that will return the number of instances. 
+`.N` is a variable that will return the number of instances.
 
 
 This gives a total count of the number of rows in the dataset:
@@ -570,8 +570,8 @@ This performs the same function:
 MTCarsDT[cyl == 6,table(gear)]
 
 ##  gear
-##   3  4  5 
-##   2  4  1 
+##   3  4  5
+##   2  4  1
 ```
 
 <br>
@@ -824,7 +824,7 @@ tables()
 
        NAME NROW NCOL MB                        COLS KEY
 1:       DT   12    8  0       V2,V3,V4,V5,V6,V9,...  V2
-2: MTCarsDT   32   11  0 mpg,cyl,disp,hp,drat,wt,...    
+2: MTCarsDT   32   11  0 mpg,cyl,disp,hp,drat,wt,...
 Total: 0MB
 ```
 
@@ -1044,7 +1044,7 @@ MTCarsDT[,mean(hp),.(cyl,gear)]
 
 # SD (**S**ubset of **D**ata) {#sd}
 
-SD stands for **Subset** of **Data**. SD will create a subsetted data table grouped by the `by` statement. 
+SD stands for **Subset** of **Data**. SD will create a subsetted data table grouped by the `by` statement.
 
 This will return the MTCarsDT sorted first by number of cylinders and then by horsepower:
 ```
@@ -1087,7 +1087,7 @@ This will return the MTCarsDT sorted first by number of cylinders and then by ho
 ##     cyl  mpg  disp  hp drat    wt  qsec vs am gear carb
 ```
 
-Using .SD with print will return all of the data above but group the data by the number of cylinders. This works even if there is no keyed column. Notice that the cylinders column is missing. 
+Using .SD with print will return all of the data above but group the data by the number of cylinders. This works even if there is no keyed column. Notice that the cylinders column is missing.
 
 ```
 > MTCarsDT[,print(.SD), by = cyl]
@@ -1317,27 +1317,27 @@ DT = as.data.table(m)
 dim(DT)
 ```
 
-Now we can run a speed test on the different methods of assigning the value of i to the i'th row of the first column. 
+Now we can run a speed test on the different methods of assigning the value of i to the i'th row of the first column.
 ```
 > system.time(for (i in 1:100000) m[i,1] <- i)
-   user  system elapsed 
-  0.015   0.003   0.019 
+   user  system elapsed
+  0.015   0.003   0.019
 
 > system.time(for (i in 1:100000) DF[i,1] <- i)
-   user  system elapsed 
- 49.487  44.195  94.792 
+   user  system elapsed
+ 49.487  44.195  94.792
 
 > system.time(for (i in 1:100000) DT[i,1] <- i)
-   user  system elapsed 
-457.258 290.126 757.099 
+   user  system elapsed
+457.258 290.126 757.099
 
 > system.time(for (i in 1:100000) DT[i,V1:=i])
-   user  system elapsed 
- 27.656   0.096  28.228 
+   user  system elapsed
+ 27.656   0.096  28.228
 
 > system.time(for (i in 1:100000) set(DT,i,1L,i))
-   user  system elapsed 
-  0.237   0.030   0.268 
+   user  system elapsed
+  0.237   0.030   0.268
 ```
 
 So you can see there are big speed advantages to using set() over the assignment operator <- or the assignment by reference operator := .
@@ -1362,8 +1362,8 @@ The syntax is setnames(DT, "oldname", "newname")
 
 > colnames(MTCarsDT)
 
-##  [1] "mpg"        "cyl"        "disp"       "horsepower" "drat"       "wt"                
-##  [7] "qsec"       "vs"         "am"         "gear"       "carb"   
+##  [1] "mpg"        "cyl"        "disp"       "horsepower" "drat"       "wt"
+##  [7] "qsec"       "vs"         "am"         "gear"       "carb"
 ```
 
 You can also change multiple columnames at the same time:
@@ -1372,9 +1372,9 @@ You can also change multiple columnames at the same time:
 > setnames(MTCarsDT, c("cyl", "disp"), c("cylinders", "displacement"))
 > colnames(MTCarsDT)
 
-##  [1] "mpg"          "cylinders"    "displacement" "horsepower"   "drat"       
-##  [6] "wt"           "qsec"         "vs"           "am"           "gear"        
-##  [11]"carb"      
+##  [1] "mpg"          "cylinders"    "displacement" "horsepower"   "drat"
+##  [6] "wt"           "qsec"         "vs"           "am"           "gear"
+##  [11]"carb"
 
 ```
 <br>

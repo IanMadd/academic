@@ -173,8 +173,7 @@ export PATH</code></pre>
 <p>If you want to keep all of your installed versions of python, but want bash to open a different version first, just copy and paste it to the <strong>bottom</strong> of the bash profile. If you don’t want bash to run a particular version of python then delete it from bash profile and uninstall that version by following the instructions further down.</p>
 <p>Don’t forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:</p>
 <ul>
-<li><code>source ~/.bash_profile</code><br />
-</li>
+<li><code>source ~/.bash_profile</code></li>
 <li><code>. ~/.bash_profile</code></li>
 </ul>
 </div>
@@ -288,7 +287,7 @@ $ which -a python3
 /Library/Frameworks/Python.framework/Versions/3.6/bin/python3
 /usr/local/bin/python3</code></pre>
 <p>This shows some overlap as some versions of python appear in both searches.</p>
-<p>The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the <code>/Library/Frameworks/Python.framework/</code> directory. Homebrew installs all packages, including python, in <code>/usr/local/Cellar</code>, then Homebrew adds a symlink to <code>/usr/local/bin</code>so that it’s version of python can be found in the path. Finally, Apple installs python in <code>/usr/bin</code>. Remember, don’t delete that version.</p>
+<p>The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the <code>/Library/Frameworks/Python.framework/</code> directory. Homebrew installs all packages, including python, in <code>/usr/local/Cellar</code>, then Homebrew adds a symlink to <code>/usr/local/bin</code>so that its version of python can be found in the path. Finally, Apple installs python in <code>/usr/bin</code>. Remember, don’t delete that version.</p>
 <hr />
 </div>
 <div id="uninstall-python" class="section level1">
@@ -321,7 +320,7 @@ sudo rm -rf /usr/local/bin/python3</code></pre>
 <pre><code>$ brew list | grep &#39;python&#39;</code></pre>
 <p>Currently brew refers to python3 as <code>python</code> and python 2 is called <code>python@2</code>.</p>
 <p>To uninstall both python2 and python3 enter the following:</p>
-<pre><code>$ brew uninstall -f python python@2 </code></pre>
+<pre><code>$ brew uninstall -f python python@2</code></pre>
 <p>Homebrew will refuse to uninstall python if it has dependencies, just uninstall python and ignore the dependencies:</p>
 <pre><code>brew uninstall --ignore-dependencies python python@2</code></pre>
 <p>Or, add the dependencies to the list of items to be uninstalled:</p>

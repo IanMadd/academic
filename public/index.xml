@@ -245,8 +245,7 @@ export PATH&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you want to keep all of your installed versions of python, but want bash to open a different version first, just copy and paste it to the &lt;strong&gt;bottom&lt;/strong&gt; of the bash profile. If you don’t want bash to run a particular version of python then delete it from bash profile and uninstall that version by following the instructions further down.&lt;/p&gt;
 &lt;p&gt;Don’t forget to save the bash profile before closing TextEdit. You also have to reload the bash profile in bash before any changes take effect. Just enter one of the following commands:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;br /&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;. ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -360,7 +359,7 @@ $ which -a python3
 /Library/Frameworks/Python.framework/Versions/3.6/bin/python3
 /usr/local/bin/python3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This shows some overlap as some versions of python appear in both searches.&lt;/p&gt;
-&lt;p&gt;The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the &lt;code&gt;/Library/Frameworks/Python.framework/&lt;/code&gt; directory. Homebrew installs all packages, including python, in &lt;code&gt;/usr/local/Cellar&lt;/code&gt;, then Homebrew adds a symlink to &lt;code&gt;/usr/local/bin&lt;/code&gt;so that it’s version of python can be found in the path. Finally, Apple installs python in &lt;code&gt;/usr/bin&lt;/code&gt;. Remember, don’t delete that version.&lt;/p&gt;
+&lt;p&gt;The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the &lt;code&gt;/Library/Frameworks/Python.framework/&lt;/code&gt; directory. Homebrew installs all packages, including python, in &lt;code&gt;/usr/local/Cellar&lt;/code&gt;, then Homebrew adds a symlink to &lt;code&gt;/usr/local/bin&lt;/code&gt;so that its version of python can be found in the path. Finally, Apple installs python in &lt;code&gt;/usr/bin&lt;/code&gt;. Remember, don’t delete that version.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;/div&gt;
 &lt;div id=&#34;uninstall-python&#34; class=&#34;section level1&#34;&gt;
@@ -393,7 +392,7 @@ sudo rm -rf /usr/local/bin/python3&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;$ brew list | grep &amp;#39;python&amp;#39;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Currently brew refers to python3 as &lt;code&gt;python&lt;/code&gt; and python 2 is called &lt;code&gt;python@2&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;To uninstall both python2 and python3 enter the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2 &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;$ brew uninstall -f python python@2&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Homebrew will refuse to uninstall python if it has dependencies, just uninstall python and ignore the dependencies:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;brew uninstall --ignore-dependencies python python@2&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Or, add the dependencies to the list of items to be uninstalled:&lt;/p&gt;

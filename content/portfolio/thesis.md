@@ -13,7 +13,7 @@ image_preview = "university-wide.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["academic"]
+tags = ["other"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = ""
@@ -23,7 +23,7 @@ math = false
 
 +++
 
-I wrote [this thesis](/files/Maddaus_Thesis_Paper.pdf) for my MFA at Montana State University in the Science and Natural History Filmmaking Program. 
+I wrote [this thesis](/files/Maddaus_Thesis_Paper.pdf) for my MFA at Montana State University in the Science and Natural History Filmmaking Program.
 
 The abstract:
 
@@ -32,7 +32,3 @@ The abstract:
 <br>
 
 [File Link](/files/Maddaus_Thesis_Paper.pdf)
-
-
-
-

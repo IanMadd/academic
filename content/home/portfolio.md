@@ -35,16 +35,11 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
-  name = "Academic"
-  tag = "academic"
+  name = "Other"
+  tag = "other"
 
 [[filter]]
   name = "R Programming"
   tag = "r-programming"
 
-[[filter]]
-  name = "Python"
-  tag = "python"
-
 +++
-
