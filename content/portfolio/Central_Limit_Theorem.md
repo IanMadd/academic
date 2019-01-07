@@ -6,7 +6,7 @@ date = 2017-03-12T00:00:00
 title =  "The Central Limit Theorem"
 
 # Project summary to display on homepage.
-summary = "."
+summary = "This demonstrates what the Central Limit Theorem is, why it is significant, and what conclusions you can draw from sampled data."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "/headers/R_logo.png"

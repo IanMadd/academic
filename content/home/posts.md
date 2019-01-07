@@ -23,7 +23,7 @@ count = 10
 # List format.
 #   0 = Simple
 #   1 = Detailed
-list_format = 1
+list_format = 0
 
 # Call to action button (optional).
 #   Activate the button by specifying a URL and button label below.
