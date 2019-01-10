@@ -58,7 +58,7 @@ This will explain how to:
     * [Performing functions on a column] (#perform_functions_on_column)
 6. [Selecting Rows and Columns `DT[i,j]`] (#dtij)
 7. [Perform A Function On A Column By The Value Of Another Column `DT[j,by]`](#dt_jby)
-    * [Subset Rows DT[i,j,by]](#dt_ijby)
+8. [Subset Rows, Select Columns, and Perform an Operation `DT[i,j,by]`](#dt_ijby)
 10. [Return The Number of Objects .N] (#objects_N)
 10. [Modifying Data.Tables DT[i,j := ]](#modifying_data_tables)
     * [Delete Columns] (#delete_columns)
@@ -86,10 +86,15 @@ This will explain how to:
 
 # Create a data.table {#create}
 
-<br>
+The data.table command creates a data table in this format:
 
-This tutorial will use two data tables, one called **DT** with dummy data, and another called **MTCarsDT** which contains the `mtcars` dataset from the datasets package.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`data.table(NameColumn1 = (some_data), NameColumn2 = (some_other_data),...)`
 
+This tutorial will use two data tables, one called **DT** with dummy data, and
+another called **MTCarsDT** which contains the `mtcars` dataset from the
+datasets package.
+
+First create the **DT** data table:
 
 ```
 > library(data.table)
@@ -110,6 +115,8 @@ This tutorial will use two data tables, one called **DT** with dummy data, and a
     )
 ```
 
+And this is what it looks like:
+
 ```
 > DT
 
@@ -128,10 +135,15 @@ This tutorial will use two data tables, one called **DT** with dummy data, and a
 ## 12:  2  C -0.7460 12 32  L 112 132  3
 ```
 
+<br>
+
+Now create the MTCarsDT data table:
 
 ```
 > MTCarsDT <- data.table(mtcars)
 ```
+
+Which looks like this:
 
 ```
 > head(MTCarsDT)
@@ -169,34 +181,46 @@ The `tables` function will list all tables in the global environment as well as 
 
 <br>
 
-Data Tables allow you to find data and perform operations using the following syntax: `DT[i, j, by]`, which means, “Take DT, subset rows using `i`, then calculate `j` grouped by `by`.” This is similar to SQL syntax where **i** corresponds to SELECT, **j** corresponds to WHERE, and *by* corresponds to GROUP BY.
+Data Tables allow you to find data and perform operations using the following
+syntax:
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DT[i, j, by]`
+
+This means, “Take the data table `DT`, subset rows using `i`, then calculate
+`j`, grouped by`by`.” This is similar to SQL syntax where *i* corresponds to
+SELECT, *j* corresponds to WHERE, and *by* corresponds to GROUP BY.
+
+<br>
 <br>
 
 # Select rows: `DT[i]` {#dti}
 
 <br>
 
-To start with we'll select rows. These operations will select:
+To start with we'll select rows.
 
-* the 3rd row
-* the 3rd through 5th rows
-* the 3rd and 5th through 8th rows
-
-
+Start by selecting the 3rd row:
 ```
 > MTCarsDT[3]
 
 ##     mpg cyl disp hp drat   wt  qsec vs am gear carb
 ## 1: 22.8   4  108 93 3.85 2.32 18.61  1  1    4    1
+```
 
+The 3rd through 5th rows:
+
+```
 > MTCarsDT[3:5]
 
 ##     mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## 1: 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
 ## 2: 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## 3: 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+```
 
+And the 3rd and 5th through 8th rows:
+
+```
 > MTCarsDT[c(3,5:8)]
 
 ##     mpg cyl  disp  hp drat   wt  qsec vs am gear carb
@@ -219,7 +243,9 @@ Notice that the previous command uses the combine function, **c()**, to list the
 
 ## Return Rows By Value {#return_rows_by_value}
 
-Return rows with 6 cylinder cars:
+You can return rows by the value of specific rows.
+
+For example, return rows with 6 cylinder cars:
 
 ```
 > MTCarsDT[cyl == 6]
@@ -245,7 +271,7 @@ Return rows with 4 and 6 cylinder cars:
 ## 3:    5 1
 ```
 
-Return rows with cars that have 110 or 123 hp:
+Return rows with cars with 110 or 123 hp engines:
 ```
 > MTCarsDT[hp %in% c(110,123)]
 
@@ -260,8 +286,11 @@ Return rows with cars that have 110 or 123 hp:
 
 # Return Columns: `DT[,j]` {#dtj}
 
+Use the following format to return columns:
 
-Return the hp column as a vector:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DT[,j]`
+
+For example, return the hp column as a vector:
 ```
 > MTCarsDT[,hp]
 
@@ -269,9 +298,11 @@ Return the hp column as a vector:
 ## [21] 97 150 150 245 175 66 91 113 264 175 335 109
 ```
 
-Print the first ten rows of the hp column as a data table:
+To return a data table you have to use the list function.
+
+This operation will print the first ten rows of the hp column as a data table:
 ```
-> MTCarsDT[1:10,.(hp)]
+> MTCarsDT[1:10,list(hp)]
 
 ##     hp
 ##  1: 110
@@ -290,7 +321,7 @@ Print the first ten rows of the hp column as a data table:
 Note that the expression `.(hp)` is identical to `list(hp)`, the period is equivalent to the list function.
 
 ```
-> MTCarsDT[1:10,list(hp)]
+> MTCarsDT[1:10,.(hp)]
 
 ##     hp
 ##  1: 110
@@ -364,16 +395,18 @@ Referring to columns by index number can create errors. If you reference a colum
 
 ## Performing functions on a column {#perform_functions_on_column}
 
-You can execute functions on a column of data.
+You can execute functions on a column of data by putting the name of the column
+inside of a function.
 
-This will return the mean of the `hp` column:
+For example, this will return the mean of the `hp` column:
 ```
 > MTCarsDT[,mean(hp)]
 
 ##  [1] 146.6875
 ```
 
-Return the mean of `hp` and standard deviation of `mpg`:
+This will return the mean of the `hp` column and the standard deviation of the
+`mpg` column:
 ```
 > MTCarsDT[,.(mean(hp), sd(mpg))]
 
@@ -381,7 +414,8 @@ Return the mean of `hp` and standard deviation of `mpg`:
 ##  1: 146.6875 6.026948
 ```
 
-The same as above but the results have different names:
+This is the same as operation above but it returns the results with different
+names:
 ```
 > MTCarsDT[,.(horsepower=mean(hp), milespergallon=sd(mpg))]
 
@@ -447,7 +481,9 @@ Use curly braces to perform multiple functions in one function call. Notice that
 
 # Selecting Rows and Columns `DT[i,j]` {#dtij}
 
-Print rows 1:5 but only the hp, weight, and mpg columns.
+You can select data from a data table by both row and column using the `DT[i,j]` syntax.
+
+This will print rows 1:5 but only the hp, weight, and mpg columns.
 ```
 > MTCarsDT[1:5, .(hp,wt,mpg)]
 
@@ -459,7 +495,7 @@ Print rows 1:5 but only the hp, weight, and mpg columns.
 ##  5: 175 3.440 18.7
 ```
 
-Return cylinders, hp, mean hp and mpg for 6 cylinder cars.
+This will return cylinders, hp, mean hp and mpg for 6 cylinder cars.
 
 ```
 > MTCarsDT[cyl == 6,.(cyl,hp,MeanHorsepower = mean(hp),mpg)]
@@ -517,10 +553,11 @@ MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
 
 <br>
 
-## Subset of Rows `DT[i,j,by]` {#dt_ijby}
+# Subset Rows, Select Columns, and Perform an Operation `DT[i,j,by]` {#dt_ijby}
 
+Now we can put all the operations together and perform a function on a subset of rows and columns.
 
-This will give the mean hp for cars with 4 gears grouped by the number cylinders.
+This will give the mean hp for cars with 4 gears grouped by the number cylinders:
 
 ```
 MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
@@ -1024,7 +1061,8 @@ The list command ensures that a data table is returned and not a vector.
 ## 5:   4 120.3
 ```
 
-Use the list function in the to return the mean horsepower for each combination of gears and cylinders:
+Use the list function to return the mean horsepower for each combination of
+gears and cylinders:
 
 ```
 MTCarsDT[,mean(hp),.(cyl,gear)]

@@ -7,8 +7,8 @@ body {
   font-size: 0.8em;
 }
 
-a:link    { 
-    color: #000000; 
+a:link    {
+    color: #000000;
     text-decoration: underline;
 }  /* unvisited links */
 a:visited { color: #000000 }  /* visited links   */
@@ -57,16 +57,29 @@ code {
     word-wrap: break-word;*/
     color: #333333;
     /*border: 1px solid #cccccc;*/
-    background-color: #f5f5f5;
+    background-color: #d5d5d5;
     border-radius: 3px;
     font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
     padding: 2px;
+}
+
+.hljs{
+    background-color: #d5d5d5;
+}
+
+.hljs-meta{
+    color: #333333;
+    font-weight:normal;
+}
+.bash{
+    color: #333333;
 }
 
 pre{
     padding: 3px;
     border: 1px solid #cccccc;
     font-style: normal;
+    background-color: #d5d5d5;
 }
 
 .hljs-comment, .hljs-quote {
