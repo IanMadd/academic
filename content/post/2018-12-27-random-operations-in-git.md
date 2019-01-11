@@ -1,5 +1,5 @@
 ---
-title: "Basic Random Operations in Git"
+title: "Random Operations in Git"
 date: 2018-12-27T18:40:11-05:00
 draft: false
 author: Ian
@@ -15,7 +15,7 @@ tags:
 
 
 
-It is easy to accidentally make commits or other changes to the wrong branch in git.
+It's easy to accidentally make commits or other changes to the wrong branch in git.
 
 To display the git branch in the bash prompt open the bash profile:
 
@@ -40,7 +40,7 @@ academic(master) >
 
 ## Display Git Repository Information
 
-This will display basic information stored in the git config file.
+The `cat` command can be used to display basic information stored in the git config file like the names of different branches and remotes.
 
 ```
 cat .git/config
@@ -70,7 +70,7 @@ cat .git/config
 
 The command `git log --pretty --graph` will show a log with branches, merges
 and commits. The options `%h` shows the commit hash, and `%s` shows the commit
-message (see below). There are [other options](https://git-scm.com/docs/pretty-formats) as well.
+message while also shortening the log (see below). There are [other options](https://git-scm.com/docs/pretty-formats) as well.
 
 ```
 git log --pretty=format:"%h %s" --graph
@@ -103,35 +103,6 @@ git log --pretty=format:"%h %s" --graph
 |/
 * c1ef5db modification to about.md
 * 691e018 Initial Commit
-```
-
-<br>
-
-## Delete Local and Remote Branches
-
-
-To delete a local branch just enter:
-
-```
-git branch -d branch_name
-```
-or
-```
-git branch --delete branch_name
-```
-
-To force delete, enter:
-
-```
-git branch -D branch_name
-```
-
-<p>
-
-To delete a remote branch enter:
-
-```
-git push -d origin branch_name
 ```
 
 <br>
