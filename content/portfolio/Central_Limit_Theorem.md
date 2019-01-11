@@ -43,7 +43,8 @@ This will demonstrate what the Central Limit Theorem is, why it is significant, 
     2. [Standard Error of the Mean](#standard_error_mean)
     3. [Sampling Error](#sampling_error)
     4. [Number of Sample Means](#number_sample_means)
-2. [An Example with Temperature Data](#example)
+3. [An Example Using Die Rolls](#dice)
+2. [An Example Using Temperature Data](#example)
     1. [Prepare Temperature Data](#prepare_data)
     2. [Plot Temperature Data](#plotting_temp_data)
     3. [Sample Means](#example_sample_means)
@@ -74,7 +75,7 @@ It states that if you have a population with a mean $\mu$ and a standard deviati
 3. the standard deviation of the sample means will be equal to the standard deviation of the population divided by the square root of the sample size *regardless of the sample size*.
 4. as the sample size increases the standard deviation decreases.
 
-Sample sizes of 30 or more ($n \geq 30$) are considered sufficiently large unless you know the population is normally distributed, in which case smaller sample sizes are acceptable. However the population distribution will affect the sample size necessary to produce a normal distribution
+Sample sizes of 30 or more ($n \geq 30$) are considered sufficiently large unless you know the population is normally distributed, in which case smaller sample sizes are acceptable. However, the population distribution will affect the sample size necessary to produce a normal distribution
 
 <br>
 
@@ -119,21 +120,35 @@ Where:
 
 <br>
 
-The standard error of the mean will get smaller as the sample size increases. A smaller standard error would indicate that the sample data is more representative of the total population. For example if we had identical standard deviations for two different populations but different sample sizes, then the standard error of the mean would be smaller for the set with a larger sample size.
+The standard error of the mean will get smaller as the sample size increases. A
+smaller standard error would indicate that the sample data is more
+representative of the total population. For example, if we had identical
+standard deviations for two different populations but different sample sizes,
+then the standard error of the mean would be smaller for the set with a larger
+sample size.
 
 <br>
 
-You can use the standard error of the mean draw inferences about the population data from a sample. This is useful in the many many situations where it would be impossible to measure every individual from a population. For example if we 30 sets of fifty samples from a population, we can take the standard deviation of the means of those samples and find a population standard deviation.
+You can use the standard error of the mean to draw inferences about the
+population data from a sample. This is useful in the many many situations where
+it would be impossible to measure every individual from a population. For
+example, you can take the standard deviation of the means of a group of samples
+and multiply it by the square root of the sample size to find a population
+standard deviation.
 
 <br>
 
 ## Sampling Error {#sampling_error}
 
-Sampling error is the difference between the actual population data and the same measure of the sampled data. For example the mean of each sample will be different from the mean of the population data.
+Sampling error is the difference between the actual population data and the
+same measure of the sampled data. For example, the mean of each sample will be
+different from the mean of the population data.
 
 [From wikipedia:](https://en.wikipedia.org/wiki/Sampling_error)
 
->Since the sample does not include all members of the population, statistics on the sample, such as means and quantiles, generally differ from the characteristics of the entire population, which are known as parameters.
+>Since the sample does not include all members of the population, statistics on
+the sample, such as means and quantiles, generally differ from the
+characteristics of the entire population, which are known as parameters.
 
 <br>
 
@@ -146,9 +161,15 @@ Sampling error is the difference between the actual population data and the same
 
 ****
 
-# An Example With Dice
+# An Example With Dice {#dice}
 
-Consider an example with a die. A die has an equal probability of landing on any side so the probability distribution is uniform. But, taking the mean of multiple samples produces a normal distribution.
+Consider an example with a die. A die has an equal probability of landing on
+any side so the probability distribution is uniform. But, taking the mean of
+multiple samples produces a normal distribution.
+
+In this example below, a die is sampled thirty times and then the mean is taken
+from those 30 samples. That operation is repeated 10,000 times and the
+resulting set of sample means is plotted in a histogram.
 
 ```
 die <- 1:6
@@ -164,13 +185,32 @@ hist(die_rolls)
 ![](/portfolio/Central_Limit_Theorem_files/die_roll_histogram.png)
 
 
+You can see that:
+
+1. the sample means have a normal distribution,
+2. the population mean is 3.5 and so is the mean of the sample means,
+3. the standard deviation of the samples multiplied by the square root of the
+sample size is close to the square root of the population (see below).
+
+```
+sd(die_rolls)*sqrt(30)
+[1] 1.720758
+
+sd(die)
+[1] 1.870829
+```
+
 <br>
 
-# An Example: Temperature Data {#example}
+# An Example Using Temperature Data {#example}
 
 <br>
 
-This example will sample from population data to demonstrate that a non-normal population will appear normal when sampled, that the sample means will converge around the population mean, and that the standard deviation of the sample means is equal to the population standard deviation divided by the square root of the sample size.
+This example will sample from population data to demonstrate that a non-normal
+population will appear normal when sampled, that the sample means will converge
+around the population mean, and that the standard deviation of the sample means
+is equal to the population standard deviation divided by the square root of the
+sample size.
 
 This example uses historical data from the [United States Historical Climatology Network](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/us-historical-climatology-network-ushcn). The data set contains daily high temperatures in Farmington, Maine from 1911 through 2010. [Download the data here.](/data/ME_2765tmax.txt)
 
@@ -317,7 +357,9 @@ Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
 
 <br>
 
-The standard deviation of the sample means, also called the *standard error of the mean* is much smaller with a larger sample size and much larger with a small sample size.
+The standard deviation of the sample means, also called the *standard error of
+the mean*, is much smaller with a larger sample size and much larger with a
+small sample size.
 
 ```
 sapply(sampleMeans, sd)
@@ -583,13 +625,27 @@ And like the previous case 99.69% of the sample means fall below 4.
 
 # Simulating the Central Limit Theorem {#simulate}
 
-This simulation is based on code from [Quality and Innovation](https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/) and [ShinyEd](http://www2.stat.duke.edu/~mc301/shinyed/). The code can be found on [github](https://github.com/IanMadd/CLT) and is hosted by [shinyapps.io](https://ianmadd.shinyapps.io/CentralLimitTheorem/).
+The simulation below allows you to select different **population
+distributions**, change parameters that change the shape of the population
+distribution, and then change the sample size. From there you can view
+different plots that allow you to compare the population data with sampled
+data, or view changes in the sampled data as the sample size increases or
+decreases.
 
+The different tabs will show different plots:
 
+* **Population Distribution** - this shows the population distribution,
+* **Distributions of Samples** - this shows histograms of eight sets of samples,
+* **Distribution of Sample Means** - this shows the distribution of the sample means,
+* **Sample Means QQ Plot** - a [quantile quantile plot](https://en.wikipedia.org/wiki/Q–Q_plot) which compares the
+distribution of the sample means to a normal distribution.
 
 <iframe src="https://ianmadd.shinyapps.io/CentralLimitTheorem/" width = 100% height = 1200px >
     </iframe>
 
+This simulation is based on code from [Quality and Innovation](https://qualityandinnovation.com/2015/03/30/sampling-distributions-and-central-limit-theorem-in-r/) and [ShinyEd](http://www2.stat.duke.edu/~mc301/shinyed/). The
+code can be found on [github](https://github.com/IanMadd/CLT) and is hosted by
+[shinyapps.io](https://ianmadd.shinyapps.io/CentralLimitTheorem/).
 
 # Additional Sources {#additional_sources}
 
