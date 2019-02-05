@@ -33,7 +33,7 @@ math = true
 
 # Purpose
 
-This will demonstrate what the Central Limit Theorem is, why it is significant, and what conclusions you can draw from sampled data.
+This will demonstrate what the Central Limit Theorem is, why it is significant, and what conclusions you can draw from sampled data. This also demonstrates how to use the R programming language to compare sampled data and calculate the probability of events happening using sampled data. There is also a simulation at the bottom that shows how different distributions and sample sizes affect the distribution of sampled data.
 
 
 # Table of Contents
@@ -53,8 +53,8 @@ This will demonstrate what the Central Limit Theorem is, why it is significant, 
 3. [Central Limit Theorem and Z-Values](#central_limit_theorem_zvalues)
     1. [Sample Size Less Than 30](#sample_size_lessthan_30)
     2. [Example: Z-Score with Weather Data](#example_zscore_weather_data)
-        1. [Using Pnorm Function](#pnorm_function)
-    3. [Smaller Sample Size](#smaller_sample_size)
+    3. [Pnorm Function](#pnorm_function)
+    4. [Smaller Sample Size](#smaller_sample_size)
 4. [Finite Population Correction Factor](#finite_population_correction_factor)
     1. [Population Size and Population Correction Factor](#population_size_and_pop_corr_factor)
         1. [Small N](#small_n)
@@ -70,18 +70,18 @@ The Central Limit Theorem is one of the most important concepts in inferential s
 
 It states that if you have a population with a mean $\mu$ and a standard deviation $\sigma$ and you take an infinitely large number of sample means:
 
-1. the mean of the sample means will be equal to the population mean *regardless of the sample size* and *regardless of the population distribution*.
-2. the sample means will be normal for a normally distributed population distribution and sample means for other population distributions will approach a normal distribution as the sample size increases.
-3. the standard deviation of the sample means will be equal to the standard deviation of the population divided by the square root of the sample size *regardless of the sample size*.
-4. as the sample size increases the standard deviation decreases.
+1. The mean of the sample means will be equal to the population mean *regardless of the sample size* and *regardless of the population distribution*.
+2. The sample means will be normal for a normally distributed population distribution and sample means for other population distributions will approach a normal distribution as the sample size increases.
+3. The standard deviation of the sample means will be approximately equal to the standard deviation of the population divided by the square root of the sample size *regardless of the sample size*.
+4. As the sample size increases the standard deviation decreases.
 
-Sample sizes of 30 or more ($n \geq 30$) are considered sufficiently large unless you know the population is normally distributed, in which case smaller sample sizes are acceptable. However, the population distribution will affect the sample size necessary to produce a normal distribution
+Sample sizes of 30 or more ($n \geq 30$) are considered sufficiently large unless you know the population is normally distributed, in which case smaller sample sizes are acceptable.
 
 <br>
 
 ## Mean of Sample Means {#mean_sample_means}
 
-As the the number of sample means approach infinity the mean of the sampled means will have the same mean as the population regardless of the sample size and regardless of the population distribution.
+As the the number of sample means approach infinity, the mean of the sampled means will have the same mean as the population regardless of the sample size and regardless of the population distribution.
 
 $$\text{mean of sample means} = \text{population mean}$$
 
@@ -141,12 +141,9 @@ standard deviation.
 ## Sampling Error {#sampling_error}
 
 Sampling error is the difference between the actual population data and the
-same measure of the sampled data. For example, the mean of each sample will be
-different from the mean of the population data.
+same measure of the sampled data.
 
-[From wikipedia:](https://en.wikipedia.org/wiki/Sampling_error)
-
->Since the sample does not include all members of the population, statistics on
+Since the sample does not include all members of the population, statistics on
 the sample, such as means and quantiles, generally differ from the
 characteristics of the entire population, which are known as parameters.
 
@@ -206,23 +203,24 @@ sd(die)
 
 <br>
 
-This example will sample from population data to demonstrate that a non-normal
-population will appear normal when sampled, that the sample means will converge
-around the population mean, and that the standard deviation of the sample means
-is equal to the population standard deviation divided by the square root of the
-sample size.
+This example will sample from population data to demonstrate that:
+
+* a non-normal population will appear normal when sampled,
+* that the sample means will converge around the population mean, and
+* that the standard deviation of the sample means is approximately equal to the
+population standard deviation divided by the square root of the sample size.
 
 This example uses historical data from the [United States Historical Climatology Network](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/us-historical-climatology-network-ushcn). The data set contains daily high temperatures in Farmington, Maine from 1911 through 2010. [Download the data here.](/data/ME_2765tmax.txt)
 
 
-The variables/columns in the data file are:
+The variables in the data file are:
 
-* Station number (i.e., 172765: 2-digit state code, followed by 4-digit station code)
-* Day of year (1-365)
-* Month
-* Day of Month
-* Year the daily record was set
-* Daily Temperature High
+* station number (i.e., 172765: 2-digit state code, followed by 4-digit station code)
+* day of year (1-365)
+* month
+* day of month
+* year the daily record was set
+* daily temperature high
 
 <br>
 
@@ -245,17 +243,23 @@ Then import the data.
 Station172765_TMax<- data.table(read.table("/data/ME_2765tmax.txt", header = FALSE))
 ```
 
+<br>
+
 The columns are labeled "V1" through "V6" so replace the column names with more descriptive names.
 
 ```
 setnames(Station172765_TMax, c("V1", "V2", "V3", "V4", "V5", "V6"), c("StationID", "YearDay", "Year", "Month", "MonthDay", "MaxTemp"))
 ```
 
+<br>
+
 On days that no data was collected the temperature is recorded as -999, change that to NA.
 
 ```
 Station172765_TMax[MaxTemp == -999, MaxTemp := NA]
 ```
+
+<br>
 
 Now view the dataset:
 
@@ -319,6 +323,7 @@ sampleMeans <- Station172765_TMax[,.(
 
 ```
 
+ <br>
 
 ## Sampling Error of Sample Means {#example_sampling_error}
 
@@ -355,7 +360,6 @@ Station172765_TMax[, mean(MaxTemp, na.rm = TRUE)]
 
 ## Standard Error of the Mean
 
-<br>
 
 The standard deviation of the sample means, also called the *standard error of
 the mean*, is much smaller with a larger sample size and much larger with a
@@ -453,7 +457,7 @@ $$z = \frac{\text{sample mean}-\text{population mean}}{\text{population standard
 
 <br>
 
-If the number of sample is less than 30 then use the normal formula for a z-score.
+If the number of samples is less than 30, then use the normal formula for a z-score.
 
 $$z = \frac{\bar{X}-\mu}{\sigma}$$
 
@@ -494,7 +498,13 @@ And based on [Z-Score lookup table](https://en.wikipedia.org/wiki/Standard_norma
 
 <br>
 
-### Pnorm function {#pnorm_function}
+## Pnorm function {#pnorm_function}
+
+You can use the [pnorm](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Normal.html) function to calculate probabilities based on the summary data of a normal distribution.
+
+The arguments for pnorm look like this:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**pnorm(quantile, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)**
 
 What's key in this operation is that the value for the standard deviation entered into pnorm is **not** 21.12321, but $21.12321 \div \sqrt{36}$.
 
@@ -505,7 +515,7 @@ pnorm(60, mean=54.45328, sd=(21.12321/sqrt(36)), lower.tail = FALSE)
 
 So that means there's a 5.76% chance that an average of 36 samples from this data set will be greater than 60 degrees. A short test in R with the weather station data set shows that this estimation holds up.
 
-This will take 1,000,000 million sample means with a sample size of 36, then return of a count of the number of samples greater than 60.
+This will take 1,000,000 sample means with a sample size of 36, then return a count of the number of samples greater than 60.
 
 ```
 > sampleMeans60 <- Station172765_TMax[,replicate(1000000, mean(sample(MaxTemp,36, replace = TRUE),na.rm=TRUE))]
@@ -546,7 +556,7 @@ pnorm(60, 54.45328, 21.12321, lower.tail = FALSE)
 # Finite Population Correction Factor {#finite_population_correction_factor}
 
 <br>
-The Central Limit Theorem and standard error of the mean assume that samples are drawn with replacement. However almost all survey work are conducted on finite populations and samples are drawn without replacement. In these cases and especially when the sample size *n* is large compared to the population size *N* (more than 5%), the finite population correction (FPC) factor is used to account for the added precision gained by sampling close to a larger percentage of the population. The effect of the FPC is that the error becomes zero when the sample size n is equal to the population size N.
+The Central Limit Theorem and standard error of the mean assume that samples are drawn with replacement. However, almost all survey work are conducted on finite populations and samples are drawn without replacement. In these cases, and especially when the sample size *n* is large compared to the population size *N* (more than 5%), the finite population correction (FPC) factor is used to account for the added precision gained by sampling close to a larger percentage of the population. The effect of the FPC is that the error becomes zero when the sample size *n* is equal to the population size *N*.
 
 Formula for the population correction factor:
 
@@ -571,62 +581,11 @@ $$z = \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}\cdot\sqrt{\frac{N-n}{N-1}}}$$
 
 <br>
 
-## Population Size and Population Correction Factor {#population_size_and_pop_corr_factor}
-
-This shows the effect that this correction factor has based on the size of the population N and the sample size n.
-
-<br>
-
-### Small N {#small_n}
-
-If **N is small** and multiplied by a data set with a $\sigma$ of 1.
-
-$$\sqrt{\frac{150-30}{150-1}} = 0.8974236$$
-
-$$\sigma_{\bar{X}\text{Small}} = \frac{1}{\sqrt{30}} \cdot \sqrt{\frac{150-30}{150-1}} = 0.1638464$$
-
-$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}\cdot\sqrt{\frac{150-30}{150-1}}} = 3.051639$$
-
-So in this case 99.89% of the sample means fall below 4.
-
-
-<br>
-
-### Large N {#large_n}
-
-If **N is large** and multiplied by a data set with a $\sigma$ of 1:
-
-$$\sqrt{\frac{100000-5}{100000-1}} = 0.999855$$
-
-<br>
-
-$$\sigma_{\bar{X}\text{Large}} = \frac{1}{\sqrt{30}} \cdot \sqrt{\frac{1000-5}{1000-1}} = 0.1825477$$
-
-$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}\cdot\sqrt{\frac{100000-30}{100000-1}}} = 2.73901$$
-
-In this case 99.69% of the sample means fall below 4.
-
-<br>
-
-### No Correction Factor {#no_correction_factor}
-
-This is fairly close to the standard error of the mean without a correction factor:
-
-$$\sigma_{\bar{X}\text{No Correction Factor}} = \frac{1}{\sqrt{30}} = 0.1825742$$
-
-$$z = \frac{\bar{X}-\mu}{\frac{\sigma}{\sqrt{n}}}$$
-
-$$z = \frac{4-3.5}{\frac{1}{\sqrt{30}}} \approx 2.738613$$
-
-And like the previous case 99.69% of the sample means fall below 4.
-
-<br>
-
 
 # Simulating the Central Limit Theorem {#simulate}
 
-The simulation below allows you to select different **population
-distributions**, change parameters that change the shape of the population
+The simulation below allows you to select different population
+distributions, change parameters that change the shape of the population
 distribution, and then change the sample size. From there you can view
 different plots that allow you to compare the population data with sampled
 data, or view changes in the sampled data as the sample size increases or
@@ -634,11 +593,10 @@ decreases.
 
 The different tabs will show different plots:
 
-* **Population Distribution** - this shows the population distribution,
-* **Distributions of Samples** - this shows histograms of eight sets of samples,
-* **Distribution of Sample Means** - this shows the distribution of the sample means,
-* **Sample Means QQ Plot** - a [quantile quantile plot](https://en.wikipedia.org/wiki/Q–Q_plot) which compares the
-distribution of the sample means to a normal distribution.
+* *Population Distribution*. This shows the population distribution.
+* *Distributions of Samples*. This shows histograms of eight samples.
+* *Distribution of Sample Means*. This shows the distribution of the sample means.
+* *Sample Means QQ Plot*. A [quantile quantile plot](https://en.wikipedia.org/wiki/Q–Q_plot) which compares the distribution of the sample means to a normal distribution.
 
 <iframe src="https://ianmadd.shinyapps.io/CentralLimitTheorem/" width = 100% height = 1200px >
     </iframe>
