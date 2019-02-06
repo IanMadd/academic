@@ -49,7 +49,6 @@ This will explain how to:
 # Table of Contents
 
 1. [Create a Data Table](#create)
-    * [fread](#fread)
 2. [List Data Tables](#list_data_tables)
 3. [Intoduction to Data Table syntax [i, j, by]](#i_j_by)
 4. [Select rows: DT[i]](#dti)
@@ -510,7 +509,7 @@ This will return cylinders, hp, mean hp and mpg for 6 cylinder cars.
 ##  7:   6 175       122.2857 19.7
 ```
 
-Note that the mean horsepower is *only* for 6 cylinder cars and doesn't include 4 and 8 cylinder cars.
+Note that the mean horsepower shown above is *only* for 6 cylinder cars and doesn't include 4 and 8 cylinder cars. The function below shows the mean horsepower for cars of all engine sizes.
 
 ```
 MTCarsDT[,mean(hp)]
@@ -617,7 +616,7 @@ MTCarsDT[cyl == 6,table(gear)]
 
 <br>
 
-The `:=` operator updates columns and does so invisibly, that is to say when you use `:=` it doesn't print a result unless you explicitly tell it to. The := operator makes the assignment operator (`DT <- DT[.....]`) unnecessary because it is significantly faster than the assignment operator. [For more on :=](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D).
+The `:=` operator updates columns and does so invisibly. That is to say, when you use `:=` it doesn't print a result unless you explicitly tell it to. The := operator makes the assignment operator (`DT <- DT[.....]`) unnecessary because it is significantly faster than the assignment operator. [For more on :=](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D).
 
 ```
 DT[,V8]
@@ -692,7 +691,7 @@ DT[, c("V6","V7") := .(LETTERS [3:5], round(exp(V1),2))][]
 
 ## Delete Columns {#delete_columns}
 
-Delete the V1 column:
+This will delete the V1 column.
 ```
 DT[, V1 := NULL][]
 
@@ -711,7 +710,7 @@ DT[, V1 := NULL][]
 12:  C  0.3930 12 32  E 7.39 12  3
 ```
 
-Delete the V7 and V8 columns:
+And this will delete the V7 and V8 columns.
 
 ```
 DT[, c("V7","V8") := NULL][]
@@ -807,7 +806,7 @@ DT
 
 <br>
 
-Put the search term in quotes to search through a keyed column:
+This will search for the value of **B** in the keyed column.
 
 ```
 DT["B"]
@@ -819,7 +818,7 @@ DT["B"]
 ## 4:  B -0.2843 11 31  D  2 111 131
 ```
 
-Use the combine function to search for two terms:
+The combine function, `c()`, allows you to search for two values in the keyed column at the same time.
 
 ```
 DT[c("B", "X")]
@@ -854,7 +853,7 @@ haskey(MTCarsDT)
 ## [1] FALSE
 ```
 
-The last column returned by `tables()` will also indicate if any data tables have keyed columns in the global environment.
+The last column returned by the `tables()` function will also indicate if any data tables in the global environment have keyed columns.
 
 ```
 tables()
@@ -986,7 +985,7 @@ MTCarsDT[.(6,c(4,5))]
 ```
 
 
-And then return the mean hp for 4 cylinder 4 gear cars and for 4 cylinder 5 gear cars:
+And then return the mean horsepower for 4 cylinder 4 gear cars and for 4 cylinder 5 gear cars:
 
 ```
 MTCarsDT[.(4, c(4,5)), mean(hp), by=.EACHI]
@@ -1049,7 +1048,7 @@ MTCarsDT[, wt[.N], by=cyl]
 
 The `.()` command is the same as `list()`.
 
-The list command ensures that a data table is returned and not a vector.
+The `list` command ensures that a data table is returned and not a vector.
 
 ```
 ## MTCarsDT[1:5,.(cyl, disp)]
@@ -1061,7 +1060,7 @@ The list command ensures that a data table is returned and not a vector.
 ## 5:   4 120.3
 ```
 
-Use the list function to return the mean horsepower for each combination of
+Use the `list` function to return the mean horsepower for each combination of
 gears and cylinders:
 
 ```
@@ -1082,9 +1081,9 @@ MTCarsDT[,mean(hp),.(cyl,gear)]
 
 # SD (**S**ubset of **D**ata) {#sd}
 
-SD stands for **Subset** of **Data**. SD will create a subsetted data table grouped by the `by` statement.
+SD stands for **Subset** of **Data**. `SD` will create a subsetted data table grouped by the `by` statement.
 
-This will return the MTCarsDT sorted first by number of cylinders and then by horsepower:
+This operation will return the **MTCarsDT** sorted first by number of cylinders and then by horsepower.
 ```
 > setkey(MTCarsDT, hp)
 > MTCarsDT[,.SD, by=cyl]
@@ -1125,7 +1124,7 @@ This will return the MTCarsDT sorted first by number of cylinders and then by ho
 ##     cyl  mpg  disp  hp drat    wt  qsec vs am gear carb
 ```
 
-Using .SD with print will return all of the data above but group the data by the number of cylinders. This works even if there is no keyed column. Notice that the cylinders column is missing.
+Using `.SD` with `print` will return all of the data above, but group the data by the number of cylinders. This works even if there is no keyed column. Also, notice that it doesn't print the cylinders column.
 
 ```
 > MTCarsDT[,print(.SD), by = cyl]
@@ -1199,7 +1198,7 @@ And you can subset the data by cylinder by adding an `i` statement, or by keying
 ## Empty data.table (0 rows) of 1 col: cyl
 ```
 
-To print the highest and lowest horsepower vehicle sorted by the number of cylinders, first key by horsepower, then use SD to print the first and last of row by cylinder:
+To print the highest and lowest horsepower vehicle sorted by the number of cylinders, first key by horsepower, then use `SD` to print the first and last of row by cylinder:
 ```
 > setkey(MTCarsDT, hp)
 > MTCarsDT[,.SD[c(1,.N)], by=cyl]
@@ -1216,7 +1215,7 @@ To print the highest and lowest horsepower vehicle sorted by the number of cylin
 
 ## lapply {#SD_lapply}
 
-With lapply you can perform a function on every column grouped by the number of cylinders.
+With `lapply` you can perform a function on every column grouped by the number of cylinders.
 
 ```
 > MTCarsDT[, lapply(.SD, mean), by=cyl]
@@ -1240,8 +1239,9 @@ You can select specific columns using `.SDcols`.
 ## 2:   6 3.117143 122.28571 183.3143
 ## 3:   8 3.999214 209.21429 353.1000
 ```
+<br>
 
-Or you can specify the column numbers that you want to display:
+You can also specify the column numbers that you want to display.
 
 ```
 > MTCarsDT[, lapply(.SD,mean), by=cyl, .SDcols = 3:7]
@@ -1258,7 +1258,10 @@ Or you can specify the column numbers that you want to display:
 
 Chaining allows you to perform multiple functions in one statement.
 
-This set of operations will: (1) return the mean horsepower for cars, grouped by cylinder, (2) and then return those means with more than 100 hp. There's an easier way to do this by chaining.
+Without chaining these two operations will:
+
+1. return the mean horsepower for cars, grouped by cylinder,
+2. and then return those means with more than 100 hp.
 
 ```
 > MTCarsDT2 <- MTCarsDT[, .(mean.hp = mean(hp)), by=cyl]
@@ -1276,7 +1279,7 @@ This set of operations will: (1) return the mean horsepower for cars, grouped by
 ## 2:   8 209.2143
 ```
 
-This is the easier way.
+This can be done in one operation and on one line with chaining.
 
 ```
 > MTCarsDT[, .(mean.hp = mean(hp)), by=cyl][mean.hp > 100]
@@ -1286,7 +1289,7 @@ This is the easier way.
 ## 2:   8 209.2143
 ```
 
-More than two operations can be chained together:
+More than two operations can be chained together. This will return 6 cylinder cars; calculate the mean horsepower sorted by gears, carburetors, and whether they're automatic or manual; select only cars with 4 gears; and then return cars that are manual transmission. *(manual = 1, automatic = 0)*
 
 ```
 > MTCarsDT[cyl ==6][,.(mean.hp=mean(hp)), by = .(gear,carb, am)][gear == 4][am==1]
@@ -1299,11 +1302,12 @@ More than two operations can be chained together:
 
 # Set and looping in a data.table {#set_looping}
 
-Set can be used to assign values in a data.table. Normally the := operation is better, but **set** yields faster results in a **for loop** than any other function, so if you must use a for loop, use set().
+`Set` can be used to assign values in a data.table. Normally the `:=` operation is better, but `set` yields faster results in a for loop than any other function, so if you want to create a for loop, use `set`.
 
 This is the syntax for set : `for (i in from:to) set(DT, row, column, new value)`
 
-Here's the DT data table:
+In this example we'll replace the values in the V8 column with the numbers 1-12.
+Here's the DT dataset:
 
 ```
 > DT
@@ -1323,7 +1327,7 @@ Here's the DT data table:
 ## 12:  C -0.4986 12 32  E  3 112 132
 ```
 
-As an example, this will renumber the V8 column:
+This will renumber the V8 column:
 
 ```
 > for (i in 1:12) set(DT,i,"V8",i)
@@ -1346,16 +1350,17 @@ As an example, this will renumber the V8 column:
 
 <br>
 
-This example shows the speed of using set in a for loop. First create three tables, a matrix, a data frame, and a data table. Each with 100,000 rows and 100 columns, then assign 1 to each cell, then u
+This example shows the speed of using `set` in a for loop.
+
+First, create a matrix, a data frame, and a data table, each with 100,000 rows and 100 columns.
 
 ```
 m = matrix(1,nrow=100000,ncol=100)
 DF = as.data.frame(m)
 DT = as.data.table(m)
-dim(DT)
 ```
 
-Now we can run a speed test on the different methods of assigning the value of i to the i'th row of the first column.
+Now run a speed test on the different methods of assigning the value of *i* to the *i*'th row of the first column.
 ```
 > system.time(for (i in 1:100000) m[i,1] <- i)
    user  system elapsed
@@ -1378,19 +1383,22 @@ Now we can run a speed test on the different methods of assigning the value of i
   0.237   0.030   0.268
 ```
 
-So you can see there are big speed advantages to using set() over the assignment operator <- or the assignment by reference operator := .
+You can see there are big speed advantages to using `set` over the assignment operator `<-` or the assignment by reference operator `:=`.
 
 <br>
 
-Also notice the the use of `1L` to select the first column in the set command of the final speed test. See [here](http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1) and [here](https://cran.r-project.org/doc/manuals/R-lang.html#Constants) for a discussion of the use of 1 vs 1L for integers in R.
+Also notice the the use of **1L** to select the first column in the set command of the final speed test. See [here](http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1) and [here](https://cran.r-project.org/doc/manuals/R-lang.html#Constants) for a discussion of the use of 1 vs 1L for integers in R.
 
 <br>
 
 # Change column names using setnames() {#setnames}
 
+Use `setnames` to change the names of columns.
+The syntax for using `setnames` is:
 
-The syntax is setnames(DT, "oldname", "newname")
+&nbsp;&nbsp;&nbsp;&nbsp;`setnames(DT, "oldname", "newname")`
 
+This example will replace the column name **hp** with the name **horsepower**:
 ```
 > colnames(MTCarsDT)
 
@@ -1419,7 +1427,9 @@ You can also change multiple columnames at the same time:
 
 # Changing column order - setcolorder() {#setcolorder}
 
-Create a new column order:
+Use `setcolorder` to change the order of columns.
+
+Create a new vector with the names of the different columns in the order you want them, then use `setcolorder` to rearrange the columns.
 
 ```
 > MTCarsColumns <- c("drat","wt","qsec","vs","am","gear","carb","mpg","cylinders","displacement","horsepower")
@@ -1435,7 +1445,7 @@ Create a new column order:
 
 # Unique {#unique}
 
-Unique returns a data.table where duplicate data, by keyed row, are removed. So here's a new data.table, notice that rows 2 and 3 are identical to rows 4 and 6 respectively.
+`Unique` returns a data.table where duplicate data, by keyed row, are removed. So here's a new data table, notice that rows 2 and 3 are identical to rows 4 and 6 respectively.
 
 ```
 > DT <- data.table(A = c('A','B','C','B','A','C'), B=c(1,2,3,2,4,3), C=c(10,20,30,20,60,30))
@@ -1450,7 +1460,7 @@ Unique returns a data.table where duplicate data, by keyed row, are removed. So 
 6: C 3 20
 ```
 
-Using `duplicated` we can see that there are two rows `TRUE` that are identical to other rows that have already been displayed.
+`Duplicated` will return **TRUE** if a row is identical to a previous row. In this example there are two rows that are identical to other rows.
 
 ```{r}
 > duplicated(DT)
@@ -1458,7 +1468,7 @@ Using `duplicated` we can see that there are two rows `TRUE` that are identical 
 ## [1] FALSE FALSE FALSE  TRUE FALSE  TRUE
 ```
 
-`Unique` will return a DT without the duplicates.
+`Unique` will return a data table without the duplicates.
 
 ```
 > unique(DT)
@@ -1470,7 +1480,7 @@ Using `duplicated` we can see that there are two rows `TRUE` that are identical 
 ## 4: A 4 60
 ```
 
-uniqueN returns the number of unique rows.
+`uniqueN` returns the number of unique rows.
 
 ```
 > uniqueN(DT)
