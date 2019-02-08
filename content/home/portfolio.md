@@ -8,7 +8,8 @@ title = "Portfolio"
 subtitle = ""
 
 # Order that this section will appear in.
-weight = 35
+weight = 30
+
 
 # Content.
 # Display content from the following folder.
@@ -18,7 +19,7 @@ folder = "portfolio"
 # View.
 # Customize how projects are displayed.
 # Legend: 0 = list, 1 = cards.
-view = 1
+view = 0
 
 # Filter toolbar.
 
