@@ -176,7 +176,7 @@ The `tables` function will list all tables in the global environment as well as 
 
 <br>
 
-# Intoduction to Data Table syntax [i, j, by]{#i_j_by}
+# Intoduction to Data Table syntax [i,&nbsp;j,&nbsp;by]{#i_j_by}
 
 <br>
 
@@ -779,7 +779,7 @@ Setkey does three things:
 
 1. It reorders the rows of the data.table by the keyed column in increasing order.
 
-2. It marks the keyed column in the data.table.
+2. It marks the keyed column in the data table.
 
 3. It allows you to easily search through that column.
 
