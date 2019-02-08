@@ -784,7 +784,7 @@ Setkey does three things:
 3. It allows you to easily search through that column.
 
 
-First, this operation keys the V2 column in this data table and it sorts the data table into alphabetical order by the keyed column.
+First, use setkey to key the V2 column in this data table and sort the data table into alphabetical order by the keyed column.
 ```
 setkey(DT,V2)
 DT
