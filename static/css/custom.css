@@ -114,3 +114,75 @@ pre{
     -moz-columns: 3 100px;
     columns: 3 100px;
 }
+
+/* for image caption */
+img + em {
+    font-style: italic;
+    display: inherit;
+    text-align: center;
+    font-size: 90%;
+    margin-bottom: 60px;
+}
+
+/* styling for alert and warning boxes*/
+.alert-warning {
+    font-size: 1rem;
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         2px 2px 3px 3px #ccc;
+}
+
+.alert-note {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         2px 2px 3px 3px #ccc;
+}
+
+
+div.alert p {
+  position: relative;
+  display: block;
+  font-size: 0.7rem;
+  margin-left: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.alert a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: solid 1px #e4e4e4;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+
+
+
+div.alert a:hover {
+  border-bottom-color: transparent;
+  color: rgba(255,255,255,0.5) !important;
+}
+
+
+div.alert p:first-child::before {
+  position: absolute;
+  top: -0.5rem;
+  left: -2rem;
+  font-family: 'FontAwesome';
+  font-size: 1.5rem;
+  color: #87CEFA;
+  content: '\f05a';
+  width: 1.5rem;
+  text-align: center;
+}
+
+div.alert-warning p:first-child::before {
+  content: '\f071';
+  color: #FF0000;
+}
