@@ -191,8 +191,8 @@ repository and click on `New pull request`.
 ### 2. Compare changes {#compareChanges}
 
 
-If you see two dialog boxes, one that says `base:master and the other
-`compare:branch_name (see figure), this will only merge your changes from
+If you see two dialog boxes, one that says `base:master` and the other
+`compare:branch_name` (see figure), this will only merge your changes from
 one of your branches to your master branch. To fix this click on the
 `compare across forks` link.
 
@@ -244,7 +244,7 @@ to the appropriate `release_...` branch in the steps above.
 ## 3. Describe your pull request {#describePullRequest}
 
 
-A text box will open: fill in any relevant comments for the issue you are
+A text box will open; fill in any relevant comments for the issue you are
 addressing.
 
 If this relates to a particular [issue](https://github.com/qgis/QGIS-Documentation/issues),
