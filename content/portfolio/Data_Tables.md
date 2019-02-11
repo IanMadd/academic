@@ -7,7 +7,7 @@ date = 2016-04-27T00:00:00
 title = "How To Use Data Tables in R"
 
 # Project summary to display on homepage.
-summary = "A guide to using the data.table package in R."
+summary = "A guide to using the data table package in R."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "headers/R_logo.png"
@@ -59,7 +59,7 @@ This will explain how to:
 7. [Perform A Function On A Column By The Value Of Another Column `DT[j,by]`](#dt_jby)
 8. [Subset Rows, Select Columns, and Perform an Operation `DT[i,j,by]`](#dt_ijby)
 10. [Return The Number of Objects .N] (#objects_N)
-10. [Modifying Data.Tables DT[i,j := ]](#modifying_data_tables)
+10. [Modifying Data Tables DT[i,j := ]](#modifying_data_tables)
     * [Delete Columns] (#delete_columns)
 12. [Using Setkey] (#setkey)
     * [key()] (#key)
@@ -83,9 +83,9 @@ This will explain how to:
 
 <br>
 
-# Create a data.table {#create}
+# Create a data table {#create}
 
-The data.table command creates a data table in this format:
+The `data.table` command creates a data table in this format:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`data.table(NameColumn1 = (some_data), NameColumn2 = (some_other_data),...)`
 
@@ -335,7 +335,7 @@ Note that the expression `.(hp)` is identical to `list(hp)`, the period is equiv
 ##  10: 123
 ```
 
-Print multiple columns as a data.table:
+Print multiple columns as a data table:
 
 
 ```
@@ -452,7 +452,7 @@ Notice here that the numbers for standard deviation and mean are different in th
 ***
 
 <br>
-You can use `apply()` on a data.table to apply a function to each column:
+You can use `apply` on a data table to apply a function to each column:
 ```
 > sapply(MTCarsDT, class)
 
@@ -777,7 +777,7 @@ DT[,c("V7","V8") := .(101:112,121:132)][]
 
 Setkey does three things:
 
-1. It reorders the rows of the data.table by the keyed column in increasing order.
+1. It reorders the rows of the data table by the keyed column in increasing order.
 
 2. It marks the keyed column in the data table.
 
@@ -845,7 +845,7 @@ key(DT)
 ## [1] "V2"
 ```
 
-`haskey()` will return TRUE or FALSE if a data.table has a key assigned.
+`haskey()` will return TRUE or FALSE if a data table has a key assigned.
 
 ```
 haskey(MTCarsDT)
@@ -1300,9 +1300,9 @@ More than two operations can be chained together. This will return 6 cylinder ca
 
 <br>
 
-# Set and looping in a data.table {#set_looping}
+# Set and looping in a data table {#set_looping}
 
-`Set` can be used to assign values in a data.table. Normally the `:=` operation is better, but `set` yields faster results in a for loop than any other function, so if you want to create a for loop, use `set`.
+`Set` can be used to assign values in a data table. Normally the `:=` operation is better, but `set` yields faster results in a for loop than any other function, so if you want to create a for loop, use `set`.
 
 This is the syntax for set : `for (i in from:to) set(DT, row, column, new value)`
 
@@ -1445,7 +1445,7 @@ Create a new vector with the names of the different columns in the order you wan
 
 # Unique {#unique}
 
-`Unique` returns a data.table where duplicate data, by keyed row, are removed. So here's a new data table, notice that rows 2 and 3 are identical to rows 4 and 6 respectively.
+`Unique` returns a data table where duplicate data, by keyed row, are removed. So here's a new data table, notice that rows 2 and 3 are identical to rows 4 and 6 respectively.
 
 ```
 > DT <- data.table(A = c('A','B','C','B','A','C'), B=c(1,2,3,2,4,3), C=c(10,20,30,20,60,30))
