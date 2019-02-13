@@ -30,7 +30,12 @@ math = true
 
 # Purpose
 
-This is user documentation for the QGIS website which explains how users can contribute changes to the documentation using the Github website. It's intended for users who know little about git or github. The documentation was written using [Sphinx](https://www.sphinx-doc.org/en/master/) and [reStructuredText](http://docutils.sourceforge.net/rst.html).
+This is user documentation for the QGIS website which explains how users can contribute 
+changes to the QGIS documentation using Github. It's intended for users who know 
+little about Git or Github. The documentation was originally written using 
+[Sphinx](https://www.sphinx-doc.org/en/master/) and 
+[reStructuredText](http://docutils.sourceforge.net/rst.html) and is reproduced 
+here in Markdown.
 
 # A Step By Step Contribution
 

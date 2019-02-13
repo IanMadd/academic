@@ -39,10 +39,10 @@ Data tables can handle large data sets faster than data frames, however the [i,j
 
 This will explain how to:
 
-* use the [Data Table](https://github.com/Rdatatable/data.table/wiki) syntax,
-* select data by row and column,
-* subset data by keyed column,
-* perform functions on subsetted data.
+* use the [Data Table](https://github.com/Rdatatable/data.table/wiki) syntax
+* select data by row and column
+* subset data by keyed column
+* perform functions on subsetted data
 
 <br>
 
