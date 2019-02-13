@@ -1,5 +1,5 @@
 ---
-title: How To Manage Multiple Versions of Python on a Mac
+title: Install, Uninstall, and Manage Multiple Versions of Python on a Mac
 author: Ian Maddaus
 date: '2018-07-26'
 categories:
@@ -350,7 +350,7 @@ $ which -a python3
 ```
 This shows some overlap as some versions of python appear in both searches.
 
-The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the `/Library/Frameworks/Python.framework/` directory. Homebrew installs all packages, including python, in `/usr/local/Cellar`, then Homebrew adds a symlink to `/usr/local/bin`so that its version of python can be found in the path. Finally, Apple installs python in `/usr/bin`. Remember, don't delete that version.   
+The locations of the anaconda and miniconda versions of python are self explanatory, so are the pyenv installs, the python.org installer places python in the `/Library/Frameworks/Python.framework/` directory. Homebrew installs all packages, including python, in `/usr/local/Cellar`, then Homebrew adds a symlink to `/usr/local/bin`so that its version of python can be found in the path. Finally, Apple installs python in `/usr/bin`. Remember, don't delete that version.
 
 
 

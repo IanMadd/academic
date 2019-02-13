@@ -10,6 +10,8 @@ tags:
 slug: a-quick-note
 ---
 
+This post was written by [Yihui Xie](https://yihui.name).
+
 To me, the two most impressive websites based on **blogdown** are:
 
 1. [Rob J Hyndman](https://robjhyndman.com)'s personal website.

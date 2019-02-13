@@ -33,7 +33,7 @@ PS1='\W$(__git_ps1 "(%s)") > '
 From here on out your bash prompot will display the current git branch. For example:
 
 ```
-academic(master) >
+project(branch_name) >
 ```
 
 <br>
