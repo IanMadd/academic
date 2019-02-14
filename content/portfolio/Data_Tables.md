@@ -85,7 +85,7 @@ This will explain how to:
 
 # Create a data table {#create}
 
-The `data.table` command creates a data table in this format:
+The `data.table` command creates data tables in this format:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`data.table(NameColumn1 = (some_data), NameColumn2 = (some_other_data),...)`
 
@@ -93,7 +93,7 @@ This tutorial will use two data tables, one called **DT** with dummy data, and
 another called **MTCarsDT** which contains the `mtcars` dataset from the
 datasets package.
 
-First create the **DT** data table:
+First create the DT data table:
 
 ```
 > library(data.table)

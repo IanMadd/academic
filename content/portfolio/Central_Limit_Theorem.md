@@ -33,8 +33,9 @@ math = true
 
 # Purpose
 
-This will demonstrate what the Central Limit Theorem is, why it is significant, and what conclusions you can draw from sampled data. This also demonstrates how to use the R programming language to compare sampled data and calculate the probability of events happening using sampled data. There is also a simulation at the bottom that shows how different distributions and sample sizes affect the distribution of sampled data.
+This will demonstrate what the Central Limit Theorem is, why it is significant, and what conclusions you can draw from sampled data. This also demonstrates how to use the R programming language to sample from a data set and draw conclusions about the data using the sampled data. There is also a simulation at the bottom that shows how different distributions and sample sizes affect the distribution of sampled data.
 
+This is intended for students with some familiarity with both statistics and the R programming language.
 
 # Table of Contents
 
