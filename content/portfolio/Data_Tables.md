@@ -190,11 +190,11 @@ This means, “Take the data table `DT`, subset rows using `i`, then calculate
 SELECT, *j* corresponds to WHERE, and *by* corresponds to GROUP BY.
 
 <br>
-<br>
+
 
 # Select rows: `DT[i]` {#dti}
 
-<br>
+
 
 To start with we'll select rows.
 
@@ -316,7 +316,6 @@ This operation will print the first ten rows of the hp column as a data table:
 ##  10: 123
 ```
 
-
 Note that the expression `.(hp)` is identical to `list(hp)`, the period is equivalent to the list function.
 
 ```
@@ -336,7 +335,6 @@ Note that the expression `.(hp)` is identical to `list(hp)`, the period is equiv
 ```
 
 Print multiple columns as a data table:
-
 
 ```
 > MTCarsDT[1:10,.(hp, cyl)]
@@ -460,7 +458,6 @@ You can use `apply` on a data table to apply a function to each column:
 ##  "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric"
 ```
 
-
 Use curly braces to perform multiple functions in one function call. Notice that the separate functions must be placed on separate lines or be separated by semicolons.
 
 ```
@@ -521,9 +518,9 @@ MTCarsDT[,mean(hp)]
 
 # Perform A Function On A Column By The Value Of Another Column `DT[,j,by]` {#dt_jby}
 
-<br>
+You can perform an operation on one column or several columns, sorted by a value in another column.
 
-This gives the mean horsepower for cars by number of cylinders.
+This gives the mean horsepower for cars sorted by number of cylinders.
 
 ```
 MTCarsDT[,.(MeanHP = mean(hp)), by=cyl]
@@ -614,8 +611,6 @@ MTCarsDT[cyl == 6,table(gear)]
 
 # Modify Data Tables `DT[i,j := ]` {#modifying_data_tables}
 
-<br>
-
 The `:=` operator updates columns and does so invisibly. That is to say, when you use `:=` it doesn't print a result unless you explicitly tell it to. The := operator makes the assignment operator (`DT <- DT[.....]`) unnecessary because it is significantly faster than the assignment operator. [For more on :=](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D).
 
 ```
@@ -688,6 +683,8 @@ DT[, c("V6","V7") := .(LETTERS [3:5], round(exp(V1),2))][]
 ## 11:  1  B -1.0002 11 31  D 2.72 11  2
 ## 12:  2  C  0.3930 12 32  E 7.39 12  3
 ```
+
+<br>
 
 ## Delete Columns {#delete_columns}
 
@@ -770,10 +767,9 @@ DT[,c("V7","V8") := .(101:112,121:132)][]
 ## 12:  C  0.9116 12 32  E  3 112 132
 ```
 
+<br>
 
 # Using Setkey {#setkey}
-
-<br>
 
 Setkey does three things:
 
@@ -907,9 +903,7 @@ DT[c("X", "D")]
 ## 5:  D      NA NA NA <NA> NA  NA  NA
 ```
 
-
 However you can add the **nomatch** command and it won't include the NA row.
-
 
 ```
 DT[c("X", "D"), nomatch=0]
@@ -924,7 +918,6 @@ DT[c("X", "D"), nomatch=0]
 <br>
 
 ## Math Operations Using Setkey {#math_operations_using_setkey}
-<br>
 
 Setkey allows you to perform operations on rows that have been keyed. This will get the mean hp for 6 cylinder cars and the mean horsepower for 4 and 6 cylinder cars.
 
@@ -1043,6 +1036,7 @@ MTCarsDT[, wt[.N], by=cyl]
 ## 3:   8 5.424
 ```
 
+<br>
 
 # List {#list}
 
@@ -1387,7 +1381,11 @@ You can see there are big speed advantages to using `set` over the assignment op
 
 <br>
 
-Also notice the the use of **1L** to select the first column in the set command of the final speed test. See [here](http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1) and [here](https://cran.r-project.org/doc/manuals/R-lang.html#Constants) for a discussion of the use of 1 vs 1L for integers in R.
+{{% alert note %}}
+
+Notice the the use of **1L** to select the first column in the set command of the final speed test. See [here](http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1) and [here](https://cran.r-project.org/doc/manuals/R-lang.html#Constants) for a discussion of the use of 1 vs 1L for integers in R.
+
+{{% /alert %}}
 
 <br>
 
@@ -1442,6 +1440,8 @@ Create a new vector with the names of the different columns in the order you wan
 ##    drat    wt  qsec vs am gear carb  mpg cylinders displacement horsepower
 ## 1: 4.93 1.615 18.52  1  1    4    2 30.4         4         75.7         52
 ```
+
+<br>
 
 # Unique {#unique}
 
