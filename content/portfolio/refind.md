@@ -3,7 +3,7 @@
 date = 2019-02-14T00:00:00
 
 # Project title.
-title =  "Install the rEFInd Boot Manager on macOS"
+title =  "Install the rEFInd boot manager on a computer running macOS"
 
 # Project summary to display on homepage.
 summary = "Instructions for installing the rEFInd Boot Manager on a computer running macOS."
