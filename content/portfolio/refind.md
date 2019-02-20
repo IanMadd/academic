@@ -87,14 +87,14 @@ System Integrity Protection (SIP) protects your computer from malicious software
 
 Uncompress the rEFInd zip file that you downloaded from SourceForge.
 
-Open Terminal and navigate into the rEFInd folder that you've downloaded.
+Open Terminal and navigate into the uncompressed rEFInd folder.
 
 Then enter:
 ```
 ./refind-install
 ```
 
-This will run an automatic installer that will install rEFInd in your EFI partition.
+An automatic installer will install rEFInd into your EFI partition.
 
 <br>
 
