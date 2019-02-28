@@ -4,7 +4,7 @@
 date = 2016-04-27T00:00:00
 
 # Project title.
-title = "How To Use Data Tables in R"
+title = "Subsetting and Performing Functions on Data Using the Data Table Package in R"
 
 # Project summary to display on homepage.
 summary = "A guide to using the data table package in R."
