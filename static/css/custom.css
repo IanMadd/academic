@@ -1,7 +1,4 @@
-/*.hljs {
-  padding: 1em;
-}
-*/
+
 body {
   font-family: Optima, Candara, Calibri, Arial, sans-serif;
   font-size: 0.8em;
@@ -33,7 +30,6 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word; /* Ensures very long heading words do not overflow into content. */
 }
-
 
 .navbar-default .navbar-brand {
   text-transform: uppercase;
@@ -144,7 +140,6 @@ img + em {
     box-shadow:         2px 2px 3px 3px #ccc;
 }
 
-
 div.alert p {
   position: relative;
   display: block;
@@ -161,14 +156,10 @@ div.alert a {
   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
-
-
-
 div.alert a:hover {
   border-bottom-color: transparent;
   color: rgba(255,255,255,0.5) !important;
 }
-
 
 div.alert p:first-child::before {
   position: absolute;
