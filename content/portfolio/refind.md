@@ -62,7 +62,7 @@ Download the latest version of rEFInd from [SourceForge](https://sourceforge.net
 
 [System Integrity Protection](https://support.apple.com/en-us/HT204899) (SIP) prevents certain folders from being modified even by the root user or by a user with root privileges. Mac OS 10.11 (El Capitan) and later have SIP turned on by default. SIP must be disabled in order to install rEFInd.
 
-To check if System Integrity Protection is enabled, open Terminal and enter:
+Check if System Integrity Protection is enabled:
 
 ```
 csrutil status
@@ -88,7 +88,11 @@ System Integrity Protection (SIP) protects your computer from malicious software
 
 1. Uncompress the rEFInd zip file that you downloaded from SourceForge.
 2. Open Terminal and navigate into the uncompressed rEFInd folder.
+<<<<<<< HEAD
 3. Then enter:
+=======
+3. Run the automatic installer:
+>>>>>>> master
 ```
 ./refind-install
 ```
@@ -104,7 +108,7 @@ disabling it:
 
 1. Restart you computer.
 2. While it's restarting hold down Command-R (⌘R). This will start it in [Recovery mode](https://support.apple.com/en-us/HT201314).
-3. Click on the Utilities menu and select Terminal.
+3. Click on the **Utilities** menu and select **Terminal**.
 4. Enter ```csrutil enable```.
 5. Restart your computer normally.
 
@@ -249,7 +253,7 @@ Protection is almost identical to disabling it:
 
 1. Restart your computer.
 2. While it's restarting hold down Command-R (⌘R). This will start your computer in [Recovery mode](https://support.apple.com/en-us/HT201314).
-3. Click on the Utilities menu and select Terminal.
+3. Click on the **Utilities** menu and select **Terminal**.
 4. Enter ```csrutil enable```.
 5. Restart your computer normally.
 
