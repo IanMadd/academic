@@ -32,7 +32,7 @@ math = true
 
 [rEFInd](http://www.rodsbooks.com/refind/) is a boot manager which allows you to boot multiple operating systems from internal or external hard drives. rEFInd automatically detects EFI bootloaders and shows a graphical interface allowing the user to select which operating system they want to start.
 
-These instructions will show you how to install rEFInd on a computer running macOS.
+These instructions will show you how to install rEFInd manuall or by using the automatic installer on a computer running macOS.
 
 # Table of Contents
 
@@ -44,7 +44,8 @@ These instructions will show you how to install rEFInd on a computer running mac
     1. [Identify System](#manualIdentifySystem)
     2. [Mount Your EFI System Partition](#manualMountEFI)
     3. [Move the rEFInd files](#manualMoveRefindFiles)
-    4. [Modify rEFInd files](#manualModifyFiles)
+    4. [Remove Unnecessary rEFInd Files](#manualRemoveFiles)
+    5. [Rename rEFInd Config File](#manualModifyConfig)
     5. [Bless rEFInd](#manualBlessRefind)
     6. [Unmount the rEFInd directory](#manualUnmount)
     7. [Re-enable System Integrity Protection](#manualReenableSIP)
@@ -67,29 +68,27 @@ To check if System Integrity Protection is enabled, open Terminal and enter:
 csrutil status
 ```
 
-If it returns ```System Integrity Protection status: enabled.```, follow these steps to disable it before installing rEFInd:
+If it returns ```System Integrity Protection status: enabled.```, follow these steps to disable SIP before installing rEFInd:
 
 1. Restart your computer.
-2. While it's restarting hold down Command-R (⌘R). This will start your computer in [Recovery mode](https://support.apple.com/en-us/HT201314).
-3. After it's restarted, click on the Utilities menu and select Terminal.
+2. While your computer is restarting hold down Command-R (⌘R). This will start your computer in [Recovery mode](https://support.apple.com/en-us/HT201314).
+3. After your computer restarted, click on the **Utilities** menu and select **Terminal**.
 4. Enter ```csrutil disable```.
 5. Restart your computer normally.
 
 <br>
 
 {{% alert note %}}
-System Integrity Protection (SIP) protects your computer from malicious software. Re-enable it after you finish installing rEFInd. There are instructions to re-enable SIP at the end of the manual and automatic installation instructions.
+System Integrity Protection (SIP) protects your computer from malicious software. Re-enable SIP after you finish installing rEFInd. There are instructions to re-enable SIP at the end of the manual and automatic installation instructions.
 {{% /alert %}}
 
 <br>
 
 # Automatic rEFInd Installer {#automatic}
 
-Uncompress the rEFInd zip file that you downloaded from SourceForge.
-
-Open Terminal and navigate into the uncompressed rEFInd folder.
-
-Then enter:
+1. Uncompress the rEFInd zip file that you downloaded from SourceForge.
+2. Open Terminal and navigate into the uncompressed rEFInd folder.
+3. Then enter:
 ```
 ./refind-install
 ```
@@ -113,7 +112,7 @@ disabling it:
 
 ## That's it {#thatsItAutomatic}
 
-After restart your computer will load the rEFInd boot manager automatically. You will see a screen like the one below; use the left and right arrows to select an operating system.
+After restart, your computer will load the rEFInd boot manager automatically. You will see a screen like the one below. Use the left and right arrows to select an operating system.
 
 <img src="/portfolio/refind.png">
 
@@ -125,7 +124,7 @@ These instructions will show you how to install rEFInd manually by copying speci
 
 <br>
 
-## Identify System {#manualIdentifySystem}
+## Identify Your System {#manualIdentifySystem}
 
 First you need to identify if you have a 32-bit or 64-bit system.
 
@@ -141,17 +140,17 @@ Terminal will return either ```EFI32``` or ```EFI64```.
 
 ## Mount your EFI System Partition. {#manualMountEFI}
 
-The EFI System Partition (ESP) contains files that tell your computer which operating system to load when it is starting up.
+The EFI System Partition (ESP) contains files that tell your computer which operating system to load while it is starting up.
 
-To modify the ESP, you have to mount it by creating a folder to mount to.
+To modify your computer's ESP, create an empty folder and then mount the ESP to that folder.
 
-### First create a folder in Terminal:
+#### Create a folder in Terminal:
 
 ```
 sudo mkdir Volumes/esp
 ```
 
-### Then mount the ESP to that folder:
+#### Mount the ESP to that folder:
 
 ```
 sudo mount -t msdos /dev/disk0s1 Volumes/esp
@@ -161,8 +160,9 @@ sudo mount -t msdos /dev/disk0s1 Volumes/esp
 
 ## Move the rEFInd files {#manualMoveRefindFiles}
 
-First, create a directory for the rEFInd files:
+Now move the files from the unzipped rEFInd folder to the ESP folder.
 
+Create an empty folder in the ESP folder for the rEFInd files:
 ```
 sudo mkdir -p /Volumes/esp/efi/refind
 ```
@@ -174,10 +174,12 @@ sudo cp -r refind/* /Volumes/esp/efi/refind/
 ```
 <br>
 
-## Modify rEFInd Files{#manualModifyFiles}
+## Remove Unnecessary rEFInd Files{#manualRemoveFiles}
 
-Remove the unnecessary versions of rEFInd from `/Volumes/esp/efi/refind/`
-that you won't be using.
+There are several versions of rEFInd that were copied from the unzipped folder to the ESP folder, but you only need the one version that will work with your computer.
+
+This step will show you how to remove the unnecessary versions of rEFInd from
+`/Volumes/esp/efi/refind/`.
 
 Apple computers don't use an ARM CPU, so you can delete this file:
 
@@ -203,7 +205,10 @@ If you have a 32-bit computer, remove this file:
 sudo rm /Volumes/esp/efi/refind/refind_x64.efi
 ```
 
-If this is your first installation, there's a file called `refind.conf-sample`. Change this to `refind.conf`:
+## Rename rEFInd Config File{#manualModifyConfig}
+
+
+If this is your first installation of rEFInd, rename the `refind.conf-sample` file to `refind.conf`:
 
 ```
 sudo mv /Volumes/esp/efi/refind/refind.conf-sample /Volumes/esp/efi/refind/refind.conf
@@ -213,9 +218,7 @@ sudo mv /Volumes/esp/efi/refind/refind.conf-sample /Volumes/esp/efi/refind/refin
 
 ## Bless rEFInd {#manualBlessRefind}
 
-Bless rEFInd
-
-The bless command makes a volume bootable. To bless this installation rEFInd, enter:
+The `bless` command makes a volume bootable. To bless this installation of rEFInd, enter:
 
 ```
 sudo bless --mount /Volumes/esp --setBoot --file /Volumes/esp/efi/refind/refind_x64.efi --shortform
@@ -225,7 +228,7 @@ sudo bless --mount /Volumes/esp --setBoot --file /Volumes/esp/efi/refind/refind_
 
 ## Unmount the rEFInd directory {#manualUnmount}
 
-You can restart your computer now and it will automatically unmount the ESP and run rEFInd after it restarts. If you want to continue using your computer without the ESP directory, enter the following command:
+You can restart your computer now and it will automatically unmount the ESP and run rEFInd after it restarts. If you want to unmount the ESP folder before you restart your computer, enter the following command:
 
 ```
 diskutil unmount /dev/disk0s1
@@ -240,8 +243,9 @@ diskutil unmount /Volumes/esp
 
 ## Re-enable System Integrity Protection {#manualReenableSIP}
 
-If you disabled System Integrity Protection you should re-enable it after you've finished install rEFInd. The process of re-enabling System Integrity Protection is almost identical to
-disabling it:
+If you disabled System Integrity Protection (SIP), you should re-enable it
+after you've finished installing rEFInd. Re-enabling System Integrity
+Protection is almost identical to disabling it:
 
 1. Restart your computer.
 2. While it's restarting hold down Command-R (⌘R). This will start your computer in [Recovery mode](https://support.apple.com/en-us/HT201314).
@@ -253,7 +257,7 @@ disabling it:
 
 ## That's it
 
-After restarting, your computer will load the rEFInd boot manager automatically. You will see a screen like the one below; use the left and right arrows to select an operating system.
+After restarting, your computer will load the rEFInd boot manager automatically. You will see a screen like the one below. Use the left and right arrows to select an operating system.
 
 <img src="/portfolio/refind.png">
 
