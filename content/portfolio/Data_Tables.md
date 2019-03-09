@@ -35,7 +35,7 @@ caption = ""
 
 The [Data Table](https://github.com/Rdatatable/data.table/wiki) package inherits from [data frames](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Data-frames), both display tabular data and are a list of vectors of the same length.
 
-Data tables can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing.
+The Data Table package can handle large data sets faster than data frames, however the [i,j,by] syntax can be a bit confusing.
 
 This will explain how to:
 
@@ -93,7 +93,7 @@ This tutorial will use two data tables, one called **DT** with dummy data, and
 another called **MTCarsDT** which contains the `mtcars` dataset from the
 datasets package.
 
-First create the DT data table:
+First create the **DT** data table:
 
 ```
 > library(data.table)
@@ -136,13 +136,13 @@ And this is what it looks like:
 
 <br>
 
-Now create the MTCarsDT data table:
+Now create the **MTCarsDT** data table:
 
 ```
 > MTCarsDT <- data.table(mtcars)
 ```
 
-Which looks like this:
+The **MTCarsDT** data table looks like this:
 
 ```
 > head(MTCarsDT)
@@ -175,18 +175,19 @@ The `tables` function will list all tables in the global environment as well as 
 ```
 
 <br>
+<br>
 
-# Intoduction to Data Table syntax [i,&nbsp;j,&nbsp;by]{#i_j_by}
+# Intoduction to Data Table Syntax [i,&nbsp;j,&nbsp;by]{#i_j_by}
 
 <br>
 
-Data Tables allow you to find data and perform operations using the following
+Data tables allow you to find data and perform operations using the following
 syntax:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DT[i, j, by]`
 
 This means, “Take the data table `DT`, subset rows using `i`, then calculate
-`j`, grouped by`by`.” This is similar to SQL syntax where *i* corresponds to
+`j`, grouped by `by`.” This is similar to SQL syntax where *i* corresponds to
 SELECT, *j* corresponds to WHERE, and *by* corresponds to GROUP BY.
 
 <br>
@@ -194,11 +195,13 @@ SELECT, *j* corresponds to WHERE, and *by* corresponds to GROUP BY.
 
 # Select rows: `DT[i]` {#dti}
 
+Use the following format to return the value of specific rows:
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DT[i]`
 
-To start with we'll select rows.
+<br>
 
-Start by selecting the 3rd row:
+Select the 3rd row:
 ```
 > MTCarsDT[3]
 
@@ -231,7 +234,7 @@ And the 3rd and 5th through 8th rows:
 
 ```
 <br>
-Notice that the previous command uses the combine function, **c()**, to list the different rows that will be printed. Without the combine function R will print the 3rd row for columns 5 through 8, like this:
+Notice that the previous command uses the combine function, **c()**, to list the different rows that will be printed. Without the combine function, R will print the 3rd row for columns 5 through 8, like this:
 ```
 > MTCarsDT[3,5:8]
 
@@ -289,7 +292,7 @@ Use the following format to return columns:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DT[,j]`
 
-For example, return the hp column as a vector:
+For example, return the **hp** column as a vector:
 ```
 > MTCarsDT[,hp]
 
@@ -297,9 +300,9 @@ For example, return the hp column as a vector:
 ## [21] 97 150 150 245 175 66 91 113 264 175 335 109
 ```
 
-To return a data table you have to use the list function.
+To return a data table you have to use the `list` function.
 
-This operation will print the first ten rows of the hp column as a data table:
+This operation will print the first ten rows of the **hp** column as a data table:
 ```
 > MTCarsDT[1:10,list(hp)]
 
@@ -316,7 +319,7 @@ This operation will print the first ten rows of the hp column as a data table:
 ##  10: 123
 ```
 
-Note that the expression `.(hp)` is identical to `list(hp)`, the period is equivalent to the list function.
+Note that the expression `.(hp)` is identical to `list(hp)`.
 
 ```
 > MTCarsDT[1:10,.(hp)]
@@ -333,6 +336,8 @@ Note that the expression `.(hp)` is identical to `list(hp)`, the period is equiv
 ##  9:  95
 ##  10: 123
 ```
+
+<br>
 
 Print multiple columns as a data table:
 
@@ -354,7 +359,7 @@ Print multiple columns as a data table:
 
 <br>
 
-You can also print columns by index number but this is generally a bad idea, **see the warning below**.
+You can also print columns by index number but this is generally a bad idea. **See the warning below**.
 
 ```
 > MTCarsDT[1:5, 1:3]
@@ -395,15 +400,15 @@ Referring to columns by index number can create errors. If you reference a colum
 You can execute functions on a column of data by putting the name of the column
 inside of a function.
 
-For example, this will return the mean of the `hp` column:
+For example, this will return the mean of the **hp** column:
 ```
 > MTCarsDT[,mean(hp)]
 
 ##  [1] 146.6875
 ```
 
-This will return the mean of the `hp` column and the standard deviation of the
-`mpg` column:
+This will return the mean of the **hp** column and the standard deviation of the
+**mpg** column:
 ```
 > MTCarsDT[,.(mean(hp), sd(mpg))]
 
@@ -420,7 +425,7 @@ names:
 ##  1:   146.6875       6.026948
 ```
 
-This prints the `hp` column and repeats the values of the standard deviation and mean of the `hp` column. The head function prints only the first six rows. Compare this operation with next operation which selects the first six rows within the brackets.
+This prints the **hp** column and repeats the values of the standard deviation and mean of the **hp** column. The `head` function prints only the first six rows. Compare this operation with next operation which selects the first six rows within the brackets.
 ```
 > head(MTCarsDT[,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))])
 
@@ -433,7 +438,7 @@ This prints the `hp` column and repeats the values of the standard deviation and
 ##  6: 105 68.56287 146.6875
 ```
 
-Notice here that the numbers for standard deviation and mean are different in this function below. This returns only the mean and standard deviation for the `hp` column for the **first six columns only**.
+Notice here that the numbers for standard deviation and mean are different in this function below. This returns only the mean and standard deviation for the **hp** column for the **first six columns only**.
 
 ```
 > MTCarsDT[1:6,.(hp, SD_HP=sd(hp), Mean_HP=mean(hp))]
@@ -479,7 +484,7 @@ Use curly braces to perform multiple functions in one function call. Notice that
 
 You can select data from a data table by both row and column using the `DT[i,j]` syntax.
 
-This will print rows 1:5 but only the hp, weight, and mpg columns.
+This will print rows 1:5 but only the **hp**, **weight**, and **mpg** columns.
 ```
 > MTCarsDT[1:5, .(hp,wt,mpg)]
 
@@ -491,7 +496,7 @@ This will print rows 1:5 but only the hp, weight, and mpg columns.
 ##  5: 175 3.440 18.7
 ```
 
-This will return cylinders, hp, mean hp and mpg for 6 cylinder cars.
+This will return **cyl**, **hp**, mean **hp**, and **mpg** for 6 cylinder cars.
 
 ```
 > MTCarsDT[cyl == 6,.(cyl,hp,MeanHorsepower = mean(hp),mpg)]
@@ -553,7 +558,7 @@ MTCarsDT[,.(MeanQuarterMile = mean(qsec)), by=.(cyl,gear)]
 
 Now we can put all the operations together and perform a function on a subset of rows and columns.
 
-This will give the mean hp for cars with 4 gears grouped by the number cylinders:
+This will give the mean horsepower for cars with 4 gears grouped by the number cylinders:
 
 ```
 MTCarsDT[gear == 4,.(Mean_HP = mean(hp)), by=cyl]
@@ -611,7 +616,7 @@ MTCarsDT[cyl == 6,table(gear)]
 
 # Modify Data Tables `DT[i,j := ]` {#modifying_data_tables}
 
-The `:=` operator updates columns and does so invisibly. That is to say, when you use `:=` it doesn't print a result unless you explicitly tell it to. The := operator makes the assignment operator (`DT <- DT[.....]`) unnecessary because it is significantly faster than the assignment operator. [For more on :=](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D).
+The `:=` operator updates columns and does so invisibly. That is to say, when you use `:=` it doesn't print a result unless you explicitly tell it to. The `:=` operator makes the assignment operator (`DT <- DT[.....]`) unnecessary because it is significantly faster than the assignment operator.
 
 ```
 DT[,V8]
@@ -632,8 +637,9 @@ DT[, V8 := round(exp(V3),2)][]
 
 ## [1] 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48 1.93 0.25 0.37 1.48
 ```
+<br>
 
-Replace NA's in V9 column with 0:
+Replace the NA's in the **V9** column with 0:
 
 ```
 DT[,V9]
@@ -647,8 +653,9 @@ DT[is.na(V9), V9 := 0][]
 ## [1] 0 1 2 3 0 1 2 3 0 1 2 3
 ```
 
+<br>
 
-Columns V6 and V7 are updated with the results of the functions after the := operator.
+Columns **V6** and **V7** are updated with the results of the functions after the := operator.
 ```
 DT[,.(V6,V7)]
 
@@ -688,7 +695,7 @@ DT[, c("V6","V7") := .(LETTERS [3:5], round(exp(V1),2))][]
 
 ## Delete Columns {#delete_columns}
 
-This will delete the V1 column.
+This will delete the **V1** column.
 ```
 DT[, V1 := NULL][]
 
@@ -707,7 +714,7 @@ DT[, V1 := NULL][]
 12:  C  0.3930 12 32  E 7.39 12  3
 ```
 
-And this will delete the V7 and V8 columns.
+And this will delete the **V7** and **V8** columns.
 
 ```
 DT[, c("V7","V8") := NULL][]
@@ -727,7 +734,7 @@ DT[, c("V7","V8") := NULL][]
 ## 12:  C  0.9116 12 32  E  3
 ```
 
-Find the rows in column V2 that are equal to **A** and assign X to them:
+Find the rows in column **V2** that are equal to **A** and assign **X** to them:
 
 ```
 DT[V2 == "A", V2 := "X"][]
@@ -747,7 +754,7 @@ DT[V2 == "A", V2 := "X"][]
 ## 12:  C  0.9116 12 32  E  3
 ```
 
-Add columns V7 and V8 back:
+Add columns **V7** and **V8** back:
 
 ```
 DT[,c("V7","V8") := .(101:112,121:132)][]
@@ -771,7 +778,7 @@ DT[,c("V7","V8") := .(101:112,121:132)][]
 
 # Using Setkey {#setkey}
 
-Setkey does three things:
+`Setkey` does three things:
 
 1. It reorders the rows of the data table by the keyed column in increasing order.
 
@@ -780,7 +787,7 @@ Setkey does three things:
 3. It allows you to easily search through that column.
 
 
-First, use setkey to key the V2 column in this data table and sort the data table into alphabetical order by the keyed column.
+First, use `setkey` to key the **V2** column in this data table and sort the data table into alphabetical order by the keyed column.
 ```
 setkey(DT,V2)
 DT
@@ -903,7 +910,7 @@ DT[c("X", "D")]
 ## 5:  D      NA NA NA <NA> NA  NA  NA
 ```
 
-However you can add the **nomatch** command and it won't include the NA row.
+However you can add the `nomatch` command and it won't include the NA row.
 
 ```
 DT[c("X", "D"), nomatch=0]
@@ -919,7 +926,7 @@ DT[c("X", "D"), nomatch=0]
 
 ## Math Operations Using Setkey {#math_operations_using_setkey}
 
-Setkey allows you to perform operations on rows that have been keyed. This will get the mean hp for 6 cylinder cars and the mean horsepower for 4 and 6 cylinder cars.
+`Setkey` allows you to perform operations on rows that have been keyed. This will get the mean horsepower for 6 cylinder cars and the mean horsepower for 4 and 6 cylinder cars.
 
 ```
 setkey(MTCarsDT, cyl)
@@ -936,7 +943,7 @@ MTCarsDT[.(c(4, 6)), mean(hp)]
 
 ## by=.EACHI {#by_eachi}
 
-To return the mean **hp** for 4 and 6 cylinder cars separately use the `by=.EACHI` command. This will perform the same operation separately for each value in the keyed column. Notice that numerical data requires the list command:
+To get the mean horsepower for 4 and 6 cylinder cars separately, use the `by=.EACHI` command. This will perform the same operation separately for each value in the keyed column. Notice that numerical data requires the list command:
 
 ```
 MTCarsDT[.(c(4,6)), mean(hp), by=.EACHI]
@@ -1301,7 +1308,7 @@ More than two operations can be chained together. This will return 6 cylinder ca
 This is the syntax for set : `for (i in from:to) set(DT, row, column, new value)`
 
 In this example we'll replace the values in the V8 column with the numbers 1-12.
-Here's the DT dataset:
+Here's the **DT** dataset:
 
 ```
 > DT
@@ -1321,7 +1328,7 @@ Here's the DT dataset:
 ## 12:  C -0.4986 12 32  E  3 112 132
 ```
 
-This will renumber the V8 column:
+This will renumber the **V8** column:
 
 ```
 > for (i in 1:12) set(DT,i,"V8",i)
@@ -1346,7 +1353,7 @@ This will renumber the V8 column:
 
 This example shows the speed of using `set` in a for loop.
 
-First, create a matrix, a data frame, and a data table, each with 100,000 rows and 100 columns.
+First create a matrix, a data frame, and a data table, each with 100,000 rows and 100 columns.
 
 ```
 m = matrix(1,nrow=100000,ncol=100)
@@ -1410,7 +1417,7 @@ This example will replace the column name **hp** with the name **horsepower**:
 ##  [7] "qsec"       "vs"         "am"         "gear"       "carb"
 ```
 
-You can also change multiple columnames at the same time:
+You can also change multiple column names at the same time:
 
 ```
 > setnames(MTCarsDT, c("cyl", "disp"), c("cylinders", "displacement"))
@@ -1445,7 +1452,7 @@ Create a new vector with the names of the different columns in the order you wan
 
 # Unique {#unique}
 
-`Unique` returns a data table where duplicate data, by keyed row, are removed. So here's a new data table, notice that rows 2 and 3 are identical to rows 4 and 6 respectively.
+`Unique` returns a data table where duplicate data, by keyed row, are removed. In this example there's a new data table, notice that rows 2 and 3 are identical to rows 4 and 6 respectively.
 
 ```
 > DT <- data.table(A = c('A','B','C','B','A','C'), B=c(1,2,3,2,4,3), C=c(10,20,30,20,60,30))
@@ -1498,3 +1505,4 @@ More info and references:
 * [What's the difference between `1L` and `1`?](http://stackoverflow.com/questions/7014387/whats-the-difference-between-1l-and-1)
 * [R Language Definition: Constants](https://cran.r-project.org/doc/manuals/R-lang.html#Constants)
 * [A data.table R tutorial by DataCamp: intro to DT[i, j, by]](http://www.r-bloggers.com/a-data-table-r-tutorial-by-datacamp-intro-to-dti-j-by/)
+* [The := operator](https://www.rdocumentation.org/packages/data.table/versions/1.11.4/topics/%3A%3D)
