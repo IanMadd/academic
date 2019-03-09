@@ -30,11 +30,11 @@ math = true
 
 # Purpose
 
-This is user documentation for the QGIS website which explains how users can contribute 
-changes to the QGIS documentation using Github. It's intended for users who know 
-little about Git or Github. The documentation was originally written using 
-[Sphinx](https://www.sphinx-doc.org/en/master/) and 
-[reStructuredText](http://docutils.sourceforge.net/rst.html) and is reproduced 
+This is user documentation for the QGIS website which explains how users can contribute
+changes to the QGIS documentation using Github. It's intended for users who know
+little about Git or Github. The documentation was originally written using
+[Sphinx](https://www.sphinx-doc.org/en/master/) and
+[reStructuredText](http://docutils.sourceforge.net/rst.html) and is reproduced
 here in Markdown.
 
 # A Step By Step Contribution
@@ -249,7 +249,7 @@ to the appropriate `release_...` branch in the steps above.
 ## 3. Describe your pull request {#describePullRequest}
 
 
-A text box will open; fill in any relevant comments for the issue you are
+A text box will open. Add any relevant comments for the issue you are
 addressing.
 
 If this relates to a particular [issue](https://github.com/qgis/QGIS-Documentation/issues),
