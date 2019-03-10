@@ -32,7 +32,7 @@ math = true
 
 [rEFInd](http://www.rodsbooks.com/refind/) is a boot manager which allows you to boot multiple operating systems from internal or external hard drives. rEFInd automatically detects EFI bootloaders and shows a graphical interface allowing the user to select which operating system they want to start.
 
-These instructions will show you how to install rEFInd manuall or by using the automatic installer on a computer running macOS.
+These instructions will show you how to use the automatic rEFInd installer or to manually install rEFInd on a computer running macOS.
 
 # Table of Contents
 
@@ -87,19 +87,8 @@ System Integrity Protection (SIP) protects your computer from malicious software
 # Automatic rEFInd Installer {#automatic}
 
 1. Uncompress the rEFInd zip file that you downloaded from SourceForge.
-2. Open Terminal and navigate into the uncompressed rEFInd folder.
-<<<<<<< HEAD
-<<<<<<< HEAD
+2. Open **Terminal** and navigate into the uncompressed rEFInd folder.
 3. Then enter:
-=======
-3. Run the automatic installer:
->>>>>>> master
-=======
-3. Run the automatic installer:
-=======
-3. Then enter:
->>>>>>> f165c810f5822a5e3cb6bb6c58fa6223d78f15ec
->>>>>>> master
 ```
 ./refind-install
 ```
@@ -139,13 +128,13 @@ These instructions will show you how to install rEFInd manually by copying speci
 
 First you need to identify if you have a 32-bit or 64-bit system.
 
-Open Terminal and enter:
+Open **Terminal** and enter:
 
 ```
 ioreg -l -p IODeviceTree | grep firmware-abi
 ```
 
-Terminal will return either ```EFI32``` or ```EFI64```.
+**Terminal** will return either ```EFI32``` or ```EFI64```.
 
 <br>
 
@@ -155,17 +144,9 @@ The EFI System Partition (ESP) contains files that tell your computer which oper
 
 To modify your computer's ESP, create an empty folder and then mount the ESP to that folder.
 
-#### Create a folder in Terminal:
+1. Create a folder in Terminal: <br> ```sudo mkdir Volumes/esp```
 
-```
-sudo mkdir Volumes/esp
-```
-
-#### Mount the ESP to that folder:
-
-```
-sudo mount -t msdos /dev/disk0s1 Volumes/esp
-```
+2. Mount the ESP to that folder: <br> `sudo mount -t msdos /dev/disk0s1 Volumes/esp`
 
 <br>
 
@@ -173,16 +154,13 @@ sudo mount -t msdos /dev/disk0s1 Volumes/esp
 
 Now move the files from the unzipped rEFInd folder to the ESP folder.
 
-Create an empty folder in the ESP folder for the rEFInd files:
-```
-sudo mkdir -p /Volumes/esp/efi/refind
-```
+1. Create an empty folder in the ESP folder for the rEFInd files: <br> `sudo mkdir -p /Volumes/esp/efi/refind`
 
-In Terminal, navigate into the unzipped folder you downloaded from SourceForge and copy the rEFInd files to the new rEFInd folder you just created:
 
-```
-sudo cp -r refind/* /Volumes/esp/efi/refind/
-```
+2. In Terminal, navigate into the unzipped folder you downloaded from
+SourceForge and copy the rEFInd files to the new rEFInd folder you just
+created: <br> `sudo cp -r refind/* /Volumes/esp/efi/refind/`
+
 <br>
 
 ## Remove Unnecessary rEFInd Files{#manualRemoveFiles}
@@ -215,6 +193,8 @@ If you have a 32-bit computer, remove this file:
 ```
 sudo rm /Volumes/esp/efi/refind/refind_x64.efi
 ```
+
+<br>
 
 ## Rename rEFInd Config File{#manualModifyConfig}
 
