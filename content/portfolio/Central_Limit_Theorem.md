@@ -183,12 +183,12 @@ hist(die_rolls)
 ![](/portfolio/Central_Limit_Theorem_files/die_roll_histogram.png)
 
 
-You can see that:
+In the figure above you can see the following:
 
-1. the sample means have a normal distribution,
-2. the population mean is 3.5 and so is the mean of the sample means,
+1. the sample means have a normal distribution
+2. the population mean is 3.5 and so is the mean of the sample means
 3. the standard deviation of the samples multiplied by the square root of the
-sample size is close to the square root of the population (see below).
+sample size is close to the square root of the population (see below)
 
 ```
 sd(die_rolls)*sqrt(30)
@@ -206,10 +206,10 @@ sd(die)
 
 This example will sample from population data to demonstrate that:
 
-* a non-normal population will appear normal when sampled,
-* that the sample means will converge around the population mean, and
+* a non-normal population will appear normal when sampled
+* that the sample means will converge around the population mean
 * that the standard deviation of the sample means is approximately equal to the
-population standard deviation divided by the square root of the sample size.
+population standard deviation divided by the square root of the sample size
 
 This example uses historical data from the [United States Historical Climatology Network](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/us-historical-climatology-network-ushcn). The data set contains daily high temperatures in Farmington, Maine from 1911 through 2010. [Download the data here.](/data/ME_2765tmax.txt)
 
@@ -238,7 +238,7 @@ library(easyGgplot2)
 
 
 <br>
-Then import the data.
+Then import the data:
 <br>
 ```
 Station172765_TMax<- data.table(read.table("/data/ME_2765tmax.txt", header = FALSE))
@@ -435,7 +435,7 @@ Notice that the different sets of sample means are all clustered around the same
 
 # Cental Limit Theorem Z-Values {#central_limit_theorem_zvalues}
 
-If the number of samples is large enough, ie more than 30, then conclusions can be made about the sample means in the same way that conclusions can be made about normally distributed datasets.
+If the number of samples is large enough, i.e., more than 30, then conclusions can be made about the sample means in the same way that conclusions can be made about normally distributed datasets.
 
 Below is the formula for z-values in normally distributed data:
 
