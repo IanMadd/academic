@@ -1,6 +1,7 @@
 ---
 title: Guides For Learning Git & Github
 author: Ian Maddaus
+draft: true
 date: '2018-07-25'
 categories:
     - Git

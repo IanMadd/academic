@@ -1,7 +1,7 @@
 ---
 title: "Random Operations in Git"
 date: 2018-12-27T18:40:11-05:00
-draft: false
+draft: true
 author: Ian
 categories:
   - Short Note

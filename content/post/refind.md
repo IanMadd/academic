@@ -25,7 +25,6 @@ math = true
 [header]
     image = "/headers/refind_banner-alpha.png"
     caption = ""
-
 +++
 
 # Introduction
@@ -50,13 +49,13 @@ These instructions will show you how to use the automatic rEFInd installer or to
     6. [Unmount the rEFInd directory](#manualUnmount)
     7. [Re-enable System Integrity Protection](#manualReenableSIP)
 
-<br>
+
 
 # Download rEFInd {#download}
 
 Download the latest version of rEFInd from [SourceForge](https://sourceforge.net/projects/refind/).
 
-<br>
+
 
 # Disable System Integrity Protection {#disableSIP}
 
@@ -76,13 +75,13 @@ If it returns ```System Integrity Protection status: enabled.```, follow these s
 4. Enter ```csrutil disable```.
 5. Restart your computer normally.
 
-<br>
+
 
 {{% callout note %}}
 System Integrity Protection (SIP) protects your computer from malicious software. Re-enable SIP after you finish installing rEFInd. There are instructions to re-enable SIP at the end of the manual and automatic installation instructions.
 {{% /callout %}}
 
-<br>
+
 
 # Automatic rEFInd Installer {#automatic}
 
@@ -95,7 +94,7 @@ System Integrity Protection (SIP) protects your computer from malicious software
 
 An automatic installer will install rEFInd into your EFI partition.
 
-<br>
+
 
 ## Re-enable System Integrity Protection {#automaticEnableSIP}
 
@@ -108,7 +107,7 @@ disabling it:
 4. Enter ```csrutil enable```.
 5. Restart your computer normally.
 
-<br>
+
 
 ## That's it {#thatsItAutomatic}
 
@@ -116,13 +115,13 @@ After restart, your computer will load the rEFInd boot manager automatically. Yo
 
 <img src="/portfolio/refind.png">
 
-<br>
+
 
 # Manual installation {#manual}
 
 These instructions will show you how to install rEFInd manually by copying specific files from the rEFInd zip file to a folder on your computer.
 
-<br>
+
 
 ## Identify Your System {#manualIdentifySystem}
 
@@ -136,7 +135,7 @@ ioreg -l -p IODeviceTree | grep firmware-abi
 
 **Terminal** will return either ```EFI32``` or ```EFI64```.
 
-<br>
+
 
 ## Mount your EFI System Partition. {#manualMountEFI}
 
@@ -144,24 +143,24 @@ The EFI System Partition (ESP) contains files that tell your computer which oper
 
 To modify your computer's ESP, create an empty folder and then mount the ESP to that folder.
 
-1. Create a folder in Terminal: <br> ```sudo mkdir Volumes/esp```
+1. Create a folder in Terminal:  ```sudo mkdir Volumes/esp```
 
-2. Mount the ESP to that folder: <br> `sudo mount -t msdos /dev/disk0s1 Volumes/esp`
+2. Mount the ESP to that folder:  `sudo mount -t msdos /dev/disk0s1 Volumes/esp`
 
-<br>
+
 
 ## Move the rEFInd files {#manualMoveRefindFiles}
 
 Now move the files from the unzipped rEFInd folder to the ESP folder.
 
-1. Create an empty folder in the ESP folder for the rEFInd files: <br> `sudo mkdir -p /Volumes/esp/efi/refind`
+1. Create an empty folder in the ESP folder for the rEFInd files:  `sudo mkdir -p /Volumes/esp/efi/refind`
 
 
 2. In Terminal, navigate into the unzipped folder you downloaded from
 SourceForge and copy the rEFInd files to the new rEFInd folder you just
-created: <br> `sudo cp -r refind/* /Volumes/esp/efi/refind/`
+created:  `sudo cp -r refind/* /Volumes/esp/efi/refind/`
 
-<br>
+
 
 ## Remove Unnecessary rEFInd Files{#manualRemoveFiles}
 
@@ -194,7 +193,7 @@ If you have a 32-bit computer, remove this file:
 sudo rm /Volumes/esp/efi/refind/refind_x64.efi
 ```
 
-<br>
+
 
 ## Rename rEFInd Config File{#manualModifyConfig}
 
@@ -205,7 +204,7 @@ If this is your first installation of rEFInd, rename the `refind.conf-sample` fi
 sudo mv /Volumes/esp/efi/refind/refind.conf-sample /Volumes/esp/efi/refind/refind.conf
 ```
 
-<br>
+
 
 ## Bless rEFInd {#manualBlessRefind}
 
@@ -215,7 +214,7 @@ The `bless` command makes a volume bootable. To bless this installation of rEFIn
 sudo bless --mount /Volumes/esp --setBoot --file /Volumes/esp/efi/refind/refind_x64.efi --shortform
 ```
 
-<br>
+
 
 ## Unmount the rEFInd directory {#manualUnmount}
 
@@ -230,7 +229,7 @@ or
 diskutil unmount /Volumes/esp
 ```
 
-<br>
+
 
 ## Re-enable System Integrity Protection {#manualReenableSIP}
 
@@ -244,7 +243,7 @@ Protection is almost identical to disabling it:
 4. Enter ```csrutil enable```.
 5. Restart your computer normally.
 
-<br>
+
 
 ## That's it
 
@@ -252,4 +251,4 @@ After restarting, your computer will load the rEFInd boot manager automatically.
 
 <img src="/portfolio/refind.png">
 
-<br>
+

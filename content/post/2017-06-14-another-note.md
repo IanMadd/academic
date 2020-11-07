@@ -1,6 +1,7 @@
 ---
 title: Another Note on A blogdown Tutorial
 author: Yihui Xie
+draft: true
 date: '2017-06-14'
 categories:
     - Short Note

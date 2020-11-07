@@ -2,6 +2,7 @@
 # Date this page was created.
 date = 2019-01-06T00:00:00
 
+draft = true
 # Project title.
 title =  "A Step By Step Contribution to QGIS Documentation"
 

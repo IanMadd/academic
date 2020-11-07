@@ -1,0 +1,79 @@
+{{ $data := $.Site.Data.emoji }}
+
+{{ with .Get "emoji" }}
+    {{ $file := "" }}
+    {{ $emoji := . }}
+    {{ $emojify := "" }}
+    {{ $value := index $data.emoji $emoji }}
+    {{ if eq $value nil }}
+        {{ $emojify = (print ":" $emoji ":") }}
+    {{ else }}
+        {{ if hasPrefix $value "alias" }}
+            {{ $key := index (split $value ":") 1 }}
+            {{ $alias := index $data.emoji $key }}
+            {{ if eq $alias nil }}
+                {{ $emojify = (print ":" $key ":") }}
+            {{ else }}
+                {{ $value := index $data.emoji $key }}
+                {{ if hasPrefix $value "alias" }}
+                    {{ $key := index (split $value ":") 1 }}
+                    {{ $file = index $data.emoji $key }}
+                {{ else }}
+                    {{ $file = $value }}
+                {{ end }}
+            {{ end }}
+        {{ else }}
+            {{ $file = $value }}
+        {{ end }}
+    {{ end }}
+
+    {{ if ne $emojify "" }}
+        {{ emojify $emojify }}
+    {{end }}
+
+    {{ if ne $file "" }}
+        {{ $image := print "/emoji/" $file }}
+        <img src="{{$image}}" alt="{{ $emoji }}" title="{{ $emoji }}" class="emoji">
+    {{ end }}
+{{ end }}
+
+{{ with .Get "emojiparty" }}
+    {{ $emojimatch := . }}
+    {{ $emojislice := slice }}
+    {{ range $emoji, $file := index $data "emoji" }}
+        {{ if in $emoji $emojimatch  }}
+            {{ $emojislice = $emojislice | append $file }}
+        {{ end }}
+    {{ end }}
+
+    {{ $emojifiles := slice }}
+
+    {{ range $emoji := $emojislice }}
+        {{ if hasPrefix $emoji "alias" }}
+            {{ $alias := index (split $emoji ":" ) 1 }}
+            {{ $replaceFile := index $data "emoji" $alias }}
+            {{ if hasPrefix $replaceFile "alias" }}
+                {{ $alias := index (split $replaceFile ":" ) 1 }}
+                {{ $replaceFile := index $data "emoji" $alias }}
+                {{ $emojifiles = $emojifiles | append $replaceFile }}
+            {{ else }}
+                {{ $emojifiles = $emojifiles | append $replaceFile }}
+            {{ end }}
+        {{ else }}
+            {{ $emojifiles = $emojifiles | append $emoji }}
+        {{ end }}
+    {{ end }}
+
+    {{ $emojifiles = uniq $emojifiles}}
+
+    {{ range $file := $emojifiles }}
+        {{ $title := "" }}
+        {{ range $emoji, $filename := $data.emoji }}
+            {{ if eq $filename $file }}
+                {{ $title = $emoji }}
+            {{ end }}
+        {{ end }}
+        {{ $image := print "/emoji/" $file }}
+        <img src="{{$image}}" alt="{{$title}}" title="{{$title}}" class="emoji">
+    {{ end }}
+{{ end }}
