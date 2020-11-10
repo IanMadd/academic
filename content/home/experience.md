@@ -25,21 +25,11 @@ date_format = "Jan 2006"
   date_start = "2019-04-01"
   date_end = ""
   description = """
-  Responsibilities include:
-  
-  * Consolidating documentation from five separate sites to one site across seven repositories
-  * Converting documentation from ReStructured Text on a Sphinx site to Markdown on a Hugo site
-  * Updating the appearance and functionality of the documentation site
-  * Automating documentation updates
-  * Reviewing and editing documentation updates
-  * Editing release notes
+  * Consolidated documentation from five separate sites to one site with content supplied from seven different repositories
+  * Converted documentation from ReStructured Text on a Sphinx site to Markdown on a Hugo site
+  * Updated the appearance and functionality of the documentation site
+  * Automated documentation updates
+  * Reviewed and edited documentation changes
+  * Edited release notes
   """
-
-[[experience]]
-  title = "Grant Writer"
-  company_url = ""
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
-  description = """Taught electronic engineering and researched semiconductor physics."""
-
 +++
