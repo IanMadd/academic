@@ -19,17 +19,15 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
   title = "Technical Writer"
-  company = "Chef Software"
+  company = "Chef / Progress Software"
   company_url = "https://chef.io"
   location = ""
   date_start = "2019-04-01"
   date_end = ""
   description = """
-  * Consolidated documentation from five separate sites to one site with content supplied from seven different repositories
-  * Converted documentation from ReStructured Text on a Sphinx site to Markdown on a Hugo site
-  * Updated the appearance and functionality of the documentation site
-  * Automated documentation updates
-  * Reviewed and edited documentation changes
-  * Edited release notes
+  * I write the docs.
+  * I edit the docs.
+  * I deploy the docs.
+  * I automate as much as I can.
   """
 +++

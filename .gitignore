@@ -45,3 +45,6 @@ public/
 scratch/
 blogdown/
 .DS_Store
+
+node_modules
+.hugo_build.lock
