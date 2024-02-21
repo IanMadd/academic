@@ -2,6 +2,12 @@
   command = "hugo --gc --minify -b $URL"
   publish = "public"
 
+[dev]
+  command = "hugo server"
+  publish = "public"
+  targetPort = 1313
+  port = 8888
+
 [build.environment]
   HUGO_VERSION = "0.122.0"
   HUGO_ENABLEGITINFO = "true"
