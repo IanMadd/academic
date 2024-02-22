@@ -30,3 +30,24 @@
   for = "index.xml"
   [headers.values]
     Content-Type = "application/rss+xml"
+
+# Rewrite a path
+[[redirects]]
+from = "/test/0.1.0/*"
+to = "https://release-0-1-0--ianmadd-docs-test.netlify.app/test/0.1.0/:splat"
+status = 200
+
+[[redirects]]
+from = "/test/0.2.0/*"
+to = "https://release-0-2-0--ianmadd-docs-test.netlify.app/test/0.2.0/:splat"
+status = 200
+
+[[redirects]]
+from = "/images/test/0.2.0/*"
+to = "https://release-0-2-0--ianmadd-docs-test.netlify.app/images/test/0.2.0/:splat"
+status = 200
+
+[[redirects]]
+from = "test/0.3.0/*"
+to = "https://release-0-3-0--ianmadd-docs-test.netlify.app/:splat"
+status = 200
